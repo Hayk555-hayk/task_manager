@@ -1,7 +1,9 @@
 
 let task_line = document.querySelector('.task_wrapper');
 let generated_html = "";
-let active = 1;
+
+let active = 2;
+
 console.log(tasks.length)
 for(let i = 0; i < tasks.length; i++) {
     generated_html += `

@@ -7,7 +7,7 @@ let tasks = [
     {
         title: "Уроки github The net ninja",
         description: "Выполнения и изучение конспектов",
-        task_status: false
+        task_status: true
     },
     {
         title: "Духовность",
