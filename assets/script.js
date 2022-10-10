@@ -2,7 +2,7 @@
 let task_line = document.querySelector('.task_wrapper');
 let generated_html = "";
 
-let active = 2;
+let active = 3;
 
 console.log(tasks.length)
 for(let i = 0; i < tasks.length; i++) {
