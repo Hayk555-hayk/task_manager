@@ -9,15 +9,23 @@ for(let i = 0; i < tasks.length; i++) {
         <div class="list_of_tasks">
             <div>${tasks[i].programming}</div>
             <hr />
+            <div>${tasks[i].practice}</div>
+            <hr />
             <div>${tasks[i].sport}</div>
-            <hr />
-            <div>${tasks[i].religion}</div>
-            <hr />
-            <div>${tasks[i].english}</div>
-            <hr />
-            <div>${tasks[i].spain}</div>
-        </div>
-    </div>`;
+            <hr />`;
+            if(tasks[i].religion) {
+                tasks_html += `<div>${tasks[i].religion}</div>
+                <hr />`;
+            }
+            if(tasks[i].english) {
+                tasks_html += `<div>${tasks[i].english}</div>
+                <hr />`;
+            }
+            if(tasks[i].spain) {
+                tasks_html += `<div>${tasks[i].spain}</div>`;
+            }
+            tasks_html += `</div>
+        </div>`;
 }
 
 let task_element = document.querySelector('#tasks');
