@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARAVEL</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="theme_wrapper">
+        <div><a href="../../index.html">BACK</a></div>
+        <div>Для установки проекта нужна команда composer create-project laravel/laravel example-app</div>
+        <div>В composer.json находятся зависимости проекта</div>
+        <div>Для начала проекта нужна команда php artisan serve</div>
+        <div>
+            Роутинг происходит в  web и api php файлах 
+            Пример роута
+            <pre>
+Rpote::get('/path', [Controller::class, 'method'])->name('some name for this route')
+Route::get('/path/{user_id}, [Controller::class, 'method])
+            </pre>
+            В методу у контроллера такие аргументы принимаются как обычные аргументы
+            Пример такого метода 
+            <pre>
+public function some_method($user_id) {
+    logic here ...
+}
+            </pre>
+            Такие параметры могут быть необьязательными, where после route создаст критерии для переданного аргумента
+            <pre>
+Route::get('/path/{user_id?}, [Controller::class, 'method])->where('user_id', 'some regular expression')
+public function some_method($user_id = null) {
+    logic here ...
+}
+            </pre>
+            Эти where могут быть и глобальными, в providers/RouteServiceProvider внутри метода booth
+            под всей логикой можем прописать 
+            <pre>
+Route::pattern('user_id', 'some regular expression');
+            </pre>
+            Можно прописать route и для post и для get
+            <pre>
+Route::match(['get', 'post'], '/path', [Controller::class, 'method'])
+Route::any('/path', [Controller::class, 'method'])
+// To get the requested method
+public function some_method(Request $req) {
+    dd($req->method());
+}
+            </pre>
+        </div>
+        <div>
+            В контроллерах пишется вся логика приложения, для создания контроллера используем
+            команду php artisan make:controller NameController
+        </div>
+        <div>
+            Общий вид по умолчанию в приложениях ларавел создается шаблонизатором blade 
+            они находятся в папке resources/views 
+            <pre>
+public function some_method() {
+    return view('users'); // but the file name is users.blade.php
+}
+            </pre>
+        </div>
+
+    </div>
+    
+</body>
+</html>

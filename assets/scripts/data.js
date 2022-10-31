@@ -2,9 +2,9 @@ let tasks = [
     {
         day_id: 1,
         day: "Понедельник",
-        programming: 'Программирование Laravel: Surfside Media; lumen-Code Step By Step; orchid-agoalofalife',
+        programming: 'Программирование Laravel: Surfside Media; lumen-Code Step By Step; orchid-agoalofalife (Видео 4, время 06:38)',
         practice: 'Практика: Изучение конспектов по Laravel',
-        sport: "Спорт: гр-хлоп-ст-40, гр-кк.бц-40, гр-жм-лж-14, тр-лж-бк-40, тр-лж-40, тр-ст-40, пр-пл-17, пр-кст-17, !жм-обч-пр-скал-22",
+        sport: "Спорт: гр-хлоп-ст-50, гр-кк.бц-50, гр-жм-лж-17, тр-лж-бк-50, тр-лж-50, тр-ст-50, пр-пл-20, пр-кст-20, !жм-обч-пр-скал-24",
         religion: "Религия: Чтение приложения",
     },
     {
@@ -63,6 +63,11 @@ let lessons = [
         title: "GITHUB",
         src: "./assets/lessons/github.html",
         img: "./assets/images/github.png"
+    },
+    {
+        title: "LARAVEL",
+        src: "./assets/lessons/laravel.html",
+        img: "./assets/images/laravel.png"
     },
     
 ];
