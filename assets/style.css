@@ -23,12 +23,14 @@ body {
 #lessons {
     margin-top: 10vh;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .day, .lesson {
     padding: 15px;
     border-radius: 25px;
     background-color: #fff;
+    margin-top: 10px;
 }
 
 .day {

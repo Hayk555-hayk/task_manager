@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="theme_wrapper">
+        <div><a href="../../index.html">BACK</a></div>
+        <div>Vue js можно установить через cdn, npm и cli</div>
+        <div>
+            Создания новой сущности vue 
+            <pre>
+new Vue({
+    el: '#app', // MAin html tag where all app will be rendered inside the mentioned tag
+    data: {
+        name: 'Hayk', // Interpolation in html {{ name }}
+    }, 
+    methods: {
+        greet: function() {
+            return 'good morning' + this.name; // interpolation can be span{{ greet() }}/span
+        }
+    }
+});
+            </pre>
+        </div>
+
+        <div>
+            Производим связку данных с атрибутами html
+            <pre>
+new Vue({
+    el: '#app',
+    data: {
+        name: 'Hayk', // Interpolation in html {{ name }}
+    }
+ });
+p v-bind:class="name" или p :class="name"
+            </pre>
+        </div>
+    </div>
+    
+</body>
+</html>
