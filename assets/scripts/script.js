@@ -9,6 +9,8 @@ for(let i = 0; i < tasks.length; i++) {
         <div class="list_of_tasks">
             <div>${tasks[i].programming}</div>
             <hr />
+            <div>${tasks[i].learned_part}</div>
+            <hr />
             <div>${tasks[i].sport}</div>
             <hr />`;
             if(tasks[i].religion) {
