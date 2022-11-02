@@ -51,7 +51,7 @@ let tasks = [
         day_id: 0,
         day: "Воскресенье",
         programming: 'Программирование PHP & JS: php-Dani Krossing; js-oop The Net Ninja Object Oriented JavaScript; js-Владилен сложный js',
-        learned_part: 'Конспекты по PHP & JS: полное чтение',
+        learned_part: 'Конспекты по PHP & JS и Github: полное чтение',
         sport: "Спорт: пр-пл-20, пр-обч-20, пр-нг-20, пр-склз-20",
         religion: "Религия: Написания письма",
     },
