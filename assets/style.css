@@ -10,45 +10,20 @@ body {
     background-size: cover;
 }
 
-#tasks, #lessons {
+#lessons {
     display: flex;
     justify-content: space-around;
-}
-
-#tasks {
-    margin-top: 15vh;
-    text-align: left;
-}
-
-#lessons {
     margin-top: 10vh;
     text-align: center;
     flex-wrap: wrap;
 }
 
-.day, .lesson {
+.lesson {
     padding: 15px;
     border-radius: 25px;
     background-color: #fff;
     margin-top: 10px;
 }
-
-.day {
-    width: 12%;
-    opacity: .3;
-    height: 200px;
-    overflow: hidden;
-}
-
-.week_day {
-    text-align: center;
-}
-
-.active {
-    width: 28%;
-    opacity: 1;
-}
-
 
 .img {
     width: 150px;
@@ -60,19 +35,6 @@ a {
     text-decoration: none;
 }
 
-.theme_wrapper {
-    margin-left: 35%
-}
-
-.theme_wrapper > div {
-    width: 40%;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 25px;
-    margin-bottom: 25px;
-    overflow: auto;
-}
 
 pre {
     text-align: left;
