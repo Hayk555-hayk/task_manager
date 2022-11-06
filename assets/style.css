@@ -16,13 +16,19 @@ body {
     margin-top: 10vh;
     text-align: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .lesson {
     padding: 15px;
     border-radius: 25px;
     background-color: #fff;
-    margin-top: 10px;
+    margin-top: 25px;
+    transition: .5s;
+}
+
+.lesson:hover {
+    transform: scale(1.2);
 }
 
 .img {
@@ -43,19 +49,40 @@ pre {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
+}
   
   /* Track */
   ::-webkit-scrollbar-track {
     background: #f1f1f1; 
-  }
+}
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888; 
-  }
+}
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+}
+
+.theme_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.theme_wrapper > div {
+    width: 70%;
+    background-color: #fff;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.theme_wrapper pre {
+    padding: 10px;
+    font-family: monospace;
+    background-color: rgb(195, 193, 193);
+    border-radius: 25px;
+}
