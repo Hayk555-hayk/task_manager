@@ -1,8 +1,8 @@
 let lessons = [
     {
-        title: "GITHUB",
-        src: "./assets/lessons/github.html",
-        img: "./assets/images/github.png"
+        title: "ADD TOOLS",
+        src: "./assets/lessons/tools.html",
+        img: "./assets/images/tools.jpg"
     },
     {
         title: "LARAVEL",
@@ -28,22 +28,7 @@ let lessons = [
         title: "SPAIN",
         src: "./assets/lessons/spain.html",
         img: "./assets/images/spain.jpg"
-    },  
-    {
-        title: "lARAVEL & VUE",
-        src: "./assets/lessons/laravel_and_vue.html",
-        img: "./assets/images/laravel_and_vue.png"
-    },  
-    {
-        title: "lARAVEL & NUXT",
-        src: "./assets/lessons/laravel_and_nuxt.html",
-        img: "./assets/images/laravel_and_nuxt.png"
-    },  
-    {
-        title: "MICROSERVICES",
-        src: "./assets/lessons/microservice.html",
-        img: "./assets/images/microservice.png"
-    },  
+    },
     {
         title: "PHP & JS",
         src: "./assets/lessons/php_js.html",

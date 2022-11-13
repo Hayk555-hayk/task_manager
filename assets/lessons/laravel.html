@@ -12,7 +12,7 @@
     <div class="theme_wrapper">
         <div>
             <a href="../../index.html">BACK</a>
-            <p>Surfside Media; lumen-Code Step By Step; orchid-agoalofalife (Видео 4, время 06:38)</p>
+            <p>Surfside Media; lumen-Code Step By Step; orchid-agoalofalife (Видео 8)</p>
         </div>
         <div>Для установки проекта нужна команда composer create-project laravel/laravel example-app</div>
         <div>В composer.json находятся зависимости проекта</div>
@@ -61,12 +61,67 @@ public function some_method(Request $req) {
             Общий вид по умолчанию в приложениях ларавел создается шаблонизатором blade 
             они находятся в папке resources/views 
             <pre>
-public function some_method() {
-    return view('users'); // but the file name is users.blade.php
+public function some_method($name) {
+    $user_name = $name;
+    return view('users', compact('user_name')); // but the file name is users.blade.php
+}
+//В blade Интерполяция происходит благодаря {{$user_name}}
+            </pre>
+        </div>
+        <div>
+            Создания blade компонента происходит при помощи php artisan make:component ComponentName команды
+            Команда создаст 2 файла, первый app/views/created php file, второй resources/views/components/blade файл <br />
+            Для вызова этого компонента в нужном blade пропишем ноый тег, через пропсы можно передавать данные x-componentName name="Hayk" :fruits="$fruits"
+            и для того чтобы этод name был виден нужно в php файле компонента прописать следующий команда
+            <pre>
+class Header extends Component {
+    public $name;
+
+    public function __construct($name) {
+        $this->name = $name; // This name is available in Header blade as {{$name}}
+    }
 }
             </pre>
         </div>
+        <div>
+            Для создания контроллера нужна команда php artisan make:controller NameController, а команда 
+            php artisan serve запускает сервер
+        </div>
+        <div>jsonplaceholder является хорошим местом для фейк api</div>
+        <div>
+            Создаем запрос на другой ресурс из нашего проекта 
+            <pre>
+public function makeRequest() {
+    //GET EXAMPLE
+    $request = Http::get('url');
+    //POST EXAMPLE
+    $request = Http::post('url', [data]);
+    // PUT EXAMPLE
+    $request = Http::put('url', [data]);
+    //DELETE EXAMPLE
+    $request = Http::delete('url');
 
+    return $requrst->json();
+}
+            </pre>
+        </div>
+        <div>
+            Работа со строками 
+            <pre>
+$str = Str::of('Welcome to tutorial')->after('Welcome to'); // will show tutoral
+$str = Str::of('Welcome\ to\ tutorial')->afterLast('\\'); // will show tutoral
+$str = Str::of('Welcome')->append(' to totorial'); // will show Welcom to tutoral
+$str = Str::of('WELCOME')->lower(); // will show welcome (same for upper)
+$str = Str::of('Welcome here')->replace('here', 'there'); // will show Welcome there
+$str = Str::of('this is a title')->title(); // will show This Is A Titile
+$str = Str::of('welcome to tutorial')->slug('-'); // will show welcome-to-tutorial
+$str = Str::of('welcome here')->substr(8); // will show here
+$str = Str::of('/laravel/')->trim('/'); // will show laravel
+
+
+
+            </pre>
+        </div>
     </div>
     
 </body>
