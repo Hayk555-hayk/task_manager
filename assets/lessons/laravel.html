@@ -117,10 +117,71 @@ $str = Str::of('this is a title')->title(); // will show This Is A Titile
 $str = Str::of('welcome to tutorial')->slug('-'); // will show welcome-to-tutorial
 $str = Str::of('welcome here')->substr(8); // will show here
 $str = Str::of('/laravel/')->trim('/'); // will show laravel
-
-
-
             </pre>
+        </div>
+
+
+
+
+
+
+        <div>
+            Laravel & websocket. Polling это создания realtime при помощи ежесекундном http запросе, но это очень не эффективно. 
+            Чтобы в laravel заработал websocket нужен pusher. Larawel websockets предоставляет бесплатный pusher 
+            <pre>
+$ composer require beyondcode/laravel-websockets // install package for websockets
+php artisan migrate // Migrate  all databases for websocket
+config/websocket.php - allow_origin // All origins for connecting to our websocket server 
+$ composer require pusher/pusher-php-server // additional dependency 
+
+// Change broadcast_driver in env to pusher, also add some values for pusher_app_id, pusher_app_key, pusher_app_secret, queue_connection = sync
+// broadcasting config 
+in pusher array in options add few options 
+useTls = false
+encripted = false 
+host
+port = 6001
+scheme http
+php artisan websockets:serve // wil lstart websocket
+
+// new route is created larawel-websockets to see websocket dashboard, click to connect if you see chart that is mean that everything is ok 
+
+//unkomment broadcastserviceprovider in config/websockets
+// chanels similar to routes
+Broadcast::channel('App.Models.User.{id}', function($user, $id) {
+    return $id;
+}); 
+
+// Creating even 
+php artisan make:event NameEvent
+add to class name implements ShoulBroadcast, in boradcastOn we define chanel, change 
+privatChanelClass to Chanel class to establish public chanel, names should be separated by dot ('public.playground')
+// In web routes there should be /playgrounds path where we can do the next 
+event(new App\Events\PlaygroundEvent());
+
+//creating our own function name instead of Playground
+in Created event add the next 
+public function broadcastAs(){
+    return 'playground';
+}
+
+// returning data in the same file add 
+public function broadcastWith() {
+    //logic to collect the data
+    return $data;
+}
+
+//Для подписки нужно npm install laravel-echo pusher-js
+// npm run hot
+const chanel = Echo.channel('public.playground.1')
+// getting data from webspcket
+channel.subscribed(() => {
+    console.log('subscribed');
+}).listen('.playground', (event) => {
+    
+})
+            </pre>
+            Существует 3 типа каналов public (no authnrequired), private (no one can see who make the post), presence (everyone can see who make the post)
         </div>
     </div>
     
