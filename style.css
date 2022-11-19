@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(./assets/main.jpg);
+}
+
+.tutorial_wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20vh;
+}
+
+.tutorial {
+    height: 250px;
+    width: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: .5s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.java {background-image: url(./assets/java.png);}
+.php {background-image: url(./assets/php.jpeg);}
+.node {background-image: url(./assets/node.jpg);}
+.add {background-image: url(./assets/add.png);}
+
+.tutorial:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.called_tutorial {
+    margin: 50px auto;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 25px;
+    background-color: rgb(231, 231, 240);
+}
+
+.called_tutorial > div {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    transition: .5s;
+    padding: 20px;
+}
+
+.called_tutorial > div:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+pre {
+    margin-top: 10px;
+    font-family: monospace;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgb(61, 60, 60);
+    color: rgb(216, 255, 60);
+    font-size: 17px;
+    
+}
