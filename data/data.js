@@ -6,4 +6,6 @@ let tutorials = {
     php: php_data,
 
     add: add_data,
+
+    lang: lang_data
 }

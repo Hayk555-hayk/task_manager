@@ -16,8 +16,8 @@ body {
 }
 
 .tutorial {
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 250px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: .5s;
     background-size: cover;
@@ -30,6 +30,7 @@ body {
 .php {background-image: url(./assets/php.jpeg);}
 .node {background-image: url(./assets/node.jpg);}
 .add {background-image: url(./assets/add.png);}
+.lang {background-image: url(./assets/languages.jpg);}
 
 .tutorial:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
