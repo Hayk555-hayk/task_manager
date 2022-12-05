@@ -29,7 +29,7 @@ body {
 .java {background-image: url(./assets/java.png);}
 .php {background-image: url(./assets/php.jpeg);}
 .node {background-image: url(./assets/node.jpg);}
-.add {background-image: url(./assets/add.png);}
+.front {background-image: url(./assets/front.png);}
 .lang {background-image: url(./assets/languages.jpg);}
 
 .tutorial:hover {
@@ -66,4 +66,48 @@ pre {
     color: rgb(216, 255, 60);
     font-size: 17px;
     
+}
+
+#get_task {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    background-image: url(./assets/rand.png);
+    background-size: contain;
+    border-radius: 40px;
+    cursor: pointer;
+    transform: scale(.5);
+    transition: .5s;
+}
+
+#get_task:hover {
+    transform: scale(1);
+}
+
+#the_task {
+    height: 250px;
+    width: 500px;
+    background-color: rgb(90, 100, 108);
+    color: rgb(230, 225, 217);
+    position: absolute;
+    left: 33%;
+    top: -250px;
+    border-radius: 25px;
+    transition: .5s;
+    padding: 40px;
+    text-align: center;
+}
+
+.task_title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.task_description {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.small {
+    font-size: 10px;
 }
