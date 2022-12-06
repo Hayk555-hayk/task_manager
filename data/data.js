@@ -76,10 +76,10 @@ let tasks = [
     React
     </span><br />
     <span class="task_description">
-    YouTube The net ninja all react and next js tutorials
+    YouTube The net ninja all react and next js tutorials (complete react redux tutorial урок 4)
     </span> <br />
     <span class="small">
-    YouTube Владилен typescript, YouTube JavaScript ru git, Documentation Metanit
+    YouTube Владилен typescript, YouTube JavaScript ru git, the net ninja all js playlists, Documentation Metanit react, metanit js
     </span>`,
 
     `<span class="task_title">
@@ -96,7 +96,7 @@ let tasks = [
     Angular
     </span><br />
     <span class="task_description">
-    YouTube web developer nazar angular
+    YouTube leela web angular (урок 4)
     </span> <br/>
     <span class="small">
     YouTube leela web ngrx Урок 1, codevolution chrome extension, Documentation Metanit
@@ -120,6 +120,13 @@ let tasks = [
     </span> <br/>
     <span class="small">
     Словарь из 700 слов 
+    </span>`,
+
+    `<span class="task_title">
+    Чтение книг
+    </span><br />
+    <span class="task_description">
+    Поочередное чтение книг из папки books (книга 1, стр. 35)
     </span>`,
 
     `<span class="task_title">
@@ -206,6 +213,6 @@ let tasks = [
     Спорт комплекс-7
     </span><br />
     <span class="task_description">
-    Грудь лежа и пресс половина 
+    Грудь лежа и пресс половина 20
     </span>`,
 ];

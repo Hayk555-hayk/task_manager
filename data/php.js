@@ -270,6 +270,36 @@ let php_data = [
         Route::pattern('id', '[0-9]+');
     }
     </pre>
+    </div>`,
+    
+    `<div>(php)
+    Функция isset($var) проверяет наличие переменной, а функция empty($var) проверяет пустая она или нет <br />
+    Функция unset($var) удаляет переменную <br />
+    В php есть конструкции if-elseid-else, switch-case, condition ? code for true : code for false, for, foreach, while, do-while <br />
+    Мало распространенный if, for и isset 
+    <pre>
+    if(true):
+        // code 
+    endif;
+
+    for($i = 0; $i < 55; $i++):
+        // code 
+    endfor;
+
+    $user = $_SESSION['login'] ?? 0; // Два вопросительных установят user в 0 если нету $_SESSION['login']
+    </pre>
+    С помощью глобальных массивов $_GET $_POST можно брать данные от request-а <br />
+    В конец массива можно добавлять данные и вот так $arr[] = 10;, а удалять можно так unset($arr[4]); <br />
+    sort($arr) сортирует массив, asort($arr) сортирует асоциативный массив, array_unique($arr) только уникальные элементы, array_sum($arr) сумма массива, <br />
+    array_product($arr) умножает друг на друга, count($arr) число элементов, in_array("5", $arr) покажет есть ли в массиве 5 <br />
+    array_chunk($arr, 2) разбивает массив на указанное количество подмассивов <br />
+    array_slice($array, 0, 4) выведит 4 элемета после 0-ого <br />
+    array_splice($array, 0, 4, [1,2,3,4]) работает как slice но не вырезает а заменяет <br />
+    $arr = range(1, 10); создаст массив от 1 до 10 <br />
+    $arr = array_merge($arr1, $arr2); обьединение массивов <br />
+    array_intersect($arr1, $arr2); показывает пересечения, одинаковые элементы в массиве, array_dif($arr1, $arr2) выявит различия <br />
+    explode('-', $str); создает из строки массив по указанному разделителю, обратный процесс с помощью implode('-', $arr) <br />
+    list($red, $green, $blue) = $array; каждая переменная по очереди возьмет свое значение из массива
     </div>`
 
 ]
