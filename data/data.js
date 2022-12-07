@@ -35,7 +35,7 @@ let tasks = [
     Node
     </span><br />
     <span class="task_description">
-    YouTube Илья Кантор node от а до я Урок 1
+    YouTube Илья Кантор node от а до я Урок 6
     </span><br />
     <span class="small">
     YouTube gungner it mongodb, Documentation Metanit node, Documentation Metanit mongodb
@@ -55,7 +55,7 @@ let tasks = [
     Java
     </span><br />
     <span class="task_description">
-    YouTube Уроки java Урок 1
+    YouTube Уроки java Урок 4
     </span><br />
     <span class="small">
     documentation Metanit
@@ -76,7 +76,7 @@ let tasks = [
     React
     </span><br />
     <span class="task_description">
-    YouTube The net ninja all react and next js tutorials (complete react redux tutorial урок 4)
+    YouTube The net ninja all react and next js tutorials (complete react redux tutorial урок 6)
     </span> <br />
     <span class="small">
     YouTube Владилен typescript, YouTube JavaScript ru git, the net ninja all js playlists, Documentation Metanit react, metanit js
@@ -106,7 +106,7 @@ let tasks = [
     English
     </span><br />
     <span class="task_description">
-    YouTube уроки по плейлистам Урок 1
+    YouTube уроки по плейлистам Урок 1 
     </span> <br/>
     <span class="small">
     Словарь из 700 слов 
@@ -116,7 +116,7 @@ let tasks = [
     Spanish
     </span><br />
     <span class="task_description">
-    YouTube уроки по плейлистам Урок 1
+    YouTube уроки по плейлистам Урок 1 (21:15)
     </span> <br/>
     <span class="small">
     Словарь из 700 слов 
@@ -171,7 +171,7 @@ let tasks = [
     Спорт комплекс-1
     </span><br />
     <span class="task_description">
-    Жим обычный и пресс скалолаз 12
+    Жим обычный и пресс скалолаз 15
     </span>`,
 
     `<span class="task_title">
@@ -199,7 +199,7 @@ let tasks = [
     Спорт комплекс-5
     </span><br />
     <span class="task_description">
-    Трицепс лежа и пресс обычный 20
+    Трицепс лежа и пресс обычный 25
     </span>`,
 
     `<span class="task_title">
@@ -213,6 +213,6 @@ let tasks = [
     Спорт комплекс-7
     </span><br />
     <span class="task_description">
-    Грудь лежа и пресс половина 20
+    Грудь лежа и пресс половина 25
     </span>`,
 ];
