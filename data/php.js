@@ -397,7 +397,85 @@ let php_data = [
     </pre>
     </div>`,
     `<div>(php)
-    get и post запросы
+    get и post запросы можно получать супер глобальными $_GET['input name'] или $_POST['input name'] а в action у form тега <br />
+    прописать путь к запросу, в методе прописать get или post <br />
+    exit ('warn text'); выйдет из программы с переданным текстом 
+    </div>`,
+    `<div>(php)
+    Работа с базой данных
+    <pre>
+    // Connecting to the db
+    define('SERVERNAME', 'localhost');
+    define('DB_LOGIN', 'root');
+    define('DB_PASSWORD', '1234');
+    define('DB_NAME', 'shop_table');
+
+    $connect = new mysqli(SERVERNAME, DB_LOGIN, DB_PASSWORD, DB_NAME);
+    // update query
+    $sql_query = "UPDATE \`heroes\` SET \`age\`=22 WHERE \`name\`='name'";
+    $connect->query($sql_query); // make query
+    $connect->close(); // closing the query
+
+    //select query
+    $sql_query = "SELECT * FROM \`heroes\`  WHERE \`name\`='name'";
+    $result = connect->query($sql_query);
+    $connect->close();
+    // now the $result is an object of the data that was returned by the query, fetch_asoc function will make it to be an array
+    $result = $result->fetch_asoc();
+
+    // insert query
+    $sql_query = "INSERT INTO \`heroes\` (\`name\`, \`age\`, \`rank\`) VALUES ('$name', '$age', '$rank')";
+    </pre>
+    header('Location: /'); выполнит редирект страници
+    </div>`,
+    `<div>(laravel)
+    Мидлверы обрабатывают http реквесты перед тем как этот реквест войдет в наше приложение <br />
+    Для создания middleware нужна команда php artisan make:middleare Name, директория app/http/middleware <br />
+     Middleware могут быть использваны 3-я разными способами global level, local level и route level<br />
+     Все мидлверы нужно регестрировать в kernel.php
+     1) global level Работает на все приложения В массиве protected $middleware, внутри kernel, добавим новосозданный middleware <br />
+     2) local level Работает на роутах, в массиве protected $middlewareGroups, внутри kernel у ключа  web, добавим <br />
+     новый наш созданный middleware, тоже самое можно провести и с api, вот поэтому они считаются локальными <br />
+     3) route level работает по определенному роуту в кернеле внутри массива protected $routeMiddleware регестрируем наш <br />
+     middleware, можно добавить и имя для этого мидлвера, теперь в конце у роута можно добавить <br />
+     ->middleware('middleware name')
+    </div>`,
+    `<div>(laravel)
+    Http сессии 
+    <pre>
+    public function getSession(Request $request) {
+        $request->session()->has('name'); // checking if session has name
+        $request->session()->get('name'); // geting name from the session
+        $request->session()->put('name', 'Hayk'); // setting session 
+        $request->session()->forget('name');
+    }
+    </pre>
+    </div>`,
+    `<div>(php)
+    Работа с файлами 
+    <pre>
+    $filename = 'data.txt';
+    $f = fopen($filename, 'a+'); //a+ is oppening file for reading and writing, if there no such file the regime will create it
+    fread($f, 300); // read the file, 300 mean how many symbols we whant to read, fread($f, filesize($filename)) read all file
+    fwrite($f, 'text'); // writing some text in the file 
+    fseek($f, $num); // откуда прочитать файл (с какой строки)
+    fclose(); // in the end it is nesessary to close the file 
+    // временный файл 
+    $tmp = tmpfile(); // create temprorary file 
+    // alternative file reading 
+    $str = file_get_contents($filename); // read file 
+    file_put_contents($filename, 'text'); // will rewrite the file, also can send and array, and it will be saved by lines in the text.txt, array argument should use implode feature 
+    file_put_contents($filename, $str . ' text'); // will add text to the file, also can use file_put_contents($filename, ' text', FILE_APPEND);
+    $arr = file('text.txt'); // will return text as an array by each line 
+    PHP_EOL // перенос строки 
+    copy('f1.txt', 'f2.txt'); // копирование файла 
+    rename('f2.txt', 'renamed.txt'); // rename file name 
+    unlink('filename.txt'); // delete the file 
+    file_exists('file_name.txt'); // check if the file is existing or not 
+    mkdir('name', 0777); // create new directory and insert the access (0, read, write, execute) 7 means that file is available for everybody, 6 for the owner and some users, 4 only for the owner
+    mkdir('name/name', 0777, true); // need to write true to create file inside of file 
+    rmdir('name'); // remove a directory 
+    </pre>
     </div>`
 
 ]

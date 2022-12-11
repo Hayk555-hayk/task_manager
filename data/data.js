@@ -14,18 +14,18 @@ let tasks = [
     `<span class="task_title">
     PHP
     </span><br />
-    <span class="task_description">
-    YouTube DarkProger Новейший курс по php (урок 10) 
+    <span an class="task_description">
+    YouTube web developer blog php oop (урок 1) 
     </span><br />
     <span class="small">
-    YouTube web developer blog php oop, YouTube html lab mysql, YouTube Аве кодер postgre, YouTube Гоша Дударь docker, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL
+    YouTube html lab mysql, YouTube Аве кодер postgre, YouTube Гоша Дударь docker, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL
     </span>`,
 
     `<span class="task_title">
     Laravel
     </span><br />
     <span class="task_description">
-    YouTube surfside media Урок 11
+    YouTube surfside media Урок 13
     </span> <br />
     <span class="small">
     YouTube Andrey Schemelyun laravel vue, YouTube agoalofalife орхид, YouTube coders tape all playlists, Documentation Laravel su урок 11, Documentation laravel demiart
