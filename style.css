@@ -65,7 +65,7 @@ pre {
     background: rgb(61, 60, 60);
     color: rgb(216, 255, 60);
     font-size: 17px;
-    
+    overflow: auto;
 }
 
 #get_task {
@@ -110,4 +110,14 @@ pre {
 
 .small {
     font-size: 10px;
+}
+
+pre::-webkit-scrollbar {
+	width: 2px;
+	background-color: #8a8585;
+}
+
+pre::-webkit-scrollbar-thumb {
+	background-color: #3125259b;
+    border-radius: 5px;
 }

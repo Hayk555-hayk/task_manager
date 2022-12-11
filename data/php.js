@@ -300,6 +300,104 @@ let php_data = [
     array_intersect($arr1, $arr2); показывает пересечения, одинаковые элементы в массиве, array_dif($arr1, $arr2) выявит различия <br />
     explode('-', $str); создает из строки массив по указанному разделителю, обратный процесс с помощью implode('-', $arr) <br />
     list($red, $green, $blue) = $array; каждая переменная по очереди возьмет свое значение из массива
+    </div>`,
+    `<div>(php)
+    Функция создается ключевым словом function и может принимать аргумены, функция должна возвращять кокое то значения по return <br />
+    Жесткая ссылка добавляется с помощью &,  такие ссылки нужны чтобы переменные менялись глобально а не толко локально внутри функции <br />
+    У переменных 2 области видимости local/global 
+    <pre>
+    function sum($x, $y) {
+        return $x + $y;
+    }
+    //with types
+    function sum(int $x, int $y):int {
+        return $x + $y;
+    }
+    // with link
+    $x = 10;
+    func(&$x); 
+    </pre>
+    </div>`,
+    `<div>(php)
+    Статические переменные, запоминают свое значение, если func вызвать 4 раза то на пятый раз у переменной $count будет значение 5
+    <pre>
+    function func() {
+        static $count = 0;
+        $count++;
+    }
+    </pre>
+    </div>`,
+    `<div>(php)
+    require вызовит ошибку если вызовать один и тот же файл с функциями более одного раза, чтобы избежать случайной ошибки <br />
+    можно вызовать require_once <br />
+    В php есть анонимные функции, это функции без имени 
+    <pre>
+    $arr = [10,20,30];
+    $average = function(array $arr) {
+        return array_sum($arr)/count($arr);
+    }; // в конце точка с запятой обьязательна 
+    $average($arr); // feature call 
+    </pre>
+    </div>`,
+    `<div>(php)
+    Способы работы с датой и временим, даты начинаются от начало эпохи unix
+    <pre>
+    time() // time in seconds from 1 jan 1970, return miliseconds
+    mktime(12,12,12, 5, 25, 1994) //make time (hours,minutes,seconds,mounths, days, year), return miliseconds
+    date('Y-M-D H:i:S') return readble time in given format
+    date('Y-M-D H:i:S', mktime(12,12,12, 5, 25, 1994)) return readble time in given format and date
+    strtotime('now') // reurn today date
+    strtotime('- 1 day') // reurn yesterday date
+    strtotime('next monday') // reurn next monday date
+    $date = new DateTime('2011-4-8'); // date class
+    $date->modify('-1 day'); // DateTime method modify will change the date 
+    echo $date->format('Y-M-D') // return date in given format of DateTime class 
+    // counting the time of script execution 
+    $start = microtime(true);
+    $end = microtime(false);
+    $executionTime = $end - $start;
+    checkdate(12, 05, 1994) // return 1 as the date is correct
+    checkdate(12, 305, 1994) // return nothing as the date is not correct
+    </pre>
+    </div>`,
+    `<div>(php)
+    Математические и строковые функции 
+    <pre>
+    abs(-20) // module of the num return 20
+    sqrt(9) // квадратный корень числа вернет 3
+    pow(9, 3) // will 9 * 9 * 9
+    M_PI = 3.14
+    M_E = 2.7
+    round(2.6) // округляет по математическим законам
+    round(2.61, 1) // will return 2.6
+    round(123, -1) // will return 150
+    round(123, -2) // will return 100
+    round with math rules, floor to bottom, ceil to top
+    mt_rand(1, 400) // will return random number from 1 to 400
+    min(1,4,5,7,8) and max(4,5,8,7,2,1) // will return minimal and maximal numbers, also as argument we can pass an array
+    base_convert(2356, 10, 2) // (number, система исчесления, перевести в другую систему исчесления)
+    strlen('str') // will return string length, russian simbols are length * 2 as they are 2 bites
+    mb_strlen('привет') // for russain string length
+    ucfirst('hayk') // will return Hayk for refers functionality lcfirst('Hayk') 
+    ucwords('ha ha ha ha') // will return Ha Ha Ha Ha
+    strtoupper('hayk') // will return HAYK, reverse strtolower
+    // replaceing some string
+    $str = "hello.world";
+    str_replace('.', '-', $str);
+    substr_replace($str, 'all', -5, -5) // where to change, new changed value, from wgere, how long
+    trim($str); // will delete spaces from the text
+    trim('@asldas!!!', '!@') // will delete also ! and @
+    strrev('some') // will reverse string and return emos
+    script_tags('text with tags or scripts') // will remove tags
+    script_tags('text with tags or scripts', ['&ltp&gt']) // will remove all tags, but will save p tag
+    htmlspecialchars('some text with tags') // will make tags be just string and will not delete them 
+    // hashing data
+    mb5("454545") // will return 374yr5n34y5of934y9jw4
+    password_hash("454545454", PASSWORD_DEFAULT) // will return 374yr5n34y5of934y9jw4fgwe84pv5jpwe4urtj980we
+    </pre>
+    </div>`,
+    `<div>(php)
+    get и post запросы
     </div>`
 
 ]
