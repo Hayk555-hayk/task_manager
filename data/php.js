@@ -476,6 +476,217 @@ let php_data = [
     mkdir('name/name', 0777, true); // need to write true to create file inside of file 
     rmdir('name'); // remove a directory 
     </pre>
+    </div>`,
+    `<div>(php)
+    ООП (обьектно ориентированное программирования) <br />
+    Если говорить просто свойства это переменные внутри класса, а методы это функции внутри класса <br />
+    Создание класса
+    <pre>
+    // Creating class
+    class ShoppingCard {
+
+    }
+
+    // creating object sample from the class
+    $product1 = new ShoppingCard();
+    $product2 = new ShoppingCard();
+    $product3 = new ShoppingCard(); // each object has its own idintificator, which is can be seen by calling var_dump feature
+    var_dump($product1 instanceof ShoppingCard); // check the owner of the object and return true or false
+    </pre>
+    </div>`,
+    `<div>(php)
+    Области видимости Public - все свойства и методы класса могут быть использованы в любой точке скрипта <br />
+    Private - виден только внутри методов этого же класса <br />
+    Protected - Свойства и методы могут использоваться внутри класса и дочернего класса, тоесть могут наследоваться, но в <br />
+    дочерних классах protected привратится в private <br />
+    Методы работают как обычные функции но они вызываются из контекста обьекта 
+    <pre>
+    class Shop() {
+        private $name;
+
+        public function naming() {
+            $this->name = "SHOP"; // the only way to work with private variables 
+            echo "Hello {$this->name}";
+        }
+
+        function getInfo() { // if there is no public/private or protected it will become public by default
+            return "Name: {$this->name}";
+        }
+    }
+
+    $shop = new Shop();
+    $shop->naming();
+    $shop->getInfo();
+
+    // We can dynamicaly add new proporties to the object 
+    $shop->surname = 'Janibekyan';
+    </pre>
+    </div>`,
+    `<div>(php)
+    Конструкторы, деструкторы и магические методы 
+    <pre>
+    class Person {
+        public $name;
+        public $surname;
+
+        function __construct($name, $surname) { // in old verssions of php instead of __construct we should write clsss name such as Person
+            $this->name = $name;
+            $this->surname = $surname;
+        }
+
+        function __distruct() {
+            echo "deleted"
+        }
+    }
+
+    $person1 = new Person('Hayk', 'Khachatryan'); // конструктор вызывается при создании класса
+    // деструктор вызывается при завершении скрипта или если на обьект больше нет ссылок после всего жизненного цикла отработает __distruct
+
+    </pre>
+    </div>`,
+    `<div>(php)
+    this и self <br />
+    $this это специальная переменная которая используется для доступа к обьекту класса изнутри самого класса <br />
+    self используется для обращения к внутреннему статическому содержимому класса
+    <pre>
+    class Person {
+        private static $name;
+
+        public static function setName($newName) {
+            self::$name = $newName;
+        }
+
+    }
+
+    Person::setName('Hayk'); // Теперь мы работаем не с экземпляром класса, а с самим классом 
+    </pre>
+    </div>`,
+    `<div>(php)
+    Наследование классов <br />
+    Наследование это определение класса которое имеет теже свойства и методы что и родительский класс, плюс свои <br />
+    Дочерний класс расширяет родительский, наследование происходит ключевым словом extends <br />
+    Чтобы запретить наследование метода дочерним классам, в родительском классе перед функцией нужно прописать final <br />
+    Чтобы запретить наследование от указоного класса вообще, перед словом class нужно прописать final <br />
+    Инкапсуляция это private свойства и методы 
+    <pre>
+    class Person {
+        private static $name;
+
+        function __construct($ownName) {
+            $this->name = $ownName;
+        }
+
+        public function getInfo() {
+            $info = "name: {$this->name}";
+            return $info;
+        }
+    }
+
+    class Driver extends Person {
+        public $drivingLicense;
+
+        function __construct($ownName, $isDriver) {
+            parent::__construct($ownName);
+            $this->drivingLicense = $isDriver;
+        }
+
+        public function getInfo() {
+            $info = parent::getInfo();
+            $info .= "is driver: {$this->drivingLicense}"; // это называется полиморфоз
+            return $info;
+        }
+
+    }
+
+    $driver = new Driver("Hayk"); // all functions from Person class are available in Driver class
+    $driver->getInfo();
+    </pre>
+    </div>`,
+    `<div>(php)
+    Константы класса всегда public <br />
+    class User {
+        const NATIONALITY = "Armenian";
+    }
+
+    echo User::NATIONALITY;
+    </div>`,
+    `<div>(php)
+    Абстрактные классы это классы которые не могут иметь экземпляров, тоесть их невозможно определить словом new <br />
+    по факту это просто шаблоны
+    <pre>
+    abstract class User {
+        // можно определять свойства и методы, но методы не должны иметь тела хотя иногда их можно прописывать
+        public $name;
+        abstract public function func();
+    }
+    </pre>
+    </div>`,
+    `<div>(php)
+    Интерфейсы это просто шаблоны, перечисление того что будет использовано в самом классе, его экземпляры невозможно создать, <br />
+    а так же нельзя прописывать тела функций, для реализации интерфейса нужна ключевое слово implements <br />
+    В отличии от class-ов interface позваляют осуществить множественное наследование
+    <pre>
+    interface FirstInterface {
+        public function getName();
+    }
+
+    class Test implements FirstInterface, SecondInterface {
+        // all methods of interface should be written here 
+    }
+    </pre>
+    </div>`,
+    `<div>(php)
+    Трейты или примеси это механизм обеспичения повторного использования кода
+    <pre>
+    class Base {
+        public function sayHello() {
+            echo "Hello ";
+        }
+    }
+
+    trait sayWord {
+        public function sayHello() {
+            parent::sayHello();
+            echo "world";
+        }
+    } 
+
+    class HelloWorld extends Base {
+        use sayWord;
+        // after that 'use' the sayHello extended method will be extendent by used trait 
+    }
+    </pre>
+    </div>`,
+    `<div>(php)
+    Магические методы set, get, clone <br />
+    Функция clone будет вызвана при клонировании обьекта 
+    <pre>
+    class User {
+        public function __clone() {
+            echo "cloned"; // context is clonned object not the original
+        }
+    }
+
+    $newUser1 = new User;
+    $newUser2 = clone $newUser1; // clone magic method now is called 
+
+     //get set example
+     class GetSet {
+        private $number;
+
+        function __get($name) {
+            echo "You just get the $name";
+        }
+
+        function __set($name, $val) {
+            echo "You just set the $name of with value {$val}";
+        }        
+     }
+
+     $obj = new GetSet();
+     $obj->number; // you just get the number
+     $obj->number = 444; // You just set the number with value 444
+    </pre>
     </div>`
 
 ]

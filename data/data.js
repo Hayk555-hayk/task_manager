@@ -15,10 +15,10 @@ let tasks = [
     PHP
     </span><br />
     <span an class="task_description">
-    YouTube web developer blog php oop (урок 1) 
+    YouTube html lab mysql (урок 1) 
     </span><br />
     <span class="small">
-    YouTube html lab mysql, YouTube Аве кодер postgre, YouTube Гоша Дударь docker, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL
+    YouTube Аве кодер postgre, YouTube Гоша Дударь docker, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL
     </span>`,
 
     `<span class="task_title">
