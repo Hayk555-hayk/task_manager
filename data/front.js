@@ -231,8 +231,64 @@ let front_data = [
             git remote -v покажет origin<br />
             git remote add origin path_of_repository если нет origin но как правило он автоматически сгенерируется <br />
         </div>`,
+        `<div>(vue)
+    Циклическое повторение
+    <pre>
+    &lttemplate&gt
+        &ltdiv&gt
 
-        
+            &ltul&gt
+                &ltli v-for="arr in rendArr"&gt {{arr}} &lt/li&gt // for ordinary array
+                &ltli v-for="arr in shopData"&gt {{arr.name}} {{arr.number}} &lt/li&gt // for objects
+                &ltli v-for="(arr, index) in shopData"&gt {{index}} - {{arr.name}} {{arr.number}} &lt/li&gt // with index
+            &lt/ul&gt
+
+        &lt/div&gt
+    &lt/template&gt
+    &ltscript&gt
+        new Vue({
+            el: '#app',
+            data: {
+                randArr: ['aaa', 'bbb', 'ccc'],
+                shopData: [
+                    {name: 'aaa', number: 25},
+                    {name: 'bbb', number: 30},
+                    {name: 'ccc', number: 35},
+                ]
+            },
+        });
+    &lt/script&gt
+    </pre>
+</div>`,
+`<div>(git)
+    Чтобы получить новые ветки нужна комманда git fetch
+</div>`,
+`<div>(vue)
+    Можно создавать много vue сущностей используя класс new Vue <br />
+    Во vue можно создавать множество компонентов, экспортировать и импортировать их, а после использовать как обычные теги <br />
+    Внутри компонента обьект data теперь будет вункцией которая возвращает обьект <br />
+    <pre>
+    data: function() {
+        return {
+                number: 12,
+            }
+        }
+    </pre>
+</div>`,
+`<div>(vue)
+    Ссылки $refs ставятся на элемент html тега чтобы их возможно было выбирать
+    <pre>
+    // html template
+    &ltinput type="text" ref="p_ref" /&gt
+    // function that works with that ref
+    let inpVal = this.$refs.p_ref.input.value;
+    </pre>
+</div>`,
+`<div>(vue)
+    Создавать vue приложения очень удобно через vue cli, чтобы установить vue cli раз и навсегда <br />
+    Нужна команда npm install -g vue-cli после доступна команда vue init webpack-simple project-name
+</div>`
+
 
 ]
 // &ltp&gt &lt/p&gt

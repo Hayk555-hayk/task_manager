@@ -687,6 +687,204 @@ let php_data = [
      $obj->number; // you just get the number
      $obj->number = 444; // You just set the number with value 444
     </pre>
-    </div>`
-
+    </div>`,
+    `<div>(laravel)
+    Конфигурирования базы данных происходит в .env файле <br />
+    При помощи фасада DB::table('table_name) можно делать запросы к базе данным <br />
+    Передавать данные к view можно через метод compact retur view('viewName', compact('var1','var2')); <br />
+    Директива @foreach($posts as $post) / @endforeach в blade шаблоне отвечает за цикличность <br />
+    Директива @csrf нужно поставить внутри form тега чтобы осуществлялись запросы через токен <br />
+    POST запрсы можно в конце ретурнить так return back()->with('post_created', 'The post was created'); <br/>
+    post_created можно в блейде получить так Session::has('post_created') Session::get('post_created') <br />
+    action="{{route('route.name')}}" в blade можно использовать так <br />
+    @if / @elseif / @endif директивы условий <br />
+    Пример join запрса при помощи фасада DB
+    <pre>
+    // inner
+    $request = DB::table('posts')->join('posts', 'users.id', '=', 'posts.user_id')->select('users.name', 'posts.title')->get();
+    // left
+    $request = DB::table('users')->leftJoin('posts', 'users.id', '=', 'posts.user_id')->select('users.name', 'posts.title')->get();
+    // right
+    $request = DB::table('users')->rightJoin('posts', 'users.id', '=', 'posts.user_id')->select('users.name', 'posts.title')->get();
+    </pre>
+    </div>`,
+    `<div>(laravel)
+    Модели отвечают за взоимодействия с базой данных php artisan make:model ModelName <br />
+    Вместо фасада DB можно использовать модели для выполнения запросов <br />
+    В них можно помещать следующие переменные 
+    <pre>
+    protected $table = 'table'; // define table
+    protected $guarded = []; // define not fillable columns 
+    protected $fillable = [] // define fillable columns
+    </pre>
+    Миграции осуществляют функционал каркаса базы данных php artisan make:migration create_posts_table --create=posts <br />
+    php artisan migrate или php artisan migrate:fresh --seed запуск миграции <br />
+    Миграция назад на один шаг выполняется командой php artisan migrate:rollback <br />
+    php artisan migrate:refresh обновит миграции <br />
+    Файл миграции выглядит следующим образом 
+    <pre>
+    $table->string('name');
+    $table->text('text');
+    </pre>
+    Сидеры заполняют базы данных определенными значениями, пример сидеров 
+    <pre>
+    // run command php artisan make:seeder PostsTableSeeder
+    //new created seeder file in function run
+    $faker = Faker::create();
+    foreach(range(1, 100) as $index) {
+        DB::('posts')->insert([
+            'title' => $faker->sentence(5),
+            'body' => '$faker->paragraph(4)
+        ]);
+    }
+    
+    // registering the seeder inside of DatabaseSeeder file in run method
+    $this->call([
+        PostsTableSeeder::class,
+    ])
+    // in the end run php artisan db:seed
+    </pre>
+    Директивы blade интерполяция {{}}
+    <pre>
+    @php / @endphp // inside blade writing php code 
+    @for($i = 0; $ < 10; $i++) / @endfor // blade loop
+    @include('header') // file name that will be injected 
+    @yield('title') // tell the section name 
+    @extends('layout') // tell that this blade extends from layout part and its sections will be injected to the yield part
+    @section('title') / @endsection // this will injected in yield part of extendet blade
+    </pre>
+    Пример пагинации 
+    <pre>
+    $users = User::paginate(10); // will take first 10 users
+    {{$users->links()}} // to get access to the buttons of the pagination 
+    </pre>
+    Чтобы загрузить фото тип формы должен быть enctype="multipart/form-data", а в контроллере <br />
+    нужно прописать $request->filename->store('public'); <br />
+    В папке lang можно писать локализацию для проекта, ее можно интерполировать как {{__(langfilename.key)}} <br />
+    В роутах можно произвести следующую операцию для локализации 
+    <pre>
+    Route::get('/{locale}', function($locale) {
+        App::setLocale($locale);
+        return view('welcome');
+    })
+    </pre>
+    </div>`,
+    `<div>(laravel)
+Singleton – один из самых простых шаблонов для понимания. Основное назначение – <br />
+гарантировать существование только одно экземпляра класса.<br />
+Причиной обычно является следующее: требуется только один объект исходного класса и Вам необходимо <br />
+что бы объект был доступен в любом месте приложения, т.е. глобальный доступ. <br />
+Ключoм реализации шаблона Singleton является статическая переменная,<br />
+переменная чье значение остается неизменным при исполнении за ее приделами.<br />
+Это позволяет сохранить объект оригинальным между вызовами статического метода Settings::getInstance(),<br />
+и возвратить ссылку на него при каждом последующем вызове метода.<br />
+Имейте так же в виду, что конструктор, как правило, приватный. Что бы обеспечить использование всегда только<br />
+одного объекта Settings мы должны ограничить доступ к конструктору, что бы при попытке создания нового объекта возникала ошибка.<br />
+Так же следует иметь в виду, что данные ограничения не возможны в PHP4.<br />
+<pre>
+class Settings {
+    private $settings = array();
+    private static $_instance = null;
+    private function __construct() {
+    // приватный конструктор ограничивает реализацию getInstance ()
+    }
+    protected function __clone() {
+    // ограничивает клонирование объекта
+    }
+    static public function getInstance() {
+    if(is_null(self::$_instance))
+    {
+    self::$_instance = new self();
+    }
+    return self::$_instance;
+    }
+    public function import() {
+    // ...
+    }
+    public function get() {
+    // ...
+    }
+}
+</pre>
+</div>`,
+`<div>(php)
+Кратко перечислим основные различия протоколов:<br />
+По-разному записывается URL-адрес. Для HTTP — http://, а для HTTPS — https://.<br />
+HTTP является не защищенным, а HTTPS защищенным.<br />
+HTTP посылает данные через порт 80, а HTTPS использует порт 443.<br />
+HTTP работает на уровне приложений, а HTTPS — на транспортном уровне.<br />
+Для HTTP не нужны SSL-сертификаты; для HTTPS нужен SSL-сертификат, подписанный центром сертификации.<br />
+HTTP не требует проверки домена, тогда как HTTPS требует хотя бы проверки домена, а для некоторых сертификатов даже проверки юридического документа.<br />
+В HTTP нет шифрования, HTTPS шифрует данные перед отправкой.<br />
+Заключение<br />
+HTTPS является более современным и безопасным протоколом.<br />
+Воздержитесь от ввода данных кредиток или другой чувствительной информации на сайтах,<br />
+работающих по протоколу HTTP. Главная цель использования HTTPS является обеспечение безопасности и конфиденциальности.<br />
+Все данные передаются только в зашифрованном виде. Поэтому использование HTTPS имеет смысл для сайтов любого назначения.
+</div>`,
+`<div>
+Сервис-провайдеры – это центральное место начальной загрузки всех приложений Laravel.<br />
+Ваше собственное приложение, а также все основные службы и сервисы Laravel загружаются через них.<br />
+Если вы откроете файл config/app.php, включенный в Laravel, вы увидите массив 'providers'. Это все классы сервис-провайдеров,<br />
+которые будут загружены вашим приложением. По умолчанию в этом массиве перечислены основные сервис-провайдеры Laravel.<br />
+Они загружают основные компоненты Laravel, такие, как подсистема отправки почты, очередь, кеш и другие. Многие из этих провайдеров являются «отложенными»,<br />
+что означает, что они не будут загружаться при каждом запросе, а только тогда, когда предоставляемые ими службы действительно необходимы.<br />
+php artisan make:provider RiakServiceProvider<br />
+Все сервис-провайдеры расширяют класс Illuminate\Support\ServiceProvider. Большинство сервис-провайдеров содержат метод register и boot.<br />
+В рамках метода register следует только связывать (bind) сущности в контейнере служб. Никогда не следует пытаться зарегистрировать<br />
+каких-либо слушателей событий, маршруты или что-то другое в методе register.<br />
+В любом из методов сервис-провайдера у вас всегда есть доступ к свойству $app, которое обеспечивает доступ к контейнеру служб:
+<pre>
+class RiakServiceProvider extends ServiceProvider
+{
+    /**
+     * Регистрация любых служб приложения.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->singleton(Connection::class, function ($app) {
+            return new Connection(config('riak'));
+        });
+    }
+}
+</pre>
+Итак, что, если нам нужно зарегистрировать компоновщик шаблонов в нашем сервис-провайдере?<br />
+Это должно быть сделано в рамках метода boot. Этот метод вызывается после регистрации всех остальных сервис-провайдеров,<br />
+что означает, что в этом месте у вас уже есть доступ ко всем другим службам, которые были зарегистрированы фреймворком:
+<pre>
+class ComposerServiceProvider extends ServiceProvider
+{
+    /**
+     * Загрузка любых служб приложения.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        View::composer('view', function () {
+            //
+        });
+    }
+}
+</pre>
+Вы можете указывать тип зависимостей в методе boot сервис-провайдера. <br />
+Контейнер служб автоматически внедрит любые необходимые зависимости:
+<pre>
+public function boot(ResponseFactory $response)
+{
+    $response->macro('serialized', function ($value) {
+        //
+    });
+}
+</pre>
+Чтобы зарегистрировать сервис-провайдер, добавьте его в массив: config/app.php
+<pre>
+'providers' => [
+    // Другие сервис-провайдеры
+    App\\Providers\\ComposerServiceProvider::class,
+],
+</pre>
+</div>`,
 ]
