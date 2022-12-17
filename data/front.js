@@ -287,6 +287,12 @@ let front_data = [
 `<div>(vue)
     Создавать vue приложения очень удобно через vue cli, чтобы установить vue cli раз и навсегда <br />
     Нужна команда npm install -g vue-cli после доступна команда vue init webpack-simple project-name
+</div>`,
+`<div>(angular)
+    Для установки bootstrap в angular npm install bootstrap, в angular.json мы можем увидить зависимости <br />
+    В src/app/style.css можно написать глобальные стили css <br />
+    В angular.json внутри styles добавим bootstrap  прописав в массиве styles - "node_modules/bootstrap/dist/css/bootstrap.min.css" <br />
+    ng serve запуск сервера
 </div>`
 
 

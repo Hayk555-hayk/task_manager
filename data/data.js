@@ -11,6 +11,7 @@ let tutorials = {
 }
 
 let tasks = [
+//-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
     `<span class="task_title">
     PHP
     </span><br />
@@ -96,30 +97,10 @@ let tasks = [
     Angular
     </span><br />
     <span class="task_description">
-    YouTube leela web angular (урок 4)
+    YouTube leela web angular (урок 5)
     </span> <br/>
     <span class="small">
     YouTube leela web ngrx Урок 1, codevolution chrome extension, Documentation Metanit
-    </span>`,
-
-    `<span class="task_title">
-    English
-    </span><br />
-    <span class="task_description">
-    YouTube уроки по плейлистам Урок 1 
-    </span> <br/>
-    <span class="small">
-    Словарь из 700 слов 
-    </span>`,
-
-    `<span class="task_title">
-    Spanish
-    </span><br />
-    <span class="task_description">
-    YouTube уроки по плейлистам Урок 1 (21:15)
-    </span> <br/>
-    <span class="small">
-    Словарь из 700 слов 
     </span>`,
 
     `<span class="task_title">
@@ -129,6 +110,28 @@ let tasks = [
     Поочередное чтение книг из папки books (книга 1, стр. 35)
     </span>`,
 
+//-------------------------------------------ЯЗЫКИ---------------------------------------------------------------------
+    `<span class="task_title">
+    English
+    </span><br />
+    <span class="task_description">
+    YouTube уроки по плейлистам Урок 1 (10:00) из 300
+    </span> <br/>
+    <span class="small">
+    Словарь из 700 слов 
+    </span>`,
+
+    `<span class="task_title">
+    Spanish
+    </span><br />
+    <span class="task_description">
+    YouTube уроки по плейлистам Урок 1 (34:05)
+    </span> <br/>
+    <span class="small">
+    Словарь из 700 слов 
+    </span>`,
+
+//-------------------------------------------РЕЛИГИЯ---------------------------------------------------------------------
     `<span class="task_title">
     Религия
     </span><br />
@@ -138,7 +141,7 @@ let tasks = [
     <span class="small">
     Чтение Библии на армянском, написание письма
     </span>`,
-
+//-------------------------------------------КОНСПЕКТЫ---------------------------------------------------------------------
     `<span class="task_title">
     Конспекты
     </span><br />
@@ -166,62 +169,14 @@ let tasks = [
     <span class="task_description">
     Чтение конспектов по Languages
     </span>`,
-
+//-------------------------------------------ДОПОЛНИТЕЛЬНО---------------------------------------------------------------------
     `<span class="task_title">
-    Спорт комплекс-1
+    Дополнительные задачи
     </span><br />
     <span class="task_description">
-    Жим обычный и пресс скалолаз 15
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-2
-    </span><br />
-    <span class="task_description">
-    Плечи хлопок в верх и колено в верх 25
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-3
-    </span><br />
-    <span class="task_description">
-    Бицепс обычный и приседания 15
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-4
-    </span><br />
-    <span class="task_description">
-    Спина обычный и спина на себя 25
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-5
-    </span><br />
-    <span class="task_description">
-    Трицепс лежа и пресс обычный 25
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-6
-    </span><br />
-    <span class="task_description">
-    Бицепс сидя и рвв сидя 25
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-7
-    </span><br />
-    <span class="task_description">
-    Грудь лежа и пресс половина 25
-    </span>`,
-
-    `<span class="task_title">
-    Спорт комплекс-8
-    </span><br />
-    <span class="task_description">
-    Грудь лежа, касание плеч, пресс скалолаз, приседания, разводка рук стоя 7
+    Как импользовать barer и oauth токены
+    </span> <br/>
+    <span class="small">
+    Laravel injection
     </span>`,
 ];
-
-console.log(tasks.length)
