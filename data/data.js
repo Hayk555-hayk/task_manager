@@ -13,27 +13,27 @@ let tutorials = {
 let tasks = [
 //-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
     `<span class="task_title">
-    PHP
+    PHP 1 урок
     </span><br />
     <span an class="task_description">
-    YouTube html lab mysql (урок 1) 
+    YouTube html lab mysql (урок 2) 
     </span><br />
     <span class="small">
     YouTube Аве кодер postgre, YouTube Гоша Дударь docker, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL
     </span>`,
 
     `<span class="task_title">
-    Laravel
+    Laravel 4 урока
     </span><br />
     <span class="task_description">
-    YouTube surfside media Урок 13
+    YouTube surfside media Урок 27 (осталось 1 видео)
     </span> <br />
     <span class="small">
     YouTube Andrey Schemelyun laravel vue, YouTube agoalofalife орхид, YouTube coders tape all playlists, Documentation Laravel su урок 11, Documentation laravel demiart
     </span>`,
 
     `<span class="task_title">
-    Node
+    Node 2 урока
     </span><br />
     <span class="task_description">
     YouTube Илья Кантор node от а до я Урок 6
@@ -43,7 +43,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Nest
+    Nest 2 урока
     </span><br />
     <span class="task_description">
     YouTube #JS Code nest js Урок 1
@@ -53,7 +53,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Java
+    Java 5 уроков
     </span><br />
     <span class="task_description">
     YouTube Уроки java Урок 4
@@ -63,7 +63,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Spring
+    Spring 1 урок
     </span><br />
     <span class="task_description">
     YouTube Alishev spring framework Урок 1
@@ -74,7 +74,7 @@ let tasks = [
     </span>`,
     
     `<span class="task_title">
-    React
+    React 3 урока
     </span><br />
     <span class="task_description">
     YouTube The net ninja all react and next js tutorials (complete react redux tutorial урок 6)
@@ -84,7 +84,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Vue
+    Vue 5 уроков
     </span><br />
     <span class="task_description">
     YouTube The net ninja all vue and nuxt tutorials (vue 2 tutorial урок 19)
@@ -94,7 +94,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Angular
+    Angular 3 урока
     </span><br />
     <span class="task_description">
     YouTube leela web angular (урок 5)
@@ -104,7 +104,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Чтение книг
+    Чтение книг 1 глава
     </span><br />
     <span class="task_description">
     Поочередное чтение книг из папки books (книга 1, стр. 35)
@@ -112,7 +112,7 @@ let tasks = [
 
 //-------------------------------------------ЯЗЫКИ---------------------------------------------------------------------
     `<span class="task_title">
-    English
+    English 1 урок
     </span><br />
     <span class="task_description">
     YouTube уроки по плейлистам Урок 1 (10:00) из 300
@@ -122,7 +122,7 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Spanish
+    Spanish 1 урок
     </span><br />
     <span class="task_description">
     YouTube уроки по плейлистам Урок 1 (34:05)
@@ -133,7 +133,7 @@ let tasks = [
 
 //-------------------------------------------РЕЛИГИЯ---------------------------------------------------------------------
     `<span class="task_title">
-    Религия
+    Религия 4 страниц
     </span><br />
     <span class="task_description">
     Чтение Библии по приложению
@@ -164,14 +164,14 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    Конспекты
+    Конспекты 
     </span><br />
     <span class="task_description">
     Чтение конспектов по Languages
     </span>`,
 //-------------------------------------------ДОПОЛНИТЕЛЬНО---------------------------------------------------------------------
     `<span class="task_title">
-    Дополнительные задачи
+    Дополнительные задачи 1 задача
     </span><br />
     <span class="task_description">
     Как импользовать barer и oauth токены

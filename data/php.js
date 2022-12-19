@@ -822,7 +822,7 @@ HTTPS является более современным и безопасным
 работающих по протоколу HTTP. Главная цель использования HTTPS является обеспечение безопасности и конфиденциальности.<br />
 Все данные передаются только в зашифрованном виде. Поэтому использование HTTPS имеет смысл для сайтов любого назначения.
 </div>`,
-`<div>
+`<div>(laravel)
 Сервис-провайдеры – это центральное место начальной загрузки всех приложений Laravel.<br />
 Ваше собственное приложение, а также все основные службы и сервисы Laravel загружаются через них.<br />
 Если вы откроете файл config/app.php, включенный в Laravel, вы увидите массив 'providers'. Это все классы сервис-провайдеров,<br />
@@ -830,7 +830,7 @@ HTTPS является более современным и безопасным
 Они загружают основные компоненты Laravel, такие, как подсистема отправки почты, очередь, кеш и другие. Многие из этих провайдеров являются «отложенными»,<br />
 что означает, что они не будут загружаться при каждом запросе, а только тогда, когда предоставляемые ими службы действительно необходимы.<br />
 php artisan make:provider RiakServiceProvider<br />
-Все сервис-провайдеры расширяют класс Illuminate\Support\ServiceProvider. Большинство сервис-провайдеров содержат метод register и boot.<br />
+Все сервис-провайдеры расширяют класс Illuminate\\Support\\ServiceProvider. Большинство сервис-провайдеров содержат метод register и boot.<br />
 В рамках метода register следует только связывать (bind) сущности в контейнере служб. Никогда не следует пытаться зарегистрировать<br />
 каких-либо слушателей событий, маршруты или что-то другое в методе register.<br />
 В любом из методов сервис-провайдера у вас всегда есть доступ к свойству $app, которое обеспечивает доступ к контейнеру служб:
@@ -887,4 +887,77 @@ public function boot(ResponseFactory $response)
 ],
 </pre>
 </div>`,
+`<div>(mysql)
+mysql можно отдельно скачать на mysql.com
+<pre>
+mysqld --console // run the sql server
+mysql -uroot -p // login 
+after login we should enter password
+</pre>
+</div>`,
+`<div>(laravel)
+Создаем новый фасад, для этого создаем новую папку в папке app, внутри новой папки создаем новый файл payment.php
+<pre>
+namespace app\\payment;
+
+class Payment {
+    public static function process() {
+        echo "processing the payment";
+    }
+}
+</pre>
+После создаем еще один новый файл paymentFacade.php
+<pre>
+namespace app\\payment;
+
+class PaymentFacade {
+    public static function getFacadeAccessor() {
+        return 'payment';
+    }
+}
+</pre>
+После создаем сервис провайдер командой php artisan make:provider PaymentServiceProvider, в его register методе прописать 
+<pre>
+public function register(){
+    $this->app->bind('payment', function() {
+        return new Payment();
+    })
+}
+</pre>
+Теперь в файле config/app.php в массиве providers зарегестрировать наш сервис провайдер <br />
+а в aliaces прописать 'payment' => paymentfacade <br />
+Теперь в контроллнро можно прописать Payment::process();
+</div>`,
+`<div>(laravel)
+Для создания custom 404 страници нужно в resources/views создать папку errors а внутри нее поместить 404.blade.php <br />
+Теперь без всяких настроек все будет работать
+</div>`,
+`<div>(laravel)
+Отправка email, для этого создаем класс mail - php artisan make:mail TestMail <br />
+После основные настройки даются в env файле, каждый майл сервер имеет свои уникальные настройки <br />
+В контроллере прописать 
+<pre>
+public function sendEmail() {
+    $details = [
+        'title' => 'some txt',
+        'body' => 'some txt'
+    ];
+
+    Mail::to("some mail adress")->send(new TestEmail($details));
+    return "email sent...";
+}
+</pre>
+Теперь в TestEmail файле создатим public $details и в конструкторе проинициализируем его, а в build методе пропишем subject
+<pre>
+public $details; 
+public function __construct($details) {
+    $this->details = $details;
+}
+
+public function build() {
+    return $this->subject('some txt')->view('emails.TestEmail); // in this blade we can use ordinary styles
+    // in this blade we can use variables $details['title'], $details['body']
+}
+</pre>
+</div>`
 ]

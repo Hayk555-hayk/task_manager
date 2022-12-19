@@ -31,12 +31,14 @@ lang.addEventListener('click', showTutorial);
   function showTask() {
     if(taskIndicator) {
       taskPopup.style.top = '15px';
-      let randomInt = Math.floor(Math.random() * tasks.length);
-      taskPopup.innerHTML = tasks[randomInt];
+      // let randomInt = Math.floor(Math.random() * tasks.length);
+      let targetTask = 1;
+      taskPopup.innerHTML = tasks[targetTask];
     } else {
       taskPopup.style.top = '-250px';
       taskPopup.innerHTML = "";
     }
 
     taskIndicator = !taskIndicator;
+    console.log(tasks.length)
   }
