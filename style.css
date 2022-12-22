@@ -27,7 +27,6 @@ body {
     border-radius: 15px;
 }
 
-.java {background-image: url(./assets/java.png);}
 .php {background-image: url(./assets/php.jpeg);}
 .node {background-image: url(./assets/node.jpg);}
 .front {background-image: url(./assets/front.png);}
@@ -69,22 +68,6 @@ pre {
     overflow: auto;
 }
 
-#get_task {
-    width: 100px;
-    height: 100px;
-    margin: 15px;
-    background-image: url(./assets/rand.png);
-    background-size: contain;
-    border-radius: 40px;
-    cursor: pointer;
-    transform: scale(.5);
-    transition: .5s;
-}
-
-#get_task:hover {
-    transform: scale(1);
-}
-
 #the_task {
     height: 250px;
     width: 500px;
@@ -97,6 +80,8 @@ pre {
     transition: .5s;
     padding: 40px;
     text-align: center;
+    overflow: hidden;
+    z-index: 99999;
 }
 
 .task_title {

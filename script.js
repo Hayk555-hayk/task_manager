@@ -1,10 +1,8 @@
-let java = document.getElementById('java');
 let php = document.getElementById('php');
 let node = document.getElementById('node');
 let front = document.getElementById('front');
 let lang = document.getElementById('lang');
 
-java.addEventListener('click', showTutorial);
 php.addEventListener('click', showTutorial);
 node.addEventListener('click', showTutorial);
 front.addEventListener('click', showTutorial);
@@ -12,7 +10,19 @@ lang.addEventListener('click', showTutorial);
 
 
   function showTutorial() {
-    target = this.id;
+    let target = this.id;
+    let taskIndex = 0;
+    switch(target) {
+      case "node":
+        taskIndex = 1;
+        break;
+        case "front":
+        taskIndex = 2;
+        break;
+        case "lang":
+        taskIndex = 3;
+        break;
+    }
     let html = "";
     let tutorialPart = document.getElementById('called_tutorial');
     for(let i = 0; i < tutorials[target].length; i++) {
@@ -20,19 +30,16 @@ lang.addEventListener('click', showTutorial);
     }
 
     tutorialPart.innerHTML = html;
+    showTask(taskIndex)
   }
 
   let taskPopup = document.getElementById('the_task');
-  let getTask = document.getElementById('get_task');
-
-  getTask.addEventListener('click', showTask);
 
   let taskIndicator = true;
-  function showTask() {
+  function showTask(taskIndex) {
     if(taskIndicator) {
       taskPopup.style.top = '15px';
-      // let randomInt = Math.floor(Math.random() * tasks.length);
-      let targetTask = 1;
+      let targetTask = taskIndex;
       taskPopup.innerHTML = tasks[targetTask];
     } else {
       taskPopup.style.top = '-250px';
@@ -40,5 +47,4 @@ lang.addEventListener('click', showTutorial);
     }
 
     taskIndicator = !taskIndicator;
-    console.log(tasks.length)
   }
