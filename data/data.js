@@ -15,7 +15,7 @@ let tasks = [
     PHP LARAVEL
     </span><br />
     <span an class="task_description">
-    YouTube surfside media Урок 27 (осталось 1 видео)
+    YouTube surfside media Урок 30
     </span><br />
     <span class="small">
     YouTube html lab mysql (урок 2), YouTube Andrey Schemelyun laravel vue, YouTube Аве кодер postgre, YouTube agoalofalife орхид, YouTube Гоша Дударь docker, YouTube coders tape all playlists, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, Documentation Laravel su урок 11, Documentation laravel demiart, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL, books php

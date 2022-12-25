@@ -959,5 +959,33 @@ public function build() {
     // in this blade we can use variables $details['title'], $details['body']
 }
 </pre>
+</div>`,
+`<div>(laravel)
+    Создания логин регистр на laravel
+    <pre>
+    composer require laravel/jetstream // instaling the package
+    php artisan jetstream:install livewire 
+    php artisan migrate
+    //After this instalations we can see Actions folber in app where everythink will be ready
+    // Also in resources views auth we will have new blades for login registr
+    </pre>
+    Eloquent ORM CRUD
+    <pre>
+    // Creating post
+    $post = new Post();
+    $post->title = 'smth';
+    $post->description = 'smth';
+    $post->save();
+    //Getting post
+    Post::orderBy('id', 'DESC')->get();
+    Post::where('id', $id)->first();
+    Post::find($id);
+    //Deletting the post
+    Post::where('id', $id)->delete();
+    //Updateing post
+    $post = Post::find($id);
+    $post->title = $request->title;
+    $post->save();
+    </pre>
 </div>`
 ]
