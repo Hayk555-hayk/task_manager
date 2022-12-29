@@ -887,15 +887,7 @@ public function boot(ResponseFactory $response)
 ],
 </pre>
 </div>`,
-`<div>(mysql)
-mysql можно отдельно скачать на mysql.com
-<pre>
-mysqld --console // run the sql server
-mysql -uroot -p // login 
-after login we should enter password
-</pre>
-</div>`,
-`<div>(laravel)
+`<div class="checkpoint">(laravel)
 Создаем новый фасад, для этого создаем новую папку в папке app, внутри новой папки создаем новый файл payment.php
 <pre>
 namespace app\\payment;

@@ -18,7 +18,7 @@ let tasks = [
     YouTube surfside media Урок 30
     </span><br />
     <span class="small">
-    YouTube html lab mysql (урок 2), YouTube Andrey Schemelyun laravel vue, YouTube Аве кодер postgre, YouTube agoalofalife орхид, YouTube Гоша Дударь docker, YouTube coders tape all playlists, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, Documentation Laravel su урок 11, Documentation laravel demiart, YouTube learn linux tv centos, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL, books php
+    YouTube школа itProger mysql, YouTube Andrey Schemelyun laravel vue,  Documentation Laravel su урок 11, Documentation laravel demiart, Documentation code mu php урок 9, Documentation code mu oop & mvc, Documentation Metanit SQL, YouTube Аве кодер postgre, YouTube agoalofalife орхид, YouTube Гоша Дударь docker, YouTube coders tape all playlists, YouTube theurbanpenguin ubuntu, YouTube msft webcast windows, YouTube learn linux tv centos, books php
     </span>`,
 
     `<span class="task_title">
@@ -38,7 +38,7 @@ let tasks = [
     YouTube The net ninja all vue and nuxt tutorials (vue 2 tutorial урок 19)
     </span> <br />
     <span class="small">
-    YouTube bitfumes nuxt js, YouTube JavaScript ru git, the net ninja all js and typescript playlists, Владилен typescript, Documentation vue2 vue3 typescript Metanit, books vue
+    YouTube bitfumes nuxt js, the net ninja all js and typescript playlists, YouTube JavaScript ru git, Владилен typescript, Documentation vue2 vue3 typescript Metanit, books vue
     </span>`,
 
 //-------------------------------------------ЯЗЫКИ---------------------------------------------------------------------
