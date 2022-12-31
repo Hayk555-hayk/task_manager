@@ -111,26 +111,3 @@ pre::-webkit-scrollbar-thumb {
 .checkpoint {
     background-color: #8beb7e;
 }
-
-/*=======================EXTRA======================*/
-.extra {
-    background-color: rgb(190, 38, 38);
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 100px;
-    width: 100px;
-    overflow: hidden;
-    transition: .5s;
-    border-radius: 15px;
-    font-size: 0px;
-}
-
-.extra:hover {
-    padding: 25px;
-    width: 500px;
-    height: 270px;
-    font-weight: bold;
-    color: #fff;
-    font-size: 15px;
-}

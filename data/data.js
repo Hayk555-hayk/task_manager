@@ -5,8 +5,6 @@ let tutorials = {
     php: php_data,
 
     front: front_data,
-
-    lang: lang_data
 }
 
 let tasks = [
@@ -38,17 +36,6 @@ let tasks = [
     YouTube The net ninja all vue and nuxt tutorials (vue 2 tutorial урок 19)
     </span> <br />
     <span class="small">
-    YouTube bitfumes nuxt js, the net ninja all js and typescript playlists, YouTube JavaScript ru git, Владилен typescript, Documentation vue2 vue3 typescript Metanit, books vue
-    </span>`,
-
-//-------------------------------------------ЯЗЫКИ---------------------------------------------------------------------
-    `<span class="task_title">
-    ENGLISH SPAIN 1 урок
-    </span><br />
-    <span class="task_description">
-    YouTube english уроки по плейлистам Урок 1 (10:00) из 300
-    </span> <br/>
-    <span class="small">
-    YouTube spain уроки по плейлистам Урок 1 (34:05), Словарь english из 700 слов, Словарь spain из 700 слов 
+    YouTube bitfumes nuxt js, the net ninja all js and typescript playlists, Youtube the net ninja tailwind tutorials,YouTube JavaScript ru git, Владилен typescript, Documentation vue2 vue3 typescript Metanit, books vue
     </span>`,
 ];
