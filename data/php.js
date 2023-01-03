@@ -153,7 +153,7 @@ let php_data = [
     }
     </pre>
     </div>`,
-    `<div>(laravel)
+    `<div class="checkpoint">(laravel)
     Для создания контроллера нужна команда php artisan make:controller NameController, а команда php artisan serve запускает сервер <br/>
     jsonplaceholder является хорошим местом для фейк api <br />
     Создаем запрос на другой ресурс из нашего проекта 
@@ -887,7 +887,7 @@ public function boot(ResponseFactory $response)
 ],
 </pre>
 </div>`,
-`<div class="checkpoint">(laravel)
+`<div>(laravel)
 Создаем новый фасад, для этого создаем новую папку в папке app, внутри новой папки создаем новый файл payment.php
 <pre>
 namespace app\\payment;
@@ -978,6 +978,124 @@ public function build() {
     $post = Post::find($id);
     $post->title = $request->title;
     $post->save();
+    </pre>
+</div>`,
+`<div>(laravel)
+    Для того чтобы соединять разные таблицы нужно иметь срртветственный ключь в таблице например user_id, phone_id, post_id...<br />
+    В таблице присоеденения можно прописать следующую строку кода, хотя можно и пропустить это, потому что laravel делает это самостоятельно <br />
+    Связь один к одному
+    <pre>
+    // phones table migration file 
+    $table->bigInteger('user_id')->unsigned();
+    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // cascade will remove phones if user will be deleted 
+    </pre>
+    В моделе User и Phone нужно добавить следующую логику 
+    <pre>
+    // USER MODEL 
+    public function phone() {
+        return $this->hasOne(Phone::class);
+    }
+    //PHONE MODEL
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+    </pre>
+    Манипулируем данные Phone и User 
+    <pre>
+    // Сохраняем 
+    $phone = new Phone();
+    $phone->phone = '1234567';
+
+    $user = new User();
+    $user->name = 'Hayk';
+    $user->phone()->save($phone);
+
+    // Получаем
+    $phone = User::find($id)->phone;
+    return $phone;
+    </pre>
+    Есть так же и связь один ко многим, допустим что у User может быть много телефонов, в этом случае в моделе User пропишем следующий код
+    <pre>
+    //User Model
+    public function Phones() {
+        return $this->hasMany(Phones::class);
+    }
+    </pre>
+    Когда забираем соединенные данные то posts вызывается без функции <br />
+    Можно так же использовать связь многие ко многим, такие связи намного сложнее 
+    <pre>
+    // Нужно создать 3-ю таблицу и сохранять id пользователя и роли 
+    $table->bigInteger('user_id')->unsigned();
+    $table->bigInteger('role_id')->unsigned();
+    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+    $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
+
+    // В модели нужно прописать такие же методы 
+    // Role model
+    public function users() {
+        return $this->belongsToMany(User::class, 'role_users'); // second argument is a table name 
+    }
+    // User model 
+    public function roles() {
+        return $this->belongsToMany(Role::class, 'role_users'); // second argument is a table name 
+    }
+
+    //Saving User roles id's
+    $user = new User();
+    $user->name = $name;
+    $user->save();
+
+    $rolesId = [1,2,3,4];
+    $user->roles()->attach($rolesId); // Data will be added in role_users table
+
+    // returning roles with user id 
+    $user = User::find($id);
+    $roles = $user->roles;
+    return $roles;
+
+    // Returning all users with roles id 
+    $roles = Role::find($id);
+    $users = $roles->users;
+    return $users;
+    </pre> 
+</div>`,
+`<div>(laravel)
+    Для экспорта данныв в exel или csv нужно установить пакет composer require maatwebsite/exel <br />
+    В confif/app.php в массиве providers пропишем Maatwebsite/Excel/ExelServiceProvider::class <br />
+    В массиве aliaces пропишем 'Excel' => Maatwebsite/Excel/Facades/Excel::class <br />
+    После вводим команду php artisan vendor:publish --provider="Maatwebsite/Excel/ExelServiceProvider" <br />
+    В нужной моделе создадим статический метод 
+    <pre>
+    public static function getEmployee() {
+        $records = DB::table('employee')->select('id', 'name')->get()->toArray();
+        return $records;
+    }
+
+    // php artisan make:export EmployeeExport --model=App/Models/Employee
+    </pre>
+    После этого в папке App/Exports появится новый класс в котором пропишем ... 
+    <pre>
+        public function headings():array 
+        {
+            return [
+                'id',
+                'name'
+            ];
+        }
+
+        public function collection() {
+            return collect(Employee::getEmoloye());
+        }
+    </pre> 
+    В Employee контроллере пропишем ...
+    <pre>
+    public function ExportExel() {
+        return Excel::download(new EmployeeExport, 'list.xlsx');
+    }
+
+    public function ExportCSV() {
+        return Excel::download(new EmployeeExport, 'list.csv');
+    }
     </pre>
 </div>`
 ]

@@ -141,5 +141,16 @@ let node_data = [
 
     server.listen(3000, '127.0.0.1');
     </pre>
+    </div>`,
+    `<div>(node)
+    Модуль http включает в себя 2 функционала первый это createServer и второй createClient усторевший <br />
+    Любые изменения в коде требуют перезапуска сервера, но для разработки удобнее использовать supervisor
+    <pre>
+    npm i -g supervisor // after installing we can use supervisor file.js instead of node file.js 
+    </pre>
+    Теперь после каждых изменений сервер будет перезапущен, но новые файлы не будут видны, придется перезапустить вручную
+    </div>`,
+    `<div>(node)
+    debugger; в коде js выполняет дебаг кода, команда count продолжит выполнение кода 
     </div>`
 ]
