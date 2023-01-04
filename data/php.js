@@ -1097,5 +1097,30 @@ public function build() {
         return Excel::download(new EmployeeExport, 'list.csv');
     }
     </pre>
+    Логика для импорта данных выглядит следующим образом 
+    <pre>
+    
+    </pre>
+</div>`,
+`<div>(laravel)
+    Экспорт данных в pdf происходит DOMPdf пакетом 
+    <pre>
+    composer require barryvdh/laravel-dompdf //downloading package 
+    // config app.php
+    // in providers array add Barryvdh/DomPDF/ServiceProvider::class,
+    // In aliaces array add 'PDF' => Barryvdh/DomPDF/Facade::class,
+    //php artisan vendor:publish --provider="Barryvdh/DomPDF/ServiceProvider"
+    // Download pdf
+
+    public function showFile() {
+        $employee = Employee::all();
+        return view('blade', compact('employee'));
+    }
+    public function downloadPDF() {
+        $employee = Employee::all();
+        $pdf = PDF::loadView('blade.name', compact('employee'));
+        return $pdf->download('employee.pdf');
+    }
+    </pre>
 </div>`
 ]
