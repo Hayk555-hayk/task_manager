@@ -1099,7 +1099,28 @@ public function build() {
     </pre>
     Логика для импорта данных выглядит следующим образом 
     <pre>
-    
+    php artisan make:import EmployeeImport --model=Employee// Creating import class
+    //app/import/EmployeeImport is placed in mentioned folber 
+    class EmployeeImport implements ToModel, WithHeadingRow {
+        public function model(array $row) {
+            return new Employee([
+                'name' => $row['name'],
+                'surname' => $row['surname'],
+                'email' => $row['email'],
+                'phone' => $row['phone'],
+            ]);
+        }
+    }
+
+    // Controller of employee 
+    public function importFrom() {
+        return view('import-form'); // blade with import button in form where user can choose the file to import
+    }
+
+    public function import(Request $request) {
+        Excel::import(new EmployeeImport, $request->file);
+        return 'imported...';
+    }
     </pre>
 </div>`,
 `<div>(laravel)
@@ -1122,5 +1143,160 @@ public function build() {
         return $pdf->download('employee.pdf');
     }
     </pre>
+</div>`,
+`<div>(laravel)
+Пакет для изменения размера фотографии
+<pre>
+    composer require intervention/image // downloading package 
+    // In providers array we need to add Intervention/Image/ImageServiceProvider::class,
+    // In aliaces we need to add 'Image' => Intervention/Image/Facades/Image::class,
+    //Publishing configs php artisan vendor:publish --provider="Intervention/Image/ImageServiceProviderLaravelRecent"
+    //controller 
+    public function resizeImage() {
+        return view('blade');
+    }
+
+    public function resizeImageSubmit(Request $request) {
+        $image = $request->file;
+        $filename = $image->getClientOriginalName();
+        $image_resize = Image::make($image->getRealPath());
+        $image_resize->resize(300, 300);
+        $image_resize->save(public_path("images/$filename"));
+        return 'saved...';
+    }
+</pre>
+</div>`,
+`<div>(laravel)
+    При помощи dropzoneJS можно загружать файлы, установи в нужном месте cdn дропзона (dropzone.min.css, dropzone.min.js) <br />
+    После создания формы в контроллере создается новый метод
+    <pre>
+        public function dropzone(Request $request) {
+            $image = $request->file('file');
+            $imageName = time() . '.' . $image->extension();
+            $image->move(public_path('images'), $imageName);
+            return response()->json(['success' => $imageName]);
+        }
+    </pre>
+</div>`,
+`<div>(laravel)
+        Lazy Loading можно осуществить при помощи jQuery, в поисковике пропишем lazy loading jquery и установим нужные cdn <br />
+        В нужном blade после установки cdn добавим скрипт 
+        <pre>
+        $(document).ready(function() {
+            $('img').lazyload();
+        });
+        </pre>
+</div>`,
+`<div>(laravel)
+        Использование tinyMCE в laravel, ищем сайт tiny.cloud, здесь нужно регестрироваться и следовать документации <br />
+        Toast это js библиотека для красивых уведомлений, нужно загрузить toastr.min.css и toastr.min.js, теперь в нужном blade пишем 
+        <pre>
+            @if(Session::has('student_added'))
+                <script>toastr.success("{!! Session::get('student_added') !!}")</script>
+            @endif
+        </pre>
+        Кроме toastr есть и sweat alert
+        <pre>
+        @if(Session::has('student_added'))
+                <script>swal("Great job", "{!! Session::get('student_added') !!}", "success", {
+                    button: "ok"
+                })</script>
+            @endif
+        </pre>
+</div>`,
+`<div>(laravel)
+    Создания своего helper, в папке app создаем новую папку Helpers а внутри functions.php <br />
+    <pre>
+    // functions.php 
+    function someLogic() {
+        // some logic ...
+    } 
+    // Composer.json inside autoload array add comma after psr-4 and add "files" : ["app/helpers/function.php"]
+    // after composer dump-autoload 
+    // after that all now the function someLogic is available any where we need it 
+    </pre>
+</div>`,
+`<div>(laravel)
+Создание Zip файла 
+<pre>
+    $zip = new ZipArchive;
+    $fileName = 'myZip.zip';
+    if($zip->open(public_path($filename), ZipArchive::CREATE) === true) {
+        $file = File::file(public_path('myFiles'));
+        foreach($file as $key => $value) {
+            $relativeNameInZipFile = basename($value);
+            $zip->addFile($value, $relativeNameInZipFile);
+        }
+        $zip->close();
+    }
+    return response()->download(public_path($fileName));
+</pre>
+</div>`,
+`<div>(laravel)
+    База данных yajra
+    <pre>
+    composer require yajra/laravel-datatables // installing package
+    // config/app.php in providers add Yajra/DataTables/DataTablesServiceProvider::class,
+    // in aliaces of config/app.php add 'DataTables' => Yajra/DataTables/Facades/DataTables::class
+    // php artisan vendor:publish --provider="Yajra/DataTables/DataTablesServiceProvider"
+    //Controller
+    public function index(EmployeeModel $table) {
+        return $table->render('employee');
+    }
+
+    //from cdn.datatables.net download cdn, click in needed css framework and copy css and js cdns
+    // in blade write the next code 
+    &ltdiv&gt {!! $table->table() !!} &ltdiv / &gt
+    {!! $table->scripts() !!} 
+
+    //To export table as csv we need another package composer require yajra/laravel-datatables-buttons
+    // config/app.php in providers add Yajra/DataTables/ButtonServiceProvider::class,
+    // php artisan vendor:publish --tag=datatables-buttons
+    </pre>
+    Остольное согласно документации
+</div>`,
+`<div>(laravel)
+    Примеры Ajax запросов 
+    <pre>
+        $('#studentForm').submit(function(e) {
+            e.preventDefault;
+            let val = $('input').val();
+            let _token = $('input[name=_tocken]').val(); //@csrf
+
+            $.ajax({
+                url: "{(route(route.name))}",
+                type: "POST",
+                data: {
+                    val: val,
+                    _tocken: _tocken
+                },
+                success: {
+                    // some js logic
+                }
+            });
+        });
+    </pre>
+</div>`,
+`<div>(laravel)
+Бесконечный скролинг 
+<pre>
+    // controller
+    public function index(Request $request) {
+        $posts = Post::paginate(5);
+        if($request->ajax()) {
+            $view = view('blade', compact('posts'))->render();
+            return response()->json(['html' => $view]);
+        }
+        return view('blade', compact('posts'));
+    }
+    // in blade show all new data, create new ajax query with ?page=, also you can add some loader 
+    // the event when this feature will work will be the next 
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+            page++;
+            new ajax query 
+        }
+    });
+</pre>
 </div>`
 ]
