@@ -252,13 +252,333 @@ let front_data = [
     Создавать vue приложения очень удобно через vue cli, чтобы установить vue cli раз и навсегда <br />
     Нужна команда npm install -g vue-cli после доступна команда vue init webpack-simple project-name
 </div>`,
-`<div>(angular)
-    Для установки bootstrap в angular npm install bootstrap, в angular.json мы можем увидить зависимости <br />
-    В src/app/style.css можно написать глобальные стили css <br />
-    В angular.json внутри styles добавим bootstrap  прописав в массиве styles - "node_modules/bootstrap/dist/css/bootstrap.min.css" <br />
-    ng serve запуск сервера
+`<div>(vue)
+    Все картинки ставятся в папке assets, main.js файл является основным javascript файлом 
+    <pre>
+    export default {
+        name: 'COmponentName',
+        data() {
+            return() {
+                // some data
+            }
+        },
+        methods: {
+            // some functions 
+        }
+    }
+    </pre>
+    Вставка компонента в компонент, в src создается новый файл а там уже размещаются новосозданные компоненты, <br />
+    props позволяют передовать данные от компонента в компонент <br />
+    События (events) могут передоваться от childe к parent компоненту
+    <pre>
+    //APP JS COMPONENT
+    &lttemplate&gt
+        &ltdiv&gt
+        &ltp&gt {{title}} &lt/ p&gt
+        &ltComponentName v-bind:propsName="data to send" v-on:eventName="methodNameForEmit($event)" /&gt // nested component
+        &lt/div&gt
+    &lt/template&gt
+&ltscript&gt
+import ComponentName from 'path.vue'
+export default {
+    name: 'COmponentName',
+    components: {
+        'COmponentName' COmponentName
+    },
+    data() {
+        return() {
+            title: 'Hello app',
+        }
+    },
+    methods: {
+        methodNameForEmit: function(param) {
+            // some logic here for this.$emit function of child component
+            // to get this param we need to use just param 
+        }
+    }
+}
+&lt/script&gt
+
+// SECOND COMPONENT
+&lttemplate&gt
+    &ltdiv&gt
+    &ltp&gt  &lt/p&gt
+        &ltul&gt
+        &ltli v-for="ninja in ninjas"&gt {{ninja}} &lt/ li&gt
+        &lt/ ul&gt
+    &lt/div&gt
+&lt/template&gt
+&ltscript&gt
+export default {
+    name: 'COmponentName',
+    props: ['propsNameInArray'], // withouth validations of type
+    props: {propsName: {type: Array, reguired: true}}, // with validations of type
+    data() {
+        return() {
+            ninjas: [
+                'name1',
+                'name2',
+                'name3'
+            ]
+        }
+    },
+    methods: {
+        changeProps: function() {
+            this.$emmit('eventName', 'second parametr is some data'); // this event will be lissened in parent component
+        }
+    }
+}
+&lt/script&gt
+&ltstyle scoped &gt // scoped means styles only for that component
+//css stuf
+&lt / style&gt
+    </pre>
+    Для использования компонента глобально его нужно регестрировать в main.js
+    <pre>
+    import ComponentName from 'path.vue'
+    Vue.component('name', ComponentName) // now this component is available everywhere in this project
+    </pre>
+</div>`,
+`<div>(vue)
+Во Vue js есть жизненные циклы компонента 
+<pre>
+export default {
+    name: 'COmponentName',
+    // Жизненные циклы
+    beforeCreated() {}
+    created() {}
+    beforeMount() {}
+    mounted() {}
+    beforeUpdate() {}
+    updated() {}
+    beforeDestroy() {}
+    destroyed() {}
+    //-----------------
+    data() {
+        return() {}
+    },
+    methods: {}
+    }
+}
+</pre>
+</div>`,
+`<div>(vue)
+    Slots используется если нужно передавать что то большое от parent to child кпримеру целый html код <br />
+    Slots может получать атрибут name и показывать только определенную часть, в parent вместо name пишется slot
+    <pre>
+    //APP JS COMPONENT
+    &lttemplate&gt
+        &ltdiv&gt
+        &ltchild-component&gt
+            // some html code here
+        &lt / child-component&gt   
+        &lt/div&gt
+    &lt/template&gt
+&ltscript&gt
+export default {
+    data() {
+        return() {
+            
+        }
+    },
+}
+&lt/script&gt
+
+// SECOND COMPONENT
+&lttemplate&gt
+    &ltdiv&gt
+    &ltslot&gt &lt/slot&gt // will show everithing that was written in parend component inside child companent tag 
+    &lt/div&gt
+&lt/template&gt
+&ltscript&gt
+export default {
+    name: 'COmponentName',
+    data() {
+    },
+}
+&lt/script&gt
+    </pre>
+</div>`,
+`<div>(vue)
+    Для того чтобы показать разные компоненты можно использовать специальный тег component с атрибутом is <br />
+    внутри которого будет записана имя компонента, можно схитрить и is превратить в v-bind:is и передать <br />
+    переменную где будет хранится нужная переменная с именем компонента 
+    Создание http реквеста происходит благодаря axios-a, также существует и vue-resource <br />
+    v-on, v-for, v-if и так далее являются директивами vue js, но можно создавать и свои собственные <br />
+    в нужном элементе проаишем нужную директиву, допустим v-rainbow, в main.js пропишем следующий код
+    <pre>
+    // main.js globaly
+    Vue.directive('rainbow', {
+        bind(el, binding, vnode) {
+            el.style.color = '#' + Math.random().toString().slice(2, 8);
+            //binding.value will sow the walue which is passed in the direcctive like this v-rainbob="some value"
+        }
+    });
+
+    // localy in component
+    directives: {
+        'rainbow': {
+            bind(....) {
+                ....
+            }
+        }
+    }
+    </pre>
+    Фильтры во Vue js
+    <pre>
+    //main.js globaly
+    Vue.filter('to-uppercase', function(value) {
+        return value.toUpperCase()
+    });
+    // we can create new filters localy by using filters object with its features
+    filters: {
+        'to-uppercase': function ...
+    }
+    // usage in everywhere
+    {{var | to-uppercase}}
+
+    </pre>
+</div>`,
+`<div>(vue)
+    Миксины, отдельный код для увеличении читабельности кода 
+    <pre>
+    // create new folber in src with name mixins and add new js file
+    //mixin file 
+    export default {
+        // same object as it was in components 
+    }
+
+    //import this new mixin js file in needed place
+    import someMixin from 'path/path/file';
+
+    export default {
+        mixins: [someMixin],
+        data ...
+        methods ...
+    }
+    </pre>
+</div>`,
+`<div>(vue)
+    Vue routing
+    <pre>
+        npm install vue-router --save// installing package
+        //main.js
+        import VueRouter from 'vue-router'
+        import Routes from './routes'
+        Vue.use(VueRouter);
+        
+        const router = new VueRouter({
+            routes: Routes,
+            mode: 'history' // will remove # from http request 
+        });
+
+        new Vue({
+            el: '#app',
+            render: h=>h(App),
+            router: router
+        })
+        ---------------------
+        //src/routes.js
+        //import needed components
+        export default [
+            {path: 'some url', component: importedComponentName},
+            {path: 'some url/:param', component: importedComponentName},
+            {path: 'some url', component: importedComponentName},
+        ]
+        -------------------------------
+        App.js
+        &ltrouter-link to="path or name of the route "&gt some route name  &lt/router-link&gt
+        &ltrouter-link to="path or name of the route "&gt some route name  &lt/router-link&gt
+        &ltrouter-link to="path or name of the route "&gt some route name  &lt/router-link&gt
+
+        &ltrouter-view&gt  &lt/router-view&gt
+    </pre>
+    Параметры роута могут быть получены так this.$route.params.id
+</div>`,
+`<div>(VueX)
+    VueX это стейт менеджмент библиотека для Vue js, оно облегчает общение между child компонентами 
+    <pre>
+    npm install vuex --save
+    //new folber store and new file inside it store.js where we will place all data
+    // store.js----------------------------------
+    import Vue from 'vue'
+    import Vuex from 'vuex'
+
+    Vue.use(Vuex)
+
+    export const store = new Vuex.Store({
+        strict: true, // will not allow to change data outside of mutations 
+        state: {
+            products: [
+                {name: 'name', price: 'price'},
+                {name: 'name', price: 'price'},
+                {name: 'name', price: 'price'},
+                {name: 'name', price: 'price'},
+            ]
+        },
+        getters: {
+            saleProducts: state => {
+                // some logig with the data of the state
+            }
+        },
+        mutations: {
+            reducePrice: (state, payload) => {
+                state.products.forEach(product => {
+                    product.price -= payload;
+                })
+            }
+        },
+        actions: { // needed for working with server as it will allow to make async logic
+            reducePrice: (context, payload) => { // payload is the passed argument
+                context.commit('reducePrice', payload) // now it will work asynchrounesly
+            }
+        }
+    });
+
+    //main.js ---------------------------------------
+    import { store } from './store/store'
+    new Vue({
+        store: store, // for using store in every component without props 
+        el: '#app',
+        render: h=>h(App),
+        router: router
+    });
+
+    // Component.vue getting data from store
+    import {mapActions} from 'vuex'
+    import {mapGetters} from 'vuex'
+
+    export default {
+        computed: {
+            products() {
+                return this.$store.state.products; // now we can use {{ products }} in our vue component 
+            },
+            // to get data from the getters we nedd to write the next
+            // if we doesn't import mapGetters we should write in such way
+            saleProducts() { 
+                return this.$store.getters.saleProducts
+            }
+            //else if we import mapGetters we can just write 
+        ...mapGetters([
+                'saleProducts',
+                'another computed proporties etc'
+            ]),
+        },
+        methods: {
+            // if we doesnt import mapActions we need to use actions in this way
+            reducePrice: function(arguments) {
+                this.$store.commit('reducePrice); // mutation name in arguments, calling mutation directly not async
+                this.$store.dispatch('reducePrice', arguments); // calling the action, now it is async, best way to make it
+            }
+            // else if we import mapActions we can use it in this way 
+            ...mapActions([
+                'reducePrice',
+                'other actions ...'
+            ]);
+        }
+    }
+    </pre>
+    Если ...mapActions и ...mapGetters не работают нужно использовать babel preset 
 </div>`
-
-
 ]
 // &ltp&gt &lt/p&gt

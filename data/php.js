@@ -1298,5 +1298,20 @@ public function build() {
         }
     });
 </pre>
+</div>`,
+`<div>
+Соединение к болле чем одной базы данных, в .env скопировать часть настроек к базе данных и вставить их там же, но с другим <br />
+названием, в config database.php файле скопировать mysql массив и изменить ее название и прописать новосозданные переменные <br />
+из env по default все подключается к первой базе данных, для подключения ко второй базе в файле миграции пропишем 
+<pre>
+    Schema::connection('mysql2')->create('posts', function(Blueprint $table) {
+        // table columns ...
+    })
+    // also need to add in model the next part of the code 
+    protected $connection = 'mysql2';
+</pre>
+</div>`,
+`<div>
+parsley.js создает многоходовую форму из несколько шагов 
 </div>`
 ]
