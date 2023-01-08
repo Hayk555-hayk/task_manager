@@ -577,8 +577,35 @@ export default {
             ]);
         }
     }
+    // add info input ref="info" this.$refs.info instead of getElement or querySelector
     </pre>
     Если ...mapActions и ...mapGetters не работают нужно использовать babel preset 
+</div>`,
+`<div>(vue3)
+    По большей части vue 3 похож на vue 2 но есть небольшие отличия <br />
+    Функция setup(), множество корневых элементов внутри template, <br />
+    новые teleport и syspense компоненты 
+    <pre>
+    const app = Vue.createApp();
+    app.mount('#app');
+    </pre>
+    :class="{fav: favAttr.isTrue}" динамическое приминение класса если favAttr.ifTrue === true <br />
+    <pre>
+    // installing vue via cli
+    npm install -g @vue/cli
+    vue create projec-name // creating new vue project via cli 
+    </pre>
+    После установки мы увидим обычный vue проект где можно будет добовлять <br />
+    импортировать и экспортировать компоненты
+</div>`,
+`<div>(vue 3)
+    teleport во vue 3 
+    <pre>
+    // вместо div нужно написать telleport 
+    &ltteleport to=".cssSelector"&gt
+     // some content
+    &lt/teleport&gt
+    </pre>
 </div>`
 ]
 // &ltp&gt &lt/p&gt

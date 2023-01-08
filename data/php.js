@@ -1313,5 +1313,53 @@ public function build() {
 </div>`,
 `<div>
 parsley.js создает многоходовую форму из несколько шагов 
-</div>`
+</div>`,
+`<div>(laravel)
+    Maintainance mode позволяет ввести сайт в режим обслуживания 
+    <pre>
+    php artisan down // now all pages will return 503 error with service unavailable 
+    php artisan down --secret="code" // site will be able if after main url we will add /code 
+    // in errors/503.blade.php we can costumize the 503 error page 
+    php artisan up // will return site to normal behaviour 
+    </pre>
+</div>`,
+`<div>(laravel)
+    accessor позволяет изменять запрошенные данные а mutators позваляет изменять отправленные данные <br />
+    Обе создаются в моделе 
+    <pre>
+    //model.php
+    //mutator
+    public function setEmailAttribute($value) {
+        $this->attributes['email'] = strtolower($value);
+    }
+    //accessor
+    public function getNameAttribute($value) {
+        return strtoupper($value);
+    }
+    </pre>
+    В laravel можно создавать свои команды php artisan make:command CommandName <br />
+    Там можно писать любую логику и в конце в kernel.php назначить время их выполнения 
+</div>`,
+`<div>(laravel)
+Livewire это фреймворк фреймворка 
+<pre>
+    composer require laravel/livewire // installing framework
+    // on livevare blade files we should add @livewireStyles in header and {{ slot }} @livewireScripts in body
+    // livevire is consisted by the components to create one such componend we should use 
+    // php artisan make:livewire Post
+    // 2 files created as ordinary laravel blade components class file and view 
+    // class file at app/http/livewire 
+    // to pass data or arguments in class we will add 
+    public $data;
+    public function mount() {
+        $this->name = $name; // same as ordinary blade but instead __construct now it is mount
+    }
+    // view file at blade/livewire
+    // Now we can access to this file by using not ordinary route logig 
+    Route::get('/path', Post::class); post class is a livewire component 
+    // components can be created without view file, such components called inline components
+    php artisan make:livewire Post --inline
+    //To add livewire component in blade just add @livewireStyles @livevireScripts and @livevire('post')
+</pre>
+</div>`,
 ]
