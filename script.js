@@ -1,10 +1,12 @@
 let php = document.getElementById('php');
 let node = document.getElementById('node');
 let front = document.getElementById('front');
+let ruby = document.getElementById('ruby');
 
 php.addEventListener('click', showTutorial);
 node.addEventListener('click', showTutorial);
 front.addEventListener('click', showTutorial);
+ruby.addEventListener('click', showTutorial);
 
   function showTutorial() {
     let target = this.id;
@@ -15,6 +17,8 @@ front.addEventListener('click', showTutorial);
         break;
         case "front":
         taskIndex = 2;
+        case "ruby":
+        taskIndex = 3;
         break;
     }
     let html = "";

@@ -30,7 +30,7 @@ body {
 .php {background-image: url(./assets/php.jpeg);}
 .node {background-image: url(./assets/node.jpg);}
 .front {background-image: url(./assets/front.png);}
-.lang {background-image: url(./assets/languages.jpg);}
+.ruby {background-image: url(./assets/ruby.jpg);}
 
 .tutorial:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

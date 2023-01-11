@@ -5,6 +5,8 @@ let tutorials = {
     php: php_data,
 
     front: front_data,
+
+    ruby: ruby_data
 }
 
 let tasks = [
@@ -37,5 +39,15 @@ let tasks = [
     </span> <br />
     <span class="small">
     YouTube bitfumes nuxt js, the net ninja all js and typescript playlists, Youtube the net ninja tailwind tutorials,YouTube JavaScript ru git, Владилен typescript, Documentation vue2 vue3 typescript Metanit, books vue
+    </span>`,
+
+    `<span class="task_title">
+    RUBY ON RAILS
+    </span><br />
+    <span class="task_description">
+    YouTube Alexander Batashov
+    </span> <br />
+    <span class="small">
+    YouTube The net ninja graph QL, книги ruby
     </span>`,
 ];
