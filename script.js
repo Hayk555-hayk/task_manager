@@ -17,6 +17,7 @@ ruby.addEventListener('click', showTutorial);
         break;
         case "front":
         taskIndex = 2;
+        break;
         case "ruby":
         taskIndex = 3;
         break;

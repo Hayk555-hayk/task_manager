@@ -7,17 +7,18 @@
 }
 
 body {
-    background-image: url(./assets/main.jpg);
+    background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% );
 }
 
 .tutorial_wrapper {
     display: flex;
     justify-content: space-around;
     padding-top: 20vh;
+    flex-wrap: wrap;
 }
 
 .tutorial {
-    height: 200px;
+    height: 100px;
     width: 250px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: .5s;
@@ -25,12 +26,13 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     border-radius: 15px;
+    background-image: linear-gradient( 109.6deg,  rgba(229,55,57,1) 11.2%, rgba(205,13,13,1) 91.1% );
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-
-.php {background-image: url(./assets/php.jpeg);}
-.node {background-image: url(./assets/node.jpg);}
-.front {background-image: url(./assets/front.png);}
-.ruby {background-image: url(./assets/ruby.jpg);}
 
 .tutorial:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -71,8 +73,8 @@ pre {
 #the_task {
     height: 250px;
     width: 500px;
-    background-color: rgb(90, 100, 108);
-    color: rgb(230, 225, 217);
+    background-image: linear-gradient( 109.6deg,  rgba(229,55,57,1) 11.2%, rgba(205,13,13,1) 91.1% );
+    color: #fff;
     position: absolute;
     left: 33%;
     top: -250px;
@@ -82,6 +84,7 @@ pre {
     text-align: center;
     overflow: hidden;
     z-index: 99999;
+    
 }
 
 .task_title {
