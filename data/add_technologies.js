@@ -4,7 +4,7 @@ let techno = [
             Позволяет просмотр всех версий файла <br />
             Позволяет многим людям кооперировать <br />
         </div>`,
-        `<div>(git>)
+        `<div>(git)
             Для изменения пользователя git нужны следующие команды <br />
             git config --global user.name someName <br />
             git config --global user.email email@email <br />

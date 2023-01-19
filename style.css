@@ -7,8 +7,8 @@
 }
 
 body {
-    background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% );
-}
+    background-image: linear-gradient( 89.4deg,  rgba(194,0,39,1) 0.8%, rgba(10,35,104,1) 99.4% );
+    }
 
 .tutorial_wrapper {
     display: flex;
@@ -26,7 +26,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     border-radius: 15px;
-    background-image: linear-gradient( 109.6deg,  rgba(229,55,57,1) 11.2%, rgba(205,13,13,1) 91.1% );
+    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
     color: #fff;
     font-weight: 900;
     text-align: center;
@@ -42,7 +42,7 @@ body {
 
 .called_tutorial {
     margin: 50px auto;
-    width: 70%;
+    width: 90%;
     border-radius: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     padding: 25px;
@@ -73,7 +73,7 @@ pre {
 #the_task {
     height: 250px;
     width: 500px;
-    background-image: linear-gradient( 109.6deg,  rgba(229,55,57,1) 11.2%, rgba(205,13,13,1) 91.1% );
+    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
     color: #fff;
     position: absolute;
     left: 33%;
