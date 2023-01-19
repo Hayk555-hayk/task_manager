@@ -1,11 +1,11 @@
 let php = document.getElementById('php');
 let node = document.getElementById('node');
-let front = document.getElementById('front');
+let add_techno = document.getElementById('add_techno');
 let ruby = document.getElementById('ruby');
 
 php.addEventListener('click', showTutorial);
 node.addEventListener('click', showTutorial);
-front.addEventListener('click', showTutorial);
+add_techno.addEventListener('click', showTutorial);
 ruby.addEventListener('click', showTutorial);
 
   function showTutorial() {
@@ -15,7 +15,7 @@ ruby.addEventListener('click', showTutorial);
       case "node":
         taskIndex = 1;
         break;
-        case "front":
+        case "add_techno":
         taskIndex = 2;
         break;
         case "ruby":

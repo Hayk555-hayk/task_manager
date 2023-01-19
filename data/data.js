@@ -4,7 +4,7 @@ let tutorials = {
 
     php: php_data,
 
-    front: front_data,
+    add_techno: techno,
 
     ruby: ruby_data
 }
@@ -12,70 +12,67 @@ let tutorials = {
 let tasks = [
 //-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
     `<span class="task_title">
-    PHP LARAVEL
+    PHP / LARAVEL
     </span><br />
     <span an class="task_description">
     YouTube surfside media Урок 65
     </span><br />
     <span class="small">
-    YouTube школа itProger mysql,
     YouTube Andrey Schemelyun laravel vue,
     Documentation Laravel su урок 11,
     YouTube laravel + redis,
     Documentation laravel demiart,
     Documentation code mu php урок 9,
     Documentation code mu oop & mvc,
-    Documentation Metanit SQL,
-    YouTube Аве кодер postgre,
     YouTube agoalofalife орхид,
-    YouTube Гоша Дударь docker,
-    YouTube coders tape all playlists,
-    YouTube theurbanpenguin ubuntu,
-    YouTube msft webcast windows,
-    YouTube learn linux tv centos,
     books php
     </span>`,
 
     `<span class="task_title">
-    NODE NEST
+    JAVASCRIPT / NODE / NEST
     </span><br />
     <span class="task_description">
     YouTube Илья Кантор node от а до я Урок 19
     </span><br />
     <span class="small">
     YouTube #JS Code nest js Урок 1,
-    YouTube gungner it mongodb,
-    the net ninja json server and graph ql,
+    Владилен typescript,
+    YouTube the net ninja all js and typescript playlists,
     Documentation Metanit node,
     Documentation Metanit mongodb,
     documentation docs nest com,
+    Documentation typescript Metanit,
     books node
     </span>`,
 
     `<span class="task_title">
-    VUE GIT
+    DATABASES / GIT / OS
     </span><br />
     <span class="task_description">
-    YouTube The net ninja all vue and nuxt tutorials (vue 3 урок 6)
+    YouTube школа itProger mysql урок 1
     </span> <br />
     <span class="small">
-    YouTube bitfumes nuxt js,
-    the net ninja all js and typescript playlists,
-    Youtube the net ninja tailwind tutorials,
-    YouTube JavaScript ru git,
-    Владилен typescript,
-    Documentation vue2 vue3 typescript Metanit,
-    books vue
+    YouTube Аве кодер postgre,
+    YouTube gungner it mongodb,
+    Documentation Metanit SQL,
+    YouTube theurbanpenguin ubuntu,
+    YouTube Гоша Дударь docker,
+    YouTube msft webcast windows,
+    YouTube learn linux tv centos,
+    YouTube JavaScript ru git,   
+    books base
     </span>`,
 
     `<span class="task_title">
-    RUBY
+    RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov
+    YouTube Alexander Batashov Ruby
     </span> <br />
     <span class="small">
-    YouTube The net ninja graph QL,
-    книги ruby
+    YouTube Alexander Batashov Ruby on Rails,
+    YouTube the net ninja graph ql,
+    YouTube the net ninja json server,
+    books ruby
     </span>`,
 ];
