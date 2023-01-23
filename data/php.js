@@ -153,7 +153,7 @@ let php_data = [
     }
     </pre>
     </div>`,
-    `<div class="checkpoint">(laravel)
+    `<div class='checkpoint'>(laravel)
     Для создания контроллера нужна команда php artisan make:controller NameController, а команда php artisan serve запускает сервер <br/>
     jsonplaceholder является хорошим местом для фейк api <br />
     Создаем запрос на другой ресурс из нашего проекта 
@@ -1360,6 +1360,26 @@ Livewire это фреймворк фреймворка
     // components can be created without view file, such components called inline components
     php artisan make:livewire Post --inline
     //To add livewire component in blade just add @livewireStyles @livevireScripts and @livevire('post')
+    //Also we can bind data of component as html attributes with wire:model="someVarName", every such model will send request to the server when the data will be changed, so to handle that we need wire:model.debounce.1000ms="someVarName"
+    //To use above mentioned we need to make public variable in target class
+    //
 </pre>
 </div>`,
+`<div>(laravel)
+Создание livewire actions
+<pre>
+php artisan make:livewire Action // make new component
+// In class file create new function to handel the behavior
+// In blade file add wire:click="createdMethodName(arguments)" on the button 
+// We have also wire:keydown.enter="methodName($event.target.value)"
+</pre>
+В livewire есть жизненные циклы компонентов 
+<pre>
+mount()
+hydrate()
+updating()
+updated()
+render()
+</pre>
+</div>`
 ]

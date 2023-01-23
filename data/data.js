@@ -15,10 +15,10 @@ let tasks = [
     PHP / LARAVEL
     </span><br />
     <span an class="task_description">
-    YouTube surfside media Урок 65
+    YouTube surfside media Урок 68
     </span><br />
     <span class="small">
-    YouTube Andrey Schemelyun laravel vue,
+    YouTube Rdavydov laravel,
     Documentation Laravel su урок 11,
     YouTube laravel + redis,
     Documentation laravel demiart,
