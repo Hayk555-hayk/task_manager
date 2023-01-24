@@ -236,13 +236,13 @@ let ruby_data = [
     Переменные класса можно удалать по условию импользуя следующий синтакс @someClassVar.delete_if {logic}
     </div>`,
     `<div>(ruby)
-    ООП, Наследование и полиморфизм <br />
+    ООП, Наследование и полиморфизм<br />
     Наследование происходит знаком < <br />
     <pre>
     class Item 
         @@discount = 0.1
 
-        def self.discount // Этот метод является методом класса, его можно вызвать не на обьекте, а на самом классе (можно вызывать и в классе self.class.discount и вне класса Item.discount)
+        def self.discount // Этот метод является статическим методом класса, его можно вызвать не на обьекте, а на самом классе (можно вызывать и в классе self.class.discount и вне класса Item.discount)
             if Time.now.month == 7
                 puts "Discount 40%"
                 @@discount += 3
@@ -287,6 +287,48 @@ let ruby_data = [
 
     </pre>
     </div>`,
+    `<div>(ruby)
+    Модули 
+    <pre>
+        module ItemContainer
+            // all methods and logic here
+            module Manager
+                // Module in module with its methods
+            end
+        end
+
+        class Item
+            include ItemContainer
+            include ItemContainer::Manager // Including module from module
+        end
+    </pre>
+    Можно инклудить модули при помощи callback-ов
+    <pre>
+        module ItemContainer
+            // all methods and logic here
+
+            module Manager
+                // Module in module with its methods
+            end
+
+            module Initializer
+                // Module in module with its methods
+            end
+
+            def self.included(class) // этот метод будет выполнен автоматически при создании обьекта класса
+                class.extend Manager // Расширяем класс методами included
+                class.class_eval include {Initializer} // добавляем остальные методы из другого вложенного модуля
+            end
+
+        end
+
+        class Item
+            include ItemContainer
+            include ItemContainer::Manager // Including module from module
+        end
+    </pre>
+    </div>`,
+
 
 
 

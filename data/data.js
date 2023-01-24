@@ -10,7 +10,7 @@ let tutorials = {
 }
 
 let tasks = [
-//-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
+    //-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
     `<span class="task_title">
     PHP / LARAVEL
     </span><br />
@@ -67,7 +67,7 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov (Ruby урок 17)
+    YouTube Alexander Batashov (Ruby урок 25)
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails,
