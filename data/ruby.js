@@ -101,11 +101,6 @@ let ruby_data = [
         p является сокращенной версией puts
     </div>`,
     `<div>(ruby)
-        <pre>
-        rand max 100 // generating random number from 0 to 100
-        </pre>
-    </div>`,
-    `<div>(ruby)
     Геттеры и сеттеры
     <pre>
             class Item
@@ -213,5 +208,106 @@ let ruby_data = [
         puts letters if |letters| != 15
     end
     </pre>
-    </div>`
+    </div>`,
+    `<div>(ruby)
+    Блок начинается с do-end или {}, анонимные функции вызываются ключевым словом yield
+    <pre>
+    class Cart 
+        def info
+            if block_given?
+                yield price
+            else 
+                puts "price is not given"
+            end
+        end
+    end
+
+    cart = Cart.new
+    cart.info { |value| puts value}
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Класс File работает с другими файлами
+    <pre>
+    File.open("path/to/file.txt", "w") {|y| y.puts "Some text"}
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Переменные класса можно удалать по условию импользуя следующий синтакс @someClassVar.delete_if {logic}
+    </div>`,
+    `<div>(ruby)
+    ООП, Наследование и полиморфизм <br />
+    Наследование происходит знаком < <br />
+    <pre>
+    class Item 
+        @@discount = 0.1
+
+        def self.discount // Этот метод является методом класса, его можно вызвать не на обьекте, а на самом классе (можно вызывать и в классе self.class.discount и вне класса Item.discount)
+            if Time.now.month == 7
+                puts "Discount 40%"
+                @@discount += 3
+            end
+        end
+
+        def price
+            @price - @price * self.class.discount
+        end
+
+        // private method tax, все методы под private будут приватными  
+        private 
+        def tax
+            type_tax = if self.class == VirtualItem
+            1
+            else 
+            2
+            end
+        end
+
+    end 
+-------------------------------------------------------------
+    class VirtualItem < Item
+
+    end
+----------------------------------------------------------------
+    class RealItem < Item
+        attr_accessor :weight
+
+        def initialize(options)
+            @weight = options[:weight] // adding new data to old data from Item 
+            suber // now old data is available 
+        end
+
+        def info // method from parrent
+            if block_given?
+                yield weight // adding new logic
+                super // getting the logig from parrent 
+            end
+        end
+    end
+
+    </pre>
+    </div>`,
+
+
+
+
+
+
+
+
+    `<div>(ruby)
+    Дополнительная информация
+        <pre>
+        rand max 100 // generating random number from 0 to 100
+        5.times {puts "Ruby"} // Will echo rubi 5 times 
+
+        hash = {age: 28, name: 'Unknown}
+        hash.each_key {|i| puts i} // will show keys (age and name)
+
+        array = [1,2,3,4]
+        array.each_with_index {|value, index| puts value.to_s + " " + index.to_s} // will show indexes and values       
+
+        // Если require_relative 'name' разрастается и много импортов то можно сделать следующее Dir["*.rb"].each {|file| require_relative file}
+        </pre>
+    </div>`,
 ]
