@@ -324,10 +324,15 @@ let ruby_data = [
 
         class Item
             include ItemContainer
-            include ItemContainer::Manager // Including module from module
         end
     </pre>
     </div>`,
+    `<div>(ruby)
+    Работа с обьектами 
+    <pre>
+
+    </pre>
+    </div>`
 
 
 
@@ -350,6 +355,24 @@ let ruby_data = [
         array.each_with_index {|value, index| puts value.to_s + " " + index.to_s} // will show indexes and values       
 
         // Если require_relative 'name' разрастается и много импортов то можно сделать следующее Dir["*.rb"].each {|file| require_relative file}
+        
+        // Операторы диапазноа
+        1..5 //1,2,3,4,5
+        1...5 //1,2,3,4
+
+        // Список методов можно получить следующим образом
+        1.methods
+        "str".methods
+
+        "str".chars // ["s","t","r"]
+        str.split // as php explode
+
+        arr = ["s","t","r"]
+        arr.find_index("t")
+        arr.fin_all {|num| num.odd?}
+
+        hash = {a: "b", c: "c"}
+        hash.reverse_each // {c: "c", a: "b"}
         </pre>
     </div>`,
 ]

@@ -153,7 +153,7 @@ let php_data = [
     }
     </pre>
     </div>`,
-    `<div class='checkpoint'>(laravel)
+    `<div>(laravel)
     Для создания контроллера нужна команда php artisan make:controller NameController, а команда php artisan serve запускает сервер <br/>
     jsonplaceholder является хорошим местом для фейк api <br />
     Создаем запрос на другой ресурс из нашего проекта 
@@ -440,7 +440,7 @@ let php_data = [
      middleware, можно добавить и имя для этого мидлвера, теперь в конце у роута можно добавить <br />
      ->middleware('middleware name')
     </div>`,
-    `<div>(laravel)
+    `<div class='checkpoint'>(laravel)
     Http сессии 
     <pre>
     public function getSession(Request $request) {
