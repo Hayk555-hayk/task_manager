@@ -67,10 +67,10 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov (Ruby урок 27)
+    YouTube Alexander Batashov (Ruby урок 33)
     </span> <br />
     <span class="small">
-    YouTube Alexander Batashov Ruby on Rails,
+    YouTube Alexander Batashov Ruby on Rails (урок 9),
     YouTube the net ninja graph ql,
     YouTube the net ninja json server,
     books ruby

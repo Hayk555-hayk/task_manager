@@ -328,21 +328,6 @@ let ruby_data = [
     </pre>
     </div>`,
     `<div>(ruby)
-    Работа с обьектами 
-    <pre>
-
-    </pre>
-    </div>`
-
-
-
-
-
-
-
-
-
-    `<div>(ruby)
     Дополнительная информация
         <pre>
         rand max 100 // generating random number from 0 to 100
@@ -373,6 +358,141 @@ let ruby_data = [
 
         hash = {a: "b", c: "c"}
         hash.reverse_each // {c: "c", a: "b"}
+
+        items = []
+        items << 1
+        items << 2
+        // now items is [1,2]
+
+        ARGV в себе имеет переменные которые можно передать в консоле
         </pre>
     </div>`,
+    `<div>(ruby)
+    Запись и чтение файлов 
+    <pre>
+        def save
+            File.open('some.txt', 'w') do |f|
+                f.puts " Some text"
+            end
+        end
+        
+        def read
+            file = File.readlines('some.txt')
+        end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    try / catch в ruby
+    <pre>
+    begin 
+    // some code
+    rescue
+    // logic if code above was with an error
+    end
+
+    //Другой способ
+    raise 'Some message about an error' if some condition 
+    </pre>
+    </div>`,
+
+
+
+
+
+
+
+
+
+    `<div>(rails)
+    Автоматически база данных в rails это sqlite для того чтобы изменить это нужно прописать <br />
+    new rails pName --database=postgresql <br />
+    В файле database.yml находятся настройки баз данных в default добавим username, password, host и port <br />
+    <pre>
+    rails c // php artisan tinker
+    exec rake db:create // Создание баз данных 
+    rails g controller Items // Создание контроллера, также создастся хелпер и папка во view где будут создаваться одноименные по методу html.erb файлы
+    rails g model Item // Создание модели и миграции
+    bundle exec rake db:migrate // Выполнение миграции 
+    bundle exec rake db:rollback // Назад по миграции
+
+    // In migration file can add 
+    t.float : price
+    t.string: name
+    t.boolean: is_checked
+
+    rails g migration add_description_column_to_items // migration for adding new column in existing table 
+    // In created migration inside def change add the next code 
+    add_column table_name :items, column_name :description, type :string // then again rake db:migrate 
+
+    bundle exec rake db:drop // delete all databases 
+    bundle exec rake db:migrate:reset // as migrate:fresh in laravel 
+
+    //In migration file after def change we can add some code to add index
+    add_index :items, :price // items is a table name price is a column name
+    add_index :items, :name
+    </pre>
+    </div>`,
+    `<div>(rails)
+    Создание данных 
+    <pre>
+    it = Item.new({name: 'name', price: 55})
+    it.save
+    // or
+    Item.create(name: 'name', price: 55)
+    </pre>
+    Обновление данных 
+    <pre>
+    Item.where(name: 'name').update(name: 'another name')
+    </pre>
+    Удаление данных 
+    <pre>
+    Item.where(name: 'name').first.destroy
+    </pre>
+    Валидация в моделе и колбеки
+    <pre>
+        // Inside model
+        validates :price, numericality: {greather_than: 0}
+        validates :name, :anotherColumn, presence: true
+
+        // There are many call backs in ruby here some of them 
+        after_initialize {}// Will be called after Item.new or Item.first will be used in code 
+        after_save {} // Will be called after Item.create or Item.save
+        after_update {}
+        after_create {}
+        after_destroy {}
+    </pre>
+    Логика из контроллера
+    <pre>
+    def index 
+        @items = Item.all
+    end
+    </pre>
+    View 
+    <pre>
+    <% @someМariable.each do |item| %> // так выводятся переменные 
+    <%= item.name %>
+    <% end %>
+    </pre>
+    Роутинг
+    <pre>
+    get '/items', to 'controller#method' 
+    </pre>
+    Загрузка фото
+    <pre>
+    //console
+    gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+    bundle install
+    rails g uploader picture
+
+    //model 
+    moun_uploader :picure, PictureUploader
+    
+    //view
+    <%= f.file_field :picture %>
+
+    // add picture to new method of creating new data 
+    </pre>
+    </div>`,
+
+
 ]
