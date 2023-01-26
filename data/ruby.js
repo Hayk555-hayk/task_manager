@@ -463,19 +463,50 @@ let ruby_data = [
     </pre>
     Логика из контроллера
     <pre>
+    skip_before_action :verify_authencity_token // отменяет запрос на токен 
     def index 
         @items = Item.all
+    end
+
+    def create
+        Item.create(item_params)
+    end
+
+    def show
+        @item = Item.where(id: params[:id]).first
+    end
+
+    def destroy
+        @item = Item.where(id: params[:id]).first.destroy
+
+        //destroy button from view 
+        <%= button_to 'delete', item_path(item), method: :delete %>
+    end
+
+    private
+    def items_param
+        params.permit(:name, :price)
     end
     </pre>
     View 
     <pre>
     <% @someМariable.each do |item| %> // так выводятся переменные 
     <%= item.name %>
+    <% end %> 
+    Если в контроллере длбавить layout false то подключения view не будет требоваться 
+
+    <%= form_tag new_item_path, method :post do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+    <%= submit_tag "save", class: "asd sad" %>
     <% end %>
     </pre>
     Роутинг
     <pre>
     get '/items', to 'controller#method' 
+    post '/items', to 'controller#method'
+    
+    resources :items
     </pre>
     Загрузка фото
     <pre>
@@ -493,6 +524,5 @@ let ruby_data = [
     // add picture to new method of creating new data 
     </pre>
     </div>`,
-
 
 ]
