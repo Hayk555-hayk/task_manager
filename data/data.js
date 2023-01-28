@@ -19,6 +19,7 @@ let tasks = [
     </span><br />
     <span class="small">
     YouTube Rdavydov laravel,
+    YouTube Laravel Lighthouse/GraphQL
     Documentation Laravel su урок 11,
     YouTube laravel + redis,
     Documentation laravel demiart,
@@ -57,6 +58,7 @@ let tasks = [
     Documentation Metanit SQL,
     YouTube theurbanpenguin ubuntu,
     YouTube Гоша Дударь docker,
+    YouTube the net ninja json server,
     YouTube msft webcast windows,
     YouTube learn linux tv centos,
     YouTube JavaScript ru git,   
@@ -71,8 +73,7 @@ let tasks = [
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),
-    YouTube the net ninja graph ql,
-    YouTube the net ninja json server,
+    YouTube GraphQL Course - Beginner To Expert,
     books ruby
     </span>`,
 ];
