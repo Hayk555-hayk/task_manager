@@ -524,5 +524,145 @@ let ruby_data = [
     // add picture to new method of creating new data 
     </pre>
     </div>`,
+    `<div>
+        Использование Graphql с Ruby
+        <pre>
+        gem 'graphql'
+        gem 'graphiql-rails'
+        rails generate graphql:install 
+        // after this new graphql folber will be added in app 
+        // also in routs will be added new post request "/graphql" to "graphql/execute"
+        // Now we can generate graphqls objects 
+        rails g graphql:object user // new file will be located at app/graphql/types folber 
+
+        // we can modify our route in such way for more comfortable work 
+        Rails.application.routes.draw do 
+            if Rails.env.development?
+                mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: "graphql:execute"
+            end
+
+            post "/graphql", to: "graphql#execute"
+        end
+
+        // In application.rb do not forget to uncomment require "sprockets/railtie"
+        // Also in app folber add assets folber and in assets add config folber where you need to locate manifest.js 
+        //In manifest js add this two lines of code 
+        //= link graphiql/rails/application.css
+        //= link graphiql/rails/application.js
+
+        // Now in rails/info/routes we can see our route list 
+        // Where we can find graphiql route, it is something like postaman only for graphql
+
+        // The query logic are going to be located in graphql/types some_type.rb 
+        // Here in for example UserType class we cann add the next code 
+        module Types
+            class UserType < Types::BaseObject
+                field :id, ID, null: false
+                field :name, String, null: true
+                field :email, String, null: false
+                field :posts, [Types::PostType], null: true // This will return posts of user which are located in another module and table
+                field :posts_count, Integer, null: true // This is a method that will return posts count
+
+                def posts_count // we dafined this posts_count method here 
+                    object.posts.size
+                end
+            end
+        end
+        // Same example for posts 
+        module Types
+            class PostType < Types::BaseObject
+                field :id, ID, null: false
+                field :title, String, null: false
+                field :body, String, null: false
+            end
+        end
+
+        // This part of code is in query_type.rb where the logic for getting data is located
+        module Types
+            class QueryType < Types::BaseObject
+            # /users
+            field :users, [Types::UserType], null: false
+            def users
+                User.all
+            end
+
+            field :user, Types::UserType, null: false do
+                argument :id, ID, required: true
+            end
+            def user(id:) 
+                User.find(id)
+            end
+        end
+
+        // Now after that we can make graphql query like this
+        {
+            user(id:2) {
+                name
+                email
+                posts {
+                    title
+                    body
+                }
+            }
+        }
+
+        // For modifing the data we need to use mutations, in mutations folber we need to add base_mutation.rb
+        // base_mutation.rb 
+        class Mutations::BaseMutation < GraphQL::Schema::RelayClassicMutation
+        end
+
+        // Now in the mutations folber we will add create_user.rb file 
+        //create_user.rb
+        class Mutations::CreateUser < Mutations::BaseMutation
+            argument :name, String, required: true
+            argument :email, String, required: true
+
+            field :user, Types::UserType, null: false
+            field :errors, [String], null: false
+
+            def resolve(name:, email:) 
+                user = User.new(name: name, email: email)
+
+                if user.save
+                {
+                    user: user,
+                    errors: []
+                }
+                else 
+                {
+                    user: nil,
+                    errors: user.errors.full_messages
+                }
+            end
+
+        end
+
+        // Now in types folber inside mutation_type.rb add the next code 
+        // mutation_type.rb
+        module Types
+            class MutationType < Types::BaseObject
+                field :create_user, mutation: Mutations::CreateUser
+            end
+        end
+
+        // Now the query for creating users is ready
+        // Graphql query
+        mutation {
+            createUser(input:{
+                name: "Some name",
+                email: "Some email"
+            }) {
+                user {
+                    id,
+                    name,
+                    email
+                }
+                errors {
+
+                }
+            }
+        }
+        </pre>
+    </div>`
 
 ]
