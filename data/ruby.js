@@ -524,7 +524,7 @@ let ruby_data = [
     // add picture to new method of creating new data 
     </pre>
     </div>`,
-    `<div>
+    `<div> (rails)
         Использование Graphql с Ruby
         <pre>
         gem 'graphql'
@@ -662,6 +662,98 @@ let ruby_data = [
                 }
             }
         }
+        </pre>
+    </div>`,
+    `<div>(graphql)
+        Синтакс graphql
+        <pre>
+            // Простой запрос с нужными полями
+            {
+                user(id: 2) {
+                  id
+                  firstName
+                  lastName
+                  birthday {
+                    month
+                    day
+                  }
+                  users {
+                    name
+                  }
+                }
+              }
+
+            // Запрос на пользователя с определенным размером изображения
+            {
+                user(id: 4) {
+                    id
+                    name
+                    profilePic(size: 100)
+                }
+            }
+
+            // Использование фрагментов для повторяющегося кода
+            query withFragments {
+                user(id: 4) {
+                  friends(first: 10) {
+                    ...friendFields
+                  }
+                  mutualFriends(first: 10) {
+                    ...friendFields
+                  }
+                }
+              }
+              
+              fragment friendFields on User {
+                id
+                name
+                profilePic(size: 50)
+              }
+
+            // Фрагмент в фрагменте 
+            query withNestedFragments {
+                user(id: 4) {
+                  friends(first: 10) {
+                    ...friendFields
+                  }
+                  mutualFriends(first: 10) {
+                    ...friendFields
+                  }
+                }
+              }
+              
+              fragment friendFields on User {
+                id
+                name
+                ...standardProfilePic
+              }
+              
+              fragment standardProfilePic on User {
+                profilePic(size: 50)
+              }
+
+            // Блочные строки 
+            mutation {
+                sendEmail(message: """
+                  Hello,
+                    World!
+              
+                  Yours,
+                    GraphQL.
+                """)
+              }
+
+            // Переменные в запросах 
+            query getZuckProfile($devicePicSize: Int) {
+                user(id: 4) {
+                  id
+                  name
+                  profilePic(size: $devicePicSize)
+                }
+              }
+              {
+                "devicePicSize": 60
+              }
         </pre>
     </div>`
 
