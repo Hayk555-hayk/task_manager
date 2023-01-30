@@ -50,9 +50,10 @@ let tasks = [
     DATABASES / GIT / OS
     </span><br />
     <span class="task_description">
-    YouTube школа itProger mysql урок 1
+    Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community
     </span> <br />
     <span class="small">
+    YouTube школа itProger mysql урок 1
     YouTube Аве кодер postgre,
     YouTube gungner it mongodb,
     Documentation Metanit SQL,
@@ -73,6 +74,7 @@ let tasks = [
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),
+    YouTube Sidekiq Redis Jsr ka Ladka
     YouTube GraphQL Course - Beginner To Expert,
     books ruby
     </span>`,
