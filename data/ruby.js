@@ -525,7 +525,11 @@ let ruby_data = [
     </pre>
     </div>`,
     `<div> (rails)
-        Использование Graphql с Ruby
+        Использование Graphql с Ruby <br />
+        Существует три типа операций, которые моделирует GraphQL: <br />
+        query – выборка только для чтения. <br />
+        мутация — запись с последующей выборкой. <br />
+        подписка — долгоживущий запрос, который извлекает данные в ответ на исходные события.
         <pre>
         gem 'graphql'
         gem 'graphiql-rails'
@@ -754,6 +758,47 @@ let ruby_data = [
               {
                 "devicePicSize": 60
               }
+
+            // Например, эта операция мутации может «лайкнуть» историю, а затем получить новое количество лайков:
+            mutation {
+                likeStory(storyID: 12345) {
+                    story {
+                        likeCount
+                    }
+                }
+            }
+
+            //Типизироваеие запроса 
+            query inlineFragmentTyping {
+                profiles(handles: ["zuck", "coca-cola"]) {
+                  handle
+                  ... on User {
+                    friends {
+                      count
+                    }
+                  }
+                  ... on Page {
+                    likers {
+                      count
+                    }
+                  }
+                }
+              }
+
+            //  Встроенные фрагменты также могут использоваться для применения директивы к группе полей. Если TypeCondition опущен, встроенный фрагмент считается относящимся к тому же типу, что и окружающий контекст.
+            query inlineFragmentNoType($expandedInfo: Boolean) {
+                user(handle: "zuck") {
+                  id
+                  name
+                  ... @include(if: $expandedInfo) {
+                    firstName
+                    lastName
+                    birthday
+                  }
+                }
+              }
+
+            
         </pre>
     </div>`
 
