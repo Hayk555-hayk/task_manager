@@ -15,7 +15,7 @@ let tasks = [
     PHP / LARAVEL
     </span><br />
     <span an class="task_description">
-    YouTube surfside media Урок 68
+    YouTube surfside media Урок 68 (по 2 урока)
     </span><br />
     <span class="small">
     YouTube Rdavydov laravel,
@@ -33,7 +33,7 @@ let tasks = [
     JAVASCRIPT / NODE / NEST
     </span><br />
     <span class="task_description">
-    YouTube Илья Кантор node от а до я Урок 19
+    YouTube Илья Кантор node от а до я Урок 19 (по 2 урока)
     </span><br />
     <span class="small">
     YouTube #JS Code nest js Урок 1,
@@ -50,7 +50,7 @@ let tasks = [
     DATABASES / GIT / OS
     </span><br />
     <span class="task_description">
-    Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community
+    Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (по 1 урок)
     </span> <br />
     <span class="small">
     YouTube школа itProger mysql урок 1
@@ -70,7 +70,7 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov (Ruby урок 33)
+    YouTube Alexander Batashov Ruby урок 33 (по 4 урока)
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),

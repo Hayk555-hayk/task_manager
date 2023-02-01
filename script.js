@@ -47,3 +47,11 @@ ruby.addEventListener('click', showTutorial);
 
     taskIndicator = !taskIndicator;
   }
+
+  let get_task = document.getElementById('get_task');
+  get_task.addEventListener('click', getRandomTask);
+
+  function getRandomTask() {
+    let task = Math.floor(Math.random() * 4);
+    showTask(task)
+  }
