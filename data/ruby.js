@@ -139,7 +139,7 @@ let ruby_data = [
         puts item.price
         </pre>
     </div>`,
-    `<div>(ruby)
+    `<div class='checkpoint'>(ruby)
     irb устонавливается вместе с ruby это php artisan tinker <br />
     Обьекты в ruby называются хешами <br />
     ID строк при вызове "string".object_id всегда будет разным, а ID символа :smt.object_id всегда один и тот же <br />
@@ -796,10 +796,30 @@ let ruby_data = [
                     birthday
                   }
                 }
-              }
-
-            
+              }           
         </pre>
+    </div>`,
+    `<div>(ruby)
+    Если в контроллере прописать функцию method_missing то она автоматически будет работать
+    <pre>
+    def method_missing(method_name)
+        puts "Method #{method_name} is not exist at all" 
+    end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Логика singletone подразумевает вызов определенного класса один раз и в лебом месте 
+    <pre>
+    class StoreApplocation
+        class << self 
+            def new 
+              unless @store
+                //some logic 
+              @store ||= self
+              end
+            end
+        end
+    end
+    </pre>
     </div>`
-
 ]

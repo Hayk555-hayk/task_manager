@@ -1,5 +1,5 @@
 let php_data = [
-    `<div>(php)
+    `<div class='checkpoint'>(php)
     Кроме index.php нужно создать файл .htaccess и внутри прописать 
         <pre>
         AddDefaultCharset utf-8
@@ -440,7 +440,7 @@ let php_data = [
      middleware, можно добавить и имя для этого мидлвера, теперь в конце у роута можно добавить <br />
      ->middleware('middleware name')
     </div>`,
-    `<div class='checkpoint'>(laravel)
+    `<div>(laravel)
     Http сессии 
     <pre>
     public function getSession(Request $request) {
