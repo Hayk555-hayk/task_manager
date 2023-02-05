@@ -70,7 +70,7 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov Ruby урок 37 (по 4 урока и 5 пунктов конспекта)
+    YouTube Alexander Batashov Ruby урок 40 (по 4 урока и 5 пунктов конспекта)
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),

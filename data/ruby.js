@@ -139,7 +139,7 @@ let ruby_data = [
         puts item.price
         </pre>
     </div>`,
-    `<div class='checkpoint'>(ruby)
+    `<div>(ruby)
     irb устонавливается вместе с ruby это php artisan tinker <br />
     Обьекты в ruby называются хешами <br />
     ID строк при вызове "string".object_id всегда будет разным, а ID символа :smt.object_id всегда один и тот же <br />
@@ -226,7 +226,7 @@ let ruby_data = [
     cart.info { |value| puts value}
     </pre>
     </div>`,
-    `<div>(ruby)
+    `<div class='checkpoint'>(ruby)
     Класс File работает с другими файлами
     <pre>
     File.open("path/to/file.txt", "w") {|y| y.puts "Some text"}
@@ -819,6 +819,55 @@ let ruby_data = [
               end
             end
         end
+    end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    В  ruby статические методы можно прописывать и таким образом
+    <pre>
+    Class Dog
+        // Some class methods 
+        
+        //Static part
+        class << self
+            //Some methods
+        end
+        //end Static part
+    end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Отправка mail
+    <pre>
+        // gem 'pony' is needed
+        //define method
+        require 'pony'
+        def send
+            Pony.mail({
+                :to => 'mail address of the reciever',
+                from: 'My store <mail@gmail.com>'
+                :via => :smtp,
+                :via_options => {
+                    address: 'smtp.gmail.com',
+                    port: '587',
+                    :enable_starttls_auto => true,
+                    user_name: 'mail address of the sender'
+                    password: 'some password',
+                    domain: 'mail.google.com',
+                    authentication: :plain,
+                    domain: 'gmail.com',
+                },
+                subject: 'smth',
+                body: 'smth'
+            })
+        end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Потоки выполняют код паролельно
+    <pre>
+    Thread.new do 
+        // some code 
     end
     </pre>
     </div>`
