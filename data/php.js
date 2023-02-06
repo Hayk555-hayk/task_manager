@@ -1,5 +1,5 @@
 let php_data = [
-    `<div class='checkpoint'>(php)
+    `<div>(php)
     Кроме index.php нужно создать файл .htaccess и внутри прописать 
         <pre>
         AddDefaultCharset utf-8
@@ -58,7 +58,7 @@ let php_data = [
     Одним из наиболее важных поставщиков служб в вашем приложении является App-Providers-RouteServiceProvider.
     Этот поставщик загружает файлы маршрутов, содержащиеся в каталоге routes приложения
     </div>`,
-    `<div>(php)
+    `<div class='checkpoint'>(php)
     Для того чтобы узнать тип переменной есть метот gettype($arr) <br />
     Метод is_string($var) проверяет переменную на строку, вернет 1 или '' <br />
     Метод is_int($var) проверяет переменную на номер, вернет 1 или '' <br />
@@ -1380,6 +1380,27 @@ hydrate()
 updating()
 updated()
 render()
+</pre>
+</div>`,
+`<div>(laravel)
+В liviwire компоненте добавим следующий код для ваоидации формы 
+<pre>
+public function updated($fields) {
+    $this->validateOnly($fields, [
+        // same validation rules from submitForm method
+    ])
+}
+
+public function submitForm() {
+    $this->validate([
+        // validation rules 
+    ]);
+}
+
+// In livewire blade component you can show errors in that way 
+@error('name')
+    some html with interpolating an error
+@enderror
 </pre>
 </div>`
 ]

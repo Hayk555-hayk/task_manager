@@ -15,7 +15,7 @@ let tasks = [
     PHP / LARAVEL
     </span><br />
     <span an class="task_description">
-    YouTube surfside media Урок 68 (по 2 урока и 5 пунктов конспекта)
+    YouTube surfside media Урок 70 (по 2 урока и 5 пунктов конспекта)
     </span><br />
     <span class="small">
     YouTube Rdavydov laravel,
@@ -70,7 +70,7 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov Ruby урок 40 (по 4 урока и 5 пунктов конспекта)
+    YouTube Alexander Batashov Ruby урок 45 (по 4 урока и 5 пунктов конспекта)
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),

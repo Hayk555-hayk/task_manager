@@ -226,7 +226,7 @@ let ruby_data = [
     cart.info { |value| puts value}
     </pre>
     </div>`,
-    `<div class='checkpoint'>(ruby)
+    `<div>(ruby)
     Класс File работает с другими файлами
     <pre>
     File.open("path/to/file.txt", "w") {|y| y.puts "Some text"}
@@ -327,7 +327,7 @@ let ruby_data = [
         end
     </pre>
     </div>`,
-    `<div>(ruby)
+    `<div class='checkpoint'>(ruby)
     Дополнительная информация
         <pre>
         rand max 100 // generating random number from 0 to 100
@@ -868,6 +868,28 @@ let ruby_data = [
     <pre>
     Thread.new do 
         // some code 
+    end
+    </pre>
+    </div>`,
+    `<div>(ruby)
+    Метод .freeze замораживает обьекты <br />
+    Работа со временем Time.now
+    </div>`,
+    `<div>(ruby)
+    Тестирование RSpec
+    <pre>
+    // gem install rspec
+    bundler exec rspec spec // run the tests 
+    rspec spec test_file.rb // run the exact test
+    // To create new test add new file tesdedClassName_spec.rb
+    require 'rspec'
+    require_relative 'classThatWillBeTested'
+
+    describe ClassName do
+        it 'calculate correct price' do
+            price = Item.price + 10
+            expext(price).to be 200
+        end
     end
     </pre>
     </div>`
