@@ -327,7 +327,7 @@ let ruby_data = [
         end
     </pre>
     </div>`,
-    `<div class='checkpoint'>(ruby)
+    `<div>(ruby)
     Дополнительная информация
         <pre>
         rand max 100 // generating random number from 0 to 100

@@ -111,10 +111,6 @@ pre::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
-.checkpoint {
-    background-color: #8beb7e;
-}
-
 #get_task {
     margin-top: 15px;
     margin-top: 15px;
@@ -126,4 +122,12 @@ pre::-webkit-scrollbar-thumb {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
+}
+
+.each_task {
+    text-align: left;
+}
+
+.target {
+    color: lime;
 }

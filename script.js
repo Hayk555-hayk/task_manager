@@ -2,11 +2,13 @@ let php = document.getElementById('php');
 let node = document.getElementById('node');
 let add_techno = document.getElementById('add_techno');
 let ruby = document.getElementById('ruby');
+let selfdev = document.getElementById('selfdev')
 
 php.addEventListener('click', showTutorial);
 node.addEventListener('click', showTutorial);
 add_techno.addEventListener('click', showTutorial);
 ruby.addEventListener('click', showTutorial);
+selfdev.addEventListener('click', showTutorial)
 
   function showTutorial() {
     let target = this.id;
@@ -21,6 +23,9 @@ ruby.addEventListener('click', showTutorial);
         case "ruby":
         taskIndex = 3;
         break;
+        case "selfdev":
+        taskIndex = 4;
+        break; 
     }
     let html = "";
     let tutorialPart = document.getElementById('called_tutorial');
@@ -52,6 +57,6 @@ ruby.addEventListener('click', showTutorial);
   get_task.addEventListener('click', getRandomTask);
 
   function getRandomTask() {
-    let task = Math.floor(Math.random() * 4);
+    let task = Math.floor(Math.random() * 5);
     showTask(task)
   }

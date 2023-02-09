@@ -6,7 +6,9 @@ let tutorials = {
 
     add_techno: techno,
 
-    ruby: ruby_data
+    ruby: ruby_data,
+
+    selfdev: selfdev_data
 }
 
 let tasks = [
@@ -15,7 +17,10 @@ let tasks = [
     PHP / LARAVEL
     </span><br />
     <span an class="task_description">
-    YouTube surfside media Урок 70 (по 2 урока и 5 пунктов конспекта)
+    <ol class="each_task">
+    <li class="target">YouTube surfside media Урок 70</li>
+    <li>Конспекты</li>
+    </ol>
     </span><br />
     <span class="small">
     YouTube Rdavydov laravel,
@@ -33,7 +38,10 @@ let tasks = [
     JAVASCRIPT / NODE / NEST
     </span><br />
     <span class="task_description">
-    YouTube Илья Кантор node от а до я Урок 19 (по 2 урока и 5 пунктов конспекта)
+    <ol class="each_task">
+    <li class="target">YouTube Илья Кантор node от а до я Урок 19</li>
+    <li>Конспекты</li>
+    </ol>
     </span><br />
     <span class="small">
     YouTube #JS Code nest js Урок 1,
@@ -50,7 +58,10 @@ let tasks = [
     DATABASES / GIT / OS
     </span><br />
     <span class="task_description">
-    Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (по 1 урок и 5 пунктов конспекта)
+    <ol class="each_task">
+    <li class="target">Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community</li>
+    <li>Конспекты</li>
+    </ol>
     </span> <br />
     <span class="small">
     YouTube школа itProger mysql урок 1
@@ -70,12 +81,31 @@ let tasks = [
     RUBY ON RAILS
     </span><br />
     <span class="task_description">
-    YouTube Alexander Batashov Ruby урок 45 (по 4 урока и 5 пунктов конспекта)
+    <ol class="each_task">
+    <li class="target">YouTube Alexander Batashov Ruby урок 45</li>
+    <li>Конспекты</li>
+    </ol>
     </span> <br />
     <span class="small">
     YouTube Alexander Batashov Ruby on Rails (урок 13),
     YouTube Sidekiq Redis Jsr ka Ladka
     YouTube GraphQL Course - Beginner To Expert,
     books ruby
+    </span>`,
+
+    `<span class="task_title">
+    SELF DEVELOPMENT
+    </span><br />
+    <span class="task_description">
+    <ol class="each_task">
+    <li class="target">Чтение Библии книга</li>
+    <li>Чтение Библии приложение</li>
+    <li>Арифметика уроки Да Винчи</li>
+    <li>Английский язык</li>
+    <li>Религия написание письма</li>
+    </ol>
+    </span> <br />
+    <span class="small">
+    
     </span>`,
 ];
