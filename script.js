@@ -3,12 +3,14 @@ let node = document.getElementById('node');
 let add_techno = document.getElementById('add_techno');
 let ruby = document.getElementById('ruby');
 let selfdev = document.getElementById('selfdev')
+let java = document.getElementById('java')
 
 php.addEventListener('click', showTutorial);
 node.addEventListener('click', showTutorial);
 add_techno.addEventListener('click', showTutorial);
 ruby.addEventListener('click', showTutorial);
 selfdev.addEventListener('click', showTutorial)
+java.addEventListener('click', showTutorial)
 
   function showTutorial() {
     let target = this.id;
@@ -26,6 +28,9 @@ selfdev.addEventListener('click', showTutorial)
         case "selfdev":
         taskIndex = 4;
         break; 
+        case "java":
+        taskIndex = 5;
+        break;
     }
     let html = "";
     let tutorialPart = document.getElementById('called_tutorial');
@@ -57,6 +62,6 @@ selfdev.addEventListener('click', showTutorial)
   get_task.addEventListener('click', getRandomTask);
 
   function getRandomTask() {
-    let task = Math.floor(Math.random() * 5);
+    let task = Math.floor(Math.random() * 6);
     showTask(task)
   }
