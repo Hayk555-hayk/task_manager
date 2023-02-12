@@ -152,5 +152,50 @@ let node_data = [
     </div>`,
     `<div>(node)
     debugger; в коде js выполняет дебаг кода, команда count продолжит выполнение кода 
+    </div>`,
+    `<div>(node)
+    Модуль debug хорошо используется для дебага
+    <pre>
+    // server file
+    var debug = require('debug')('server');
+
+    debug("message")
+
+    // request file
+    var debug = require('debug')('server:request');
+
+    debug("message")
+
+    *DEBUG=server (windows: set DEBUG=server) node server js*
+    -----------------------------------------------------------
+    var log = require('winston');
+
+    log.info('message', param1, param2);
+    log.debug('message');
+    log.error('message');
+    -----------------------------------------------------------
+    NODE_DEBUG="http net" node server.js // will debug all information 
+    </pre>
+    </div>`,
+    `<div>(node)
+    
+    <pre>
+    var http = require('http');
+    var fs = require('fs');
+    
+    http.createServer(function (req, res) {
+        var info;
+        
+        if(req.url == '/') {
+            // Sync -----------------------------------
+            info = fs.readFileSync('index.html');
+            res.end(info);
+            // Async -----------------------------------
+            fs.readFile('index.js', function(err, info) {
+                res.end(info);
+            })
+        }
+    }).listen(3000);
+    </pre>
     </div>`
 ]

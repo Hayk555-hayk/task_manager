@@ -892,5 +892,25 @@ let ruby_data = [
         end
     end
     </pre>
+    </div>`,
+    `<div>(ruby)
+    Proc.new {} или proc {} - Создание нового обьекта proc<br />
+    lambda это тоже блок с кодом, но в отличии от proc она всегда проверяет число аргументов 
+    <pre>
+    x = prox {|var| puts var}
+    x.call 55 //55
+
+    y = lambda {|var| puts var}
+    y.call :55 //55
+
+    // Target class
+    def show_info_about(attribute, block)
+        show_info_about ||= {} // define a var that is an empty hash
+        sshow_info_about[attribute] = block
+    end
+
+    // Checking some weight variable 
+    show_info_about :weight, lambda { |attr| attr > 10 }
+    </pre>
     </div>`
 ]

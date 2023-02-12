@@ -20,8 +20,8 @@ let tasks = [
     </span><br />
     <span an class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube surfside media Урок 70</li>
-    <li>Конспекты</li>
+    <li>YouTube surfside media (72)</li>
+    <li  class="target">Конспекты</li>
     </ol>
     </span><br />
     <span class="small">
@@ -37,12 +37,12 @@ let tasks = [
     </span>`,
 
     `<span class="task_title">
-    JAVASCRIPT / NODE / NEST
+    JS / NODE / NEST / REACT
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube Илья Кантор node от а до я Урок 19</li>
-    <li>Конспекты</li>
+    <li>YouTube Илья Кантор node от а до я (21)</li>
+    <li class="target">Конспекты</li>
     </ol>
     </span><br />
     <span class="small">
@@ -53,6 +53,13 @@ let tasks = [
     Documentation Metanit mongodb,
     documentation docs nest com,
     Documentation typescript Metanit,
+    YouTube Ulbi TV React,
+    YouTube Codevolution React Redux tutorial,
+    YouTube The net ninja all MERN videos,
+    Documentation React metanit,
+    Documentation React code.mu,
+    YouTube Next js codevolution,
+    Documentation Next js next org
     books node
     </span>`,
 
@@ -61,8 +68,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community</li>
-    <li>Конспекты</li>
+    <li>Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (2)</li>
+    <li class="target">Конспекты</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -84,13 +91,12 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube Alexander Batashov Ruby урок 45</li>
-    <li>Конспекты</li>
+    <li>YouTube Alexander Batashov Ruby on Rails (13)</li>
+    <li class="target">Конспекты</li>
     </ol>
     </span> <br />
     <span class="small">
-    YouTube Alexander Batashov Ruby on Rails (урок 13),
-    YouTube Sidekiq Redis Jsr ka Ladka
+    YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert,
     books ruby
     </span>`,
@@ -121,8 +127,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube изучем java создай проект</li>
-    <li>Конспекты</li>
+    <li>YouTube изучем java создай проект (4)</li>
+    <li class="target">Конспекты</li>
     </ol>
     </span> <br />
     <span class="small">

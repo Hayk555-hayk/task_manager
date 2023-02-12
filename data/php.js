@@ -1402,5 +1402,18 @@ public function submitForm() {
     some html with interpolating an error
 @enderror
 </pre>
+</div>`,
+`<div>(laravel)
+    Пагинация в Livewire компонентах 
+    <pre>
+    1. add this namespace in the component 
+    use Livewire/WithPagination; // new namespace
+    use WithPagination; // Add in class
+    2. select from db
+    $users = User::paginate(5);
+    3. return view
+    return view('view-name',['users'=>$users]);
+    4. use {{$users->links()}} in blade for pagination
+    </pre>
 </div>`
 ]

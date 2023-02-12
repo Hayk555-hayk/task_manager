@@ -56,6 +56,63 @@ let techno = [
             git remote -v покажет origin<br />
             git remote add origin path_of_repository если нет origin но как правило он автоматически сгенерируется <br />
         </div>`,
-`<div>(git)
-    Чтобы получить новые ветки нужна комманда git fetch
-</div>`,]
+        `<div>(git)
+            Чтобы получить новые ветки нужна комманда git fetch
+        </div>`,
+        `<div>(elastic)
+        Шаги работы эластик search - client -> server -> search query to elastic search<br />
+        -> elastic search response to the server -> server respons to the client <br />
+        Kibana помогает визуализировать данные, сущности эластик поиска является node которые находятся в cluster-e <br />
+        В cluster-e находятся множество node-ов, все node-ы находятся в разных серверах, но поскольку они пренадлежат <br/>
+        одному кластеру то задача выполняется как из одного компьютера, у node-ов множество ролей одна из них хранение данных <br />
+        Данные хранятся как документы в формате json, можно индексировать данные это поможет осуществить более быстрый поиск <br/>
+        Каждая node может хранить данные, поиск данных из множество node происходит за раз, вот поэтому правельнее хранить данные <br/>
+        во множественных node-ах, если одна из node упадет то все данные будут потеряны, для того чтобы не допустить этого <br/>
+        нужно копировать данные в разных node-ах 
+        <pre>
+        bin/elasticsearch // will start elastic search, you should start this command from the elastic search folder 
+        // 127.0.0.1:9200 port will allow us to use elastic search api 
+        // curl command to http://localhost:9200/ will show all information about elastic search
+        // bin/kibana will run kibana interface will run at http://localhost:5601/ (dashboard)
+        // we can change elastic search name (elasticsearch will give us some folders as laravel or rails)
+        // elasticsearch.yml at line 17 cluster.name, uncomment it and add your cluster name 
+        // at the same file you can change node.name
+        // At kibana search console you can make queries 
+        GET _cluster/health 
+        GET _nodes/status
+        PUT some_title_index // creating some index
+
+        // Query with index in elastic search
+        POST some_title_index/_doc {
+            "key":"value"
+        }
+
+        // Creating 
+        PUT some_title_index/_create/1 {
+            "key":"value"
+        }
+
+        // Updating 
+        POST some_title_index/_update/1 {
+            "key":"value"
+        }
+
+        // Creating or updating some data
+        PUT some_title_index/_doc/1 {
+            "key":"value"
+        }
+        PUT some_title_index/_doc/2 {
+            "key":"value"
+        }
+
+        // Getting some data 
+        GET some_title_index/_doc/2
+
+        // Delete
+        DELETE some_title_index/_doc/2
+
+        // _version in response will show how many times target data was updated 
+
+        </pre>
+        </div>`,
+    ]
