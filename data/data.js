@@ -20,8 +20,8 @@ let tasks = [
     </span><br />
     <span an class="task_description">
     <ol class="each_task">
-    <li>YouTube surfside media (72)</li>
-    <li  class="target">Конспекты</li>
+    <li class="target">YouTube surfside media (72)</li>
+    <li>Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -42,7 +42,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>YouTube Илья Кантор node от а до я (21)</li>
-    <li class="target">Конспекты</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -69,7 +69,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (2)</li>
-    <li class="target">Конспекты</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -92,7 +92,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>YouTube Alexander Batashov Ruby on Rails (13)</li>
-    <li class="target">Конспекты</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -106,15 +106,15 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">Чтение Библии книга</li>
-    <li>Чтение Библии приложение</li>
+    <li class="target">Чтение Библии книга чтение по 40 минут</li>
+    <li>Чтение Библии приложение чтение по 40 минут</li>
     <li>Арифметика уроки Да Винчи</li>
     <li>Английский язык</li>
     <li>Испанский язык</li>
     <li>Немецкий язык</li>
     <li>Японский язык</li>
     <li>Иврит</li>
-    <li>Японский и Иврит алфавит</li>
+    <li>Японский и Иврит алфавит изучение по 40 минут</li>
     <li>Религия написание письма</li>
     </ol>
     </span> <br />
@@ -128,7 +128,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>YouTube изучем java создай проект (4)</li>
-    <li class="target">Конспекты</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">

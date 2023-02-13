@@ -139,3 +139,7 @@ pre::-webkit-scrollbar-thumb {
 #the_task::-webkit-scrollbar-thumb {
     border-radius: 0px;
 }
+
+.checkpoint {
+    background-color: lime;
+}

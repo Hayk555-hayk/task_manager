@@ -360,7 +360,7 @@ let php_data = [
     checkdate(12, 305, 1994) // return nothing as the date is not correct
     </pre>
     </div>`,
-    `<div>(php)
+    `<div class="checkpoint">(php)
     Математические и строковые функции 
     <pre>
     abs(-20) // module of the num return 20
