@@ -141,5 +141,6 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .checkpoint {
-    background-color: lime;
+    background-color: rgb(54, 121, 54);
+    color: #fff;
 }

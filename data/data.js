@@ -70,8 +70,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (2)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li class="target">Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (2)</li>
+    <li>Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -98,7 +98,7 @@ let tasks = [
     </ol>
     </span> <br />
     <span class="small">
-    YouTube Super Ruby By Yaraslav Shamanov
+    YouTube Super Ruby By Yaraslav Shamanov (2)
     YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert,
     books ruby

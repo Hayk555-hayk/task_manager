@@ -46,7 +46,7 @@ let techno = [
         </div>`,
        `<div>(git)
             Для обьединения веток переходим в нужную ветку допустим master и прописываем git merge branchName <br />
-            Если возникают конфликты, решаем их и после git add . , git commit, wg enter <br /
+            Если возникают конфликты, решаем их и после git add . , git commit, wg enter <br />
         </div>`,
         `<div>(git)
             Работа с online репазиторием <br />
@@ -59,7 +59,7 @@ let techno = [
         `<div>(git)
             Чтобы получить новые ветки нужна комманда git fetch
         </div>`,
-        `<div>(elastic)
+        `<div class="checkpoint">(elastic)
         Шаги работы эластик search - client -> server -> search query to elastic search<br />
         -> elastic search response to the server -> server respons to the client <br />
         Kibana помогает визуализировать данные, сущности эластик поиска является node которые находятся в cluster-e <br />

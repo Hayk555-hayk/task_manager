@@ -912,5 +912,69 @@ let ruby_data = [
     // Checking some weight variable 
     show_info_about :weight, lambda { |attr| attr > 10 }
     </pre>
+    </div>`,
+    `<div>(rails)
+    Интеграция платежной системы stripe <br />
+    rails g scaffold product name price:integer <br />
+    Для stripe данные о ценах хранаятся не в типе флоат а в интегер к примеру 100 10 долларов это 1000 центов <br />
+    Добавляем gem "stripe", из профиля stripe генерируем api key (developers - api keys) нужно найти secret test key<br />
+    В config/initializer создадим stripe.rb и там пропишем 
+    <pre>
+    Stripe.api_key = "sk_test_asjeur83y4v8ynw384ntwvyn485ventiuy"
+    </pre>
+    Теперь в консоле можно вызвать Stripe::Customer.list() <br />
+    Создание клиента Stripe::Customer.create(email: 'email') клиентов можно просмотреть из dashboard <br />
+    Создания стандартного чекоута для покупки товаров (можно создавать как в контроллере так и в мутации) 
+    <pre>
+    product = product.find(params[:id])
+    @session = Stripe::Checkout::Session.create({
+        payment_method_types: ["card"],
+        line_items: [
+            {
+                name: product.name,
+                amount: product.price,
+                currency: "usd",
+                quantity: 1
+            }
+        ],
+        mode: 'payment',
+        success_url: "some url",
+        cancel_url: "some url",
+    })
+    //Некоторые манипуляции нужно выполнять в js файлах
+    respond_to do |format|
+        format.js
+    end
+    </pre>
+    После того как была сделана пакупка наше приложение не знает об этом, для этого есть webhook (developers - webhooks) <br />
+    Создадим контроллер для webhook
+    <pre>
+    scip_before_action :verify_authenticity_token
+    def create
+        payload = request.body.read
+        sig_header = request.env['HTTP_STRIPE_SIGNATURE']
+        event = nil
+
+        begin
+            event = Stripe::Webhook.construct_event(
+                payload, sig_header, Rails.application.credentials[Rails.env.to_sym][:stripe][:webhook]
+            )
+        rescue JSON::ParseError => e
+            status 400
+            return
+        rescue Stripe::SignatureVerificationError => e
+            p "Signature error"
+            return
+        end
+
+        case event.type
+        when 'Checkout.session.completed'
+        session = event.data.object
+        @product = Product.find_by(price: session.amount_total)
+        @product.increment!(:sales_count)
+
+        render json: {message: 'success'}
+    end
+    </pre>
     </div>`
 ]
