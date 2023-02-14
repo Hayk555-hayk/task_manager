@@ -26,6 +26,7 @@ let tasks = [
     </span><br />
     <span class="small">
     YouTube Rdavydov laravel,
+    YouTube Best Laravel PayPal (JsonFullstack)
     YouTube Laravel Lighthouse/GraphQL
     Documentation Laravel su урок 11,
     YouTube laravel + redis,
@@ -47,10 +48,11 @@ let tasks = [
     </span><br />
     <span class="small">
     YouTube #JS Code nest js Урок 1,
-    Владилен typescript,
+    YouTube Владилен typescript,
     YouTube the net ninja all js and typescript playlists,
     Documentation Metanit node,
     Documentation Metanit mongodb,
+    YouTube Talented developer stripe with node
     documentation docs nest com,
     Documentation typescript Metanit,
     YouTube Ulbi TV React,
@@ -96,6 +98,7 @@ let tasks = [
     </ol>
     </span> <br />
     <span class="small">
+    YouTube Super Ruby By Yaraslav Shamanov
     YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert,
     books ruby
