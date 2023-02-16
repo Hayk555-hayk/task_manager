@@ -177,8 +177,8 @@ let node_data = [
     NODE_DEBUG="http net" node server.js // will debug all information 
     </pre>
     </div>`,
-    `<div>(node)
-    
+    `<div class="checkpoint">(node)
+    Синхронное и асинхронное программирование 
     <pre>
     var http = require('http');
     var fs = require('fs');

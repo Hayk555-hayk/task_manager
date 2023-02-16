@@ -34,7 +34,19 @@ let tasks = [
     Documentation code mu php урок 9,
     Documentation code mu oop & mvc,
     YouTube agoalofalife орхид,
-    books php
+    books php,
+    PHP ordinary CRUD APP,
+    Laravel ordinary CRUD APP,
+    PHP GraphQL CRUD APP,
+    Laravel GraphQL CRUD APP,
+    PHP ordinary elastic-search CRUD APP,
+    Laravel ordinary elastic-search CRUD APP,
+    PHP GraphQ elastic-searchL CRUD APP,
+    Laravel GraphQL elastic-search CRUD APP,
+    PHP ordinary stripe-api CRUD APP,
+    Laravel ordinary stripe-api CRUD APP,
+    PHP GraphQL stripe-api CRUD APP,
+    Laravel GraphQl stripe-api CRUD APP,
     </span>`,
 
     `<span class="task_title">
@@ -42,8 +54,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube Илья Кантор node от а до я (21)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li class="target">YouTube Илья Кантор node от а до я (21)</li>
+    <li>Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -61,8 +73,20 @@ let tasks = [
     Documentation React metanit,
     Documentation React code.mu,
     YouTube Next js codevolution,
-    Documentation Next js next org
-    books node
+    Documentation Next js next org,
+    books node,
+    Node ordinary CRUD APP,
+    Nest ordinary CRUD APP,
+    Node GraphQL CRUD APP,
+    Nest GraphQL CRUD APP,
+    Node ordinary elastic-search CRUD APP,
+    Nest ordinary elastic-search CRUD APP,
+    Node GraphQ elastic-searchL CRUD APP,
+    Nest GraphQL elastic-search CRUD APP,
+    Node ordinary stripe-api CRUD APP,
+    Nest ordinary stripe-api CRUD APP,
+    Node GraphQL stripe-api CRUD APP,
+    Nest GraphQl stripe-api CRUD APP,
     </span>`,
 
     `<span class="task_title">
@@ -101,7 +125,19 @@ let tasks = [
     YouTube Super Ruby By Yaraslav Shamanov (2)
     YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert,
-    books ruby
+    books ruby,
+    Ruby ordinary CRUD APP,
+    Rails ordinary CRUD APP,
+    Ruby GraphQL CRUD APP,
+    Rails GraphQL CRUD APP,
+    Ruby ordinary elastic-search CRUD APP,
+    Rails ordinary elastic-search CRUD APP,
+    Ruby GraphQ elastic-searchL CRUD APP,
+    Rails GraphQL elastic-search CRUD APP,
+    Ruby ordinary stripe-api CRUD APP,
+    Rails ordinary stripe-api CRUD APP,
+    Ruby GraphQL stripe-api CRUD APP,
+    Rails GraphQl stripe-api CRUD APP,
     </span>`,
 
     `<span class="task_title">
@@ -109,9 +145,9 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">Чтение Библии книга чтение по 40 минут</li>
+    <li>Чтение Библии книга чтение по 40 минут (10-7)</li>
     <li>Чтение Библии приложение чтение по 40 минут</li>
-    <li>Арифметика уроки Да Винчи</li>
+    <li class="target">Арифметика уроки Да Винчи</li>
     <li>Английский язык</li>
     <li>Испанский язык</li>
     <li>Немецкий язык</li>
@@ -120,9 +156,6 @@ let tasks = [
     <li>Японский и Иврит алфавит изучение по 40 минут</li>
     <li>Религия написание письма</li>
     </ol>
-    </span> <br />
-    <span class="small">
-    
     </span>`,
 
     `<span class="task_title">
@@ -130,11 +163,23 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube изучем java создай проект (4)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li class="target">YouTube изучем java создай проект (4)</li>
+    <li>Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
-    YouTube Гоша Дударь spring, YouTube Alishev spring, Books Java
+    YouTube Гоша Дударь spring, YouTube Alishev spring, Books Java,
+    Java ordinary CRUD APP,
+    Spring ordinary CRUD APP,
+    Java GraphQL CRUD APP,
+    Spring GraphQL CRUD APP,
+    Java ordinary elastic-search CRUD APP,
+    Spring ordinary elastic-search CRUD APP,
+    Java GraphQ elastic-searchL CRUD APP,
+    Spring GraphQL elastic-search CRUD APP,
+    Java ordinary stripe-api CRUD APP,
+    Spring ordinary stripe-api CRUD APP,
+    Java GraphQL stripe-api CRUD APP,
+    Spring GraphQl stripe-api CRUD APP,
     </span>`,    
 ];
