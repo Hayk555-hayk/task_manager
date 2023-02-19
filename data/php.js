@@ -1415,5 +1415,130 @@ public function submitForm() {
     return view('view-name',['users'=>$users]);
     4. use {{$users->links()}} in blade for pagination
     </pre>
+</div>`,
+`<div>(laravel)
+Sanctum auth
+<pre>
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel/Sanctum/SanctumServiceProvider"
+php artisan migrate
+
+// http/kernel.php inside api array add this
+/Laravel/Sanctum/Http/Middleware/EnsureFrontendRequestsAreStateful::class,
+
+// User model
+use Laravel/Sanctum/HasApiTokens;
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+}
+
+// Make new controller for auth 
+php artisan make:controller AuthController
+public function register(Requset $request) 
+{
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    if($validator->fails()) {
+        return response()->json(['status_code' => 400, 'message' => 'Bad request']);
+    }
+
+    $user = new User();
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = bcrypt($request->password);
+    $user->save();
+
+    return response()->json([
+        'status_code' => 200,
+        'message' => 'User created'
+    ]);
+}
+
+public function login(Request $request)
+{
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    if($validator->fails()) {
+        return response()->json(['status_code' => 400, 'message' => 'Bad request']);
+    }
+
+    $credentials = request(['email', 'password']);
+
+    if(!Auth::attempt($credentials)) {
+        return response()->json([
+            'status_code' => 500,
+            'message' => 'Unauthorized'
+        ]);
+    }
+
+    $user = User::where('email', $request->email)->first();
+    $tokenResult = $user->createToken('authToken')->PlainTextToken;
+    
+    return response()->json([
+        'status_code' => 200,
+        'token' => $tokenResult
+    ]);
+}
+
+publick function logout(Request $request) 
+{
+    $request->user()->currentAccessToken()->delete();
+    return response()->json([
+        'status_code' => 200,
+        'message' => 'Token deleted'
+    ]);
+}
+
+// Create Routes for this routes
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    // all routs for loged in user
+})
+</pre>
+</div>`,
+`<div>(laravel)
+Множественная authentication
+<pre>
+composer require laravel/Jetstream
+php artisan jetstream:install liveware
+
+// open user table migration add add
+$table->string('utype')->default('USR')->comment('ADM for admin and USR for normal user');
+
+// In middleware folder inside AuthAdmin.php add 
+public function handle(Request $request, Closure $next) 
+{
+    if(session('utype') === 'ADM') {
+        return $next($request);
+    } else {
+        session()->flush();
+        return redirect()->route('login');
+    }
+    return $next($request);
+}
+
+// In http kernel.php routeMiddleware array add
+'authadmin' => /App/Http/Middleware/AuthAdmin::class
+
+// In ROuteServiceProvider add 
+public const HOME = '/user/dashboard';
+public const ADMIN_HOME = '/admin/dashboard';
+
+// In resources videws layouts add 
+admin.blade.php file
+
+// In app/view/components add AdminLayout.php 
+// Inside that new layout return view('layouts.php')
+</pre>
 </div>`
 ]

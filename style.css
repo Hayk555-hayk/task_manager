@@ -144,3 +144,9 @@ pre::-webkit-scrollbar-thumb {
     background-color: rgb(54, 121, 54);
     color: #fff;
 }
+
+.lesson_img {
+    display: block;
+    height: 500px;
+    margin: 0 auto;
+}

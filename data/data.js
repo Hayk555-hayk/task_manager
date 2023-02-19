@@ -20,12 +20,11 @@ let tasks = [
     </span><br />
     <span an class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube surfside media (72)</li>
-    <li>Конспекты чтение по 40 минут</li>
+    <li>YouTube Rdavydov laravel(1)</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
-    YouTube Rdavydov laravel,
     YouTube Best Laravel PayPal (JsonFullstack)
     YouTube Laravel Lighthouse/GraphQL
     Documentation Laravel su урок 11,
@@ -54,8 +53,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube Илья Кантор node от а до я (21)</li>
-    <li>Конспекты чтение по 40 минут</li>
+    <li>YouTube Илья Кантор node от а до я (23)</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -147,14 +146,15 @@ let tasks = [
     <ol class="each_task">
     <li>Чтение Библии книга чтение по 40 минут (10-7)</li>
     <li>Чтение Библии приложение чтение по 40 минут</li>
-    <li class="target">Арифметика уроки Да Винчи</li>
-    <li>Английский язык</li>
+    <li>Арифметика уроки Да Винчи (5кл-5)</li>
+    <li class="target">Английский язык</li>
     <li>Испанский язык</li>
     <li>Немецкий язык</li>
     <li>Японский язык</li>
     <li>Иврит</li>
     <li>Японский и Иврит алфавит изучение по 40 минут</li>
     <li>Религия написание письма</li>
+    <li>Чтение конспектов 40 минут</li>
     </ol>
     </span>`,
 
