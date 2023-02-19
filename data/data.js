@@ -53,7 +53,7 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube Илья Кантор node от а до я (23)</li>
+    <li>YouTube Илья Кантор node от а до я (26)</li>
     <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span><br />
@@ -116,7 +116,7 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube Alexander Batashov Ruby on Rails (13)</li>
+    <li>YouTube Alexander Batashov Ruby on Rails (17)</li>
     <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
@@ -163,7 +163,7 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube изучем java создай проект (4)</li>
+    <li class="target">YouTube изучем java создай проект (6)</li>
     <li>Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />

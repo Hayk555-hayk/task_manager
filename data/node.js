@@ -177,7 +177,7 @@ let node_data = [
     NODE_DEBUG="http net" node server.js // will debug all information 
     </pre>
     </div>`,
-    `<div class="checkpoint">(node)
+    `<div>(node)
     Синхронное и асинхронное программирование 
     <pre>
     var http = require('http');
@@ -198,10 +198,16 @@ let node_data = [
     }).listen(3000);
     </pre>
     </div>`,
-    `<div>(node)
+    `<div class="checkpoint">(node)
     Библиотека LibUv встроенна в node JS и отвечает за кросплатформенный ввод и вывод а так же <br />
     поддержка основного событийного цикла в node js <br />
     process.memoryUsage( даст информацию об использовании памяти) <br />
     Если есть активный таймер то процесс не будет завершен
+    </div>`,
+    `<div>(node)
+    Работа с файлами и дерикториями происходит так что у всех методов есть две имини одна просто имя другая с добавлением слово sync <br />
+    Есть два основных типа потоков данных <br />
+    1. stream.Readble - чтение (req, fs.ReadStream) <br />
+    2. stream.Writable - запись (res, fs.WriteStream)
     </div>`
 ]

@@ -524,7 +524,7 @@ let ruby_data = [
     // add picture to new method of creating new data 
     </pre>
     </div>`,
-    `<div> (rails)
+    `<div class="checkpoint"> (rails)
         Использование Graphql с Ruby <br />
         Существует три типа операций, которые моделирует GraphQL: <br />
         query – выборка только для чтения. <br />
@@ -911,6 +911,23 @@ let ruby_data = [
 
     // Checking some weight variable 
     show_info_about :weight, lambda { |attr| attr > 10 }
+    </pre>
+    </div>`,
+    `<div>(rails)
+    Разница между редирект и рендер 
+    <pre>
+    redirect_to '/items'
+    render 'items/index' // теряет доступ к переменным метода
+    </pre>
+    Если в нескольких методах выполняется один и тот же код то его можно сократить следующим образом 
+    <pre>
+    before_action :find_item, only: i%[show update destroy edit]
+
+    // private method in controller
+    def find_item
+        @item = Item.where(id: params[:id]).find
+    end
+    // В вышеуказанных методах можно использовать готовый @item 
     </pre>
     </div>`,
     `<div>(rails)
