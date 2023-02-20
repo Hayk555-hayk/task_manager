@@ -93,8 +93,8 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (2)</li>
-    <li>Конспекты чтение по 40 минут</li>
+    <li>Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (3)</li>
+    <li class="target">Конспекты чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">

@@ -112,7 +112,21 @@ let techno = [
         DELETE some_title_index/_doc/2
 
         // _version in response will show how many times target data was updated 
-
         </pre>
         </div>`,
+        `<div>(elastic)
+        Способ и архитектура запроса похожа на GraphQL архетиктуру
+        <pre>
+        GET news_headlines/_search
+        {
+            "query": {
+                "match": {
+                    "headline": {
+                        "query": "Some search"
+                    }
+                }
+            }
+        }
+        </pre>
+        </div>`
     ]
