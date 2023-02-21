@@ -20,11 +20,14 @@ let tasks = [
     </span><br />
     <span an class="task_description">
     <ol class="each_task">
-    <li>YouTube Rdavydov laravel(1)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li>Практика: PHP ordinary CRUD APP</li>
+    <li>Теория: Просмотр примера создания сайта согласно практике</li>
+    <li>Теория: YouTube Rdavydov laravel(1)</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span><br />
     <span class="small">
+    ТЕОРИЯ <br/>
     YouTube Best Laravel PayPal (JsonFullstack)
     YouTube Laravel Lighthouse/GraphQL
     Documentation Laravel su урок 11,
@@ -33,8 +36,8 @@ let tasks = [
     Documentation code mu php урок 9,
     Documentation code mu oop & mvc,
     YouTube agoalofalife орхид,
-    books php,
-    PHP ordinary CRUD APP,
+    books php
+    <br/>ПРАКТИКА <br/>
     Laravel ordinary CRUD APP,
     PHP GraphQL CRUD APP,
     Laravel GraphQL CRUD APP,
@@ -53,11 +56,14 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube Илья Кантор node от а до я (26)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li>Практика: Node ordinary CRUD APP</li>
+    <li>Теория: Просмотр примера создания сайта согласно практике</li>
+    <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span><br />
     <span class="small">
+    ТЕОРИЯ <br/>
     YouTube #JS Code nest js Урок 1,
     YouTube Владилен typescript,
     YouTube the net ninja all js and typescript playlists,
@@ -73,8 +79,8 @@ let tasks = [
     Documentation React code.mu,
     YouTube Next js codevolution,
     Documentation Next js next org,
-    books node,
-    Node ordinary CRUD APP,
+    books node
+    <br/>ПРАКТИКА <br/>
     Nest ordinary CRUD APP,
     Node GraphQL CRUD APP,
     Nest GraphQL CRUD APP,
@@ -93,11 +99,12 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (3)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
+    ТЕОРИЯ <br/>
     YouTube школа itProger mysql урок 1
     YouTube Аве кодер postgre,
     YouTube gungner it mongodb,
@@ -116,16 +123,19 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>YouTube Alexander Batashov Ruby on Rails (17)</li>
-    <li class="target">Конспекты чтение по 40 минут</li>
+    <li>Практика: Ruby ordinary CRUD APP</li>
+    <li>Теория: Просмотр примера создания сайта согласно практике</li>
+    <li>Теория: YouTube Alexander Batashov Ruby on Rails (17)</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
+    ТЕОРИЯ <br/>
     YouTube Super Ruby By Yaraslav Shamanov (2)
     YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert,
-    books ruby,
-    Ruby ordinary CRUD APP,
+    books ruby
+    <br/>ПРАКТИКА <br/>
     Rails ordinary CRUD APP,
     Ruby GraphQL CRUD APP,
     Rails GraphQL CRUD APP,
@@ -147,14 +157,14 @@ let tasks = [
     <li>Чтение Библии книга чтение по 40 минут (10-7)</li>
     <li>Чтение Библии приложение чтение по 40 минут</li>
     <li>Арифметика уроки Да Винчи (5кл-5)</li>
-    <li class="target">Английский язык</li>
+    <li>Английский язык</li>
     <li>Испанский язык</li>
     <li>Немецкий язык</li>
     <li>Японский язык</li>
     <li>Иврит</li>
     <li>Японский и Иврит алфавит изучение по 40 минут</li>
     <li>Религия написание письма</li>
-    <li>Чтение конспектов 40 минут</li>
+    <li>Чтение конспектов</li>
     </ol>
     </span>`,
 
@@ -163,13 +173,18 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li class="target">YouTube изучем java создай проект (6)</li>
-    <li>Конспекты чтение по 40 минут</li>
+    <li>Практика: Java ordinary CRUD APP</li>
+    <li>Теория: Просмотр примера создания сайта согласно практике</li>
+    <li>Теория: YouTube изучем java создай проект (8)</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
-    YouTube Гоша Дударь spring, YouTube Alishev spring, Books Java,
-    Java ordinary CRUD APP,
+    ТЕОРИЯ <br/>
+    YouTube Гоша Дударь spring,
+    YouTube Alishev spring,
+    Books Java
+    <br/>ПРАКТИКА <br/>
     Spring ordinary CRUD APP,
     Java GraphQL CRUD APP,
     Spring GraphQL CRUD APP,

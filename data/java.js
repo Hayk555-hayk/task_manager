@@ -53,5 +53,59 @@ let java_data = [
         }
     }
     </pre>
-    </div>`
+    </div>`,
+    `<div>(java)
+    Определение и типы переменных 
+    <pre>
+    byte varName = 1; (1bit)
+    short varName = 1; (2bit)
+    int varName = 1; (4bit)
+    long varName = 1; (bigest number)
+
+    float varName = 1.1
+    double varName = 1.1
+
+    char varName = 'c'
+
+    boolean varName = true
+
+    string varName = "kjj"
+
+    //usage example 1
+    public class SaveStudentValidator
+    {
+        public static void main(String[] args) {
+            NameData full_name; 
+            full_name = new NameData();
+            full_name.family = "ttt";
+            full_name.name = "ppp";
+
+            another_full_name = readNameData();
+
+            long num = getNum(full_name)
+            System.out.println(num)
+        }
+
+        static NameData readNameData() {
+            NameData names = new NameData();
+            return names;
+        }
+
+        static long getNum(NameData name) {
+            System.out.printl(name.family);
+            System.out.printl(name.name);
+
+            long x = 15456;
+            return x;
+        }
+    }
+
+    // Another file
+    public class NameData
+    {
+        string family;
+        string name;
+    }
+    </pre>
+    </div>`,
 ]

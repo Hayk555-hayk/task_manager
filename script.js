@@ -50,6 +50,11 @@ java.addEventListener('click', showTutorial)
       taskPopup.style.top = '15px';
       let targetTask = taskIndex;
       taskPopup.innerHTML = tasks[targetTask];
+
+      li_length = document.querySelectorAll('li');
+      random_li = Math.floor(Math.random() * li_length.length);
+      console.log(li_length[random_li].classList.add("target"));
+      
     } else {
       taskPopup.style.top = '-250px';
       taskPopup.innerHTML = "";

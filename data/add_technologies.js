@@ -59,7 +59,7 @@ let techno = [
         `<div>(git)
             Чтобы получить новые ветки нужна комманда git fetch
         </div>`,
-        `<div class="checkpoint">(elastic)
+        `<div>(elastic)
         Шаги работы эластик search - client -> server -> search query to elastic search<br />
         -> elastic search response to the server -> server respons to the client <br />
         Kibana помогает визуализировать данные, сущности эластик поиска является node которые находятся в cluster-e <br />
@@ -114,9 +114,10 @@ let techno = [
         // _version in response will show how many times target data was updated 
         </pre>
         </div>`,
-        `<div>(elastic)
+        `<div class="checkpoint">(elastic)
         Способ и архитектура запроса похожа на GraphQL архетиктуру
         <pre>
+        // match query
         GET news_headlines/_search
         {
             "query": {
@@ -127,6 +128,98 @@ let techno = [
                 }
             }
         }
+
+        // aggregations request get by category 
+        GET news_headlines/_search
+        {
+            "aggregations":{
+                "by_category": {
+                    "terms": {
+                        "field": "category",
+                        "size": 100
+                    }
+                }
+            }
+        }
+
+        // match phrase query
+        GET news_headlines/_search
+        {
+            "query": {
+                "match_phrase": {
+                    "headline": {
+                        "query": "Some search"
+                    }
+                }
+            }
+        }
+
+        //multi match query 
+        GET news_headlines/_search {
+            "query": {
+                "multi_match": {
+                    "query": "Michelle Obama",
+                    "fields": [
+                        "headline",
+                        "short_description",
+                        "authors"
+                    ]
+                }
+            }
+        }
+
+        //multi match query with type
+        GET news_headlines/_search {
+            "query": {
+                "multi_match": {
+                    "query": "Michelle Obama",
+                    "fields": [
+                        "headline",
+                        "short_description",
+                        "authors"
+                    ],
+                    "type": "phrase"
+                }
+            }
+        }
+
+        //bool query
+        GET my_index/_search
+            {
+            "query": {
+                "bool": {
+                "must": [
+                    {
+                    "match": {
+                        "field1": "value1"
+                    }
+                    },
+                    {
+                    "range": {
+                        "field2": {
+                        "gte": "2022-01-01",
+                        "lte": "2022-12-31"
+                        }
+                    }
+                    }
+                ],
+                "should": [
+                    {
+                    "match": {
+                        "field3": "value3"
+                    }
+                    }
+                ],
+                "must_not": [
+                    {
+                    "match": {
+                        "field4": "value4"
+                    }
+                    }
+                ]
+                }
+            }
+            }
         </pre>
-        </div>`
+        </div>`,
     ]
