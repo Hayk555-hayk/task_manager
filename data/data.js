@@ -23,7 +23,7 @@ let tasks = [
     <li>Практика: PHP ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Rdavydov laravel(1)</li>
-    <li>Конспекты: чтение</li>
+    <li>Конспекты: чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -59,7 +59,7 @@ let tasks = [
     <li>Практика: Node ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
-    <li>Конспекты: чтение</li>
+    <li>Конспекты: чтение по 40 минут</li>
     </ol>
     </span><br />
     <span class="small">
@@ -100,7 +100,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
-    <li>Конспекты: чтение</li>
+    <li>Конспекты: чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -126,7 +126,7 @@ let tasks = [
     <li>Практика: Ruby ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Alexander Batashov Ruby on Rails (17)</li>
-    <li>Конспекты: чтение</li>
+    <li>Конспекты: чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -176,7 +176,7 @@ let tasks = [
     <li>Практика: Java ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube изучем java создай проект (8)</li>
-    <li>Конспекты: чтение</li>
+    <li>Конспекты: чтение по 40 минут</li>
     </ol>
     </span> <br />
     <span class="small">
