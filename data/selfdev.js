@@ -33,6 +33,10 @@ let selfdev_data = [
     Все деления миллиметров на сантиметре это шкалы
     <img class="lesson_img" src="images/math/img2.png" />
     </div>`,
+    `<div>(Английский)
+    Presernt Simple настоящее простое время (Глагол + падлежащее) <br/>
+    I agree, I understandб You do it very well, I have a job, I really like - мне очень нравиться 
+    </div>`,
 
 
 
