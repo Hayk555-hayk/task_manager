@@ -23,7 +23,7 @@ let tasks = [
     <li>Практика: PHP ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Rdavydov laravel(1)</li>
-    <li>Конспекты: чтение по 40 минут</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span><br />
     <span class="small">
@@ -59,7 +59,7 @@ let tasks = [
     <li>Практика: Node ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
-    <li>Конспекты: чтение по 40 минут</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span><br />
     <span class="small">
@@ -100,7 +100,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
-    <li>Конспекты: чтение по 40 минут</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -126,7 +126,7 @@ let tasks = [
     <li>Практика: Ruby ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Alexander Batashov Ruby on Rails (22)</li>
-    <li>Конспекты: чтение по 40 минут</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -154,15 +154,15 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>Чтение Библии книга чтение по 40 минут (10-7)</li>
-    <li>Чтение Библии приложение чтение по 40 минут</li>
+    <li>Чтение Библии книга чтение (10-7)</li>
+    <li>Чтение Библии приложение чтение</li>
     <li>Арифметика уроки Да Винчи (5кл-5)</li>
     <li>Английский язык с нуля за 50 уроков (3)</li>
     <li>Испанский язык</li>
     <li>Немецкий язык</li>
     <li>Японский язык</li>
     <li>Иврит</li>
-    <li>Японский и Иврит алфавит изучение по 40 минут</li>
+    <li>Японский и Иврит алфавит изучение</li>
     <li>Религия написание письма</li>
     <li>Чтение конспектов</li>
     <li>Создание словаря из 1500 слов</li>
@@ -177,7 +177,7 @@ let tasks = [
     <li>Практика: Java ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube изучем java создай проект (8)</li>
-    <li>Конспекты: чтение по 40 минут</li>
+    <li>Конспекты: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
