@@ -931,6 +931,31 @@ let ruby_data = [
     </pre>
     </div>`,
     `<div>(rails)
+    В application_controller можно определить def render_403 и def render_404 для того чтобы определить страници с ошибками<br />
+    Можно возвращать данные render file: 'public/404.html', status: :not_found или render_404 <br />
+    Отношения моделей между собой 
+    <pre>
+    // user model
+    has_many: carts
+    // cart model 
+    belongs_to: user
+    </pre>
+    Есть так же и связь has_and_belongs_to_meny здесь к примеру user может иметь много cart и cart могут иметь много user
+    </div>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+    `<div>(rails)
     Интеграция платежной системы stripe <br />
     rails g scaffold product name price:integer <br />
     Для stripe данные о ценах хранаятся не в типе флоат а в интегер к примеру 100 10 долларов это 1000 центов <br />
