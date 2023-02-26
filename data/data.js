@@ -24,6 +24,7 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Rdavydov laravel(1)</li>
     <li>Конспекты: чтение</li>
+    <li>Книги по PHP: чтение</li>
     </ol>
     </span><br />
     <span class="small">
@@ -35,8 +36,7 @@ let tasks = [
     Documentation laravel demiart,
     Documentation code mu php урок 9,
     Documentation code mu oop & mvc,
-    YouTube agoalofalife орхид,
-    books php
+    YouTube agoalofalife орхид
     <br/>ПРАКТИКА <br/>
     Laravel ordinary CRUD APP,
     PHP GraphQL CRUD APP,
@@ -60,6 +60,7 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
     <li>Конспекты: чтение</li>
+    <li>Книги по NODE: чтение</li>
     </ol>
     </span><br />
     <span class="small">
@@ -78,8 +79,7 @@ let tasks = [
     Documentation React metanit,
     Documentation React code.mu,
     YouTube Next js codevolution,
-    Documentation Next js next org,
-    books node
+    Documentation Next js next org
     <br/>ПРАКТИКА <br/>
     Nest ordinary CRUD APP,
     Node GraphQL CRUD APP,
@@ -101,6 +101,7 @@ let tasks = [
     <ol class="each_task">
     <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
     <li>Конспекты: чтение</li>
+    <li>Книги по программированию: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -114,8 +115,7 @@ let tasks = [
     YouTube the net ninja json server,
     YouTube msft webcast windows,
     YouTube learn linux tv centos,
-    YouTube JavaScript ru git,   
-    books base
+    YouTube JavaScript ru git
     </span>`,
 
     `<span class="task_title">
@@ -127,14 +127,14 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Alexander Batashov Ruby on Rails (22)</li>
     <li>Конспекты: чтение</li>
+    <li>Книги по BASE: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
     ТЕОРИЯ <br/>
     YouTube Super Ruby By Yaraslav Shamanov (2)
     YouTube Sidekiq Redis Jsr ka Ladka,
-    YouTube GraphQL Course - Beginner To Expert,
-    books ruby
+    YouTube GraphQL Course - Beginner To Expert
     <br/>ПРАКТИКА <br/>
     Rails ordinary CRUD APP,
     Ruby GraphQL CRUD APP,
@@ -178,13 +178,13 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube изучем java создай проект (8)</li>
     <li>Конспекты: чтение</li>
+    <li>Книги по JAVA: чтение</li>
     </ol>
     </span> <br />
     <span class="small">
     ТЕОРИЯ <br/>
     YouTube Гоша Дударь spring,
     YouTube Alishev spring,
-    Books Java
     <br/>ПРАКТИКА <br/>
     Spring ordinary CRUD APP,
     Java GraphQL CRUD APP,

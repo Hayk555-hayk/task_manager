@@ -941,7 +941,7 @@ let ruby_data = [
     belongs_to: user
     </pre>
     Есть так же и связь has_and_belongs_to_meny здесь к примеру user может иметь много cart и cart могут иметь много user
-    </div>`
+    </div>`,
 
 
 
