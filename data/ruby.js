@@ -940,7 +940,27 @@ let ruby_data = [
     // cart model 
     belongs_to: user
     </pre>
-    Есть так же и связь has_and_belongs_to_meny здесь к примеру user может иметь много cart и cart могут иметь много user
+    Есть так же и связь has_and_belongs_to_meny здесь к примеру user может иметь много cart и cart могут иметь много user <br /
+    has_many :through связь 
+    <pre>
+    // items model---------------------
+    has_many :positions
+    has_many :cards, trough: :positions
+    // card model----------------------
+    has_many :positions
+    has_many :items, trough: :positions
+    // positions model-----------------
+    belongs_to :card
+    belongs_to :item
+    </pre>
+    </div>`,
+    `<div>(rails)
+    Названия паршиалов начинается с нижнего подчеркивания <br />
+    Это повторяющаяся часть верстки и ее можно вызвать в нужном месте
+    <pre>
+    // views/shared/_email.html.erb // create some markap here at the created directory
+    <%= render partisal: 'shared/email' %> // In different parts we can call this partial by using this command
+    </pre>
     </div>`,
 
 

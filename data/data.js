@@ -125,7 +125,7 @@ let tasks = [
     <ol class="each_task">
     <li>Практика: Ruby ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Alexander Batashov Ruby on Rails (22)</li>
+    <li>Теория: YouTube Alexander Batashov Ruby on Rails (25)</li>
     <li>Конспекты: чтение</li>
     <li>Книги по BASE: чтение</li>
     </ol>
