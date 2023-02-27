@@ -176,7 +176,7 @@ let tasks = [
     <ol class="each_task">
     <li>Практика: Java ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube изучем java создай проект (8)</li>
+    <li>Теория: YouTube изучем java создай проект (11)</li>
     <li>Конспекты: чтение</li>
     <li>Книги по JAVA: чтение</li>
     </ol>
