@@ -22,7 +22,7 @@ let tasks = [
     <ol class="each_task">
     <li>Практика: PHP ordinary CRUD APP</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Rdavydov laravel(1)</li>
+    <li>Теория: YouTube Rdavydov laravel(2)</li>
     <li>Конспекты: чтение</li>
     <li>Книги по PHP: чтение</li>
     </ol>
