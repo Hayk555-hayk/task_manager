@@ -1540,5 +1540,8 @@ admin.blade.php file
 // In app/view/components add AdminLayout.php 
 // Inside that new layout return view('layouts.php')
 </pre>
+</div>`,
+`<div>(php)
+Базовые стандарты php гласят что если код составлен только из php то закрывающийся тег php не обьязателен
 </div>`
 ]

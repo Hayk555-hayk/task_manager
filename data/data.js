@@ -22,10 +22,10 @@ let tasks = [
     <ol class="each_task">
     <li>Практика: PHP ordinary CRUD APP</li>
     <li>Теория: Изучения кода из практики</li>
-    <li>Теория: Просмотр примера создания сайта согласно практике</li>
+    <li>Теория: Просмотр примера создания сайта согласно практике (learnWebCoding 5/03:00)</li>
     <li>Теория: YouTube Rdavydov laravel(2)</li>
     <li>Конспекты: чтение</li>
-    <li>Книги по PHP: чтение</li>
+    <li>Книги по PHP: чтение стр. 29</li>
     </ol>
     </span><br />
     <span class="small">
@@ -62,7 +62,7 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
     <li>Конспекты: чтение</li>
-    <li>Книги по NODE: чтение</li>
+    <li>Книги по NODE: чтение стр. 25</li>
     </ol>
     </span><br />
     <span class="small">

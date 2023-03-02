@@ -120,7 +120,7 @@ let node_data = [
     });
     -------------------------------------------------
     // echo text by get request (127.0.0.1/echo?message=hello)
-    var http = require('http');
+    var http = require('http'); // The http is just a package that was required for node js 
     var url = require('url');
 
     var server new http.Server(function(req,res) {
@@ -139,7 +139,7 @@ let node_data = [
         }
     });
 
-    server.listen(3000, '127.0.0.1');
+    server.listen(3000, '127.0.0.1'); // Starting the server 
     </pre>
     </div>`,
     `<div>(node)
@@ -209,5 +209,72 @@ let node_data = [
     Есть два основных типа потоков данных <br />
     1. stream.Readble - чтение (req, fs.ReadStream) <br />
     2. stream.Writable - запись (res, fs.WriteStream)
-    </div>`
+    </div>`,
+    `<div>(node)
+    Работа Router-a
+    <pre>
+    const http = require('http')
+    const server = http.createServer((req, res) =>{
+    if(req.url === '/about')
+    res.end('The about page')
+    else if(req.url === '/contact')
+    res.end('The contact page')
+    else if(req.url === '/')
+    res.end('The home page')
+    else {
+    res.writeHead(404)
+    res.end('page not found')
+    }
+    })
+    server.listen(3000)
+    </pre>
+    Работа с fs 
+    <pre>
+    const http = require('http')
+    const fs = require('fs') // Import file system module
+    const homePage = fs.readFileSync('index.html')
+    const aboutPage = fs.readFileSync('about.html')
+    const contactPage = fs.readFileSync('contact.html')
+    const notFoundPage = fs.readFileSync('notfound.html')
+    const server = http.createServer((req, res) =>{
+    if(req.url === '/about')
+    res.end(aboutPage)
+    else if(req.url === '/contact')
+    res.end(contactPage)
+    else if(req.url === '/')
+    res.end(homePage)
+    else {
+    res.writeHead(404)
+    res.end(notFoundPage)
+    }
+    })
+    server.listen(3000)
+    </pre>
+    Для справки все npm пакеты можно найти на странице npmjs.com
+    </div>`,
+    `<div>(node)
+    Для установки express js нужна комманда npm init(для package json) и npm install express <br />
+    Выше приведенный код только уже на express 
+    <pre>
+    const express = require('express') // require express module
+    const app = express() // calls express function to start new Express app
+    app.listen(3000,()=>{
+    console.log("App listening on port 3000")
+    })
+
+    app.get('/',(req,res)=>{
+        res.json({
+        name: 'Greg Lim'
+        })
+    })
+    </pre>
+    Для передачи html вайлов в express js можно использовать следующий код 
+    <pre>
+    const path = require('path')
+    // some code 
+    app.get('/',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'index.html'))
+    })
+    </pre>
+    </div>`,
 ]
