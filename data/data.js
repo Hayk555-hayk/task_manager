@@ -132,7 +132,9 @@ let tasks = [
     </span> <br />
     <span class="small">
     ТЕОРИЯ <br/>
-    YouTube Super Ruby By Yaraslav Shamanov (2)
+    YouTube Super Ruby By Yaraslav Shamanov (2),
+    YouTube Corey's Corner Stripe subscription,
+    YouTube Stripe Developers Stripe-Ruby
     YouTube Sidekiq Redis Jsr ka Ladka,
     YouTube GraphQL Course - Beginner To Expert
     <br/>ПРАКТИКА <br/>
