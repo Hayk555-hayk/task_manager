@@ -21,8 +21,9 @@ let tasks = [
     <span an class="task_description">
     <ol class="each_task">
     <li>Практика: PHP ordinary CRUD APP</li>
+    <li>Теория: Изучения кода из практики</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Rdavydov laravel(1)</li>
+    <li>Теория: YouTube Rdavydov laravel(2)</li>
     <li>Конспекты: чтение</li>
     <li>Книги по PHP: чтение</li>
     </ol>
@@ -57,6 +58,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Практика: Node ordinary CRUD APP</li>
+    <li>Теория: Изучения кода из практики</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
     <li>Конспекты: чтение</li>
@@ -69,7 +71,6 @@ let tasks = [
     YouTube Владилен typescript,
     YouTube the net ninja all js and typescript playlists,
     Documentation Metanit node,
-    Documentation Metanit mongodb,
     YouTube Talented developer stripe with node
     documentation docs nest com,
     Documentation typescript Metanit,
@@ -110,6 +111,7 @@ let tasks = [
     YouTube Аве кодер postgre,
     YouTube gungner it mongodb,
     Documentation Metanit SQL,
+    Documentation Metanit mongodb,
     YouTube theurbanpenguin ubuntu,
     YouTube Гоша Дударь docker,
     YouTube the net ninja json server,
@@ -124,8 +126,9 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Практика: Ruby ordinary CRUD APP</li>
+    <li>Теория: Изучения кода из практики</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Alexander Batashov Ruby on Rails (22)</li>
+    <li>Теория: YouTube Alexander Batashov Ruby on Rails (25)</li>
     <li>Конспекты: чтение</li>
     <li>Книги по BASE: чтение</li>
     </ol>
@@ -156,7 +159,7 @@ let tasks = [
     </span><br />
     <span class="task_description">
     <ol class="each_task">
-    <li>Чтение Библии книга чтение (10-7)</li>
+    <li>Чтение Библии книга чтение (14-13)</li>
     <li>Чтение Библии приложение чтение</li>
     <li>Арифметика уроки Да Винчи (5кл-5)</li>
     <li>Английский язык с нуля за 50 уроков (3)</li>
@@ -177,6 +180,7 @@ let tasks = [
     <span class="task_description">
     <ol class="each_task">
     <li>Практика: Java ordinary CRUD APP</li>
+    <li>Теория: Изучения кода из практики</li>
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube изучем java создай проект (11)</li>
     <li>Конспекты: чтение</li>
