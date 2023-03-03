@@ -327,7 +327,7 @@ let ruby_data = [
         end
     </pre>
     </div>`,
-    `<div>(ruby)
+    `<div class='checkpoint'>(ruby)
     Дополнительная информация
         <pre>
         rand max 100 // generating random number from 0 to 100
@@ -524,7 +524,7 @@ let ruby_data = [
     // add picture to new method of creating new data 
     </pre>
     </div>`,
-    `<div class="checkpoint"> (rails)
+    `<div> (rails)
         Использование Graphql с Ruby <br />
         Существует три типа операций, которые моделирует GraphQL: <br />
         query – выборка только для чтения. <br />

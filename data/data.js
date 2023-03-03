@@ -102,7 +102,7 @@ let tasks = [
     <ol class="each_task">
     <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
     <li>Конспекты: чтение</li>
-    <li>Книги по программированию: чтение</li>
+    <li>Книги по base: чтение стр. 38</li>
     </ol>
     </span> <br />
     <span class="small">
@@ -130,7 +130,7 @@ let tasks = [
     <li>Теория: Просмотр примера создания сайта согласно практике</li>
     <li>Теория: YouTube Alexander Batashov Ruby on Rails (25)</li>
     <li>Конспекты: чтение</li>
-    <li>Книги по BASE: чтение</li>
+    <li>Книги по ruby: чтение стр. 36</li>
     </ol>
     </span> <br />
     <span class="small">

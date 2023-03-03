@@ -222,4 +222,10 @@ let techno = [
             }
         </pre>
         </div>`,
+        `<div>(git)
+        Создание ssh key происходит командлй ssh-keygen, после чего нужжно ввести директорию для сохранения <br />
+        и ответить на пару вопроссов, сгенерируется 2 ключа, один приватный, другой публичный<br />
+        Добавка public ssh ключа на сервер ssh-copy-id -i ~/.ssh/id_rsα.pub gituser@git.server.com <br />
+        При попытке запушить ветку в первый раз нужно использовать git push --set-upstream origin baranch_name        
+        </div>`
     ]
