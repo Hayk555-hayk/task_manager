@@ -229,3 +229,8 @@ let techno = [
         При попытке запушить ветку в первый раз нужно использовать git push --set-upstream origin baranch_name        
         </div>`
     ]
+
+    
+let list = document.getElementById('list');
+
+list.innerHTML = techno.join('');

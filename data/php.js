@@ -1545,3 +1545,8 @@ admin.blade.php file
 Базовые стандарты php гласят что если код составлен только из php то закрывающийся тег php не обьязателен
 </div>`
 ]
+
+
+let list = document.getElementById('list');
+
+list.innerHTML = php_data.join('');

@@ -152,3 +152,8 @@ let java_data = [
     import path.to.file.class; импортирует логику определенного класса (use in php)
     </div>`
 ]
+
+
+let list = document.getElementById('list');
+
+list.innerHTML = java_data.join('');

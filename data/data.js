@@ -1,207 +1,368 @@
-let tutorials = {
-
-    node: node_data,
-
-    php: php_data,
-
-    add_techno: techno,
-
-    ruby: ruby_data,
-
-    selfdev: selfdev_data,
-
-    java: java_data
-}
 
 let tasks = [
-    //-------------------------------------------ПРОГРАММИРОВАНИЕ---------------------------------------------------------------------
-    `<span class="task_title">
-    PHP / LARAVEL
-    </span><br />
-    <span an class="task_description">
-    <ol class="each_task">
-    <li>Практика: PHP ordinary CRUD APP</li>
-    <li>Теория: Изучения кода из практики</li>
-    <li>Теория: Просмотр примера создания сайта согласно практике (learnWebCoding 5/03:00)</li>
-    <li>Теория: YouTube Rdavydov laravel(2)</li>
-    <li>Конспекты: чтение</li>
-    <li>Книги по PHP: чтение стр. 29</li>
-    </ol>
-    </span><br />
-    <span class="small">
-    ТЕОРИЯ <br/>
-    YouTube Best Laravel PayPal (JsonFullstack)
-    YouTube Laravel Lighthouse/GraphQL
-    Documentation Laravel su урок 11,
-    YouTube laravel + redis,
-    Documentation laravel demiart,
-    Documentation code mu php урок 9,
-    Documentation code mu oop & mvc,
-    YouTube agoalofalife орхид
-    <br/>ПРАКТИКА <br/>
-    Laravel ordinary CRUD APP,
-    PHP GraphQL CRUD APP,
-    Laravel GraphQL CRUD APP,
-    PHP ordinary elastic-search CRUD APP,
-    Laravel ordinary elastic-search CRUD APP,
-    PHP GraphQ elastic-searchL CRUD APP,
-    Laravel GraphQL elastic-search CRUD APP,
-    PHP ordinary stripe-api CRUD APP,
-    Laravel ordinary stripe-api CRUD APP,
-    PHP GraphQL stripe-api CRUD APP,
-    Laravel GraphQl stripe-api CRUD APP,
-    </span>`,
-
-    `<span class="task_title">
-    JS / NODE / NEST / REACT
-    </span><br />
-    <span class="task_description">
-    <ol class="each_task">
-    <li>Практика: Node ordinary CRUD APP</li>
-    <li>Теория: Изучения кода из практики</li>
-    <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Илья Кантор node от а до я (26)</li>
-    <li>Конспекты: чтение</li>
-    <li>Книги по NODE: чтение стр. 25</li>
-    </ol>
-    </span><br />
-    <span class="small">
-    ТЕОРИЯ <br/>
-    YouTube #JS Code nest js Урок 1,
-    YouTube Владилен typescript,
-    YouTube the net ninja all js and typescript playlists,
-    Documentation Metanit node,
-    YouTube Talented developer stripe with node
-    documentation docs nest com,
-    Documentation typescript Metanit,
-    YouTube Ulbi TV React,
-    YouTube Codevolution React Redux tutorial,
-    YouTube The net ninja all MERN videos,
-    Documentation React metanit,
-    Documentation React code.mu,
-    YouTube Next js codevolution,
-    Documentation Next js next org
-    <br/>ПРАКТИКА <br/>
-    Nest ordinary CRUD APP,
-    Node GraphQL CRUD APP,
-    Nest GraphQL CRUD APP,
-    Node ordinary elastic-search CRUD APP,
-    Nest ordinary elastic-search CRUD APP,
-    Node GraphQ elastic-searchL CRUD APP,
-    Nest GraphQL elastic-search CRUD APP,
-    Node ordinary stripe-api CRUD APP,
-    Nest ordinary stripe-api CRUD APP,
-    Node GraphQL stripe-api CRUD APP,
-    Nest GraphQl stripe-api CRUD APP,
-    </span>`,
-
-    `<span class="task_title">
-    DATABASES / GIT / OS
-    </span><br />
-    <span class="task_description">
-    <ol class="each_task">
-    <li>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</li>
-    <li>Конспекты: чтение</li>
-    <li>Книги по base: чтение стр. 38</li>
-    </ol>
-    </span> <br />
-    <span class="small">
-    ТЕОРИЯ <br/>
-    YouTube школа itProger mysql урок 1
-    YouTube Аве кодер postgre,
-    YouTube gungner it mongodb,
-    Documentation Metanit SQL,
-    Documentation Metanit mongodb,
-    YouTube theurbanpenguin ubuntu,
-    YouTube Гоша Дударь docker,
-    YouTube the net ninja json server,
-    YouTube msft webcast windows,
-    YouTube learn linux tv centos,
-    YouTube JavaScript ru git
-    </span>`,
-
-    `<span class="task_title">
-    RUBY ON RAILS
-    </span><br />
-    <span class="task_description">
-    <ol class="each_task">
-    <li>Практика: Ruby ordinary CRUD APP</li>
-    <li>Теория: Изучения кода из практики</li>
-    <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube Alexander Batashov Ruby on Rails (25)</li>
-    <li>Конспекты: чтение</li>
-    <li>Книги по ruby: чтение стр. 36</li>
-    </ol>
-    </span> <br />
-    <span class="small">
-    ТЕОРИЯ <br/>
-    YouTube Super Ruby By Yaraslav Shamanov (2),
-    YouTube Corey's Corner Stripe subscription,
-    YouTube Stripe Developers Stripe-Ruby
-    YouTube Sidekiq Redis Jsr ka Ladka,
-    YouTube GraphQL Course - Beginner To Expert
-    <br/>ПРАКТИКА <br/>
-    Rails ordinary CRUD APP,
-    Ruby GraphQL CRUD APP,
-    Rails GraphQL CRUD APP,
-    Ruby ordinary elastic-search CRUD APP,
-    Rails ordinary elastic-search CRUD APP,
-    Ruby GraphQ elastic-searchL CRUD APP,
-    Rails GraphQL elastic-search CRUD APP,
-    Ruby ordinary stripe-api CRUD APP,
-    Rails ordinary stripe-api CRUD APP,
-    Ruby GraphQL stripe-api CRUD APP,
-    Rails GraphQl stripe-api CRUD APP,
-    </span>`,
-
-    `<span class="task_title">
-    SELF DEVELOPMENT
-    </span><br />
-    <span class="task_description">
-    <ol class="each_task">
-    <li>Чтение Библии книга чтение (14-13)</li>
-    <li>Чтение Библии приложение чтение</li>
-    <li>Арифметика уроки Да Винчи (5кл-5)</li>
-    <li>Английский язык с нуля за 50 уроков (3)</li>
-    <li>Испанский язык</li>
-    <li>Немецкий язык</li>
-    <li>Японский язык</li>
-    <li>Иврит</li>
-    <li>Японский и Иврит алфавит изучение</li>
-    <li>Религия написание письма</li>
-    <li>Чтение конспектов</li>
-    <li>Создание словаря из 1500 слов</li>
-    </ol>
-    </span>`,
-
-    `<span class="task_title">
-    JAVA / SPRING
-    </span><br />
-    <span class="task_description">
-    <ol class="each_task">
-    <li>Практика: Java ordinary CRUD APP</li>
-    <li>Теория: Изучения кода из практики</li>
-    <li>Теория: Просмотр примера создания сайта согласно практике</li>
-    <li>Теория: YouTube изучем java создай проект (11)</li>
-    <li>Конспекты: чтение</li>
-    <li>Книги по JAVA: чтение</li>
-    </ol>
-    </span> <br />
-    <span class="small">
-    ТЕОРИЯ <br/>
-    YouTube Гоша Дударь spring,
-    YouTube Alishev spring,
-    <br/>ПРАКТИКА <br/>
-    Spring ordinary CRUD APP,
-    Java GraphQL CRUD APP,
-    Spring GraphQL CRUD APP,
-    Java ordinary elastic-search CRUD APP,
-    Spring ordinary elastic-search CRUD APP,
-    Java GraphQ elastic-searchL CRUD APP,
-    Spring GraphQL elastic-search CRUD APP,
-    Java ordinary stripe-api CRUD APP,
-    Spring ordinary stripe-api CRUD APP,
-    Java GraphQL stripe-api CRUD APP,
-    Spring GraphQl stripe-api CRUD APP,
-    </span>`,    
+    // ТЕОРИЯ -------------------------------------------------------------------
+    `<div class="done">Теория: YouTube Alexander Batashov Ruby on Rails (25)</div>`,
+    `<div>YouTube GraphQL Course - Beginner To Expert</div>`,
+    `<div>Теория: Youtube Beginner's Crash Course to Elastic Stack Official Elastic Community (4)</div>`,
+    `<div>Теория: YouTube Rdavydov laravel(2)</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Теория: YouTube Илья Кантор node от а до я (26)</div>`,
+    `<div>YouTube Super Ruby By Yaraslav Shamanov (2)</div>`,
+    `<div>YouTube Best Laravel PayPal (JsonFullstack)</div>`,
+    `<div>YouTube #JS Code nest js Урок 1</div>`,
+    `<div>YouTube Corey's Corner Stripe subscription</div>`,
+    `<div>YouTube Laravel Lighthouse/GraphQL</div>`,
+    `<div>YouTube школа itProger mysql урок 1</div>`,
+    `<div>YouTube Stripe Developers Stripe-Ruby</div>`,
+    `<div>YouTube gungner it mongodb</div>`,
+    `<div>YouTube Владилен typescript</div>`,
+    `<div>YouTube the net ninja all js and typescript playlists</div>`,
+    `<div>YouTube Sidekiq Redis Jsr ka Ladka</div>`,
+    `<div>YouTube laravel + redis</div>`,
+    `<div>YouTube Talented developer stripe with node</div>`,
+    `<div>YouTube Аве кодер postgre</div>`,
+    `<div>YouTube agoalofalife орхид</div>`,
+    `<div>YouTube Ulbi TV React</div>`,
+    `<div>YouTube Codevolution React Redux tutorial</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>YouTube The net ninja all MERN videos</div>`,
+    `<div>YouTube Next js codevolution</div>`,
+    `<div>Теория: YouTube изучем java создай проект (11)</div>`,
+    `<div>YouTube Гоша Дударь spring</div>`,
+    `<div>YouTube Alishev spring</div>`,
+    `<div>YouTube theurbanpenguin ubuntu</div>`,
+    `<div>YouTube Гоша Дударь docker</div>`,
+    `<div>YouTube the net ninja json server</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>YouTube msft webcast windows</div>`,
+    `<div>YouTube learn linux tv centos</div>`,
+    `<div>YouTube JavaScript ru git</div>`,
+    // ДОКУМЕНТАЦИЯ --------------------------------------------------------------
+    `<div>Documentation Laravel su урок 11</div>`,
+    `<div>Documentation Metanit node</div>`,
+    `<div>Documentation laravel demiart</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Documentation code mu php урок 9</div>`,
+    `<div>Documentation code mu oop & mvc</div>`,
+    `<div>documentation docs nest com</div>`,
+    `<div>Documentation typescript Metanit</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Documentation React metanit</div>`,
+    `<div>Documentation React code.mu</div>`,
+    `<div>Documentation Metanit SQL</div>`,
+    `<div>Documentation Metanit mongodb</div>`,
+    // ПРАКТИКА -----------------------------------------------------------------
+    `<div>Практика: PHP ordinary CRUD APP</div>`,
+    `<div>PHP GraphQL CRUD APP</div>`,
+    `<div>PHP ordinary elastic-search CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>PHP GraphQ elastic-searchL CRUD APP</div>`,
+    `<div>PHP ordinary stripe-api CRUD APP</div>`,
+    `<div>PHP GraphQL stripe-api CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Laravel ordinary CRUD APP</div>`,
+    `<div>Laravel GraphQL CRUD APP</div>`,
+    `<div>Laravel ordinary elastic-search CRUD APP</div>`,
+    `<div>Laravel GraphQL elastic-search CRUD APP</div>`,
+    `<div>Laravel ordinary stripe-api CRUD APP</div>`,
+    `<div>Laravel GraphQl stripe-api CRUD APP</div>`,
+    `<div>Практика: Node ordinary CRUD APP</div>`,
+    `<div>Node GraphQL CRUD APP</div>`,
+    `<div>Node ordinary elastic-search CRUD APP</div>`,
+    `<div>Node GraphQ elastic-searchL CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Node ordinary stripe-api CRUD APP</div>`,
+    `<div>Node GraphQL stripe-api CRUD APP</div>`,
+    `<div>Nest ordinary CRUD APP</div>`,
+    `<div>Nest GraphQL CRUD APP</div>`,
+    `<div>Nest ordinary elastic-search CRUD APP</div>`,
+    `<div>Nest GraphQL elastic-search CRUD APP</div>`,
+    `<div>Nest ordinary stripe-api CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Nest GraphQl stripe-api CRUD APP</div>`,
+    `<div>Ruby GraphQL CRUD APP</div>`,
+    `<div>Ruby ordinary elastic-search CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Ruby GraphQ elastic-searchL CRUD APP</div>`,
+    `<div>Ruby ordinary stripe-api CRUD APP</div>`,
+    `<div>Ruby GraphQL stripe-api CRUD APP</div>`,
+    `<div>Rails ordinary CRUD APP</div>`,
+    `<div>Rails GraphQL CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Rails ordinary elastic-search CRUD APP</div>`,
+    `<div>Rails GraphQL elastic-search CRUD APP</div>`,
+    `<div>Rails ordinary stripe-api CRUD APP</div>`,
+    `<div>Rails GraphQl stripe-api CRUD APP</div>`,
+    `<div>Практика: Java ordinary CRUD APP</div>`,
+    `<div>Spring ordinary CRUD APP</div>`,
+    `<div>Java GraphQL CRUD APP</div>`,
+    `<div>Spring GraphQL CRUD APP</div>`,
+    `<div>Java ordinary elastic-search CRUD APP</div>`,
+    `<div>Spring ordinary elastic-search CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Java GraphQ elastic-searchL CRUD APP</div>`,
+    `<div>Spring GraphQL elastic-search CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Java ordinary stripe-api CRUD APP</div>`,
+    `<div>Spring ordinary stripe-api CRUD APP</div>`,
+    `<div>Java GraphQL stripe-api CRUD APP</div>`,
+    `<div>Spring GraphQl stripe-api CRUD APP</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    // КНИГИ -------------------------------------------------------
+    `<div>Книги по PHP: чтение стр. 29</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Книги по ruby: чтение стр. 36</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Книги по NODE: чтение стр. 25</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Книги по base: чтение стр. 38</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Книги по JAVA: чтение</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    // САМОРАЗВИТИЕ -----------------------------------------------
+    `<div>Чтение Библии книга чтение (14-13)</div>`,
+    `<div>Чтение Библии приложение чтение</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Арифметика уроки Да Винчи (5кл-5)</div>`,
+    `<div>Английский язык с нуля за 50 уроков (3)</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Испанский язык</div>`,
+    `<div>Немецкий язык</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Японский язык</div>`,
+    `<div>Иврит</div>`,
+    `<div>Японский и Иврит алфавит изучение</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Религия написание письма</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>Чтение конспектов</div>`,
+    `<div>Создание словаря из 1500 слов</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    // КОНСПЕКТЫ -----------------------------------------------
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
+    `<div>КОНСПЕКТЫ - PHP - LARAVEL</div>`,
+    `<div>КОНСПЕКТЫ - RUBY - RAILS</div>`,
+    `<div>КОНСПЕКТЫ - NODE - NEST - JAVASCRIPT</div>`,
+    `<div>КОНСПЕКТЫ - JAVA - SPRING</div>`,
+    `<div>КОНСПЕКТЫ - DATA BASES AND OS</div>`,
+    `<div>КОНСПЕКТЫ - SELF DEVELOPEMENT</div>`,
 ];
+
+
+let list = document.getElementById('list');
+
+list.innerHTML = tasks.join('');

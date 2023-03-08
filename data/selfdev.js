@@ -48,3 +48,8 @@ let selfdev_data = [
     </pre>
     </div>`
 ]
+
+
+let list = document.getElementById('list');
+
+list.innerHTML = selfdev_data.join('');

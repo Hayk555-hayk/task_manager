@@ -1040,3 +1040,8 @@ let ruby_data = [
     </pre>
     </div>`
 ]
+
+
+let list = document.getElementById('list');
+
+list.innerHTML = ruby_data.join('');

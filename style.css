@@ -1,155 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&display=swap');
 * {
-    box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 25px;
+    box-sizing: border-box;
+    transition: .5s;
 }
 
 body {
-    background-image: linear-gradient( 89.4deg,  rgba(194,0,39,1) 0.8%, rgba(10,35,104,1) 99.4% );
-    }
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
 
-.tutorial_wrapper {
+a {
+    text-decoration: none;
+}
+
+#menu {
     display: flex;
     justify-content: space-around;
-    padding-top: 20vh;
-    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.tutorial {
+#menu > div {
+    text-align: center;
+    font-size: 18px;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     height: 100px;
     width: 200px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    transition: .5s;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     border-radius: 15px;
-    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
-    color: #fff;
-    font-weight: 900;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.tutorial:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px 10px 0px 10px;
+    transition: .5s;
     cursor: pointer;
-    transform: scale(1.1);
 }
 
-.called_tutorial {
-    margin: 50px auto;
-    width: 90%;
+#menu > div:hover, .list_menu > div:hover, #list > div:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+#list {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#list > div {
+    margin-top: 25px;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     border-radius: 15px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    padding: 25px;
-    background-color: rgb(231, 231, 240);
-}
-
-.called_tutorial > div {
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    padding: 30px 10px 30px 10px;
     transition: .5s;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 5px;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 10%;
 }
 
-.called_tutorial > div:hover {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.list_menu {
+    width: 300px;
+    margin-left: 40%;
+}
+
+.list_menu > div {
+    height: 100px;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    border-radius: 15px;
+    padding: 30px 10px 0px 10px;
+    transition: .5s;
+    cursor: pointer;
+} 
+
+.done {
+    background-color: #85FFBD!important;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)!important;
 }
 
 pre {
-    margin-top: 10px;
-    font-family: monospace;
-    padding: 25px;
-    border-radius: 15px;
-    background: rgb(61, 60, 60);
-    color: rgb(216, 255, 60);
-    font-size: 17px;
+    margin: 10px 0 10px 0;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    width: 70%;
     overflow: auto;
-}
-
-#the_task {
-    height: 250px;
-    width: 500px;
-    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
-    color: #fff;
-    position: absolute;
-    left: 33%;
-    top: -250px;
-    border-radius: 25px;
-    transition: .5s;
-    padding: 40px;
-    text-align: left;
-    overflow: auto;
-    z-index: 99999;
-    
-}
-
-.task_title {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.task_description {
-    display: inline-block;
-    margin-top: 30px;
-}
-
-.small {
-    font-size: 10px;
-}
-
-pre::-webkit-scrollbar {
-	width: 2px;
-	background-color: #8a8585;
-}
-
-pre::-webkit-scrollbar-thumb {
-	background-color: #3125259b;
-    border-radius: 5px;
-}
-
-#get_task {
-    margin-top: 15px;
-    margin-top: 15px;
-    margin-left: 10px;
-    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
-    display: inline-block;
-    padding: 4px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.each_task {
-    text-align: left;
-}
-
-.target {
-    color: lime;
-}
-
-#the_task::-webkit-scrollbar {
-	width: 0px;
-}
-
-#the_task::-webkit-scrollbar-thumb {
-    border-radius: 0px;
-}
-
-.checkpoint {
-    background-color: rgb(69, 142, 69);
-    color: #fff;
     border-radius: 15px;
+    padding: 10px;
+    font-family: 'Encode Sans', sans-serif;
 }
 
-.lesson_img {
+img {
+    width: 50%;
     display: block;
-    height: 500px;
-    margin: 0 auto;
+    margin: 20px;
+    border-radius: 15px;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #80D0C7;
+}
+::-webkit-scrollbar-thumb {
+  background: #0093E9;
+  border-radius: 5px;
+}
+
