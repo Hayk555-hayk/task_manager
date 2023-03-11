@@ -10,6 +10,9 @@
 body {
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    padding-bottom: 50px;
+    /* background-image: url(./images/system/back.jpg);
+    background-size: contain; */
 }
 
 a {
@@ -35,7 +38,7 @@ a {
     cursor: pointer;
 }
 
-#menu > div:hover, .list_menu > div:hover, #list > div:hover {
+#menu > div:hover, .list_menu > div:hover, #list > div:hover, #random_block > div:hover, #get_task:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -109,3 +112,38 @@ img {
   border-radius: 5px;
 }
 
+
+#random_block {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 210px;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#get_task {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+    border: none;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    font-weight: 900;
+}
+
+#random_block > div {
+    background-color: #85FFBD!important;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)!important;
+    height: 170px;
+    width: 300px;
+    padding: 50px 10px 10px 20px;
+    font-weight: 900;
+    border-radius: 20px;
+    transition: .5s;
+}
