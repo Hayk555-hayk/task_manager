@@ -8,15 +8,14 @@
 }
 
 body {
-    background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     padding-bottom: 50px;
-    /* background-image: url(./images/system/back.jpg);
-    background-size: contain; */
+    background-image: url(./images/system/back.gif);
 }
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 #menu {
@@ -28,20 +27,19 @@ a {
 #menu > div {
     text-align: center;
     font-size: 18px;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    font-weight: 900;
     height: 100px;
     width: 200px;
     border-radius: 15px;
     padding: 30px 10px 0px 10px;
     transition: .5s;
     cursor: pointer;
+    box-shadow: rgba(116, 51, 51, 0.17) 0px -23px 25px 0px inset, rgba(173, 87, 87, 0.15) 0px -36px 30px 0px inset, rgba(80, 25, 25, 0.1) 0px -79px 40px 0px inset, rgba(152, 62, 62, 0.06) 0px 2px 1px, rgba(108, 43, 43, 0.09) 0px 4px 2px, rgba(172, 36, 36, 0.09) 0px 8px 4px, rgba(85, 31, 31, 0.09) 0px 16px 8px, rgba(81, 28, 28, 0.09) 0px 32px 16px;
 }
 
 #menu > div:hover, .list_menu > div:hover, #list > div:hover, #random_block > div:hover, #get_task:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-
 
 #list {
     margin-top: 35px;
@@ -52,14 +50,15 @@ a {
 
 #list > div {
     margin-top: 25px;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-size: contain;
     border-radius: 15px;
     padding: 30px 10px 30px 10px;
     transition: .5s;
     cursor: pointer;
     width: 80%;
     margin-left: 10%;
+    color: #fff;
+    box-shadow: rgba(69, 51, 116, 0.17) 0px -23px 25px 0px inset, rgba(117, 87, 173, 0.15) 0px -36px 30px 0px inset, rgba(35, 25, 80, 0.1) 0px -79px 40px 0px inset, rgba(70, 62, 152, 0.06) 0px 2px 1px, rgba(53, 43, 108, 0.09) 0px 4px 2px, rgba(79, 36, 172, 0.09) 0px 8px 4px, rgba(39, 31, 85, 0.09) 0px 16px 8px, rgba(34, 28, 81, 0.09) 0px 32px 16px;
 }
 
 .list_menu {
@@ -69,8 +68,6 @@ a {
 
 .list_menu > div {
     height: 100px;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     border-radius: 15px;
     padding: 30px 10px 0px 10px;
     transition: .5s;
@@ -78,14 +75,11 @@ a {
 } 
 
 .done {
-    background-color: #85FFBD!important;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)!important;
+    background-size: cover;
 }
 
 pre {
     margin: 10px 0 10px 0;
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     width: 70%;
     overflow: auto;
     border-radius: 15px;
@@ -99,16 +93,17 @@ img {
     margin: 20px;
     border-radius: 15px;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #80D0C7;
+  background: black;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0093E9;
+  background: #fff;
   border-radius: 5px;
 }
 
@@ -132,18 +127,24 @@ img {
     cursor: pointer;
     transition: .5s;
     border: none;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-image: url(./images/system/button.gif);
+    background-size: cover;
+    background-position: center center;
     font-weight: 900;
+    color: #fff;
 }
 
 #random_block > div {
-    background-color: #85FFBD!important;
-    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%)!important;
     height: 170px;
     width: 300px;
     padding: 50px 10px 10px 20px;
     font-weight: 900;
     border-radius: 20px;
     transition: .5s;
+    box-shadow: rgba(51, 116, 95, 0.17) 0px -23px 25px 0px inset, rgba(87, 173, 121, 0.15) 0px -36px 30px 0px inset, rgba(25, 80, 27, 0.1) 0px -79px 40px 0px inset, rgba(62, 152, 98, 0.06) 0px 2px 1px, rgba(43, 108, 56, 0.09) 0px 4px 2px, rgba(36, 172, 77, 0.09) 0px 8px 4px, rgba(38, 85, 31, 0.09) 0px 16px 8px, rgba(28, 81, 42, 0.09) 0px 32px 16px!important;
+    color: #fff;
+}
+
+.checkpoint {
+    box-shadow: rgba(51, 116, 95, 0.17) 0px -23px 25px 0px inset, rgba(87, 173, 121, 0.15) 0px -36px 30px 0px inset, rgba(25, 80, 27, 0.1) 0px -79px 40px 0px inset, rgba(62, 152, 98, 0.06) 0px 2px 1px, rgba(43, 108, 56, 0.09) 0px 4px 2px, rgba(36, 172, 77, 0.09) 0px 8px 4px, rgba(38, 85, 31, 0.09) 0px 16px 8px, rgba(28, 81, 42, 0.09) 0px 32px 16px!important;
 }
