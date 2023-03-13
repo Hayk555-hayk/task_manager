@@ -1,5 +1,5 @@
 let python_data = [
-    `<div>(python)
+    `<div class="checkpoint">(python)
     
     </div>`,
 ]
