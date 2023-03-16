@@ -18,7 +18,7 @@ if (hours < 15) {
         `<div>YouTube Stripe Developers Stripe-Ruby</div>`,
         // ТЕОРИЯ NODE --------------------------------------------------------------
         `<div>Теория: YouTube Илья Кантор node от а до я (26)</div>`,
-        `<div>YouTube #JS Code nest js Урок 1</div>`,
+        `<div>YouTube #JS Code nest js Урок 5</div>`,
         `<div>YouTube Владилен typescript</div>`,
         `<div>YouTube the net ninja all js and typescript playlists</div>`,
         `<div>YouTube Talented developer stripe with node</div>`,

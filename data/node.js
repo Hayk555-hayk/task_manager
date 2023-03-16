@@ -277,6 +277,92 @@ let node_data = [
     })
     </pre>
     </div>`,
+    `<div>(nest)
+    Свойства декораторов и их свойства
+    <pre>
+    @Module() - используется для определения модуля NestJS.
+    @Controller() - используется для определения контроллера NestJS.
+    @Injectable() - используется для определения сервиса NestJS.
+    @Middleware() - используется для определения middleware NestJS.
+    @Guard() - используется для определения guard NestJS.
+    @UseGuards() - используется для применения guard к методу контроллера.
+    @UseInterceptors() - используется для применения интерсепторов к методу контроллера.
+    @Param() - используется для получения параметра из URL.
+    @Body() - используется для получения данных из тела запроса.
+    @Query() - используется для получения параметров из строки запроса.
+    @Headers() - используется для получения заголовков из запроса.
+    @Res() - используется для получения объекта ответа Express.
+    @Req() - используется для получения объекта запроса Express.
+    @Redirect() - используется для выполнения перенаправления.
+    @Render() - используется для рендеринга шаблона.
+    </pre>
+    Установка 
+    <pre>
+    npm install -g @nestjs/cli
+    nest new project-name
+    yarn start:dev
+    </pre>
+    Основные команды cli 
+    <pre>
+    nest new <project-name> - создать новый проект NestJS.
+    nest generate <schematic> <name> - создать файл с помощью генератора кода. schematic 
+    может быть одним из следующих: module, controller, service, guard, middleware, resolver, pipe, interceptor, filter. name - это имя файла.
+    nest build - скомпилировать проект NestJS в JavaScript.
+    nest start - запустить проект NestJS.
+    nest test - запустить тесты в проекте NestJS.
+    nest lint - запустить линтер для проекта NestJS.
+    nest update - обновить версии зависимостей в проекте NestJS.
+    nest info - показать информацию о версиях NestJS и его зависимостей.
+    </pre>
+    При создании модуля user в модуль сразу должно прописаться соответственная строка <br />
+    nest g module user создает папку user с модульным файлом внутри
+    </div>`,
+    `<div>(nest)
+    Контроллеры в NestJS - это классы, которые обрабатывают входящие запросы HTTP.<br />
+    Они являются частью модуля и обычно отвечают за определенный ресурс или функциональность.
+    Чтобы создать контроллер в NestJS, можно воспользоваться генератором кода, выполнив команду nest generate<br />
+    controller <name>. Это создаст класс контроллера с именем <name>. Затем необходимо добавить методы в контроллер<br />
+    для обработки запросов.<br/>
+    В методах контроллера можно использовать декораторы, такие как @Get, @Post, @Put, @Delete, @Patch, чтобы<br/>
+     указать, какой HTTP метод должен быть использован для каждого метода контроллера. Например:
+<pre>
+import { Controller, Get, Post } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+
+  @Post()
+  create(): string {
+    return 'This action adds a new cat';
+  }
+}
+</pre>
+    В этом примере мы создали контроллер CatsController, который будет обрабатывать запросы, связанные с ресурсом<br/>
+    "cats". Метод findAll() будет обрабатывать GET запросы, а метод create() будет обрабатывать POST запросы.<br/>
+    Контроллеры в NestJS также могут использовать сервисы, чтобы выполнить бизнес-логику при обработке запросов.<br />
+    Для этого необходимо внедрить сервис в контроллер с помощью декоратора @Injectable() и создать конструктор,<br />
+    который будет использовать инъекцию зависимостей для получения сервиса. Например:
+<pre>
+import { Controller, Get } from '@nestjs/common';
+import { CatsService } from './cats.service';
+
+@Controller('cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
+
+  @Get()
+  async findAll(): Promise<any[]> {
+    return this.catsService.findAll();
+  }
+}
+</pre>
+    В этом примере мы внедрили сервис CatsService в контроллер CatsController и использовали его метод findAll()<br/>
+    для получения списка всех котов.
+    </div>`
 ]
 
 
