@@ -362,9 +362,53 @@ export class CatsController {
 </pre>
     В этом примере мы внедрили сервис CatsService в контроллер CatsController и использовали его метод findAll()<br/>
     для получения списка всех котов.
+    </div>`,
+    `<div>(react)
+    React использует концепции Virtual DOM и Components <br />
+    <pre>
+    &ltscript type="text/babel"&gt
+    const rootNode = document.getElementById("app");    // элемент для рендеринга приложения React
+    // получаем корневой элемент 
+    const root = ReactDOM.createRoot(rootNode);
+    // рендеринг в корневой элемент
+    root.render(
+        &lth1&gtHello React&lt/h1&gt  // элемент, который мы хотим создать
+     );
+   </script>
+    </pre>
+    JSX представляет способ описания визуального кода посредством комбинации кода на JavaScript и разметки XML.<br />
+    В реальности для разработки под React использование JSX не требуется, однако примение JSX является рекомендуемым<br />
+    способом создания интерфейса
+    <pre>
+    const user = {
+        id : 5,
+        age: 33,
+        firstName: 'Tom',
+        lastName: 'Smit',
+        getFullName: function(){ 
+            return {this.firstName} {this.lastName};
+        }
+    };
+    ReactDOM    
+        .createRoot(document.getElementById("app"))
+        .render(
+            &ltdiv id={user.id}&gt
+            &ltp&gtПолное имя: {user.getFullName()}&lt/p&gt
+            &ltp&gtВозраст: {user.age}&lt/p&gt
+            &ltp&gtВремя генерации данных: {new Date().toLocaleTimeString()}&lt/p&gt
+            &lt/div&gt
+        );
+    </pre>
+    При работе с JSX следует учитывать ряд моментов, в частности, в JSX для установки класса применяется атрибут<br />
+    className, а не class. Второй момент: атрибут style в качестве значения принимает объект javascript.<br />
+    И третий момент: в JSX используется camel-case, то есть если мы хотим определить стилевое свойство для шрифта,<br />
+    например, свойство font-family, то соответствующее свойство в объекте стиля будет называться fontFamily,<br />
+    то есть дефис отбрасывается, а следующая часть слова начинается с заглавной буквы.<br />
+    Для компиляции JSX нужен babel
     </div>`
 ]
 
+//&lt &gt
 
 let list = document.getElementById('list');
 

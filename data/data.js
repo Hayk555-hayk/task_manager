@@ -4,7 +4,7 @@ const hours = now.getHours();
 
 let tasks = []
 
-if (hours < 15) {
+if (hours < 19) {
     tasks = [
         // ТЕОРИЯ PHP ---------------------------------------------------------------
         `<div>Теория: YouTube Rdavydov laravel(2)</div>`,
@@ -53,7 +53,7 @@ if (hours < 15) {
         `<div>Documentation code mu oop & mvc</div>`,
         `<div>documentation docs nest com</div>`,
         `<div>Documentation typescript Metanit</div>`,
-        `<div>Documentation React metanit</div>`,
+        `<div>Documentation React metanit (Глава 2 - рендеринг элементов)</div>`,
         `<div>Documentation React code.mu</div>`,
         `<div>Documentation Metanit SQL</div>`,
         `<div>Documentation Metanit mongodb</div>`,

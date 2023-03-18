@@ -44,7 +44,7 @@ let techno = [
             Для удаления ветки переходим на master ветку и вводим git branch -D branchName  <br />
             git checkouot -b branchName создаст и перенаправит на новую ветку  <br />
         </div>`,
-       `<div>(git)
+       `<div class="checkpoint">(git)
             Для обьединения веток переходим в нужную ветку допустим master и прописываем git merge branchName <br />
             Если возникают конфликты, решаем их и после git add . , git commit, wg enter <br />
         </div>`,
@@ -114,7 +114,7 @@ let techno = [
         // _version in response will show how many times target data was updated 
         </pre>
         </div>`,
-        `<div class="checkpoint">(elastic)
+        `<div>(elastic)
         Способ и архитектура запроса похожа на GraphQL архетиктуру
         <pre>
         // match query
