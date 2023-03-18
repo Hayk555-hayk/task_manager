@@ -405,6 +405,31 @@ export class CatsController {
     например, свойство font-family, то соответствующее свойство в объекте стиля будет называться fontFamily,<br />
     то есть дефис отбрасывается, а следующая часть слова начинается с заглавной буквы.<br />
     Для компиляции JSX нужен babel
+    </div>`,
+    `<div>(mern)
+    Подгрузка express const express = require('express)
+    <pre>
+    // .env npm install dotenv
+    PORT = 4000
+    // server.js
+    require('dotenv').config()
+    const express = require('express')
+    cons app = express()
+
+    // Global middleware 
+    app.use((req, res, next) => {
+        console.log(req.path, req.method);
+        next();
+    })
+
+    app.get('/', (req, res) => {
+        // handle request
+    })
+
+    app.listen(process.env.PORT, () => {
+        console.log('listening')
+    })
+    </pre>
     </div>`
 ]
 

@@ -39,7 +39,7 @@ if (hours < 19) {
         // ТЕОРИЯ REACT -------------------------------------------------------------
         `<div>YouTube Ulbi TV React</div>`,
         `<div>YouTube Codevolution React Redux tutorial</div>`,
-        `<div>YouTube The net ninja all MERN videos</div>`,
+        `<div>YouTube The net ninja all MERN videos (3)</div>`,
         `<div>YouTube Next js codevolution</div>`,
         // ТЕОРИЯ JAVA --------------------------------------------------------------
         `<div>Теория: YouTube изучем java создай проект (11)</div>`,
