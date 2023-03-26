@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TASK MANAGER</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Task Development</title>
 </head>
 <body>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+        body {background-color: black;}
+        .wrapper {margin: 50px auto; width: 90%;}
+        .title {text-align: center; font-size: 20px; color: #3f1e16; cursor: pointer;}
+        .background {position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -5;}
+        .get_task {transition: .5s; width: 200px; height: 200px; background-image: url(./assets/system/get_task.png); background-size: contain; margin: 10px auto; cursor: pointer;}
+        .get_task:hover {transform: scale(1.1);}
+        .tasks {display: flex; justify-content: center; gap: 5%; margin-top: 50px;}
+        .tasks > div {background: linear-gradient(115deg, rgb(0, 0, 0) 5.8%, rgb(178, 14, 14) 112.6%); width: 250px; height: 150px; border-radius: 15px; text-align: center; padding: 25px 10px 50px 10px; cursor: pointer; font-weight: 500; font-size: 20px; color: #fff;}
+        .notes {margin-top: 50px; color: #fff; padding: 30px; border-radius: 15px; background-color: #a496967a;}
+        .notes > div {margin-top: 15px;}
+    </style>
+    <video autoplay muted loop class="background">
+        <source src="./assets/system/Avee player music 🎶.mp4" type="video/mp4">
+    </video>
 
-    <div id="random_block">
-        <button id="get_task"></button>
+    <div class="wrapper">
+        <div class="title"><h1>TASK GENERATOR</h1></div>
+        <div class="page_content">
+            <div class="get_task"></div>
+        </div>
+        <div class="notes"></div>
     </div>
-
-    <div id="menu">
-        <div><a target="_blank" href="./php.html">PHP - LARAVEL</a></div>
-        <div><a target="_blank" href="./ruby.html">RUBY - RAILS</a></div>
-        <div><a target="_blank" href="./node.html">NODE - NEST - REACT - JS</a></div>
-        <div><a target="_blank" href="./add_techno.html">DATA BASES AND OS</a></div>
-        <div><a target="_blank" href="./selfdev.html">SELF DEVELOPEMENT</a></div>
-    </div>
-
-    <div id="list" class="list_menu"></div>
-
-    <script src="./data/data.js"></script>
+    
+    <script src="./assets/data/data.js"></script>
+    <script src="./assets/data/script.js"></script>
 </body>
 </html>
