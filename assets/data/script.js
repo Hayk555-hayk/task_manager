@@ -32,7 +32,7 @@ function show_notes(e) {
 
     if (notes[e.target.className] != undefined) {
         for(let i = 0; i < notes[e.target.className].length; i++) {
-            note.innerHTML += `<div>${notes[e.target.className]}</div>`
+            note.innerHTML += `<div>${notes[e.target.className][i]}</div>`
         }
     }
     
