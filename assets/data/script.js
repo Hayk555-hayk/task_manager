@@ -21,4 +21,4 @@ function show_notes(e) {
 }
 
 const target_notes = document.querySelector('#targeting_task');
-target_notes.addEventListener('click', show_notes);
+target_notes.addEventListener('change', show_notes);
