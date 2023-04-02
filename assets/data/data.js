@@ -2,7 +2,6 @@ const task_title = {
     programming: ['Ruby', 'Ruby on Rails', 'PHP', 'Laravel', 'Node JS', 'Nest JS', 'JavaScript', 'React JS', 'Add techno'],
     math: ['Algebra', 'Geometry', 'Physics'],
     languages: ['English', 'German', 'Spanish', 'Japanese', 'Chinese', 'Hebrew'],
-    sport: ['Chest', 'Biceps', 'Shoulders', 'Triceps', 'Abs', 'Back', 'Legs'],
     religion: ['Reading the Bible', 'Writing a letter', 'Reading the Bible through an app']
 }
 
@@ -107,13 +106,6 @@ const notes = {
     'Hebrew': [
         'lingust урок 1'
     ] ,
-    'Chest': ['Упражнения на грудь'],
-    'Biceps': ['Упражнения на бицепс'],
-    'Shoulders': ['Упражнения на плечи'],
-    'Triceps': ['Упражнения на трицепс'],
-    'Abs': ['Упражнения на пресс'],
-    'Back': ['Упражнения на спину'],
-    'Legs': ['Упражнения на ноги'],
     'Reading the Bible': ['Reading the Bible (стр 17 пункт 18)'],
     'Writing a letter': ['Writing a letter'],
     'Reading the Bible through an app': ['Reading the Bible through an app'],
