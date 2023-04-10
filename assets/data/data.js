@@ -8,7 +8,7 @@ const task_title = {
 
 const notes = {
     'Ruby': [
-        'Чтение кники Ruby (страница 110)',
+        'Чтение кники Ruby (страница 134)',
         'Обьект это сущность служащая контейнером для данных и управляющая доступом к эти данным',
         'Инкапсуляция ограничивает доступ к методам и данным обьекта',
         'Обьект это экземпляр класса',
@@ -50,9 +50,19 @@ const notes = {
         'Если в строке множество подчеркиваний то ее можно представить с помощью %q[some "string"]',
         'Несколько методов строк',
         `<img src='assets/code_examples/ruby/img9.png' />`,
+        'Пример регулярных выражений',
+        `<img src='assets/code_examples/ruby/img10.png' />`,
+        `<img src='assets/code_examples/ruby/img11.png' />`,
+        `<img src='assets/code_examples/ruby/img12.png' />`,
+        'Регулярные выражения нужно скомпелировать Regexp.compile("^foo.*")'
     ],
     'Ruby on Rails': [
-        'Книга Rails стр(2)'
+        'Книга Rails стр(38)',
+        'Валидация в rails осуществляется в моделях',
+        `<img src='assets/code_examples/rails/img1.png' />`,
+        'После того как rails приложение установлено нужна команда bundle install для установки всех gem-ов',
+        'команда rails s запустит сервер',
+        'rails работает шаблоном MVC'
     ],
     'PHP': [
         'Уроки PHP на code.mu (основной учебник - урок 1)'
