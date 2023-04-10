@@ -57,12 +57,14 @@ const notes = {
         'Регулярные выражения нужно скомпелировать Regexp.compile("^foo.*")'
     ],
     'Ruby on Rails': [
-        'Книга Rails стр(38)',
+        'Книга Rails стр(59)',
         'Валидация в rails осуществляется в моделях',
         `<img src='assets/code_examples/rails/img1.png' />`,
         'После того как rails приложение установлено нужна команда bundle install для установки всех gem-ов',
         'команда rails s запустит сервер',
-        'rails работает шаблоном MVC'
+        'rails работает шаблоном MVC',
+        'Корневой маршрут который ответит на запрос / можно определить словом root',
+        `<img src='assets/code_examples/rails/img2.png' />`,
     ],
     'PHP': [
         'Уроки PHP на code.mu (основной учебник - урок 1)'
