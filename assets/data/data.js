@@ -57,7 +57,7 @@ const notes = {
         'Регулярные выражения нужно скомпелировать Regexp.compile("^foo.*")'
     ],
     'Ruby on Rails': [
-        'Книга Rails стр(62)',
+        'Книга Rails стр(88)',
         'Валидация в rails осуществляется в моделях',
         `<img src='assets/code_examples/rails/img1.png' />`,
         'После того как rails приложение установлено нужна команда bundle install для установки всех gem-ов',
@@ -65,6 +65,19 @@ const notes = {
         'rails работает шаблоном MVC',
         'Корневой маршрут который ответит на запрос / можно определить словом root',
         `<img src='assets/code_examples/rails/img2.png' />`,
+        'Как и Laravel Ruby использует паттерн MVC',
+        'Выполнение миграций bundle exec rake db:migrate',
+        'rake это ruby make',
+        `<img src='assets/code_examples/rails/img3.png' />`,
+        'Роуты ресурсы можно создать командой resources: users',
+        `<img src='assets/code_examples/rails/img4.png' />`,
+        'Валидации происходят в моделях',
+        'validates: :content, length: {maximum: 140}',
+        'К примеру если у юзера множество постов то в моделях соединения пишутся следующим образом',
+        'USERS MODEL => has_many :posts',
+        'POSTS MODEL => belongs_to :user',
+        'Модели наследуют ActiveRecord base',
+        'Контроллеры наследуют от ApplicationController, а тот в свою очередь наследует от ActionController:base'
     ],
     'PHP': [
         'Уроки PHP на code.mu (основной учебник - урок 5)',
