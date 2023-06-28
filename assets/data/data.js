@@ -1,5 +1,8 @@
 const task_title = {
-    programming: ['Ruby', 'Ruby on Rails', 'PHP', 'Laravel', 'Node JS', 'Nest JS', 'JavaScript', 'React JS', 'Add techno'],
+    practice: ['YouTube Practice'],
+    books: ['Programming Books'],
+    coursera: ['Coursera'],
+    programming: ['Ruby', 'Ruby on Rails', 'PHP', 'Laravel', 'Node JS', 'Nest JS', 'JavaScript', 'React JS', 'Add techno', 'Vue JS', 'Angular JS'],
     math: ['Algebra', 'Geometry', 'Physics'],
     languages: ['English', 'German', 'Spanish', 'Japanese', 'Chinese', 'Hebrew'],
     religion: ['Reading the Bible', 'Writing a letter', 'Reading the Bible through an app'],
@@ -7,6 +10,12 @@ const task_title = {
 }
 
 const notes = {
+    'Programming Books': [
+        'PHP Objects, Patterns, and Practice" by Matt Zandstra глава 2',
+    ],
+    'Coursera': [
+        'Web Application development, basic concept',
+    ],
     'Ruby': [
         'Чтение кники Ruby (страница 158 )',
         'Обьект это сущность служащая контейнером для данных и управляющая доступом к эти данным',
@@ -122,6 +131,12 @@ const notes = {
     ],
     'React JS': [
         'Уроки React js на metanit.com (урок 1)'
+    ],
+    'Vue JS': [
+        'Уроки на metanit, урок 1'
+    ],
+    'Angular JS': [
+        'Уроки на metanit, урок 1'
     ],
     'Add techno': [
         'Уроки Graphql  на https://tproger.ru/translations/graphql-beginners-guide/ (урок 1)'
@@ -277,5 +292,11 @@ const notes = {
         "Хлопки перед собой 2 минуты",
         "Колени к локтям 2 минуты",
         "Бокс 2 минуты",
-    ]
+    ],
+    'YouTube Practice': [
+        'Alex Merced: react + ruby on rails build',
+        'John Weeks dev: Vue 3 Laravel 9 Tailwind',
+        'Thomas Olviver: Blog app',
+        'Thomas Oliver: Chat App',
+    ],
 }
