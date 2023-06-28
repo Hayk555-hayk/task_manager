@@ -13,7 +13,7 @@ function show_notes(e) {
         note.innerHTML = '<div>';
 
         if (target == "Sport") {
-            notes[target] = notes[target].sort(() => 0.5 - Math.random()).slice(0, 7);
+            notes[target] = notes[target].sort(() => 0.5 - Math.random()).slice(0, 1);
         }
         
         for(let i = 0; i < notes[target].length; i++) {
