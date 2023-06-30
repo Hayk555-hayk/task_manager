@@ -8,9 +8,15 @@ const task_title = {
     religion: ['Reading the Bible', 'Writing a letter', 'Reading the Bible through an app'],
     sport: ['Sport'],
     dog: ['Собаководство'],
+    conspect: ['Conspect'],
 }
 
 const notes = {
+    'Conspect': [
+        'Ruby', 'Ruby on Rails', 'PHP', 'Laravel', 'Node JS', 'Nest JS', 'JavaScript', 'React JS', 'Add techno', 'Vue JS', 'Angular JS',
+        'Algebra', 'Geometry', 'Physics',
+        'English', 'German', 'Spanish', 'Japanese', 'Chinese', 'Hebrew'
+    ],
     'Собаководство': [
         'Чтение книги (по 1-й главе)'
     ],

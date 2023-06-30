@@ -12,7 +12,7 @@ function show_notes(e) {
         note.innerHTML = '';
         note.innerHTML = '<div>';
 
-        if (target == "Sport") {
+        if (target == "Sport" || target == "Conspect") {
             notes[target] = notes[target].sort(() => 0.5 - Math.random()).slice(0, 1);
         }
         
