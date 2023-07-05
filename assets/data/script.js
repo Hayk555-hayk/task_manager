@@ -24,6 +24,7 @@ switch (date.getDay()) {
         target_tasks_sections.bible_book = programming_lessons.religion.bible_book
         target_tasks_sections.bible_app = programming_lessons.religion.bible_app
         target_tasks_sections.writing = programming_lessons.religion.writing
+        target_tasks_sections.laravel_vue_practice = programming_lessons.web_practice.laravel_vue
     break;
 
     case 1:
@@ -45,6 +46,7 @@ switch (date.getDay()) {
         target_tasks_sections.legs = programming_lessons.sport.legs
         target_tasks_sections.abs = programming_lessons.sport.abs
         target_tasks_sections.back = programming_lessons.sport.back
+        target_tasks_sections.ruby_react_practice = programming_lessons.web_practice.ruby_react
     break;
 
     case 2:
@@ -59,9 +61,9 @@ switch (date.getDay()) {
         target_tasks_sections.node = programming_lessons.node_nest_react.node
         target_tasks_sections.nest = programming_lessons.node_nest_react.nest
         target_tasks_sections.react = programming_lessons.node_nest_react.react
-
         target_tasks_sections.dog_training_video = programming_lessons.dog_train.video
         target_tasks_sections.dog_training_books = programming_lessons.dog_train.book
+        target_tasks_sections.nest_angular_practice = programming_lessons.web_practice.nest_angular
     break;
 }
 

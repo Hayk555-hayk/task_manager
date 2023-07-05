@@ -735,5 +735,10 @@ const programming_lessons = {
             "back: разведение рук (стоя, руки вытянуты в стороны, разведение рук в стороны)",
             "back: планка с подъемом ноги и руки (начинается в положении планки на предплечьях, одна нога и противоположная рука поднимаются)"
         ]
+    },
+    web_practice: {
+        laravel_vue: ["Let's Build A Multi-Purpose Laravel 9 and Vue 3 Application (Clovon)"],
+        ruby_react: [" Full Stack Development with Rails 7 and React (APPSIMPACT Academy)"],
+        nest_angular: ["Thomas Oliver Nest and Angular blog and chat app"]
     }
 }
