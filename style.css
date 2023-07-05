@@ -101,7 +101,13 @@ section {
     }
 
     .wrapper_card {
-        width: 70%;
+        width: 90%;
     }
+
+    .card {
+      width: 87%;
+    }
+
+
   }
 
