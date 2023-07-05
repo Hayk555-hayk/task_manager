@@ -5,76 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Development</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
-        body {background: linear-gradient(to right, #d9d9d9, #f3f3f3);}
-        .wrapper {margin: 50px auto; width: 90%;}
-        .title {text-align: center; font-size: 20px; color: #3f1e16; cursor: pointer;}
-        .get_task {margin: 10px auto; cursor: pointer; text-align: center;}
-        select {height: 50px; border-radius: 12px; text-align: center; cursor: pointer;}
-        option {font-size: 14px; cursor: pointer; text-align: left;}
-        .notes {margin-top: 50px; color: #3f1e16; padding: 30px; border-radius: 15px; background-color: #a496967a;}
-        .notes > div {margin-top: 15px;}
-        img {border-radius: 15px; max-width: 100%;}
-        pre {width: 100%; overflow: scroll;}
-        .in_progress {background-color: green; color: #fff; text-decoration: underline;}
-    </style>
 
-    <div class="wrapper">
-        <div class="title"><h1>GET TASK</h1></div>
-        <div class="page_content">
-            <div class="get_task">
-                <select id="targeting_task">
-                    <option class="Programming Books in_progress">Programming Books</option>
-                    <option class="Coursera">Coursera</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Conspect">Conspect</option>
-                    <option class="Ruby">Ruby</option>
-                    <option class="Ruby on Rails">Ruby on Rails</option>
-                    <option class="Sport">Sport</option>
-                    <option class="PHP">PHP</option>
-                    <option class="Laravel">Laravel</option>
-                    <option class="Conspect">Conspect</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Node JS">Node JS</option>
-                    <option class="Nest JS">Nest JS</option>
-                    <option class="Sport">Sport</option>
-                    <option class="JavaScript">JavaScript</option>
-                    <option class="React JS">React JS</option>
-                    <option class="Conspect">Conspect</option>
-                    <option class="Vue JS">Vue JS</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Angular JS">Angular JS</option>
-                    <option class="Add techno">Add techno</option>
-                    <option class="YouTube Practice">YouTube Practice</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Algebra">Algebra</option>
-                    <option class="Geometry">Geometry</option>
-                    <option class="Physics">Physics</option>
-                    <option class="English">English</option>
-                    <option class="Sport">Sport</option>
-                    <option class="German">German</option>
-                    <option class="Spanish">Spanish</option>
-                    <option class="Japanese">Japanese</option>
-                    <option class="Conspect">Conspect</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Chinese">Chinese</option>
-                    <option class="Hebrew">Hebrew</option>
-                    <option class="Reading the Bible">Reading the Bible</option>
-                    <option class="Conspect">Conspect</option>
-                    <option class="Sport">Sport</option>
-                    <option class="Writing a letter">Writing a letter</option>
-                    <option class="Reading the Bible through an app">Reading the Bible through an app</option>
-                    <option class="Sport">Sport</option>
-                    <option class="dog">Собаководство</option>
-                    <option class="Conspect">Conspect</option>
-                </select>
+    <div>
+        <header>
+            <nav>
+                <div id="day_1">Задачи день 1</div>
+                <div id="day_2">Задачи день 2</div>
+                <div id="day_3">Задачи день 3</div>
+            </nav>
+        </header>
+
+        <section>
+            <div class="wrapper_card">
+                <div id="card" class="card">
+                    <div class="profile">
+                      <img id="day_img" class="profile-image" src="" alt="Profile Photo">
+                    </div>
+                    <h2 id="card_title" class="card-title">Название карточки</h2>
+                    <div class="task-sections">
+                      <div class="task-section">
+                        <h3>Секция 1</h3>
+                        <ul>
+                          <li>Задача 1</li>
+                          <li>Задача 2</li>
+                          <li>Задача 3</li>
+                          <li>Задача 4</li>
+                        </ul>
+                      </div>
+                      <div class="task-section">
+                        <h3>Секция 2</h3>
+                        <ul>
+                          <li>Задача 1</li>
+                          <li>Задача 2</li>
+                          <li>Задача 3</li>
+                          <li>Задача 4</li>
+                        </ul>
+                      </div>
+                      <div class="task-section">
+                        <h3>Секция 3</h3>
+                        <ul>
+                          <li>Задача 1</li>
+                          <li>Задача 2</li>
+                          <li>Задача 3</li>
+                          <li>Задача 4</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>                  
             </div>
-        </div>
-        <div class="notes"></div>
+        </section>
+
+        <footer>
+            footer
+        </footer>
     </div>
+
     
     <script src="./assets/data/data.js"></script>
     <script src="./assets/data/script.js"></script>
