@@ -740,5 +740,30 @@ const programming_lessons = {
         laravel_vue: ["Let's Build A Multi-Purpose Laravel 9 and Vue 3 Application (Clovon)"],
         ruby_react: [" Full Stack Development with Rails 7 and React (APPSIMPACT Academy)"],
         nest_angular: ["Thomas Oliver Nest and Angular blog and chat app"]
+    },
+    programming_books: {
+        books: [
+            "clean_code",
+            "pdf_content",
+            "The Pragmatic Programmer Your Journey to Mastery, 20th Anniversary Edition by Andrew Hunt David Hurst Thomas",
+            "code-complete-a-practical-handbook-of-software-construction-with-pdf-outline-2nd-edition_compress",
+            "articulo",
+            "Refactoring-Improving-the-Design-of-Existing-Code-Addison-Wesley-Professional-1999",
+            "sicp",
+            "Addison.Wesley.The.Mythical.Man-Month.Essays.on.Software.Engineering.20th.Anniversary.Edition",
+            "Cracking the Coding Interview 189 Programming Questions and Solutions by Gayle Laakmann McDowell",
+            "Apress PHP Objects Patterns And Practicebbb",
+            "toaz.info-modern-php-pr_827dbac0004d3bbc1a5496238638b5ec",
+            "php-the-right-way.1594",
+            "Laravel Up and Running - A Framework for Building Modern PHP Apps [EnglishOnlineClub.com]",
+            "codebright",
+            "The_Well-Grounded_Rubyist_3rd_Edition",
+            "agile-web-development-with-rails-6-9781680506709-1680506706_compress",
+            "0321584104",
+            "Node.js Design Patterns - Casciaro, Mario [PDF][StormRG]",
+            "JavaScript- The Good Parts",
+            "Pham_Duc"
+
+        ]
     }
 }
