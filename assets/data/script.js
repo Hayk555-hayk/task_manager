@@ -15,7 +15,7 @@ switch (date.getDay()) {
         day_3.classList.add("inactive_day");
         day_1.setAttribute('id', 'active_element');
         card_title.innerText = "PHP, LARAVEL, VUE, RELIGION"
-        day_img.src = './assets/images/download.png'
+        day_img.src = './assets/images/one.png'
     break;
 
     case 1:
@@ -26,6 +26,7 @@ switch (date.getDay()) {
         day_3.classList.add("inactive_day");
         day_2.setAttribute('id', 'active_element');
         card_title.innerText = "RUBY, RAILS, ANGULAR, SPORT"
+        day_img.src = './assets/images/two.png'
     break;
 
     case 2:
@@ -35,6 +36,7 @@ switch (date.getDay()) {
         day_3.classList.add("active_day");
         day_3.setAttribute('id', 'active_element');
         card_title.innerText = "NODE, NEST, REACT, DOG TRAINING"
+        day_img.src = './assets/images/three.png'
     break;
 }
 
@@ -43,7 +45,6 @@ const active_element = document.getElementById("active_element");
 let clicks_count = 1
 const cart = document.getElementById("card");
 
-console.log(card)
 active_element.addEventListener('click', function() {
     clicks_count += 1
     if (clicks_count % 2 == 0) {
