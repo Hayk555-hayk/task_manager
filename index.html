@@ -4,40 +4,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Development</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hayk Khachatryan CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p, li {
+            color: #666;
+        }
+
+        hr {
+            border-color: #ccc;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section li {
+            margin-top: 15px;
+        }
+
+        .cover-letter {
+            margin-top: 40px;
+        }
+
+        .company_logo {
+            width: 50px;
+            border-radius: 15px;
+            display: inline-block;
+            vertical-align: -17px;
+            margin-right: 10px;
+        }
+
+        .skill_logo {
+            width: 40px;
+            vertical-align: -10px;
+            border-radius: 20px;
+        }
+
+        img {
+
+        }
+    </style>
 </head>
-<body>
+<body id="download-pdf" style="background-color: #f2f2f2;">
 
     <div>
-        <header>
-            <nav>
-                <div id="day_1">Задачи день 1</div>
-                <div id="day_2">Задачи день 2</div>
-                <div id="day_3">Задачи день 3</div>
-            </nav>
-        </header>
+        <h1>Hayk Khachatryan</h1>
+        <p>Backend Developer</p>
 
-        <section>
-            <div class="wrapper_card">
-                <div id="card" class="card">
-                    <div class="profile">
-                      <img id="day_img" class="profile-image" src="" alt="Profile Photo">
-                    </div>
-                    <h2 id="card_title" class="card-title">Название карточки</h2>
-                    <div id="random_tasks" class="task-sections"></div>
-                  </div>                  
-            </div>
-        </section>
+        <hr>
+
+        <div class="section">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: ayk.khachatryan.1994@gmail.com</li>
+                <li>Phone: +374-96-49-45-43</li>
+                <li>Location: Armenia, Yerevan</li>
+                <li>Github: <a href="https://github.com/Hayk555-hayk">Link</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li><img class="skill_logo" src="./assets/images/html.png" alt="html"> HTML</li>
+                <li><img class="skill_logo" src="./assets/images/css.png" alt="css"> CSS</li>
+                <li><img class="skill_logo" src="./assets/images/js.png" alt="js"> JavaScript</li>
+                <li><img class="skill_logo" src="./assets/images/postgre.png" alt="pgre"> PostgreSQL</li>
+                <li><img class="skill_logo" src="./assets/images/mysql.png" alt="msql"> MySQL</li>
+                <li><img class="skill_logo" src="./assets/images/sqlite.jpg" alt="sql"> SQLite</li>
+                <li><img class="skill_logo" src="./assets/images/php.png" alt="php"> PHP</li>
+                <li><img class="skill_logo" src="./assets/images/laravel.png" alt="lrv"> Laravel</li>
+                <li><img class="skill_logo" src="./assets/images/ruby.png" alt="rub"> Ruby</li>
+                <li><img class="skill_logo" src="./assets/images/rails.png" alt="rubrail"> Ruby on Rails</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>
+                    <img class="company_logo" src="./assets/images/ser.jpeg" alt="serious"><strong>Serious</strong> - Backend Developer <i>Jul 2021 - Feb 2022</i>
+                </li>
+                <li>
+                    <img class="company_logo" src="./assets/images/web.jpeg" alt="web foundation"><strong>Web Foundation</strong> - Backend Developer <i>Feb 2022 - Dec 2022</i>
+                </li>
+                <li>
+                    <img class="company_logo" src="./assets/images/cret.jpeg" alt="cretrix"><strong>Cretrix</strong> - Backend Developer <i>Jan 2023 - Present</i>
+                </li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 20px;" class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>Armenian (Native)</li>
+                <li>Russian (Fluent)</li>
+                <li>English (Intermediate)</li>
+            </ul>
+        </div>
+
+        <div class="cover-letter">
+            <h2>Cover Letter</h2>
+            <p>
+                Dear Hiring Manager,<br><br>
+                I am writing to express my interest in the backend developer position at your company.
+                With a strong background in web development and a passion for creating efficient and scalable solutions,
+                I believe I would be a valuable asset to your team.<br><br>                
+                Thank you for considering my application. I have attached my resume for your review.
+                I would welcome the opportunity to further discuss how I can contribute to the success of your organization.
+                Please feel free to contact me at your convenience.<br><br>
+                Thank you for your time and consideration.<br><br>
+                Sincerely,<br>
+                Hayk Khachatryan
+            </p>
+        </div>
+
     </div>
 
-    <button id="download-pdf">Download PDF</button>
 
 
-    <!-- <script src="./assets/data/data.js"></script> -->
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.js"></script>
-
+    <script src="./assets/data/data.js"></script>
     <script src="./assets/data/script.js"></script>
 </body>
 </html>
