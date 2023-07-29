@@ -30,8 +30,7 @@ function register_to_task_manager() {
     email: user_email
   }
   let uuid = generateUUID()
-
-  let register_user = insert_to_firebase('users', uuid, sent_data)
+  let check_user = get_from_firebase('users', 'login', sent_data)
 
 }
 
