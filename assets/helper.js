@@ -1,5 +1,4 @@
 function check_user_existence() {
-  console.log(localStorage.getItem('userData'))
   if (localStorage.getItem('userData') != null){
     document.getElementById('unloged').style.display = 'none'
     let user = JSON.parse(localStorage.getItem('userData'))
@@ -21,14 +20,26 @@ function generateUUID() {
     return uuid;
   }
 
-  function get_from_firebase(firebase_collection_name, query_type, sent_data) {
+  function get_from_firebase(firebase_collection_name, query_type, sent_data = {}) {
     switch(query_type) {
         case "all": 
-        db.collection(firebase_collection_name).get().then(data => {
+        if (check_user_existence()) {
+          let user = JSON.parse(localStorage.getItem('userData'))
+          db.collection(firebase_collection_name).where('user_id', '==', user.id).get().then(data => {
+            let html = '';
             data.docs.forEach(element => {
-                element.data()
+              html += `<div class="article">
+                <h3>${element.data().title}</h3>
+                <p>${element.data().description}</p>
+              </div>`;
             });
-        })
+            console.log(html)
+            document.getElementById('main_page').innerHTML = html
+          })
+        } else {
+          console.log('please, log in')
+        }
+
         break;
         case "login":
             db.collection(firebase_collection_name).where('login', '==', sent_data.login).where('password', '==', sent_data.password).where('email', '==', sent_data.email).get().then(data => {

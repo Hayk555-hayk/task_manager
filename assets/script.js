@@ -39,3 +39,10 @@ function register_to_task_manager() {
 }
 
 register.addEventListener('click', register_to_task_manager)
+
+// Get articles
+function get_mai_page_data(data_from_firebase_collection) {
+  get_from_firebase(data_from_firebase_collection, 'all')
+}
+
+get_mai_page_data('articles')
