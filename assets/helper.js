@@ -30,10 +30,13 @@ function generateUUID() {
             data.docs.forEach(element => {
               html += `<div class="article">
                 <h3>${element.data().title}</h3>
+                <h4>${element.data().type}</h2>
                 <p>${element.data().description}</p>
+                <div class="article_redact">
+                  <div class="article_manager"><button onclick="manage_articles(event, '${firebase_collection_name}', 'edit', '${element.id}')">edit</button> / <button onclick="manage_articles(event, '${firebase_collection_name}', 'remove', '${element.id}')">remove</button></div>
+                </div>
               </div>`;
             });
-            console.log(html)
             document.getElementById('main_page').innerHTML = html
           })
         } else {
@@ -50,9 +53,13 @@ function generateUUID() {
                   console.log(user_data)
                   localStorage.setItem('userData', JSON.stringify(user_data));
                   check_user_existence()
+                  document.getElementById('login_register_error').style.opacity = '0'
+                  get_mai_page_data('articles')
+
                 });
               } else {
-                console.log('no such user')
+                document.getElementById('login_register_error').innerText = 'User not found'
+                document.getElementById('login_register_error').style.opacity = '1'
               }
               
             })
@@ -88,13 +95,13 @@ function generateUUID() {
   }
 
   function remove_from_firebase(firebase_collection_name, uuid) {
-    db.collection(firebase_collection_name).doc(uuid).delete.then(() => {
+    db.collection(firebase_collection_name).doc(uuid).delete().then(() => {
         return uuid;
     })
   }
 
   function update_in_firebase(firebase_collection_name, uuid, data) {
-    db.connection(firebase_collection_name).doc(uuid).update(data).then(() => {
+    db.collection(firebase_collection_name).doc(uuid).update(data).then(() => {
         return data;
     })
   }
