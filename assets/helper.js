@@ -26,7 +26,12 @@ function generateUUID() {
         if (check_user_existence()) {
           let user = JSON.parse(localStorage.getItem('userData'))
           db.collection(firebase_collection_name).where('user_id', '==', user.id).get().then(data => {
-            let html = '';
+            let html = `<div id="crate_new_article_data">
+            <input id="new_data_title" type="text" placeholder="title"> <br />
+            <input id="new_data_type" type="text" placeholder="type"> <br />
+            <textarea id="new_data_description" type="text" placeholder="description"></textarea> <br />
+            <button onclick="insert_new_article()" id='insert_article'>Create</button>
+          </div>`;
             data.docs.forEach(element => {
               html += `<div class="article">
                 <h3>${element.data().title}</h3>

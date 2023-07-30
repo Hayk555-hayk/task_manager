@@ -86,12 +86,21 @@ input {
     display: none;
   }
 
-  #crate_article_data {
-    width: 400px;
+  #crate_new_article_data {
+    width: 50%;
     background-color: #6c63ff;
     padding: 5px;
     border-radius: 15px;
-    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px auto;
+  }
+
+  #crate_article_data {
+    width: 25%;
+    background-color: #6c63ff;
+    padding: 5px;
+    border-radius: 15px;
+    position: sticky;
     top: 15vh;
     left: 40%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

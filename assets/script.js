@@ -82,3 +82,34 @@ function manage_articles(event, firebase_collection, action, target_id) {
     }
   }
 }
+
+// Create article 
+let new_article = document.getElementById('insert_article')
+
+function insert_new_article() {
+  let title = document.getElementById('new_data_title').value;
+  let type = document.getElementById('new_data_type').value;
+  let description = document.getElementById('new_data_description').value;
+  let uuid = generateUUID();
+
+  if (title == '') {
+    document.getElementById('new_data_title').style.border = '3px solid red';
+    return 0;
+  } else if(type == '') {
+    document.getElementById('new_data_type').style.border = '3px solid red';
+    return 0;
+  } else if (description == '') {
+    document.getElementById('new_data_description').style.border = '3px solid red';
+    return 0;
+  } else {
+    let user = JSON.parse(localStorage.getItem('userData'))
+    let data = {
+      title: title,
+      type: type,
+      description: description,
+      user_id: user.id
+    }
+    insert_to_firebase("articles", uuid, data)
+  }
+}
+
