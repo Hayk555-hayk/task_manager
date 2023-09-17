@@ -1872,3 +1872,15 @@ body {
   border-radius: 12px;
 }
 
+
+
+@media (max-width: 658px) {
+  #tutorial {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #tutorial > div {
+    width: 100%;
+  }
+}
