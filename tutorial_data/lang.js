@@ -1,20 +1,33 @@
 let lang_data = {
     english: [
-        'english tutorial',
+        `<div class ="legend">
+        Уроки lingust<br />
+        Книга oxford
+        </div>`,
     ],
     spanish: [
-        'spanish tutorial',
+        `<div class ="legend">
+        Уроки lingust
+        </div>`,
     ],
     france: [
-        'france tutorial',
+        `<div class ="legend">
+        Уроки lingust
+        </div>`,
     ],
     german: [
-        'german tutorial',
+        `<div class ="legend">
+        Уроки lingust
+        </div>`,
     ],
     japan: [
-        'japan tutorial',
+        `<div class ="legend">
+        Уроки lingust
+        </div>`,
     ],
     habrew: [
-        'habrev tutorial',
+        `<div class ="legend">
+        Уроки lingust
+        </div>`,
     ]
 }
