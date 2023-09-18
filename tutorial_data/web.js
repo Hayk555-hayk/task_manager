@@ -24,7 +24,7 @@ let web_data = {
     ],
     ruby: [
         `<div class ="legend">
-        Ruby Tutorial For Beginners, ProgrammingKnowledge<br />
+        Ruby Tutorial For Beginners, ProgrammingKnowledge (урок 2)<br />
         Ruby - Programming Language | Tutorial, Giraffe Academy<br />
         Ruby Programming Tutorials, Jake Day<br />
         Книга clear_code 5<br />,
@@ -32,10 +32,18 @@ let web_data = {
         Книга ruby 3<br />
         Книга ruby 1<br />
         </div>`,
+        `Ruby файлы имеют расширение .rb, ruby -v покажет версию ruby, ruby fileName.rb запуск программы`,
+        `Форматировка строки с переменными происходит следующим образом p "this is value of #{var_1}"<br />
+        Так же вместо p можно использовать puts или print, puts отличается от print тем что каждый puts будет выведен с новой строки а print<br />
+        друг за другом, можно выводить переменные используя запятую puts var_1, var_2`,
+        `Пример определения и вызова ruby функции<br />
+        '<img src="tutorial_data/web_img/ruby_1.png">'`,
+        `Можно поменять переменные местами используя следующий синтаксис a,b = b,a<br />
+        a,b,c = 1,2,3 пример определения переменных одной строкой`
     ],
     ror: [
         `<div class ="legend">
-        Ruby on Rails for Beginners,GoRails<br />
+        Ruby on Rails for Beginners,GoRails (урок 3)<br />
         Full Stack Ruby on Rails Development Bootcamp, APPSIMPACT Academy<br />
         Postgres Tutorial - Beginners to Advanced, Analytics Excellence<br />
         Книга clear_code 3<br />
@@ -43,6 +51,9 @@ let web_data = {
         Книга ruby 2<br />
         Книга clear_code 6<br />
         </div>`,
+        `Если установлен ruby то можно использовать комманду gem install rails для установки ROR<br />
+        rails new project_name создаст новый проект<br />
+        Bundler устанавливает gem файлы, используется команда bundle install, rails s - старт сервера`
     ],
     js: [
         `<div class ="legend">
