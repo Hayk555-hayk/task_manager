@@ -1,7 +1,7 @@
 let web_data = {
     php: [
         `<div class ="legend">
-        Learn PHP The Right Way - Full PHP Tutorial For Beginners & Advanced, Program With Gio<br />
+        Learn PHP The Right Way - Full PHP Tutorial For Beginners & Advanced, Program With Gio (урок 3)<br />
         PHP Design Patterns, Applicable Programming<br />
         Design Patterns in Object Oriented Programming, Christopher Okhravi<br />
         MySQL tutorial for beginners, Bro Code<br />
@@ -11,10 +11,12 @@ let web_data = {
         Книга php 1<br />
         Книга php 4<br />
         </div>`,
+        `PHP запускается при помощи веб сервера, основные веб сервера это apache и nginx<br />
+        При использовании XAMP можно в htdocs создать свой файл с проектами и запустить его при помощи ввода в url localhost и имя файла`
     ],
     laravel: [
         `<div class ="legend">
-        Laravel 9 tutorial, Code Step By Step<br />
+        Laravel 9 tutorial, Code Step By Step (урок 3)<br />
         Laravel 10 full course for beginners, Bitfumes<br />
         Laravel From Scratch, Traversy Media<br />
         Книга  clear_code 8<br />
