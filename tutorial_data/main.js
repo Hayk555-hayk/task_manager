@@ -39,7 +39,7 @@ menu_container.addEventListener("click", function(event) {
     
             console.log(current_page_data[target_tutorial_name])
             for (var i = 0; i < current_page_data[target_tutorial_name].length; i++) {
-                sub_tutorial_html += `<div>${current_page_data[target_tutorial_name][i]}</div>`
+                sub_tutorial_html += `<div>${current_page_data[target_tutorial_name][i]} <br /> - ${i} -</div>`
             }
     
             sub_tutorial.innerHTML = sub_tutorial_html
