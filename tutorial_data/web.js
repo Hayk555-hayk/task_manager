@@ -61,10 +61,16 @@ let web_data = {
         `<div class ="legend">
         JavaScript Tutorial for Beginners, Telusko<br />
         JavaScript Tutorial For Beginners To Experts | Full Course 2020, CoderLipi<br />
+        TypeScript Tutorial, Net Ninja<br />
         Complete MongoDB Tutorial, Net Ninja<br />
         Книга js 1<br />
         Книга Грокаем Алгоритмы<br />
         </div>`,
+        `При помощи JS можно создавать все типы веб приложений, компютер понимает байт кот компилер или интерпритатор переводит код в байт код<br />
+        JS интерпритируется`,
+        `Пример логики переменных<br />
+        <img src="tutorial_data/web_img/js_1.png">
+        `
     ],
     node: [
         `<div class ="legend">
@@ -75,6 +81,7 @@ let web_data = {
         Книга js 2<br />
         Книга js 3<br />
         </div>`,
+        `JS версий 6 но на самрм деле 5 потому что 4-я версия не выходила, были EcmaScript 1,2,3,5,6`
     ],
     react: [
         `<div class ="legend">
@@ -83,5 +90,8 @@ let web_data = {
         Next.js Tutorial for Beginners, Codevolution<br />
         Книга JS 5<br />
         </div>`,
+        `React это открытая для всех библиотека для создания user interface, для установки react необходимо иметь node js потому что<br />
+        нам нужен будет npm который установится с node js`,
+        `На сайте npmjs.com можно найти пакет create-react-app (npm i create-react-app), npmx create-react-app projectName`
     ]
 }
