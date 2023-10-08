@@ -93,5 +93,13 @@ let web_data = {
         `React это открытая для всех библиотека для создания user interface, для установки react необходимо иметь node js потому что<br />
         нам нужен будет npm который установится с node js`,
         `На сайте npmjs.com можно найти пакет create-react-app (npm i create-react-app), npmx create-react-app projectName`
+    ],
+    mobile: [
+        `<div class ="legend">
+        Flutter totorial for beginners, the net ninja<br />
+        Flutter totorial for beginners, Tech with Tim<br />
+        React native totorial for beginners, the net ninja<br />
+        React Native Tutorial, Programming with Mash
+        </div>`,
     ]
 }
