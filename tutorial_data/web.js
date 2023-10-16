@@ -1,7 +1,7 @@
 let web_data = {
     php: [
         `<div class ="legend">
-        Learn PHP The Right Way - Full PHP Tutorial For Beginners & Advanced, Program With Gio (урок 3)<br />
+        Learn PHP The Right Way - Full PHP Tutorial For Beginners & Advanced, Program With Gio (урок 4 03:50)<br />
         PHP Design Patterns, Applicable Programming<br />
         Design Patterns in Object Oriented Programming, Christopher Okhravi<br />
         MySQL tutorial for beginners, Bro Code<br />
@@ -12,7 +12,30 @@ let web_data = {
         Книга php 4<br />
         </div>`,
         `PHP запускается при помощи веб сервера, основные веб сервера это apache и nginx<br />
-        При использовании XAMP можно в htdocs создать свой файл с проектами и запустить его при помощи ввода в url localhost и имя файла`
+        При использовании XAMP можно в htdocs создать свой файл с проектами и запустить его при помощи ввода в url localhost и имя файла`,
+        `php код пишется внутри тега php в файле .php &#x2770;?php ?&#x2771; если в файле .php только php код то он может не иметь закрывающийся тег <br />
+        Но если там есть и html код по php тегом то закрывающийся тег обьязателен`,
+        `echo "hello world" выводит текст, в консоле мы увидим просто текст потому что php это server side код,<br />
+        print "hello world" тоже выводит текст, echo быстрее и многофункциональнее чем print`,
+        `Обьязательно нужно ставить точку с запятой, есть исключения где точка с запятой не обьязятельно <br />
+        - На последней строчке перед закрывающимся php тегом`,
+        `php index.php выполняет код php <br />
+        Интерполяцию строки php c переменной нужно ваполнять в двойных кавычках echo "Hello $var" или echo "Hello {$var}"<br/>
+        можно конкатенировать переменные символом точки echo 'Hello' . ' ' . $var`,
+        `Переменные начинаются со знака доллара $variable = "5x"; переменная не может начинатся с цивор или иметь зарезервированно емя как скажем $this`,
+        `Два примера присвоения переменным значения с сылкой  и без<br />
+        <img src="tutorial_data/web_img/php_1.png" /><br />
+        <img src="tutorial_data/web_img/php_2.png" /><br />
+        Пример использования php с html <br/>
+        <img src="tutorial_data/web_img/php_3.png" /><br/>
+        Тот же код но с каротким php тегом<br />
+        <img src="tutorial_data/web_img/php_4.png" /><br/>
+        Короткое написание пригодиться когда нужно бутет напечатать что нибудь, для полноценного кода нужен нормальный php тег`,
+        `Константа это переменная которая не может быть изменена если ее уже определили<br />
+        Есть два способа определить константу<br />
+        1-define('name', 'value') define('STATUS', 'open') echo STATUS, проверка defined('STATUS') <br/>
+        2- const STATUS = 'open'<br/>
+        const определяется во время компиляции а define во время выполнения кода`,
     ],
     laravel: [
         `<div class ="legend">
