@@ -120,6 +120,119 @@ let lang_data = {
         offen	офэн	открытый<br />
         Ofen	о:фэн	печка`,
         `Ударение в немецком языке падает, как правило, на корень слова или на приставку, т. е. на первый слог. При изменении слова ударение не меняется.`,
+        `wie ви: как<br/>
+        heißen хайсэн: зваться, называться<br/>
+        Wie heißen Sie?: Как вас зовут?<br/>
+        Sie зи: вы (форма вежливости)Heißen Sie Martin?<br/>
+        Entschuldigen Sie! энтшульдигэн: Извините!<br/>
+        Entschuldigen Sie! Sind Sie Rolf?: Извините! Вы Рольф?<br/>
+        sind зинт (обычно не переводится)Sind Sie Walter Scholz?: Вы Вальтер Шольц?<br/>
+        bin бин(обычно не переводится)Ich bin Wladimir Petrow. Я Владимир Петров.<br/>
+        gut гу:т хороший<br/>
+        der Tag дэа та:к день<br/>
+        Guten Tag!: Добрый день! Здравствуйте!<br/>
+        der Morgen дэа моргэн утро<br/>
+        Guten Morgen, Frau Stein!: Доброе утро, госпожа Штайн!<br/>
+        der Abend дэа а:бэнт вечер<br/>
+        Guten Abend, Paul! Добрый вечер, Пауль!<br/>
+        der Freund дэа фройнт друг
+        Sind Sie Freunde?: Вы друзья?`,
+        `<img src="tutorial_data/lang_img/ger_1.png"/>`,
+        `woher вохе:а откуда<br/>
+        Woher sind Sie? Откуда вы?<br/>
+        kommen комэн приходить; приезжать<br/>
+        Woher kommen Sie? Откуда вы прибыли?<br/>
+        aus аус из<br/>
+        Kommen Sie aus Dresden? Вы приехали из Дрездена?<br/>
+        Russland pycлaнт Россия<br/>
+        Ich komme aus Russland. Я приехал из России.<br/>
+        Moskau москау Москва<br/>
+        Kommen Sie aus Moskau? Вы приехали из Москвы?<br/>
+        wohnen вo:нэн жить<br/>
+        Wohnen Sie in Yerevan? — Nein. Вы живете в Ереване? — Нет.<br/>
+        in ин в <br/>
+        Ich wohne in Wolgograd. Я живу в Волгограде.<br/>
+        wo во: где<br/>
+        Wo wohnen Sie? Где вы живете?<br/>
+        auch аух также, тоже<br/>
+        Kommen Sie auch aus Moskau? Вы тоже приехали из Москвы?<br/>
+        sprechen шпрэхен говорить разговаривать<br/>
+        Sprechen Sie Deutsch? Вы говорите по-немецки?<br/>
+        Deutsch дойч немецкий язык<br/>
+        Ich spreche Deutsch. Я говорю по-немецки.<br/>
+        Russisch русиш русский язык<br/>
+        Sprechen Sie Russisch? Вы говорите по-русски?<br/>
+        verstehen фэ(а/р)штэ:ен понимать<br/>
+        Verstehen Sie Russisch? Вы понимаете по-русски?<br/>
+        etwas этвас что-нибудь; немного<br/>
+        Ich verstehe etwas Deutsch. Я немного понимаю по-немецки.<br/>
+        und унт и; a<br/>
+        Ich verstehe Deutsch. Und Sie? Я понимаю по-немецки. А вы?<br/>
+        Berlin бэ(р)ли:н Берлин<br/>
+        Bernd wohnt in Berlin Бернд живет в Берлине`,
+        `Darf ich...? дарф ихь разрешите (что-либо сделать)?<br/>
+        Darf ich kommen? Разрешите прийти?<br/>
+        vorstellen фо:(а/р)штэлен представлять<br/>
+        Darf ich vorstellen? Разрешите представить?<br/>
+        das дас это<br/>
+        Ich verstehe das. Я это понимаю.<br/>
+        ist ист(обычно не переводится) Das ist Frau Lorenz. Это госпожа Лоренц.<br/>
+        bitte битэ пожалуйста<br/>
+        Entschuldigen Sie bitte! Извините, пожалуйста!<br/>
+        wie bitte? ви: битэ как вы сказали?<br/>
+        Wie bitte? Woher sind Sie? Как вы сказали? Откуда вы?<br/>
+        mein майн мой (моя, моё)<br/>
+        Das ist mein Freund Werner. Это мой друг Вернер.<br/>
+        Ihr и:а ваш (ваша, ваше)<br/>
+        Ist das Ihr Freund? — Ja. Это ваш друг? — Да.<br/>
+        der Name на:мэ имя; фамилия<br/>
+        Mein Name ist Smirnow. Моя фамилия Смирнов.<br/>
+        sehr зе(и):а очень (как усиление)<br/>
+        Darf ich kommen? — Bitte sehr! Разрешите прийти? — Пожалуйста!<br/>
+        angenehm ангэне:м приятно<br/>
+        Das ist Manfred. — Sehr angenehm! Это Манфред. — Очень приятно!<br/>
+        er э:а он<br/>
+        Das ist Paul. Er wohnt in Halle. Это Пауль. Он живет в Галле.<br/>
+        sie зи: она<br/>
+        Das ist Erika. Sie kommt aus Rom. Это Эрика. Она приехала из Рима.<br/>
+        es эс оно; это<br/>
+        Ich verstehe es. Я это понимаю.<br/>
+        sie зи: они<br/>
+        Uwe und Jan, sie kommen aus Gera. Уве и Ян, они прибыли из Геры.<br/>
+        wir ви:а мы<br/>
+        Wir kommen aus Wolgograd. Мы прибыли из Волгограда.`,
+        `allein аляйн один (в одиночестве)<br/>
+        Sind Sie allein? - Ja Вы один?—Да.<br/>
+        die Sekretärin зэкрэтэ:рин секретарь (женщина)<br/>
+        Frau Meier ist Sekretärin. Госпожа Майер секретарь.<br/>
+        helfen хэльфэн помогать<br/>
+        Darf ich helfen? Разрешите (вам) помочь?<br/>
+        gern герн охотно<br/>
+        Ich komme gern. Я охотно (с удовольствием) приду.<br/>
+        ganz ганц совсем, вполне, очень<br/>
+        Sie ist ganz allein. Она совсем одна.<br/>
+        schön шё:н красиво, прекрасно; хорошо<br/>
+        Moskau ist schön. Москва красива<br/>
+        nicht нихьт не<br/>
+        Ich wohne nicht in Dresden. Я живу не в Дрездене.<br/>
+        der Kollege коле:гэ товарищ (по работе), коллега<br/>
+        Er ist mein Kollege. Он мой товарищ по работе.<br/>
+        also альзо итак, таким образом<br/>
+        Also, Sie kommen aus Moskau. Итак, вы прибыли из Москвы.<br/>
+        willkommen вилькомэн добро пожаловать<br/>
+        Willkommen in Leipzig! Добро пожаловать в Лейпциг!<br/>
+        die DDR дэдээр ГДР (истор.)<br/>
+        Ich komme aus der Ex-DDR. Я прибыл из бывшей ГДР.<br/>
+        die Bundesrepublik ...рэпублик Федеративная Республика (ФРГ)<br/>
+        Uwe ist in der Bundesrepublik. Уве в Федеративной Республике.<br/>
+        Österreich ё:стэрайхь Австрия<br/>
+        Frau Lang kommt aus Österreich. Госпожа Ланг прибыла из Австрии.<br/>
+        die Schweiz швайц Швейцария<br/>
+        Wir kommen aus der Schweiz. Мы прибыли из Швейцарии.<br/>
+        Englisch энглиш английский язык<br/>
+        Ich spreche etwas Englisch. Я говорю немного по-английски.<br/>
+        Französisch францё:зиш французский язык<br/>
+        Verstehen Sie Französisch?—Ja. Вы понимаете по-французски? - Да.`,
     ],
     japan: [
         `<div class ="legend">
