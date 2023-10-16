@@ -113,7 +113,7 @@ let lang_data = {
     ],
     german: [
         `<div class ="legend">
-        Уроки lingust (Тема №1-1. Знакомство)
+        Уроки lingust (Урок 2. Занятие 2. Виды сказуемого)
         </div>`,
         `Stadt	штат	город<br />
         Staat	шта:т	государство<br />
@@ -233,6 +233,37 @@ let lang_data = {
         Ich spreche etwas Englisch. Я говорю немного по-английски.<br/>
         Französisch францё:зиш французский язык<br/>
         Verstehen Sie Französisch?—Ja. Вы понимаете по-французски? - Да.`,
+        `wer ве:а кто<br/>
+        Wer ist das? — Das ist Monika. Кто это? — Это Моника.<br/>
+        Wie alt sind Sie? Сколько вам лет?<br/>
+        Wie alt ist Martin? Сколько лет Мартину?<br/>
+        das Jahr йа:(а/р) год<br/>
+        Ich wohne ein Jahr in Berlin. Я живу в Берлине год.<br/>
+        Ich bin ... Jahre alt. Мне ... лет.<br/>
+        Rolf ist 18 Jahre alt. Рольфу 18 лет.<br/>
+        eins айнс один<br/>
+        zwei цвай два<br/>
+        Eins plus eins ist zwei. Один плюс один получится два.<br/>
+        drei драй три<br/>
+        Drei minus eins ist zwei. Три минус один получится два.
+        vier фи:а четыре<br/>
+        Zwei mal zwei ist vier. Дважды два — четыре.<br/>
+        fünf фюнф пять<br/>
+        Zwei plus drei ist fünf. Два плюс три получится пять.<br/>
+        sechs зэкс шесть<br/>
+        Drei mal zwei ist sechs. Трижды два — шесть.<br/>
+        sieben зи:бэн семь<br/>
+        Sieben minus drei ist vier. Семь минус три получится четыре.<br/>
+        acht ахт восемь<br/>
+        Acht durch zwei ist vier. Восемь разделить на два — четыре.<br/>
+        neun нойн девять<br/>
+        Drei mal drei ist neun. Три помножить на три — девять.<br/>
+        zehn цэин десять<br/>
+        Zehn durch zwei ist fünf. Десять разделить на два — пять.<br/>
+        elf эльф одиннадцать<br/>
+        Sieben plus vier ist elf. Семь плюс четыре — одиннадцать.<br/>
+        zwölf цвёльф двенадцать<br/>
+        Zwölf minus vier ist acht. Двенадцать минус четыре — восемь.`,
     ],
     japan: [
         `<div class ="legend">
