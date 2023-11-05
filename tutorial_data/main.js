@@ -45,3 +45,11 @@ menu_container.addEventListener("click", function(event) {
         }   
     }
 });
+
+const elements = document.querySelectorAll('.fa.fa-angle-right');
+
+for (const element of elements) {
+  const intervalId = setInterval(() => {
+    element.click();
+  }, 4000);
+}
