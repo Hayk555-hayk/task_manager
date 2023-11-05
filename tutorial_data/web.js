@@ -51,14 +51,13 @@ let web_data = {
     ],
     ruby: [
         `<div class ="legend">
-        Ruby Tutorial For Beginners, ProgrammingKnowledge (урок 2)<br />
+        Ruby Tutorial For Beginners, ProgrammingKnowledge (урок 4 08:07)<br />
         Ruby - Programming Language | Tutorial, Giraffe Academy<br />
         Ruby Programming Tutorials, Jake Day<br />
         Книга clear_code 5<br />,
         Книга clear_code 4<br />
         Книга ruby 3<br />
         Книга ruby 1<br />
-        Конспекты
         </div>`,
         `Ruby файлы имеют расширение .rb, ruby -v покажет версию ruby, ruby fileName.rb запуск программы`,
         `Форматировка строки с переменными происходит следующим образом p "this is value of #{var_1}"<br />
@@ -67,7 +66,28 @@ let web_data = {
         `Пример определения и вызова ruby функции<br />
         '<img src="tutorial_data/web_img/ruby_1.png">'`,
         `Можно поменять переменные местами используя следующий синтаксис a,b = b,a<br />
-        a,b,c = 1,2,3 пример определения переменных одной строкой`
+        a,b,c = 1,2,3 пример определения переменных одной строкой`,
+        `RUBY файл можно запустить коммандой ruby fileName.rb<br />
+        x = true && false (будет false) x = true || false (будет true)`,
+        `Пример условий<br/><img src="tutorial_data/web_img/ruby_2.png">`,
+        `Пример цикла while<br/><img src="tutorial_data/web_img/ruby_3.png">`,
+        `puts (1..100).to_a выведит числа от 1-го до 100, puts(1...100.to_a) выводит числа от 1 до 99`,
+        `Пример цикла for in <br/><img src="tutorial_data/web_img/ruby_4.png">`,
+        `Пример switch case <br/><img src="tutorial_data/web_img/ruby_5.png">`,
+        `puts some_arr выведит с новой строки значения массива, а puts "#{some_arr}" выведит все значения в одну строку и поставит квадратные скобки`,
+        `Массивы можно создавать несколькими путями arr = [] arr = Arr.new([])<br/>
+        tmp = Array.new(5, 'hello') Создаст массив где 5 раз написано hello<br/>
+        tm = Array(5..10) Создаст масив из чисел 5 до 10<br/>
+        Длинну массива можно вычеслить arr.length, arr.size или arr.count<br />
+        arr.first arr.last покажет первый и последний элемент в массиве<br/>
+        arr.push(5) добавит 5 под конец массива, arr.pop удаляет последний элемент из массива<br/>
+        arr.each_with_index {|val, index| p "#{val} #{index}"}<br/>
+        arr.delete_at(4) удалит элемент массива пол индексом 4, arr.delete(20) удалит элемент 20 из массива
+        arr = [1,2,3] проверка arr.include?(2)`,
+        `Создание строки s = "str" или s = String.new("str")<br/>
+        s.length, s.size длинна строки, s.upcase все буквы заглавные, s.downcase все буквы маленькие<br/>
+        Восклицательный знак после метода изменит значение переменной s.upcase! puts s переменная s уже всегда будет с заглавными буквами`,
+        `Обьекты в ruby называються hash obj = Hash.new<br/>><img src="tutorial_data/web_img/ruby_6.png">`
     ],
     ror: [
         `<div class ="legend">
