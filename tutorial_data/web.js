@@ -125,6 +125,12 @@ let web_data = {
         </div>`,
         `JS версий 6 но на самрм деле 5 потому что 4-я версия не выходила, были EcmaScript 1,2,3,5,6`
     ],
+    python: [
+        `<div class="legend">
+            Python for Beginners (Full Course) | Programming Tutorial Telusko<br />
+            Try Django 3.2 - Python Web Development Tutorial Series CodingEntrepreneurs
+        </div>`
+    ],
     additional: [
         `MySQL tutorial for beginners, Bro Code<br />
          Postgres Tutorial - Beginners to Advanced, Analytics Excellence<br />
