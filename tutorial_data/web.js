@@ -8,7 +8,8 @@ let web_data = {
         Книга clear_code 7<br />
         Книга php 5<br />
         Книга php 1<br />
-        Книга php 4
+        Книга php 4<br />
+        stripe-php Stripe Developers
         </div>`,
         `PHP запускается при помощи веб сервера, основные веб сервера это apache и nginx<br />
         При использовании XAMP можно в htdocs создать свой файл с проектами и запустить его при помощи ввода в url localhost и имя файла`,
@@ -44,6 +45,7 @@ let web_data = {
         Книга  clear_code 8<br />
         Книга php 2<br />
         Книга php 3<br />
+        Stripe Integration using Laravel Cashier Career Development Lab
         </div>`,
     ],
     ruby: [
@@ -94,6 +96,7 @@ let web_data = {
         Книга clear_code 2<br />
         Книга ruby 2<br />
         Книга clear_code 6<br />
+        Ruby on Rails+ Stripe API: eCommerce store with Checkout SupeRails
         </div>`,
         `Если установлен ruby то можно использовать комманду gem install rails для установки ROR<br />
         rails new project_name создаст новый проект<br />
@@ -120,7 +123,8 @@ let web_data = {
         Книга clear_code 1<br />
         Книга js 2<br />
         Книга js 3<br />
-        Конспекты
+        Конспекты<br/>
+        stripe-node Stripe Developers
         </div>`,
         `JS версий 6 но на самрм деле 5 потому что 4-я версия не выходила, были EcmaScript 1,2,3,5,6`
     ],
@@ -128,6 +132,7 @@ let web_data = {
         `<div class="legend">
             Python for Beginners (Full Course) | Programming Tutorial Telusko<br />
             Книга Грокаем Алгоритмы<br />
+            stripe-python Stripe Developers
         </div>`
     ],
     django: [
@@ -136,13 +141,16 @@ let web_data = {
         </div>`
     ],
     additional: [
-        `MySQL tutorial for beginners, Bro Code<br />
-         Postgres Tutorial - Beginners to Advanced, Analytics Excellence<br />
-         Complete MongoDB Tutorial, Net Ninja<br />
-         Geek code основы ngnix<br/>
-         Theurbanpenguine appache server<br/>
-         Codeewithrajranjan kafka for beginners<br/>
-         Abishek veermala complete devops from zero to hero<br/>
-         javascript.ru git курс`
+        `<div class="legend">
+            MySQL tutorial for beginners, Bro Code<br />
+            Postgres Tutorial - Beginners to Advanced, Analytics Excellence<br />
+            Complete MongoDB Tutorial, Net Ninja<br />
+            Geek code основы ngnix<br/>
+            Theurbanpenguine appache server<br/>
+            Codeewithrajranjan kafka for beginners<br/>
+            Abishek veermala complete devops from zero to hero<br/>
+            Docker Crash Course Tutorial Net Ninja<br/>
+            javascript.ru git курс
+         </div>`
     ]
 }
