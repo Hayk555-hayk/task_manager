@@ -105,7 +105,6 @@ let web_data = {
         JavaScript Tutorial For Beginners To Experts | Full Course 2020, CoderLipi<br />
         TypeScript Tutorial, Net Ninja<br />
         Книга js 1<br />
-        Книга Грокаем Алгоритмы<br />
         </div>`,
         `При помощи JS можно создавать все типы веб приложений, компютер понимает байт кот компилер или интерпритатор переводит код в байт код<br />
         JS интерпритируется`,
@@ -128,6 +127,11 @@ let web_data = {
     python: [
         `<div class="legend">
             Python for Beginners (Full Course) | Programming Tutorial Telusko<br />
+            Книга Грокаем Алгоритмы<br />
+        </div>`
+    ],
+    django: [
+        `<div class="legend">
             Try Django 3.2 - Python Web Development Tutorial Series CodingEntrepreneurs
         </div>`
     ],
