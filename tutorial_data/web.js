@@ -56,6 +56,7 @@ let web_data = {
         Книга clear_code 5<br />,
         Книга clear_code 4<br />
         Книга ruby 3<br />
+        Книга Грокаем Алгоритмы<br />
         Книга ruby 1<br />
         </div>`,
         `Ruby файлы имеют расширение .rb, ruby -v покажет версию ruby, ruby fileName.rb запуск программы`,
@@ -104,7 +105,7 @@ let web_data = {
     ],
     js: [
         `<div class ="legend">
-        JavaScript Tutorial for Beginners, Telusko<br />
+        JavaScript Tutorial for Beginners, Telusko (урок 8)<br />
         JavaScript Tutorial For Beginners To Experts | Full Course 2020, CoderLipi<br />
         TypeScript Tutorial, Net Ninja<br />
         Книга js 1<br />
@@ -112,7 +113,17 @@ let web_data = {
         `При помощи JS можно создавать все типы веб приложений, компютер понимает байт кот компилер или интерпритатор переводит код в байт код<br />
         JS интерпритируется`,
         `Пример логики переменных<br />
-        <img src="tutorial_data/web_img/js_1.png">
+        <img src="tutorial_data/web_img/js_1.png">`,
+        `Переменные (let var) могут изменятся если ето не константы (const)<br/>
+        Типы данных js делятся на две категории <br/>
+        1-примитивные (number, string, null, boolean undefined, symbol)<br/>
+        2-обьекты ()<br/>
+        bigint нужен для работы с большими числами<br />
+        typeof variable возвараащает тип переменной<br/>
+        Для бтаких больших чисел 100000000 есть удобный синтакс 100_000_000<br/>
+        Деление на ноль возвращает бесконечность в JS (5/0 = Infinity, -5/0 = -Infinity)<br/>
+        Number.MAX_VALUE максимальное число, как только к этому числу будет прибавлен 1 то в ответ получим Infinity<br/>
+        с bigint не получится выполнять операции с другими числами для этого их нужно будет конвентировать (bigIntVar + 2n) 'n' конвентирует<br/>
         `
     ],
     node: [
@@ -127,18 +138,6 @@ let web_data = {
         stripe-node Stripe Developers
         </div>`,
         `JS версий 6 но на самрм деле 5 потому что 4-я версия не выходила, были EcmaScript 1,2,3,5,6`
-    ],
-    python: [
-        `<div class="legend">
-            Python for Beginners (Full Course) | Programming Tutorial Telusko<br />
-            Книга Грокаем Алгоритмы<br />
-            stripe-python Stripe Developers
-        </div>`
-    ],
-    django: [
-        `<div class="legend">
-            Try Django 3.2 - Python Web Development Tutorial Series CodingEntrepreneurs
-        </div>`
     ],
     additional: [
         `<div class="legend">
