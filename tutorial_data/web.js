@@ -56,7 +56,6 @@ let web_data = {
         Книга clear_code 5<br />,
         Книга clear_code 4<br />
         Книга ruby 3<br />
-        Книга Грокаем Алгоритмы<br />
         Книга ruby 1<br />
         </div>`,
         `Ruby файлы имеют расширение .rb, ruby -v покажет версию ruby, ruby fileName.rb запуск программы`,
@@ -138,6 +137,15 @@ let web_data = {
         stripe-node Stripe Developers
         </div>`,
         `JS версий 6 но на самрм деле 5 потому что 4-я версия не выходила, были EcmaScript 1,2,3,5,6`
+    ],
+    python: [
+        `<div class="legend">
+            Python for Beginners (Full Course) | Programming Tutorial Telusko<br />
+            Книга Грокаем Алгоритмы<br />
+            Django Tutorial for Beginners Telusko<br />
+            Create A Flask Blog - Flask Friday Codemy.com<br />
+            Python Pyramid Vivek Singh<br/>
+         </div>`
     ],
     additional: [
         `<div class="legend">
