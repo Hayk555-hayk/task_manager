@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: .5s;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+header > div > div {
+    cursor: pointer;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+main {
+    margin: 25px auto;
+    width: 80%;
+}
+
+.term {
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    overflow: auto;
+}
+
+@media (max-width: 600px) {
+    header > div {
+        display: block;
+        text-align: center;
+    }
+
+    header > div > div {
+        margin-top: 15px;
+    }
+  }
