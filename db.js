@@ -21,7 +21,35 @@ const main_data = {
         Имена переменноы пренадлежащей обьекту начинаются со знака @<br/>
         Имена переменной пренадлежащей классу начинаются со знаком @@<br/>
         Коментарии начинаются со знака решетки
-        <img src="./assets/ruby/2.png" />`
+        <img src="./assets/ruby/2.png" />`,
+        `Все массивы это экземпляры класса Array
+        <img src="./assets/ruby/3.png" />
+        Ассоциативные массивы в Ruby называются хешами
+        <img src="./assets/ruby/4.png" />
+        В Ruby логически ложно вычисляются только nil и false<br/>
+        В Ruby кроме if есть еще и unless который работает по противоположной логике
+        <img src="./assets/ruby/5.png" />
+        switch case в ruby это case when
+        <img src="./assets/ruby/6.png" />
+        Пример всех циклов в Ruby
+        <img src="./assets/ruby/7.png" />
+        <img src="./assets/ruby/8.png" />`,
+        `Вывод ошибок try/catch выполняется обератором begin/rescue
+        <img src="./assets/ruby/9.png" />
+        <img src="./assets/ruby/10.png" />`,
+        `В Ruby числа, строки регулярные выражения и другие сущности являются обьектами (веть у них есть свои методы)<br/>
+        <img src="./assets/ruby/11.png" />
+        Определение и использование класса в Ruby
+        <img src="./assets/ruby/12.png" />
+        Пример класса и ооп в ruby
+        <img src="./assets/ruby/13.png" />
+        <img src="./assets/ruby/14.png" />
+        Здесь видны классические setter и getter но в Ruby есть более удобный способ установления setter и getter<br/>
+        есть методы attr, attr_accessor, attr_reader и attr_writer<br/>
+        В выше упомянутом классе можно все 3 метода заменить одной строкой attr_accessor :myvar<br />
+        Для управления видимостью методов класса есть модификаторы private, protected и public
+        <img src="./assets/ruby/15.png" />
+        По умолчанию все методы класса кроме initialize являются открытыми `
     ],
     rails: [
 
