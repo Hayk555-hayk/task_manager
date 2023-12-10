@@ -128,4 +128,28 @@ const main_data = {
     git: [
 
     ],
+    algebra: [
+        
+    ],
+    geometry: [
+        
+    ],
+    physics: [
+        
+    ],
+    english: [
+
+    ],
+    spanish: [
+
+    ],
+    hebrew: [
+
+    ],
+    german: [
+
+    ],
+    japanese: [
+        
+    ]
 }

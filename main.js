@@ -1,13 +1,27 @@
 const container = document.getElementById('menu');
-container.addEventListener('click', (event) => {
-  const clickedElement = event.target;
-  if (clickedElement.classList.value.length > 0) {
-    html = ""
-    for(let i = 0; i < main_data[clickedElement.classList.value].length; i++) {
-        html += `<div class="term">${main_data[clickedElement.classList.value][i]}<br/>-${i+1}-</div>`
+const mobileMenu = document.getElementById('mobile-menu');
+const pageContent = document.getElementById('page_content');
+
+container.addEventListener('click', handleMenuClick);
+mobileMenu.addEventListener('change', handleMobileMenuChange);
+
+function handleMenuClick(event) {
+    const clickedElement = event.target;
+    if (clickedElement.classList.value.length > 0) {
+        displayContent(clickedElement.classList.value);
     }
-    let page_content = document.getElementById('page_content');
-    page_content.innerHTML = "";
-    page_content.innerHTML = html;
 }
-});
+
+function handleMobileMenuChange() {
+    const selectedValue = mobileMenu.value;
+    displayContent(selectedValue);
+}
+
+function displayContent(menuItem) {
+    html = "";
+    for (let i = 0; i < main_data[menuItem].length; i++) {
+        html += `<div class="term">${main_data[menuItem][i]}<br/>-${i + 1}-</div>`;
+    }
+    pageContent.innerHTML = "";
+    pageContent.innerHTML = html;
+}
