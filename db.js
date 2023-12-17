@@ -101,8 +101,9 @@ const main_data = {
         <img src="./assets/ruby/31.png" />
         <img src="./assets/ruby/32.png" />
         <img src="./assets/ruby/33.png" />
-        <img src="./assets/ruby/34.png" />
-        `
+        <img src="./assets/ruby/34.png" />`,
+        `<img src="./assets/ruby/35.png" />`
+
     ],
     rails: [
 
@@ -138,10 +139,14 @@ const main_data = {
         
     ],
     english: [
-
+        `Самые короткие предложения состоят из одного 'verb', более длинные предложения нуждаются в 'subject + verb'
+        <img src="./assets/english/1.png" />
+        Пример сложных предложений
+        <img src="./assets/english/2.png" />`
     ],
     spanish: [
-
+        `hola amigos- привет друзья, boenos dias - доброе утро, boenos tardes - добрый вечер, boenos noches - спокойной ночи или пока<br/>
+        chao, adios - пока, hasta luego или hasta pronto - до встречи`
     ],
     hebrew: [
 

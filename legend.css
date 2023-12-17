@@ -17,10 +17,6 @@ body {
     background-color: greenyellow;
   }
 
-  .done {
-    background-color: rgb(84, 133, 80);
-  }
-
   table {
     width: 80%;
     margin: 20px auto;
