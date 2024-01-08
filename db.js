@@ -102,8 +102,21 @@ const main_data = {
         <img src="./assets/ruby/32.png" />
         <img src="./assets/ruby/33.png" />
         <img src="./assets/ruby/34.png" />`,
-        `<img src="./assets/ruby/35.png" />`
-
+        `<img src="./assets/ruby/35.png" />`,
+        `Числа это первичный тип данных естественный для каждого компютера<br/>
+        Если числа большие то можно для избежания путаници ставить нижние подчеркивания 1_045_457 вместо 1045457
+        <img src="./assets/ruby/36.png" />
+        В классе float есть константы определяющие масимальное и минимальное число
+        <img src="./assets/ruby/37.png" />
+        num.round округляет числа <br/>
+        Если нужно округлить число но не полностью можно использовать эти методы
+        <img src="./assets/ruby/38.png" />
+        Ruby позволяет работать с большими числами переход от Fixnum к Bignum происходит автоматически
+        <img src="./assets/ruby/39.png" />
+        <img src="./assets/ruby/40.png" />
+        <img src="./assets/ruby/41.png" />
+        Матрици массивов можно создавать методом Matrix, добавив false можно запретить копирование
+        <img src="./assets/ruby/42.png" />`
     ],
     rails: [
 
