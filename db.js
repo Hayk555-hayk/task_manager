@@ -177,7 +177,29 @@ const main_data = {
         Множество можно сравнить интуитивно очевидным способом Set[1,2,3] == Set[2,1,3] вернет true`,
         `В основе ввода и вывода в руби сидит класс IO который и определяет поведение ввода и вывода с ним тесно связан класс File<br/>
         В класс File вложен класс Stat который инкапсулирует различные сведения о файле<br/>
-        Методы ввода и вывода есть и в самом модуле Kernel`
+        Методы ввода и вывода есть и в самом модуле Kernel, File.new создаст новый обьект file
+        <img src="./assets/ruby/58.png" />
+        После работы над файлом для предатврашения потери данных нужно закрыть его file_var.close, File.open синоним File.new <br/>
+        Если открыть файл в блоке то он закроется автоматически
+        <img src="./assets/ruby/59.png" />
+        Знак + позваляет открыть файл для чтения и записи
+        <img src="./assets/ruby/60.png" />
+        Для дописания файла с конца нужен знак а
+        <img src="./assets/ruby/61.png" />
+        Файлы можно блокировать и разблокировать
+        <img src="./assets/ruby/62.png" />
+        Для простого ввода вывода данных есть методы p, puts <br/>
+        FileTest::exist?("Filename") проверка наличие фпйла, размер файла можно узнать методом FileTest::size?("filename") или File.stat("filename").size<br/>
+        Есть так же методы File.delete("filename") и его синоним File.unlink("filename"), File.rename("oldname","newname")<br/>
+        Файлы можно усекать до нужного размера File.truncate("filename", 1000) не более 1000 байтов<br/>
+        Создания CSV файла
+        <img src="./assets/ruby/63.png" />`,
+        `Запрос к базам данных MySql
+        <img src="./assets/ruby/64.png" />
+        Запрос к базам данных PostgreSQL
+        <img src="./assets/ruby/65.png" />
+        Подключения к Oracle
+        <img src="./assets/ruby/66.png" />`
     ],
     rails: [
 
