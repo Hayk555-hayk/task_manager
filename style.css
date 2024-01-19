@@ -54,6 +54,11 @@ img {
     width: 80%;
 }
 
+.completed {
+    background-color: rgb(120, 207, 123);
+    opacity: .4;
+}
+
 .legend_wrapper > div {
     width: 40%;
     margin: 15px auto;
