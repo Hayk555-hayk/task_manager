@@ -59,6 +59,11 @@ img {
     opacity: .4;
 }
 
+.theme_title {
+    width: 40%;
+    margin: 0 auto;
+}
+
 .legend_wrapper > div {
     width: 40%;
     margin: 15px auto;
