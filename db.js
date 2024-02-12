@@ -223,7 +223,7 @@ const main_data = {
         <img src="./assets/ruby/76.png" />`
     ],
     rails: [
-
+        `RoR это обыкновенный MVC фреймворк`
     ],
     js: [
 
