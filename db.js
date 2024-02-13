@@ -309,6 +309,15 @@ const main_data = {
         `<h1>Laravel vue multipurpose app</h1>`,
         `composer create-project laravel/laravel example-app - создание нового приложения <br/>
         npm i vue - установка vue js <br/>
-        php artisan key:generate - создания нового ключа laravel`
+        php artisan key:generate - создания нового ключа laravel<br />
+        npm install admin-lte@^3.2 --save - установка админ панели <br/>
+        https://adminlte.io/docs/3.2 сайт документации админки
+        В resources/css/app.css можно импортировать стили из admin lte<br/>
+        npm run dev включит vue<br/>
+        https://laravel.com/docs/10.x/vite нужно используя эту документацию зафиксить vite настройки<br/>
+        В нужном blade шаблоне добавте @vite(['resources/css/app.css', 'resources/js/app.js']) в хедаре для загрузки стилей<br/>
+        Таким лбразом все ссылки на стили были импортированы из app.css<br/>
+        Аналогичные действия происходят с js файлами в respurces/js/app.js импортируются нужные скрипты, перед названием из src прописывается admin-lte/<br/>
+        в отличии ои css тут добавлять специальные vite в blade не нужно`
     ]
 }
