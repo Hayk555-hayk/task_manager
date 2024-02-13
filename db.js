@@ -223,7 +223,10 @@ const main_data = {
         <img src="./assets/ruby/76.png" />`
     ],
     rails: [
-        `RoR это обыкновенный MVC фреймворк`
+        `RoR это обыкновенный MVC фреймворк, у rails есть свой собственный шаблонизатор благодаря которому мы можем писать html и css коды
+        <img src="./assets/rails/1.png" />
+        внутри знаков шаблона в html можно писать ruby код
+        <img src="./assets/rails/2.png" />`
     ],
     js: [
 
@@ -301,5 +304,11 @@ const main_data = {
     ],
     japanese: [
         
+    ],
+    practice: [
+        `<h1>Laravel vue multipurpose app</h1>`,
+        `composer create-project laravel/laravel example-app - создание нового приложения <br/>
+        npm i vue - установка vue js <br/>
+        php artisan key:generate - создания нового ключа laravel`
     ]
 }
