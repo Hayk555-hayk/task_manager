@@ -1,27 +1,15 @@
-const container = document.getElementById('menu');
-const mobileMenu = document.getElementById('mobile-menu');
-const pageContent = document.getElementById('page_content');
+// Your Firebase config object
+const firebaseConfig = {
+    apiKey: "AIzaSyBkfPUE4IcSt3doIzXApcWBsnwWjEGCKeQ",
+    authDomain: "task-manager-b41d7.firebaseapp.com",
+    projectId: "task-manager-b41d7",
+    storageBucket: "task-manager-b41d7.appspot.com",
+    messagingSenderId: "38540793283",
+    appId: "1:38540793283:web:c4de1b84c8cf40b3d71976"
+  };
 
-container.addEventListener('click', handleMenuClick);
-mobileMenu.addEventListener('change', handleMobileMenuChange);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-function handleMenuClick(event) {
-    const clickedElement = event.target;
-    if (clickedElement.classList.value.length > 0) {
-        displayContent(clickedElement.classList.value);
-    }
-}
 
-function handleMobileMenuChange() {
-    const selectedValue = mobileMenu.value;
-    displayContent(selectedValue);
-}
-
-function displayContent(menuItem) {
-    html = "";
-    for (let i = 0; i < main_data[menuItem].length; i++) {
-        html += `<div class="term">${main_data[menuItem][i]}<br/>-${i + 1}-</div>`;
-    }
-    pageContent.innerHTML = "";
-    pageContent.innerHTML = html;
-}

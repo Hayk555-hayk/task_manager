@@ -3,68 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SELF DEV</title>
+    <title>Welcome</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div>
-        <p class="navigator">
-            <a href="./sport.html">Sport</a>
-            <a href="./legend.html">Legend</a>
-        </p>
-    </div>
-    <header>
-        <div id="menu">
-            <div class="php">PHP</div>
-            <div class="laravel">LARAVEL</div>
-            <div class="ruby">RUBY</div>
-            <div class="rails">RAILS</div>
-            <div class="js">JS</div>
-            <div class="node">NODE JS</div>
-            <div class="nest">NEST JS</div>
-            <div class="devops">DEVOPS</div>
-            <div class="pattern">PATTERN</div>
-            <div class="sql">SQL</div>
-            <div class="git">GIT</div>
-            <div class="algebra">ALGEBRA</div>
-            <div class="geometry">GEOMETY</div>
-            <div class="physics">PHYSICS</div>
-            <div class="english">ENGLISH</div>
-            <div class="spanish">SPANISH</div>
-            <div class="hebrew">HABREW</div>
-            <div class="german">GERMAN</div>
-            <div class="japanese">JAPANESE</div>
-        </div>
-        <div>
-            <select id="mobile-menu" class="mobile-menu">
-                <option value="php">PHP</option>
-                <option value="laravel">LARAVEL</option>
-                <option value="ruby">RUBY</option>
-                <option value="rails">RAILS</option>
-                <option value="js">JS</option>
-                <option value="node">NODE JS</option>
-                <option value="nest">NEST JS</option>
-                <option value="devops">DEVOPS</option>
-                <option value="pattern">PATTERN</option>
-                <option value="sql">SQL</option>
-                <option value="git">GIT</option>
-                <option value="algebra">ALGEBRA</option>
-                <option value="geometry">GEOMETRY</option>
-                <option value="physics">PHYSICS</option>
-                <option value="english">ENGLISH</option>
-                <option value="spanish">SPANISH</option>
-                <option value="hebrew">HEBREW</option>
-                <option value="german">GERMAN</option>
-                <option value="japanese">JAPANESE</option>
-            </select>
-        </div>
-
-    </header>
-
-    <main><div id="page_content"></div></main>
-
-    <script src="./db.js"></script>
-    <script src="./main.js"></script>
     
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <span id="login_errors"></span>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <button id="change_to_register" onclick="toggleForm('register')">Register</button>
+    </div>
+    
+    <div id="register-container" class="container">
+        <h2>Register</h2>
+        <span id="registr_errors"></span>
+        <input type="text" id="register-name" placeholder="Name" required>
+        <input type="text" id="register-surname" placeholder="Surname" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password (min. 8 characters)" minlength="8" required>
+        <button onclick="register()">Register</button>
+        <button id="change_to_login" onclick="toggleForm('login')">Login</button>
+    </div>
+
+    <script src="./firebase-app.js"></script>
+    <script src="firebase-firestore.js"></script>
+    <script src="./firebase-auth.js"></script>
+    <script src="./main.js"></script>
+    <script src="index.js"></script>
+    <script src="./collection/user.js"></script>
 </body>
 </html>
