@@ -1,38 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Саморазвитие</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="login-container" class="container">
-        <h2>Login</h2>
-        <span id="login_errors"></span>
-        <input type="email" id="login-email" placeholder="Email" required>
-        <input type="password" id="login-password" placeholder="Password" required>
-        <button onclick="login()">Login</button>
-        <button id="change_to_register" onclick="toggleForm('register')">Register</button>
-    </div>
-    
-    <div id="register-container" class="container">
-        <h2>Register</h2>
-        <span id="registr_errors"></span>
-        <input type="text" id="register-name" placeholder="Name" required>
-        <input type="text" id="register-surname" placeholder="Surname" required>
-        <input type="email" id="register-email" placeholder="Email" required>
-        <input type="password" id="register-password" placeholder="Password (min. 8 characters)" minlength="8" required>
-        <button onclick="register()">Register</button>
-        <button id="change_to_login" onclick="toggleForm('login')">Login</button>
-    </div>
+    <header>
+        <h1>САМОРАЗВИТИЕ</h1>
+    </header>
 
-    <script src="./firebase-app.js"></script>
-    <script src="firebase-firestore.js"></script>
-    <script src="./firebase-auth.js"></script>
-    <script src="./main.js"></script>
-    <script src="index.js"></script>
-    <script src="./collection/user.js"></script>
+    <main>
+        <nav>
+            <ul id="lessons-list">
+                </ul>
+        </nav>
+
+        <section id="lesson-content">
+            <h2>Название урока</h2>
+            <p id="lesson-text"></p>
+        </section>
+    </main>
+
+    <script src="./lessons/devops/devops.js"></script>
+    <script src="./lessons/php/php.js"></script>
+    <script src="./lessons/node/node.js"></script>
+    <script src="./lessons/db/db.js"></script>
+    <script src="./lessons/db/sql.js"></script>
+    <script src="./lessons/algorithm/algo.js"></script>
+    <script src="./lessons/code/code.js"></script>
+    <script src="./lessons/react/react.js"></script>
+    <script src="./lessons/react/native.js"></script>
+    <script src="./lessons/python/python.js"></script>
+    <script src="./lessons/religion/rel.js"></script>
+    <script src="./lessons/math/alg.js"></script>
+    <script src="./lessons/math/geo.js"></script>
+    <script src="./lessons/math/phy.js"></script>
+    <script src="./lessons/lang/eng.js"></script>
+    <script src="./lessons/lang/ger.js"></script>
+    <script src="./lessons/lang/jap.js"></script>
+    <script src="./lessons/sport/sport.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
