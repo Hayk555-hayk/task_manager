@@ -38,5 +38,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-#lesson-text {
+img {
+    width: 25%;
+    display: block
 }
