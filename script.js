@@ -81,6 +81,10 @@ const lessons = [
         title: goTitle,
         text: goTutorial
     },
+    {
+        title: conspectTitle,
+        text: conspectTutorial
+    },
     // Добавляйте другие уроки здесь
 ];
 
