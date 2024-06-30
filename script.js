@@ -77,6 +77,10 @@ const lessons = [
         title: sportTitle,
         text: sportTutorial
     },
+    {
+        title: goTitle,
+        text: goTutorial
+    },
     // Добавляйте другие уроки здесь
 ];
 
