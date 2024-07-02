@@ -42,3 +42,13 @@ img {
     width: 25%;
     display: block
 }
+
+pre {
+    background-color: rgb(59, 57, 57);
+    color: #ccc;
+    width: 50%;
+    padding: 15px;
+    margin: 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
