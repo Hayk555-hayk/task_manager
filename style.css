@@ -46,9 +46,10 @@ img {
 pre {
     background-color: rgb(59, 57, 57);
     color: #ccc;
-    width: 50%;
+    width: 100%;
     padding: 15px;
     margin: 15px;
     box-sizing: border-box;
     border-radius: 25px;
+    overflow: auto;
 }
