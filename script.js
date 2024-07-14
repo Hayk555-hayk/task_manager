@@ -74,10 +74,6 @@ const lessons = [
         text: japTutorial
     },
     {
-        title: sportTitle,
-        text: sportTutorial
-    },
-    {
         title: goTitle,
         text: goTutorial
     },
