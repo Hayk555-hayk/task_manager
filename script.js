@@ -1,103 +1,89 @@
-const lessonsList = document.getElementById('lessons-list');
-const lessonContent = document.getElementById('lesson-content');
-const lessonTitle = lessonContent.querySelector('h2');
-const lessonText = document.getElementById('lesson-text');
-
-// Массив с данными уроков
 const lessons = [
     {
-        title: devopsTitle,
-        text: devopsTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: phpTitle,
-        text: phpTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: nodeTitle,
-        text: nodeTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: dbTitle,
-        text: dbTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: sqlTitle,
-        text: sqlTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: algoTitle,
-        text: algoTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: codeTitle,
-        text: codeTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: reactTitle,
-        text: reactTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: nativeTitle,
-        text: nativeTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: pythonTitle,
-        text: pythonTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: relTitle,
-        text: relTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: algTitle,
-        text: algTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: geoTitle,
-        text: geoTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: phyTitle,
-        text: phyTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: engTitle,
-        text: engTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: gerTitle,
-        text: gerTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
     {
-        title: japTitle,
-        text: japTutorial
+        title: 'Lesson 1',
+        content: 'some <b>content</b>'
     },
     {
-        title: goTitle,
-        text: goTutorial
+        title: 'Lesson 2',
+        content: 'some <b>content</b>'
     },
-    {
-        title: conspectTitle,
-        text: conspectTutorial
-    },
-    // Добавляйте другие уроки здесь
 ];
 
-// Функция для отображения контента урока
-function showLesson(lesson) {
-    lessonTitle.textContent = lesson.title;
-    lessonText.innerHTML = lesson.text;
-}
+let lessonsHtml = '<div>';
+const mainElement = document.querySelector('main');
 
-// Создание списка уроков
 lessons.forEach(lesson => {
-    const listItem = document.createElement('li');
-    listItem.textContent = lesson.title;
-    listItem.addEventListener('click', () => showLesson(lesson));
-    lessonsList.appendChild(listItem);
+    lessonsHtml += `
+        <div class='lesson'>
+            <h3>${lesson.title}</h3>
+            <p>${lesson.content}</p>
+        </div>
+    `
 });
 
-// Отображение контента рандомного урока по умолчанию
-const randomIndex = Math.floor(Math.random() * lessons.length);
-showLesson(lessons[randomIndex]);
+lessonsHtml += '</div>';
+mainElement.innerHTML = lessonsHtml;
