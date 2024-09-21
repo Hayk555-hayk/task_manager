@@ -29,10 +29,6 @@ main {
     opacity: .3;
 }
 
-.lesson:hover {
-    opacity: 1;
-}
-
 .road {
     text-decoration: none;
     color: red;
@@ -57,6 +53,7 @@ ul {
     color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
+    overflow: auto;
   }
   
   ul li:hover {

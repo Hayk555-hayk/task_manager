@@ -67,6 +67,69 @@ const lessons = [
 	        <li>Практика по программированию</li>
         </ul>`
     },
+    {
+        title: 'СПОРТ',
+        content: `<ul>
+            <li>
+                Гантели грудь лежа 30<br/>
+                Гантели бицепс стоя обычный 30<br/>
+                Гантели трицепс стоя 30<br/>
+                Гантели плечи перед собой 30<br/>
+                Гантели спина обычный 30<br/>
+                Гантели ноги приседания 30<br/>
+                Пресс обычный 40<br/>
+            </li>
+            <li>
+                Гантели грудь разводка лежа 30<br/>
+                Гантели бицепс сидя по 1-й руке 30<br/>
+                Гантели трицепс сидя 30<br/>
+                Гантели плечи разводка стоя 30<br/>
+                Гантели спина на себя 30<br/>
+                Гантели ноги ягоды 30<br/>
+                Пресс ног 30<br/>
+            </li>
+            <li>
+                Гантели грудь стоя как бицепс 30<br/>
+                Гантели бицепс стоя по 1-й руке 30<br/>
+                Гантели трицепс стоя с наклоном как бицепс 30<br/>
+                Гантели плечи рвв сидя 30<br/>
+                Гантели спина бордюр 2-я руками 30<br/>
+                Гантели ноги утиный шаг 30<br/>
+                Пресс скалолаз 30<br/>
+            </li>
+            <li>
+                Жим грудь лежа 15<br/>
+                Жим на бицепс лежа 15<br/>
+                Жим узкий хват на трицепс 15<br/>
+                Жим стена для плеч 40<br/>
+                Спина мельница касание ног стоя 40<br/>
+                Ноги ягоды сидя нога в верх 20<br/>
+                Пресс паук 30<br/>
+            </li>
+            <li>
+                Бег каскад<br/>
+                Отжимания на каждом этаже 25<br/>
+                Пресс скалолаз на каждом этаже 25<br/>
+                Приседания на каждом этаже 25<br/>
+            </li>
+            <li>
+                Брусья на грудь 12<br/>
+                Турники обычный 7<br/>
+                Турники на бицепс 7<br/>
+                Жим на грудь низкий турник 25<br/>
+                Жим на руки низкий турник 25<br/>
+                Пресс обычный 25<br/>
+            </li>
+            <li>
+                Бег раздансое ущнлье с гантелями + форсаж 20 минут<br/>
+                Жим на грудь 30<br/>
+                Пресс скалолаз 25<br/>
+                Пресс паук 25<br/>
+                Пресс обычный 25<br/>
+                Пресс ног 25<br/>
+            </li>
+        </ul>`
+    },
 
     {
         title: 'ПРАКТИКА',
@@ -84,6 +147,9 @@ const lessons = [
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
+const randomActiveLessons = generateUniqueRandomNumbers();
+
+let lessonId = 0;
 
 lessons.forEach(lesson => {
     // Create a temporary container to parse the content
@@ -100,13 +166,31 @@ lessons.forEach(lesson => {
     }
 
     lessonsHtml += `
-        <div class='lesson'>
+        <div id=${lessonId} class='lesson'>
             <h3>${lesson.title}</h3>
             <p>${tempContainer.innerHTML}</p>
         </div>
     `;
+
+    lessonId +=1;
 });
 
+function generateUniqueRandomNumbers() {
+    let numbers = new Set();
+
+    while (numbers.size < 2) {
+        let randomNumber = Math.floor(Math.random() * 6);
+        numbers.add(randomNumber);
+    }
+
+    return Array.from(numbers);
+}
 
 lessonsHtml += '</div>';
 mainElement.innerHTML = lessonsHtml;
+
+randomActiveLessons.forEach(num => {
+    const element = document.getElementById(num);
+    
+    element.style.opacity = '1';
+});
