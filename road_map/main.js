@@ -2,8 +2,6 @@ const lessons = [
     {
         title: 'ТЕОРИЯ IT BACKEND',
         content: `<ul>
-            <li>С# Документация https://learn.microsoft.com/en-us/dotnet/csharp/</li>
-            <li>.NET Документация https://learn.microsoft.com/en-us/dotnet/</li>
 	        <li>PHP Документация https://www.php.net/docs.php</li>
 	        <li>Laravel Документация https://laravel.com/docs/11.x/readme</li>
 	        <li>Node JS Документация https://nodejs.org/docs/latest/api/</li>
@@ -12,8 +10,6 @@ const lessons = [
 	        <li>Python Документация https://docs.python.org/3/</li>
 	        <li>Django Документация https://docs.djangoproject.com/en/5.1/</li>
 	        <li>Ruby On Rails Документация https://guides.rubyonrails.org/</li>
-	        <li>Java Документация https://docs.oracle.com/en/java/</li>
-	        <li>Java spring boot Документация https://docs.spring.io/spring-boot/index.html</li>
         </ul>`
     },
 
@@ -23,9 +19,6 @@ const lessons = [
             <li>React JS Документация https://legacy.reactjs.org/docs/getting-started.html</li>
 	        <li>Next JS Документация https://nextjs.org/docs</li>
 	        <li>JS Документация https://developer.mozilla.org/en-US/docs/Web/JavaScript</li>
-	        <li>Vue JS Документация https://vuejs.org/guide/introduction.html</li>
-	        <li>Nuxt JS Документация https://nuxt.com/docs/getting-started/introduction</li>
-	        <li>Angular Документация https://v17.angular.io/docs</li>
 	        <li>TypeScript Документация https://www.typescriptlang.org/docs/</li>
         </ul>`
     },
@@ -135,7 +128,7 @@ const lessons = [
         title: 'ПРАКТИКА',
         content: `<ul>
             <li>Изучение конспектов наизусть</li>
-	        <li>Практика Laravel и Vue JS с graphql https://youtube.com/playlist?list=PLEhEHUEU3x5qsA5JnRzhgOghrH9Vqz4cg&si=m1exEw-LEAOKRa9-</li>
+	        <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
         </ul>`
     },
 
@@ -147,7 +140,7 @@ const lessons = [
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
-const randomActiveLessons = generateUniqueRandomNumbers();
+const randomActiveLesson = Math.floor(Math.random() * 7);
 
 let lessonId = 0;
 
@@ -189,8 +182,6 @@ function generateUniqueRandomNumbers() {
 lessonsHtml += '</div>';
 mainElement.innerHTML = lessonsHtml;
 
-randomActiveLessons.forEach(num => {
-    const element = document.getElementById(num);
+const lesson = document.getElementById(randomActiveLesson);
     
-    element.style.opacity = '1';
-});
+lesson.style.opacity = '1';
