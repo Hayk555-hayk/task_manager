@@ -1,45 +1,41 @@
 const lessons = [
     {
-        title: 'ТЕОРИЯ IT BACKEND',
+        title: 'ТЕОРИЯ IT',
         content: `<ul>
-	        <li>PHP Документация https://www.php.net/docs.php</li>
-	        <li>Laravel Документация https://laravel.com/docs/11.x/readme</li>
-	        <li>Node JS Документация https://nodejs.org/docs/latest/api/</li>
-	        <li>Nest JS Документация https://docs.nestjs.com/</li>
-	        <li>Go Документация https://go.dev/doc/</li>
-	        <li>Python Документация https://docs.python.org/3/</li>
-	        <li>Django Документация https://docs.djangoproject.com/en/5.1/</li>
-	        <li>Ruby On Rails Документация https://guides.rubyonrails.org/</li>
-        </ul>`
-    },
-
-    {
-        title: 'ТЕОРИЯ IT FRONTEND',
-        content: `<ul>
-            <li>React JS Документация https://legacy.reactjs.org/docs/getting-started.html</li>
-	        <li>Next JS Документация https://nextjs.org/docs</li>
-	        <li>JS Документация https://developer.mozilla.org/en-US/docs/Web/JavaScript</li>
-	        <li>TypeScript Документация https://www.typescriptlang.org/docs/</li>
-        </ul>`
-    },
-
-    {
-        title: 'ТЕОРИЯ IT ADDTECHNO',
-        content: `<ul>
-            <li>MySQL Документация https://dev.mysql.com/doc/</li>
-	        <li>Elastic search Документация https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html</li>
-	        <li>Redis Документация https://redis.io/docs/latest/</li>
-	        <li>MongoDB Документация https://www.mongodb.com/docs/</li>
-	        <li>FireBase документация https://firebase.google.com/docs?hl=ru</li>
-	        <li>AWS Документация https://docs.aws.amazon.com/</li>
-	        <li>Google cloud Документация https://cloud.google.com/docs/?gad_source=1&gclid=CjwKCAjwlbu2BhA3EiwA3yXyu6MO-WrR1bGr-M2ZGHexqSA9W1PwBgViEbOVKI6gLRlj-KKfsgNxuhoCUDMQAvD_BwE&gclsrc=aw.ds</li>
-	        <li>Graphql Документация https://graphql.org/learn/</li>
-	        <li>Чистый код Документация https://refactoring.guru/ru</li>
-	        <li>Internet protocol Документация https://www.ibm.com/docs/en/aix/7.1?topic=protocols-internet-protocol</li>
-	        <li>CORS Документация https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</li>
-	        <li>Websocket Документация https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API</li>
-	        <li>Stripe Документация https://docs.stripe.com/</li>
-	        <li>PayPal Документация https://developer.paypal.com/home/</li>
+            <li>1715_Bezopasno_by_design.pdf</li>
+            <li>1644_nadezhnost-nejronnyh-setej.pdf</li> 
+            <li>1623_Laravel-9-bystraya-razrabotka-web-sajtov-na-PHP.pdf</li> 
+            <li>1615_Django3.0.-Praktika-sozdaniya-veb-saytov-na-Python.pdf</li> 
+            <li>1614_sekrety-python-pro.pdf</li> 
+            <li>1608_oblachnye-tehnologii-prakticheskoe-rukovodstvo.pdf</li> 
+            <li>1604_typescript-bystro.pdf </li>
+            <li>1601_Software_Oshibki_i_kompromissy_pri_razrabotke_PO.pdf</li> 
+            <li>1553_osnovy-TypeScript.pdf </li>
+            <li>1546_Osnovyi_razrabotki_veb-prilozheniy_na_platformah_Node.js_i_Deno.pdf</li> 
+            <li>1542_SQL-Pocket-guide.pdf </li>
+            <li>1529_testirovanie-veb-api.pdf </li>
+            <li>1524_bitcoin-ethereum.pdf </li>
+            <li>1518_GO_idiomy_i_patterny_proektirovaniya.pdf </li>
+            <li>1505_sozdaem-neironnyu-set.pdf </li>
+            <li>1453_Paternu-OOP.pdf </li>
+            <li>1449_Refaktoring_Uluchshenie_suschestvuyuschego_koda.pdf</li> 
+            <li>1432_Pogruzhenie_v_patterny_proektirovanija.pdf </li>
+            <li>1414_PHP-i-MySQL-servernaya-veb-razrabotka.pdf </li>
+            <li>1410_PHP-glazami-hakera-5-izd.pdf </li>
+            <li>1405_Grokaem-glubokoe-obuchenie.pdf </li>
+            <li>1244_Head_First_GIT.pdf </li>
+            <li>1236_Javascript_dlya_glubokogo_obucheniya.pdf </li>
+            <li>1231_monitoring-postgresql.pdf </li>
+            <li>1206_Izuchaem-TypeScript-3.pdf </li>
+            <li>1153_Osnovyi-iskusstvennogo-intellekta.pdf </li>
+            <li>1142_Effektivnaja_rabota-s-unasledovannym-kodom.pdf </li>
+            <li>1102_Bazy_dannyh_Proektirovanie_i_razrabotka.pdf </li>
+            <li>1056_Gid-po-Computer-Science-dlja-kazhdogo-programmista.pdf </li>
+            <li>1045_Prakticheskij_Go_sozdanie_masshtabiruemyh_setevyh_i_nesetevyh_prilozhenij.pdf </li>
+            <li>1031_Programmirovanie-bez-durakov.pdf </li>
+            <li>1027_PHP-8-naibolee-polnoe-rukovodstvo.pdf </li>
+            <li>1012_Kak-napisat-i-prodat-svoy-PHP-skript.pdf </li>
+            <li>0919_python-ekspress-kurs.pdf</li>
         </ul>`
     },
 
@@ -60,6 +56,7 @@ const lessons = [
 	        <li>Практика по программированию</li>
         </ul>`
     },
+
     {
         title: 'СПОРТ',
         content: `<ul>
@@ -140,7 +137,7 @@ const lessons = [
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
-const randomActiveLesson = Math.floor(Math.random() * 7);
+const randomActiveLesson = Math.floor(Math.random() * 4);
 
 let lessonId = 0;
 
