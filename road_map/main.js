@@ -36,6 +36,7 @@ const lessons = [
             <li>1027_PHP-8-naibolee-polnoe-rukovodstvo.pdf </li>
             <li>1012_Kak-napisat-i-prodat-svoy-PHP-skript.pdf </li>
             <li>0919_python-ekspress-kurs.pdf</li>
+            <li>elastic.pdf</li>
         </ul>`
     },
 
