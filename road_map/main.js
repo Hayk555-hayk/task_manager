@@ -2,41 +2,9 @@ const lessons = [
     {
         title: 'ТЕОРИЯ IT',
         content: `<ul>
-            <li>1715_Bezopasno_by_design.pdf</li>
-            <li>1644_nadezhnost-nejronnyh-setej.pdf</li> 
-            <li>1623_Laravel-9-bystraya-razrabotka-web-sajtov-na-PHP.pdf</li> 
-            <li>1615_Django3.0.-Praktika-sozdaniya-veb-saytov-na-Python.pdf</li> 
-            <li>1614_sekrety-python-pro.pdf</li> 
-            <li>1608_oblachnye-tehnologii-prakticheskoe-rukovodstvo.pdf</li> 
-            <li>1604_typescript-bystro.pdf </li>
-            <li>1601_Software_Oshibki_i_kompromissy_pri_razrabotke_PO.pdf</li> 
-            <li>1553_osnovy-TypeScript.pdf </li>
-            <li>1546_Osnovyi_razrabotki_veb-prilozheniy_na_platformah_Node.js_i_Deno.pdf</li> 
-            <li>1542_SQL-Pocket-guide.pdf </li>
-            <li>1529_testirovanie-veb-api.pdf </li>
-            <li>1524_bitcoin-ethereum.pdf </li>
-            <li>1518_GO_idiomy_i_patterny_proektirovaniya.pdf </li>
-            <li>1505_sozdaem-neironnyu-set.pdf </li>
-            <li>1453_Paternu-OOP.pdf </li>
-            <li>1449_Refaktoring_Uluchshenie_suschestvuyuschego_koda.pdf</li> 
-            <li>1432_Pogruzhenie_v_patterny_proektirovanija.pdf </li>
+            <li>Изучение конспектов наизусть</li>
             <li>1414_PHP-i-MySQL-servernaya-veb-razrabotka.pdf </li>
-            <li>1410_PHP-glazami-hakera-5-izd.pdf </li>
-            <li>1405_Grokaem-glubokoe-obuchenie.pdf </li>
-            <li>1244_Head_First_GIT.pdf </li>
-            <li>1236_Javascript_dlya_glubokogo_obucheniya.pdf </li>
-            <li>1231_monitoring-postgresql.pdf </li>
-            <li>1206_Izuchaem-TypeScript-3.pdf </li>
-            <li>1153_Osnovyi-iskusstvennogo-intellekta.pdf </li>
-            <li>1142_Effektivnaja_rabota-s-unasledovannym-kodom.pdf </li>
-            <li>1102_Bazy_dannyh_Proektirovanie_i_razrabotka.pdf </li>
-            <li>1056_Gid-po-Computer-Science-dlja-kazhdogo-programmista.pdf </li>
-            <li>1045_Prakticheskij_Go_sozdanie_masshtabiruemyh_setevyh_i_nesetevyh_prilozhenij.pdf </li>
-            <li>1031_Programmirovanie-bez-durakov.pdf </li>
-            <li>1027_PHP-8-naibolee-polnoe-rukovodstvo.pdf </li>
-            <li>1012_Kak-napisat-i-prodat-svoy-PHP-skript.pdf </li>
-            <li>0919_python-ekspress-kurs.pdf</li>
-            <li>elastic.pdf</li>
+	        <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
         </ul>`
     },
 
@@ -112,7 +80,7 @@ const lessons = [
                 Пресс обычный 25<br/>
             </li>
             <li>
-                Бег раздансое ущнлье с гантелями + форсаж 20 минут<br/>
+                Бег раздансое ущнлье с гантелями + форсаж минут<br/>
                 Жим на грудь 30<br/>
                 Пресс скалолаз 25<br/>
                 Пресс паук 25<br/>
@@ -121,24 +89,12 @@ const lessons = [
             </li>
         </ul>`
     },
-
-    {
-        title: 'ПРАКТИКА',
-        content: `<ul>
-            <li>Изучение конспектов наизусть</li>
-	        <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
-        </ul>`
-    },
-
-    
-
-    
 ];
 
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
-const randomActiveLesson = Math.floor(Math.random() * 4);
+const randomActiveLesson = Math.floor(Math.random() * 3);
 
 let lessonId = 0;
 
