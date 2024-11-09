@@ -2,7 +2,6 @@ const lessons = [
     {
         title: 'ТЕОРИЯ IT',
         content: `<ul>
-            <li>Изучение конспектов наизусть</li>
             <li>Книга по программированию</li>
 	        <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
         </ul>`
@@ -28,7 +27,7 @@ const lessons = [
     {
         title: 'СПОРТ',
         content: `<ul>
-            <li>Пресс удары коленями максимум</li>
+            <li>Пресс удары коленями 5 минут</li>
             <li>
                 Гантели грудь лежа 30x3<br/>
                 Гантели бицепс стоя обычный 30x3<br/>
@@ -38,7 +37,7 @@ const lessons = [
                 Гантели ноги приседания 30x3<br/>
                 Пресс обычный 40x3<br/>
             </li>
-            <li>Гантели на грудь максимум</li>
+            <li>Гантели на грудь 5 минут</li>
             <li>
                 Гантели грудь разводка лежа 30x3<br/>
                 Гантели бицепс сидя по 1-й руке 30x3<br/>
@@ -48,7 +47,7 @@ const lessons = [
                 Гантели ноги ягоды 30x3<br/>
                 Пресс ног 30x3<br/>
             </li>
-            <li>Гантели на бицепс максимум</li>
+            <li>Гантели на бицепс 5 минут</li>
             <li>
                 Гантели грудь стоя как бицепс 30x3<br/>
                 Гантели бицепс стоя по 1-й руке 30x3<br/>
@@ -58,7 +57,7 @@ const lessons = [
                 Гантели ноги утиный шаг 30x3<br/>
                 Пресс скалолаз 30x3<br/>
             </li>
-            <li>Гантели на плечи рвв стоя максимум</li>
+            <li>Гантели на плечи рвв стоя 5 минут</li>
             <li>
                 Жим грудь лежа 15x3<br/>
                 Жим на бицепс лежа 15x3<br/>
@@ -69,7 +68,14 @@ const lessons = [
                 Удары коленями 50x3<br/>
                 Пресс паук 30x3<br/>
             </li>
-            <li>Гантели приседания максимум</li>
+            <li>Гантели приседания 5 минут</li>
+        </ul>`
+    },
+
+    {
+        title: 'ИЗУЧЕНИЕ ПРОЙДЕННОГО',
+        content: `<ul>
+            <li>Изучение конспектов наизусть</li>
         </ul>`
     },
 ];
@@ -77,7 +83,7 @@ const lessons = [
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
-const randomActiveLesson = Math.floor(Math.random() * 3);
+const randomActiveLesson = Math.floor(Math.random() * 4);
 
 let lessonId = 0;
 
