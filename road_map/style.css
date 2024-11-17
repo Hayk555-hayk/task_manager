@@ -26,6 +26,11 @@ main {
     text-align: left;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: .2;
+}
+
+.lesson:hover {
+  opacity: 1;
 }
 
 .road {

@@ -3,27 +3,25 @@ const lessons = [
         title: 'ТЕОРИЯ IT',
         content: `<ul>
             <li>Книга по программированию</li>
-	        <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
+            <li>Практика Laravel и React JS https://www.youtube.com/watch?v=z0UqqoedPkQ&list=PL8p2I9GklV441mpKgiou6lQ7cDFmqYA3B</li>
         </ul>`
     },
-
     {
         title: 'САМОРАЗВИТИЕ',
         content: `<ul>
             <li>Книга по Алгебре</li>
-	        <li>Книга по Геометрии</li>
-	        <li>Книга по Физике</li>
-	        <li>Книга по Английскому</li>
-	        <li>Книга по Немецкому</li>
-	        <li>Книга по Испанском</li>
-	        <li>Книга по Японскому</li>
-	        <li>Библия APP</li>
-	        <li>Библия Армянская книга</li>
-	        <li>Библия Русская книга</li>
-	        <li>Написание письма</li>
+            <li>Книга по Геометрии</li>
+            <li>Книга по Физике</li>
+            <li>Книга по Английскому</li>
+            <li>Книга по Немецкому</li>
+            <li>Книга по Испанском</li>
+            <li>Книга по Японскому</li>
+            <li>Библия APP</li>
+            <li>Библия Армянская книга</li>
+            <li>Библия Русская книга</li>
+            <li>Написание письма</li>
         </ul>`
     },
-
     {
         title: 'СПОРТ',
         content: `<ul>
@@ -71,7 +69,6 @@ const lessons = [
             <li>Гантели приседания 5 минут</li>
         </ul>`
     },
-
     {
         title: 'ИЗУЧЕНИЕ ПРОЙДЕННОГО',
         content: `<ul>
@@ -80,49 +77,38 @@ const lessons = [
     },
 ];
 
-
-let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
-const randomActiveLesson = Math.floor(Math.random() * 4);
 
-let lessonId = 0;
+// Добавление уроков на страницу
+lessons.forEach((lesson, index) => {
+    const lessonDiv = document.createElement('div');
+    lessonDiv.id = `lesson-${index}`;
+    lessonDiv.classList.add('lesson');
+    lessonDiv.style.padding = '10px';
+    lessonDiv.style.margin = '10px';
+    lessonDiv.style.border = '1px solid #ccc';
+    lessonDiv.style.backgroundColor = '#fff';
 
-lessons.forEach(lesson => {
-    // Create a temporary container to parse the content
-    const tempContainer = document.createElement('div');
-    tempContainer.innerHTML = lesson.content;
-
-    // Get all li elements
-    const liElements = tempContainer.querySelectorAll('li');
-    
-    // Randomly select one li element and add a class
-    if (liElements.length > 0) {
-        const randomIndex = Math.floor(Math.random() * liElements.length);
-        liElements[randomIndex].classList.add('actual');
-    }
-
-    lessonsHtml += `
-        <div id=${lessonId} class='lesson'>
-            <h3>${lesson.title}</h3>
-            <p>${tempContainer.innerHTML}</p>
-        </div>
+    // Вставляем заголовок и контент
+    lessonDiv.innerHTML = `
+        <h3>${lesson.title}</h3>
+        ${lesson.content}
     `;
 
-    lessonId +=1;
-});
+    // Добавляем обработчик события на ul внутри блока
+    const ulElement = lessonDiv.querySelector('ul');
+    if (ulElement) {
+        ulElement.style.cursor = 'pointer';
+        ulElement.addEventListener('click', () => {
+            // Сбросить цвета у всех li внутри этого ul
+            const liElements = ulElement.querySelectorAll('li');
+            liElements.forEach(li => (li.classList.remove('actual')));
 
-function generateUniqueRandomNumbers() {
-    let numbers = new Set();
-
-    while (numbers.size < 2) {
-        let randomNumber = Math.floor(Math.random() * 6);
-        numbers.add(randomNumber);
+            // Выбрать случайный li и перекрасить
+            const randomIndex = Math.floor(Math.random() * liElements.length);
+            liElements[randomIndex].classList.add('actual');
+        });
     }
 
-    return Array.from(numbers);
-}
-
-lessonsHtml += '</div>';
-mainElement.innerHTML = lessonsHtml;
-
-const lesson = document.getElementById(randomActiveLesson);
+    mainElement.appendChild(lessonDiv);
+});
