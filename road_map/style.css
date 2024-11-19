@@ -66,6 +66,9 @@ ul {
   }
   
   .done {
-    opacity: 1;
     background-color: rgb(6, 250, 6);
+  }
+
+  .in_progress {
+    background-color: rgb(6, 234, 250);
   }

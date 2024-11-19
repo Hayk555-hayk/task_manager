@@ -1,75 +1,17 @@
 const lessons = [
     {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 1',
-        content: 'some <b>content</b>'
-    },
-    {
-        title: 'Lesson 2',
-        content: 'some <b>content</b>'
+        title: 'Математика 5 класс глава 1',
+        content: `1,2,3,4,5,6,7,8,9,10,11,12... называются натуральными числами, 1/2 не натуральное число<br/>
+        Рядом натуральных чисел называют натуральные числа в порядке возрастания, наименьшее натуральное число это 1 наибольшего нет<br/>
+        Есть 10 цифр из них строятся числа (1,2,3,4,5,6,7,8,9,0), все числа кроме однозначных можно называть многозначными<br/>
+        большие числа можно поделить на классы 17(миллионы) 450(тысячи) 124(единицы), каждый класс в свою очередь разделяется на <br/>
+        единицы, десятки и сотни <img src='./images/algebra/1.png'/>
+        Пример отрезка <img src='./images/algebra/2.png'/> длину отрезка можно измерять милиметрами, сантиметрами, дециметрами<br/>
+        метрами и километрами, измерить отрезок это подщитать сколько единичных отрезков в нем помещяются<br/>
+        Два отрезка считаются равными если при наложении друг на друга их длина одинакова<br/>
+        Прямая это геометрическая фигура которая не имеет концов, у луча есть начало но нет конца
+        <img src='./images/algebra/3.png'/>
+        <img src='./images/algebra/4.png'/>`
     },
 ];
 
