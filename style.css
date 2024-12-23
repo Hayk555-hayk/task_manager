@@ -44,5 +44,10 @@ main {
 
 img {
     display: block;
+    width: 250px;
+    transition: .5;
+}
+
+img:hover {
     width: 100%;
 }

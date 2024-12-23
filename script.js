@@ -13,16 +13,36 @@ const lessons = [
         <img src='./images/algebra/3.png'/>
         <img src='./images/algebra/4.png'/>`
     },
+    {
+        title: 'PHP Zandstra',
+        content: `В PHP 7 было введено обьявление скалярных типов данных, а так же анонимных классов<br/>
+        Класс это шаблон кода для создания обьектов
+        <img src='./images/php/1.png'/>
+        В php 4 и 5.1 можно выводить классы непосредственным путем но начиная с php 5.2 нужно добавить метод __toString()<br/>
+        private, protected и public определяют оюласть кода для которого метод будет доступным
+        <img src='./images/php/2.png'/>
+        Передавать значения вышеуказаным способом не принятая практика, потому что создавая класс мы подразумеваем что у него уже есть<br/>
+        свойство title<br/>
+        В отличии от функции методы обьявляются внутри класса
+        <img src='./images/php/3.png'/>
+        public - открытый можно использовать за пределами класса<br/>
+        Метод __construct вызывается при создании экземпляра класса, как и __toString() это магический метод, до php 5 метод __construct<br/>
+        совпадал с именем класса, в php 8 обьявлять свойства можно в конструкторе<br/>
+        <img src='./images/php/4.png'/>`
+    },
 ];
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
+let lessonCount = 0;
 
 lessons.forEach(lesson => {
+    lessonCount += 1;
     lessonsHtml += `
         <div class='lesson'>
             <h3>${lesson.title}</h3>
             <p>${lesson.content}</p>
+            <p><b>-${lessonCount}-</b></p>
         </div>
     `
 });
