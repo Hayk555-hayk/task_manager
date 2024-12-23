@@ -30,6 +30,14 @@ const lessons = [
         совпадал с именем класса, в php 8 обьявлять свойства можно в конструкторе<br/>
         <img src='./images/php/4.png'/>`
     },
+    {
+        title: 'PHP & Lighthouse',
+        content: `Для установки можно воспользоваться официальным сайтом lighthouse-php.com, внутри laravel <br/>
+        создасться директория graphql с файлом schema.graphql <br/>
+        php artisan vendor:publish --tag=lighthouse-config в папке config создаст файл lighthouse.php с настройками graphql для laravel
+        <img src='./images/php/5.png'/>
+        ВОсклицательный знак означает required`
+    },
 ];
 
 let lessonsHtml = '<div>';
