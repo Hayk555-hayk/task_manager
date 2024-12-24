@@ -61,6 +61,16 @@ const lessons = [
         Тип void возвращает ничего<br/>
         Наследование позволяет создовать несколько классов из одного базового`
     },
+    {
+        title: 'PHP & Lighthouse',
+        content: `Schema похожа на схему в базах данных она описывает данные, есть 3 корневые типы Query, mutation и Subscription<br/>
+        Scalar это определенные в type-ах значения типо int, string Id и так далее<br/>
+        $carbon->diffForHumans() возвратит время как 38 minutes ago<br/>
+        Определения скаляров можно таким образом
+        <img src='./images/php/11.png'/>
+        Директивы это очень мощный инструмент lighthouse
+        <img src='./images/php/12.png'/>`
+    },
 ];
 
 let lessonsHtml = '<div>';
