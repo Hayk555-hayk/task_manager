@@ -122,6 +122,21 @@ const lessons = [
         В php только одиночное наследование поэтому после слово extends пишем один класс но после implements можем добавить много интерфейсов<br/>
         class Consultancy extends TimedService implements Bookable, Chargeable {}`
     },
+    {
+        title: 'PHP & Lighthouse',
+        content: `Директива @all выбирет все данные из модели
+        <img src='./images/php/18.png'/>`
+    },
+    {
+        title: 'Laravel Documentation',
+        content: `Можно установить установщик ларавел composer global require laravel/installer и после устанавливать новые проекты<br/>
+        таким образом laravel new example-app<br/>
+        Все файлы конфигурации Laravel хранятся в каталоге config<br/>
+        важные параметры конфигурации задаются в файле .env<br/>
+        Файл .env не следует добавлять в систему контроля версий вашего приложения, так как различные разработчики и серверы могут<br/>
+        требовать разные настройки окружения<br/>
+        php artisan migrate после создания проекта выполнит все необходимые миграции`
+    },
 ];
 
 let lessonsHtml = '<div>';
