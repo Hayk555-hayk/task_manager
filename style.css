@@ -44,10 +44,18 @@ main {
 
 img {
     display: block;
-    width: 250px;
+    width: 70%;
     transition: .5;
 }
 
 img:hover {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    img {
+        display: block;
+        width: 250px;
+        transition: .5;
+    }
 }
