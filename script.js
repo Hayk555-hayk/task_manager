@@ -167,6 +167,11 @@ const lessons = [
         Можно поменять модификаторы доступа для методов трейта внутри самого класса 
         <img src='./images/php/22.png'/>`
     },
+    {
+        title: 'PHP & Lighthouse',
+        content: `Пример создания запроса на единичного и множество пользователей 
+        <img src='./images/php/23.png'/>`
+    },
 ];
 
 let lessonsHtml = '<div>';
