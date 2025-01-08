@@ -190,6 +190,11 @@ const lessons = [
         config:publish для публикации любых файлов конфигурации, которые не публикуются по умолчанию: php artisan config:publish<br/>
         Чтобы включить режим обслуживания, выполните команду down Artisan: php artisan down (php artisan up)`
     },
+    {
+        title: 'Ruby',
+        content: `Файлы руби имеют расширение .rb, p или puts выводит на экран данные как echo в php<br/>
+        ruby filename.rb для запуска файла на ruby`
+    },
 ];
 
 let lessonsHtml = '<div>';
