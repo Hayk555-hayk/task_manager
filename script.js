@@ -172,6 +172,24 @@ const lessons = [
         content: `Пример создания запроса на единичного и множество пользователей 
         <img src='./images/php/23.png'/>`
     },
+    {
+        title: 'Laravel Documentation',
+        content: `Все конфигурационные файлы фреймворка Laravel хранятся в каталоге config, Конфигурационные файлы позволяют<br/>
+        настраивать такие вещи, как информация о подключении к базе данных, информация о почтовом сервере, а также другие основные<br/>
+        параметры, например, часовой пояс приложения и ключ шифрования<br/>
+        php artisan about - может отображать обзор конфигурации (php artisan about --only=environment)<br/>
+        php artisan config:show database - чтобы получить детальную информацию о значениях в определенном файле конфигурации<br/>
+        Текущее окружение приложения определяется с помощью переменной APP_ENV из файла .env
+        <img src='./images/php/24.png'/>
+        php artisan env:encrypt - Для шифрования файла окружения (php artisan env:decrypt)<br/>
+        Значения конфигураций можно использовать таким образом Config::get('app.timezone'), Config::set('app.timezone', 'America/Chicago')<br/>
+        php artisan config:cache - кеширует настройки (php artisan config:clear)<br/>
+        Большинство файлов конфигурации Laravel уже опубликованы в каталоге config вашего приложения<br/>
+        однако некоторые файлы конфигурации, такие как cors.php и view.php, не публикуются по умолчанию<br/>
+        поскольку большинству приложений никогда не потребуется их модифицировать.Однако вы можете использовать Artisan-команду<br/>
+        config:publish для публикации любых файлов конфигурации, которые не публикуются по умолчанию: php artisan config:publish<br/>
+        Чтобы включить режим обслуживания, выполните команду down Artisan: php artisan down (php artisan up)`
+    },
 ];
 
 let lessonsHtml = '<div>';
