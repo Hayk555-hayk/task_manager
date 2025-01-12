@@ -1,5 +1,6 @@
-const lessons = [
+let lessons = [
     {
+        meta_title: 'algebra',
         title: 'Математика 5 класс глава 1',
         content: `1,2,3,4,5,6,7,8,9,10,11,12... называются натуральными числами, 1/2 не натуральное число<br/>
         Рядом натуральных чисел называют натуральные числа в порядке возрастания, наименьшее натуральное число это 1 наибольшего нет<br/>
@@ -14,6 +15,7 @@ const lessons = [
         <img src='./images/algebra/4.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'PHP Zandstra',
         content: `В PHP 7 было введено обьявление скалярных типов данных, а так же анонимных классов<br/>
         Класс это шаблон кода для создания обьектов
@@ -31,6 +33,7 @@ const lessons = [
         <img src='./images/php/4.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'PHP & Lighthouse',
         content: `Для установки можно воспользоваться официальным сайтом lighthouse-php.com, внутри laravel <br/>
         создасться директория graphql с файлом schema.graphql <br/>
@@ -39,12 +42,14 @@ const lessons = [
         ВОсклицательный знак означает required`
     },
     {
+        meta_title: 'add_techno',
         title: 'Computer science',
         content: `Алгоритм белого списка (White List) — это подход, при котором разрешаются только заранее определённые и<br/>
         проверенные значения (например, данные, действия, IP-адреса или маршруты). Всё, что не входит в список, автоматически блокируется.
         <img src='./images/php/6.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'PHP Zandstra',
         content: `В PHP 8 появились именованные аргкменты для методов
         <img src='./images/php/7.png'/>
@@ -62,6 +67,7 @@ const lessons = [
         Наследование позволяет создовать несколько классов из одного базового`
     },
     {
+        meta_title: 'php',
         title: 'PHP & Lighthouse',
         content: `Schema похожа на схему в базах данных она описывает данные, есть 3 корневые типы Query, mutation и Subscription<br/>
         Scalar это определенные в type-ах значения типо int, string Id и так далее<br/>
@@ -72,6 +78,7 @@ const lessons = [
         <img src='./images/php/12.png'/>`
     },
     {
+        meta_title: 'add_techno',
         title: 'Computer science',
         content: `Алгоритм бинарного поиска Объяснение работы: Массив должен быть отсортирован. Бинарный поиск работает только<br/>
         с отсортированными данными. Идея алгоритма: Делим массив на две половины. Сравниваем искомое число ($target) со<br/>
@@ -80,6 +87,7 @@ const lessons = [
         <img src='./images/php/13.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'PHP Zandstra',
         content: `Класс наследованный от другого класса называется подклассом, как правило дочерний класс расширяет функционал родительского класса<br/>
         $someClass instanceof MainClass - instanceof возвращает true или false если переменная является обьектом MainClass<br/>
@@ -96,6 +104,7 @@ const lessons = [
     },
 
     {
+        meta_title: 'php',
         title: 'PHP Zandstra',
         content: `Доступ к статистическому свойству осуществляется через класс а не через экземпляр обьекта ClassName::staticMethod()<br/>
         Чтобы получить доступ к статическому методу или свойству из того же самого класса ( а не из дочернего класса ),<br/>
@@ -123,11 +132,13 @@ const lessons = [
         class Consultancy extends TimedService implements Bookable, Chargeable {}`
     },
     {
+        meta_title: 'php',
         title: 'PHP & Lighthouse',
         content: `Директива @all выбирет все данные из модели
         <img src='./images/php/18.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'Laravel Documentation',
         content: `Можно установить установщик ларавел composer global require laravel/installer и после устанавливать новые проекты<br/>
         таким образом laravel new example-app<br/>
@@ -138,6 +149,7 @@ const lessons = [
         php artisan migrate после создания проекта выполнит все необходимые миграции`
     },
     {
+        meta_title: 'add_techno',
         title: 'Computer science',
         content: `Алгоритм сортировки вставкой работает так: Разделяем массив: считаем, что первый элемент уже отсортирован.<br/>
         Берём следующий элемент и сравниваем с предыдущими. Сдвигаем элементы, которые больше текущего, вправо.<br/>
@@ -152,10 +164,12 @@ const lessons = [
         больших данных. Если хочешь производительности, лучше использовать быструю сортировку или сортировку слиянием.`
     },
     {
+        meta_title: 'go',
         title: 'Go',
         content: `Полезен для создания веб сервисов, файлы имеют расширение .go`
     },
      {
+        meta_title: 'php',
         title: 'PHP Zandstra',
         content: `Трейты похожи на классы, экземпляры которых нельзя получить, но можно включить в другие классы<br/>
         Внутри класса нужно прописать use TraitName для доступа к методам трейта<br/>
@@ -168,11 +182,13 @@ const lessons = [
         <img src='./images/php/22.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'PHP & Lighthouse',
         content: `Пример создания запроса на единичного и множество пользователей 
         <img src='./images/php/23.png'/>`
     },
     {
+        meta_title: 'php',
         title: 'Laravel Documentation',
         content: `Все конфигурационные файлы фреймворка Laravel хранятся в каталоге config, Конфигурационные файлы позволяют<br/>
         настраивать такие вещи, как информация о подключении к базе данных, информация о почтовом сервере, а также другие основные<br/>
@@ -191,11 +207,23 @@ const lessons = [
         Чтобы включить режим обслуживания, выполните команду down Artisan: php artisan down (php artisan up)`
     },
     {
+        meta_title: 'ruby',
         title: 'Ruby',
         content: `Файлы руби имеют расширение .rb, p или puts выводит на экран данные как echo в php<br/>
         ruby filename.rb для запуска файла на ruby`
     },
 ];
+
+lessons.sort((a, b) => {
+    if (a.title < b.title) {
+        return -1;
+    }
+    if (a.title > b.title) {
+        return 1;
+    }
+    return 0;
+});
+
 
 let lessonsHtml = '<div>';
 const mainElement = document.querySelector('main');
@@ -214,3 +242,39 @@ lessons.forEach(lesson => {
 
 lessonsHtml += '</div>';
 mainElement.innerHTML = lessonsHtml;
+
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => {
+        mainElement.innerHTML = '';
+
+        let lessonsHtml = '';
+        let lessonCount = 0;
+
+        const filterTitle = item.id;
+        const filteredData = lessons.filter(obj => obj.meta_title === filterTitle);
+
+        filteredData.forEach(lesson => {
+            lessonCount += 1;
+            lessonsHtml += `
+                <div class='lesson'>
+                    <h3>${lesson.title}</h3>
+                    <p>${lesson.content}</p>
+                    <p><b>-${lessonCount}-</b></p>
+                </div>
+            `;
+        });
+
+        mainElement.innerHTML = lessonsHtml;
+    });
+});
+
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+        if (img.style.width === '80%') {
+            img.style.width = '10%';
+        } else {
+            img.style.width = '80%';
+        }
+    });
+});

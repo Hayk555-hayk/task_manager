@@ -10,6 +10,10 @@ body {
     background-size: cover;
 }
 
+h3 {
+  color: aliceblue;
+}
+
 main {
     width: 100%;
     text-align: center;
@@ -21,7 +25,8 @@ main {
 .lesson {
     margin: 30px auto;
     width: 95%;
-    background-color: rgb(242, 243, 252);
+    background-image: url(./lbg.gif);
+    background-size: contain;
     padding: 10px;
     text-align: left;
     border-radius: 20px;
@@ -50,7 +55,6 @@ ul {
   ul li {
     padding: 10px 15px;
     margin-bottom: 5px;
-    background-color: #f7f7f7;
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Arial', sans-serif;
@@ -58,17 +62,21 @@ ul {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
     overflow: auto;
+    opacity: .3;
   }
   
   ul li:hover {
-    background-color: #e3e3e3;
     transform: translateY(-2px);
+    color: aliceblue;
+    opacity: 1;
   }
   
   .done {
     background-color: rgb(6, 250, 6);
+    opacity: 1;
   }
 
   .in_progress {
     background-color: rgb(6, 234, 250);
+    opacity: 1;
   }
