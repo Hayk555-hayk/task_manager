@@ -1,39 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Расписание</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗАДАЧИ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h2>ПОНЕДЕЛЬНИК; ЧЕТВЕРГ</h2>
-      <p><strong>Программирование:</strong> Изучение Node.js с Nest.js и JavaScript с React.js. 
-        Практика по YouTube "code step by step" (MERN stack). Теория: node - metanit, mongodb - metanit.</p>
-      <p><strong>Спорт:</strong> Упражнения на плечи, спину и нижний пресс.</p>
-      <p><strong>Испанский: </strong>Первоночальный курс на lingust</p>
-      <p><img src="./nodereact.jpg"></p>
-    </div>
 
-    <div class="card">
-      <h2>ВТОРНИК; ПЯТНИЦА; ВОСКРЕСЕНЬЕ</h2>
-      <p><strong>Программирование:</strong> Изучение PHP с Laravel и JavaScript с Vue.js.
-        Практика по YouTube "clovon". Теория: PHP - metanit, SQL - metanit, Laravel - laravel su, Vue - vuejsorg.</p>
-      <p><strong>Спорт:</strong> Упражнения на грудь, трицепс и верхний пресс.</p>
-      <p><strong>Английский: </strong>Первоночальный курс на lingust</p>
-      <p><img src="./laravue.jpg"></p>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./pages/javascript.html">JavaScript</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="card">
-      <h2>СРЕДА; СУББОТА</h2>
-      <p><strong>Программирование:</strong> Изучение Go и JavaScript с React.js. 
-        Практика по YouTube "Akhil Sharma". Теория: Go - metanit, React - reactdev, TypeScript - metanit.</p>
-      <p><strong>Спорт:</strong> Упражнения на бицепс, ноги и средний пресс.</p>
-      <p><strong>Японский: </strong>Первоночальный курс на lingust</p>
-      <p><img src="./rego.png"></p>
-    </div>
-  </div>
+    <main>
+        <h1>Список задач</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ДЕНЬ</th>
+                    <th>ОТДЕЛ</th>
+                    <th>ЗАДАЧА</th>
+                    <th>СЛЕДУЮЩИЕ ШАГИ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ПОНЕДЕЛЬНИК</td>
+                    <td>Прогоаммирование на PHP</td>
+                    <td>PHP (roadmap) </td>
+                    <td>Laravel laravel.su</td>
+                </tr>
+                <tr>
+                    <td>ВТОРНИК</td>
+                    <td>Программирование на JS</td>
+                    <td>JavaScript (roadmap)</td>
+                    <td>TypeScript, Node js, React, Vue (roadmap)</td>
+                </tr>
+                <tr>
+                    <td>СРЕДА</td>
+                    <td>Изучение баз данных</td>
+                    <td>SQL (roadmap)</td>
+                    <td>PostgreSQL, ModngoDB, Redis (roadmap)</td>
+                </tr>
+
+                <tr>
+                  <td>ЧЕТВЕРГ</td>
+                  <td>Программирование на GO</td>
+                  <td>GO (roadmap)</td>
+                  <td>-</td>
+              </tr>
+
+              <tr>
+                <td>ПЯТНИЦА</td>
+                <td>Дополнительные технологии</td>
+                <td>GraphQL (roadmap)</td>
+                <td>Git and GitHub, Kubernetis, AWS, Linux, Docker (roadmap)</td>
+            </tr>
+
+            <tr>
+              <td>СУББОТА</td>
+              <td>Дизайн программирования</td>
+              <td>API design (roadmap)</td>
+              <td>System design, Code review, Design system, Design and architecture (roadmap)</td>
+          </tr>
+
+          <tr>
+            <td>ВОСКРЕСЕНЬЕ</td>
+            <td>Компютерные технологии</td>
+            <td>Computer science (roadmap)</td>
+            <td>Data structures, Software Architect, Prompt engineering, Terraform (roadmap)</td>
+        </tr>
+            </tbody>
+        </table>
+
+
+        <h1>Список спортивных задач</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ДЕНЬ</th>
+                    <th>МЕСТО</th>
+                    <th>ГРУППА МЫШЦ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ПОНЕДЕЛЬНИК</td>
+                    <td>Тренажерный зал</td>
+                    <td>Грудь и трицепс</td>
+                </tr>
+                <tr>
+                    <td>ВТОРНИК</td>
+                    <td>Тренажерный зал</td>
+                    <td>Бицепс и ноги</td>
+                </tr>
+                <tr>
+                    <td>СРЕДА</td>
+                    <td>Басейн</td>
+                    <td>Плавание</td>
+                </tr>
+
+                <tr>
+                  <td>ЧЕТВЕРГ</td>
+                  <td>Тренажерный зал</td>
+                  <td>Плечи и спина</td>
+              </tr>
+
+              <tr>
+                <td>ПЯТНИЦА</td>
+                <td>Тренажерный зал</td>
+                <td>Пресс</td>
+            </tr>
+
+            <tr>
+              <td>СУББОТА</td>
+              <td>Бассейн</td>
+              <td>Плавание</td>
+          </tr>
+
+          <tr>
+            <td>ВОСКРЕСЕНЬЕ</td>
+            <td>Бассейн</td>
+            <td>Плавание</td>
+        </tr>
+            </tbody>
+        </table>
+
+    </main>
+
 </body>
 </html>
