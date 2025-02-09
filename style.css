@@ -1,13 +1,11 @@
-/* Общие стили */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #2b2a2a, #9e9b9b);
   color: #333;
 }
 
-/* Навигационное меню */
 header {
   background: rgba(0, 0, 0, 0.8);
   padding: 10px 0;
@@ -15,6 +13,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 nav ul {
@@ -22,32 +21,34 @@ nav ul {
   padding: 0;
   margin: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 20px;
+  margin: 0;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Контент */
 main {
-  padding: 80px 20px;
+  padding: 100px 10px 20px;
   text-align: center;
 }
 
-/* Таблица */
 table {
-  width: 60%;
+  width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
   background: white;
@@ -62,15 +63,37 @@ th, td {
 }
 
 th {
-  background: #ff758c;
-  color: white;
+  background: #424040;
+  color: #fff;
 }
 
 tr:nth-child(even) {
-  background: #f9f9f9;
+  background: #696767;
+  color: #fff;
 }
 
 tr:hover {
-  background: #ffe0e5;
+  background: #494747;
   transition: 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+
+h1 {
+  color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 10px;
+  }
 }
