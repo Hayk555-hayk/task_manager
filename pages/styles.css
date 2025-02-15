@@ -97,6 +97,14 @@ main {
     background: #5a4bcc;
 }
 
+img {
+    width: 70%;
+}
+
+kbd {
+    display: block;
+}
+
 @media screen and (max-width: 600px) {
     .post {
         width: 95%;
@@ -105,5 +113,9 @@ main {
     nav ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    img {
+        width: 100%;
     }
 }
