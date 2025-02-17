@@ -2,8 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #2b2a2a, #9e9b9b);
   color: #333;
+  background: url(./intro.gif);
+  background-size: cover;
 }
 
 header {
@@ -47,38 +48,6 @@ main {
   text-align: center;
 }
 
-table {
-  width: 90%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-
-th {
-  background: #424040;
-  color: #fff;
-}
-
-tr:nth-child(even) {
-  background: #696767;
-  color: #fff;
-}
-
-tr:hover {
-  background: #494747;
-  transition: 0.3s;
-  color: #fff;
-  cursor: pointer;
-}
-
 h1 {
   color: #fff;
 }
@@ -87,13 +56,5 @@ h1 {
   nav ul {
     flex-direction: column;
     gap: 5px;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  th, td {
-    padding: 10px;
   }
 }
