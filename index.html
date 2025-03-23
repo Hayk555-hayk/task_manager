@@ -7,21 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <ul>
-                <li><a href="./pages/php.html">PHP</a></li>
-
-                <li><a href="./pages/node.html">Node js</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main>
-        <div class="intro">
-
+        <div class="text">
+            Prism автоматически подсветит код на JavaScript.
+            Если используешь другие языки (например, Python, C#), просто замени class="language-javascript" на нужный (например, language-csharp).
         </div>
+         <div class="code">
+                 .code-container {
+                     font-family: monospace; /* Моноширинный шрифт */
+                     background-color: #282c34; /* Темный фон */
+                     color: #abb2bf; /* Цвет текста */
+                     padding: 10px;
+                     border-radius: 5px;
+                     white-space: pre; /* Сохраняет пробелы и переводы строк */
+                     overflow-x: auto; /* Горизонтальная прокрутка */
+                 }
+
+                 function hello() {
+                 console.log("Hello, world!");
+                 }
+         </div>
     </main>
 
 </body>
