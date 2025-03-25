@@ -422,6 +422,500 @@
             }
             // Когда блок using завершится, метод Dispose() будет вызван автоматически.
         </div>
+        <div class="text">
+            <h3>WEB DEVELOPMENT</h3>
+            <h4>PHP</h4>
+            PHP (Hypertext Preprocessor) — это язык серверного программирования, который широко используется для создания динамических веб-сайтов
+            и веб-приложений. PHP выполняется на сервере и генерирует HTML-код, который отправляется в браузер пользователя.<br />
+            Основные особенности PHP:<br />
+            Интерпретируемый язык, выполняемый на сервере.<br />
+            Поддержка множества баз данных (MySQL, PostgreSQL, SQLite и др.).<br />
+            Гибкость и простота интеграции с HTML.<br />
+            Богатый набор встроенных функций.<br />
+            Поддержка объектно-ориентированного программирования (ООП).<br />
+            Клиент отправляет HTTP-запрос (обычно через браузер).<br />
+            Сервер (Apache, Nginx) принимает запрос и передает его в интерпретатор PHP.<br />
+            PHP выполняет код, взаимодействует с базами данных и возвращает HTML-код.<br />
+            Сервер отправляет HTML-код обратно клиенту.<br />
+            <h4>LARAVEL</h4>
+            Laravel — это популярный PHP-фреймворк для разработки веб-приложений, который использует
+            архитектурный шаблон MVC (Model-View-Controller).<br />
+            Основные преимущества Laravel:<br />
+            Чистый и понятный синтаксис.<br />
+            Встроенная поддержка аутентификации и авторизации.<br />
+            Элегантный механизм маршрутизации.<br />
+            ORM Eloquent для работы с базами данных.<br />
+            Поддержка кэширования, очередей, событий и других механизмов.<br />
+            Входящий запрос проходит через public/index.php.<br />
+            Laravel инициализирует свой сервис-контейнер и сервис-провайдеры.<br />
+            Запрос передается в маршрутизатор (routes/web.php).<br />
+            Контроллер обрабатывает запрос и возвращает ответ (обычно представление или JSON).<br />
+            <h4>GO</h4>
+            Go — это компилируемый многопоточный язык программирования, разработанный Google, который
+            обладает высокой производительностью и простотой синтаксиса.<br />
+            Высокая скорость выполнения (почти как у C).<br />
+            Сильная типизация.<br />
+            Поддержка конкурентного программирования (goroutines).<br />
+            Встроенные инструменты для тестирования и сборки кода.<br />
+        </div>
+        <div class="code">
+            package main
+            import "fmt"
+
+            func main() {
+                fmt.Println("Hello, World!")
+            }
+        </div>
+        <div class="text">
+            <h4>JAVASCRIPT</h4>
+            JavaScript — это язык программирования, который выполняется в браузере и делает веб-страницы динамичными.<br />
+            Основные возможности JavaScript:<br />
+            Работа с DOM (изменение HTML и CSS на лету).<br />
+            Асинхронное программирование с Promise и async/await.<br />
+            Поддержка модулей и ES6+.<br />
+            Взаимодействие с API и веб-серверами.<br />
+            <h4>NODE JS</h4>
+            Node.js — это среда выполнения JavaScript на сервере, позволяющая создавать веб-приложения, работающие без браузера.<br />
+            Основные преимущества:<br />
+            Асинхронная, событийно-ориентированная модель.<br />
+            Высокая производительность благодаря движку V8.<br />
+            Большая экосистема пакетов (npm).<br />
+        </div>
+        <div class="code">
+            const http = require('http');
+
+            const server = http.createServer((req, res) => {
+                res.writeHead(200, { 'Content-Type': 'text/plain' });
+                res.end('Hello, World!');
+            });
+
+            server.listen(3000, () => console.log('Server running on port 3000'));
+        </div>
+        <div class="text">
+            <h4>EXPRESS JS</h4>
+            Express.js — это минималистичный фреймворк для Node.js, который упрощает создание серверных приложений.
+        </div>
+        <div class="code">
+            const express = require('express');
+            const app = express();
+
+            app.get('/hello', (req, res) => {
+                res.send('Hello, World!');
+            });
+
+            app.listen(3000, () => console.log('Server is running on port 3000'));
+        </div>
+        <div class="text">
+            <h4>NEST JS</h4>
+            Nest.js — это фреймворк для Node.js, построенный на TypeScript и основанный на принципах ООП и модульности.
+        </div>
+        <div class="code">
+            import { Controller, Get } from '@nestjs/common';
+
+            @Controller('hello')
+            export class HelloController {
+              @Get()
+              getHello(): string {
+                return 'Hello, World!';
+              }
+            }
+        </div>
+        <div class="text">
+            <h4>ANGULAR JS</h4>
+            AngularJS — это фреймворк для фронтенд-разработки от Google, который позволяет создавать динамичные веб-приложения.
+        </div>
+        <div class="code">
+            import { Component } from '@angular/core';
+
+            @Component({
+            selector: 'app-hello',
+            template: '&lt;h1&gt;Hello, World!&lt;/h1&gt;'
+            })
+            export class HelloComponent {}
+        </div>
+        <div class="text">
+            <h4>REACT JS</h4>
+            React.js — это библиотека для создания пользовательских интерфейсов от Facebook, использующая виртуальный DOM для высокой производительности.
+        </div>
+        <div class="code">
+            import React from 'react';
+
+            function Hello() {
+                return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+            }
+
+            export default Hello;
+        </div>
+        <div class="text">
+            <h4>PHP</h4>
+            PHP — это интерпретируемый язык, но его код сначала компилируется в промежуточное представление (опкоды), которое затем выполняется Zend Engine.<br />
+            Работа интерпретатора PHP <br />
+            PHP-код загружается в интерпретатор<br />
+            Парсер анализирует синтаксис и создает AST (Abstract Syntax Tree)<br />
+            Компилятор превращает AST в опкоды (bytecode)<br />
+            Zend Engine выполняет опкоды<br />
+            Результат возвращается клиенту<br />
+            Встроенные структуры данных <br />
+            PHP предоставляет несколько типов структур данных:<br />
+            Массивы (array) — ассоциативные массивы (реализованы через хеш-таблицы)<br />
+            Объекты (object) — экземпляры классов<br />
+            Ресурсы (resource) — ссылки на внешние объекты (файлы, сокеты, базы данных)<br />
+            NULL — специальное значение для отсутствующих переменных<br />
+            PHP поддерживает полное объектно-ориентированное программирование, включая инкапсуляцию, наследование и полиморфизм.
+        </div>
+        <div class="code">
+            class User {
+                private string $name;
+    
+                public function __construct(string $name) {
+                    $this->name = $name;
+                }
+    
+                public function getName(): string {
+                    return $this->name;
+                }
+            }
+
+            $user = new User("Айк");
+            echo $user->getName(); // Айк
+        </div>
+        <div class="text">
+            Работа с памятью в PHP <br />
+            PHP использует автоматический Garbage Collector (GC) для очистки памяти. Основные механизмы управления памятью:<br />
+            Счетчик ссылок (Reference Counting)<br />
+            Сборщик мусора (Garbage Collector)<br />
+            Ручное управление памятью (unset(), gc_collect_cycles())
+        </div>
+        <div class="code">
+            $obj = new stdClass();
+            $obj2 = $obj;
+            unset($obj);
+            gc_collect_cycles(); // Принудительный запуск GC
+        </div>
+        <div class="text">
+            <h4>LARAVEL</h4>
+            Laravel построен на архитектуре MVC (Model-View-Controller).<br />
+            Структура проекта<br />
+            Основные директории Laravel:<br />
+            app/ — логика приложения (модели, контроллеры, сервисы)<br />
+            routes/ — маршрутизация (web.php, api.php)<br />
+            resources/views/ — шаблоны Blade<br />
+            database/ — миграции и seeders<br />
+            config/ — конфигурационные файлы<br />
+            Работа маршрутизации<br />
+            Laravel использует мощную систему маршрутизации, позволяя легко управлять входящими запросами.<br />
+            Пример маршрута в routes/web.php
+        </div>
+        <div class="code">
+            Route::get('/hello/{name}', function ($name) {
+                return "Привет, $name!";
+            });
+        </div>
+        <div class="text">
+            В Laravel контроллеры управляют бизнес-логикой. Пример контроллера:
+        </div>
+        <div class="code">
+            use Illuminate\Http\Request;
+            use App\Http\Controllers\Controller;
+
+            class UserController extends Controller {
+                public function show($id) {
+                    return "User ID: " . $id;
+                }
+            }
+        </div>
+        <div class="text">
+            Eloquent — это мощный ORM, который позволяет работать с базами данных как с объектами.
+        </div>
+        <div class="code">
+            use Illuminate\Database\Eloquent\Model;
+
+            class User extends Model {
+                protected $fillable = ['name', 'email'];
+            }
+
+            // Пример получения данных из базы:
+            $user = User::find(1);
+            echo $user->name;
+        </div>
+        <div class="text">
+            <h4>GO</h4>
+            Go использует систему компиляции и выполнения кода, которая сочетает статическую типизацию и сборку мусора.<br />
+            Основные компоненты Go:<br />
+            Go runtime — отвечает за выполнение кода, управление памятью и многопоточность.<br />
+            Goroutines — легковесные потоки, которые позволяют писать асинхронный код.<br />
+            Горутины позволяют писать асинхронный код без сложных потоков.
+        </div>
+        <div class="code">
+            package main
+
+            import (
+                "fmt"
+                "time"
+            )
+
+            func hello() {
+                fmt.Println("Hello from Goroutine")
+            }
+
+            func main() {
+                go hello()
+                time.Sleep(time.Second) // Ждем выполнения горутины
+            }
+        </div>
+        <div class="text">
+            <h4>JAVASCRIPT</h4>
+            JavaScript использует event loop для обработки асинхронных задач.
+        </div>
+        <div class="code">
+            console.log("Start");
+
+            setTimeout(() => {
+                console.log("Timeout executed");
+            }, 0);
+
+            console.log("End");
+
+            // Start
+            // End
+            // Timeout executed
+        </div>
+        <div class="text">
+            <h4>NODE JS</h4>
+            Node.js работает по событийно-ориентированной модели, используя libuv для работы с потоками.
+        </div>
+        <div class="code">
+            const fs = require('fs');
+
+            fs.readFile('file.txt', 'utf8', (err, data) => {
+                if (err) throw err;
+                console.log(data);
+            });
+        </div>
+        <div class="text">
+            <h4>EXPRESS JS</h4>
+            Middleware (промежуточное ПО) — это функции, которые выполняются между получением запроса и отправкой ответа.
+        </div>
+        <div class="code">
+            const express = require('express');
+            const app = express();
+
+            app.use((req, res, next) => {
+                console.log(`Request: ${req.method} ${req.url}`);
+                next();
+            });
+
+            app.get('/', (req, res) => {
+                res.send('Hello, World!');
+            });
+
+            app.listen(3000, () => console.log('Server running on port 3000'));
+        </div>
+        <div class="text">
+            <h4>NEST JS</h4>
+            Nest.js использует сервисы для работы с бизнес-логикой.
+        </div>
+        <div class="code">
+            import { Injectable } from '@nestjs/common';
+
+            @Injectable()
+            export class UserService {
+              getUser() {
+                return { id: 1, name: "Айк" };
+              }
+            }
+        </div>
+        <div class="text">
+            <h4>ANGULAR JS</h4>
+            AngularJS использует директивы для работы с DOM.
+        </div>
+        <div class="code">
+            //HTML
+            &lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+            &lt;p&gt;{{ message }}&lt;/p&gt;
+            &lt;/div&gt;
+
+            //JS
+            angular.module('myApp', []).controller('myCtrl', function($scope) {
+                $scope.message = "Привет, мир!";
+            });
+        </div>
+        <div class="text">
+            <h4>REACT JS</h4>
+            React использует хуки (useState, useEffect) для управления состоянием.
+        </div>
+        <div class="code">
+            import React, { useState } from 'react';
+
+            function Counter() {
+                const [count, setCount] = useState(0);
+
+                return (
+                    &lt;div&gt;
+                        &lt;p&gt;Счетчик: {count}&lt;/p&gt;
+                        &lt;button onClick={() => setCount(count + 1)}&gt;+&lt;/button&gt;
+                    &lt;/div&gt;
+                );
+            }
+
+            export default Counter;
+        </div>
+        <div class="text">
+            <h4>PHP</h4>
+            Оптимизация работы с памятью <br />
+            Использование unset($var) для освобождения памяти.<br />
+            Использование gc_collect_cycles() для ручного запуска сборщика мусора.<br />
+            Использование spl_fixedarray вместо обычных массивов для экономии памяти.<br />
+            Кэширование<br />
+            OPcache: ускоряет работу за счет хранения байт-кода.<br />
+            APCu: кэширует данные в памяти.<br />
+            Пример включения OPcache:<br />
+        </div>
+        <div class="code">
+            opcache.enable=1
+            opcache.memory_consumption=128
+            opcache.max_accelerated_files=10000
+            opcache.validate_timestamps=0
+        </div>
+        <div class="text">
+            Снижение количества SQL-запросов <br />
+            Использование JOIN вместо нескольких запросов.<br />
+            Кэширование данных (Redis, Memcached).<br />
+            <h4>LARAVEL</h4>
+            Service Container позволяет автоматически внедрять зависимости
+        </div>
+        <div class="code">
+            class PaymentService {
+            public function pay() {
+                return "Оплата проведена!";
+            }
+        }
+
+        // В сервис-провайдере
+        app()->bind('PaymentService', function() {
+            return new PaymentService();
+        });
+
+        // Использование
+        $payment = app('PaymentService');
+        echo $payment->pay();
+        </div>
+        <div class="text">
+            Middleware используются для фильтрации запросов.
+        </div>
+        <div class="code">
+            public function handle($request, Closure $next) {
+                if (!$request->has('token')) {
+                    return response('Access denied', 403);
+                }
+                return $next($request);
+            }
+        </div>
+        <div class="text">
+            <h4>GO</h4>
+            Каналы позволяют безопасно передавать данные между горутинами.
+        </div>
+        <div class="code">
+            package main
+
+            import "fmt"
+
+            func main() {
+                messages := make(chan string)
+
+                go func() { messages &lt;- "Hello from Goroutine" }()
+
+                msg := &lt;-messages
+                fmt.Println(msg)
+            }
+        </div>
+        <div class="text">
+            Буферизированные каналы позволяют отправлять несколько сообщений без немедленного чтения.
+        </div>
+        <div class="code">
+            ch := make(chan int, 2)
+            ch &lt;- 1
+            ch &lt;- 2
+            fmt.Println(&lt;-ch)
+            fmt.Println(&lt;-ch)
+        </div>
+        <div class="text">
+            <h4>JAVASCRIPT</h4>
+            Microtasks (Promise callbacks) выполняются до следующего рендера, а Macrotasks (setTimeout) — после.
+        </div>
+        <div class="code">
+            console.log("Start");
+            setTimeout(() => console.log("Timeout"), 0);
+            Promise.resolve().then(() => console.log("Promise"));
+            console.log("End");
+
+            // Start
+            // End
+            // Promise
+            // Timeout
+        </div>
+        <div class="text">
+            <h4>NODE JS</h4>
+            Потоки позволяют запускать код параллельно.
+        </div>
+        <div class="code">
+            const { Worker } = require('worker_threads');
+
+            const worker = new Worker(`
+                parentPort.on('message', msg => {
+                    parentPort.postMessage(msg * 2);
+                });
+            `, { eval: true });
+
+            worker.on('message', msg => console.log(`Received: ${msg}`));
+            worker.postMessage(10);
+        </div>
+        <div class="text">
+            <h4>EXPRESS JS</h4>
+            Async/Await в Express
+        </div>
+        <div class="code">
+            app.get('/data', async (req, res) => {
+                const data = await fetchData();
+                res.json(data);
+            });
+        </div>
+        <div class="text">
+            <h4>NEST JS</h4>
+            Nest.js — Dependency Injection
+        </div>
+        <div class="code">
+            @Injectable()
+            export class AuthService {
+              constructor(private readonly userService: UserService) {}
+
+              validateUser(email: string, password: string): boolean {
+                return this.userService.findUser(email)?.password === password;
+              }
+            }
+        </div>
+        <div class="text">
+            <h4>ANGULAR JS</h4>
+            Динамические компоненты
+        </div>
+        <div class="code">
+            // HTML
+            &lt;div ng-controller="MyController"&gt;
+                &lt;p&gt;{{ message }}&lt;/p&gt;
+            &lt;/div&gt;
+
+            // JS
+            angular.module('app', []).controller('MyController', function($scope) {
+                $scope.message = "Hello, AngularJS!";
+            });
+        </div>
+        <div class="text">
+            <h4>REACT JS</h4>
+            Использование useMemo и useCallback для оптимизации рендеринга.
+        </div>
+        <div class="code">
+            const expensiveCalculation = useMemo(() => computeExpensiveValue(data), [data]);
+        </div>
     </main>
 
 </body>
