@@ -8,7 +8,387 @@
 </head>
 <body>
     <main>
+        <div class="text">
+            <h3>C#</h3>
+            <h4>ОСНОВЫ ЯЗЫКА C#</h4>
+            C# — это современный, объектно-ориентированный язык программирования, разработанный Microsoft. Он используется для: <br />
+            Создания desktop-приложений (Windows Forms, WPF)<br />
+            Веб-разработки (ASP.NET, Blazor)<br />
+            Мобильных приложений (Xamarin, MAUI)<br />
+            Игр (Unity)<br />
+            Серверных приложений (Microservices, API)<br />
+        </div>
+        <div class="code">
+            // Program.cs точка входа программы
+            // Это комментарий — он не влияет на код
+            using System; // Подключение пространства имён System
 
+            class Program // Объявление класса Program
+            {
+                static void Main(string[] args) // Главный метод программы
+                {
+                    Console.WriteLine("Hello, World!"); // Вывод текста в консоль
+                }
+            }
+        </div>
+        <div class="text">
+            Переменная — это именованная область памяти, которая хранит данные. У каждой переменной есть: <br />
+            Имя (например, age, name)<br />
+            Тип данных (например, число, текст)<br />
+            Значение (например, 25, "Анна")<br />
+            Основные типы данных<br />
+            int	10, -5	Целое число<br />
+            double	3.14, -0.5	Число с плавающей точкой<br />
+            bool	true, false	Логический тип (истина/ложь)<br />
+            char	'A', 'ж'	Один символ<br />
+            string	"Привет"	Строка (текст)<br />
+            const double PI = 3.14159; - Используйте const, если значение не должно меняться
+        </div>
+        <div class="code">
+            int age = 25;                  // Целое число
+            double height = 1.75;          // Число с плавающей точкой
+            string name = "Иван";          // Строка
+            bool isStudent = true;         // Логическое значение
+            char grade = 'A';              // Один символ
+        </div>
+        <div class="text">
+            В C# для чтения ввода с клавиатуры используется метод Console.ReadLine() <br />
+            Convert.ToInt32()	int age = Convert.ToInt32("25");	Преобразует строку в целое число. Если строка не число — ошибка.<br />
+            int.Parse()	int num = int.Parse("10");	Аналогично Convert, но менее гибкий.<br />
+            int.TryParse()	int.TryParse("abc", out _)	Безопасный метод. Возвращает true/false в зависимости от успеха.<br />
+        </div>
+        <div class="code">
+            Console.Write("Введите ваше имя: ");  // Вывод подсказки (без перевода строки)
+            string userName = Console.ReadLine();  // Чтение ввода
+
+            Console.WriteLine($"Привет, {userName}!");
+
+            -----------------------------------------------------
+
+            Console.Write("Сколько вам лет? ");
+            string input = Console.ReadLine();  // Пользователь вводит "30" (но это всё ещё строка!)
+            int age = Convert.ToInt32(input);   // Преобразуем строку в число
+
+            Console.WriteLine($"Через 10 лет вам будет {age + 10}");  // Можно делать вычисления!
+
+            -----------------------------------------------------
+
+            Console.Write("Введите число: ");
+            string input = Console.ReadLine();
+            int number;
+
+            if (int.TryParse(input, out number))  // Если преобразование удалось
+            {
+                Console.WriteLine($"Вы ввели: {number}");
+            }
+            else  // Если ввели не число
+            {
+                Console.WriteLine("Ошибка: это не число!");
+            }
+        </div>
+        <div class="text">
+            Конструкции if/else if/else, switch/case/break/default
+        </div>
+        <div class="text">
+            if (number > 0) 
+            {
+                Console.WriteLine("Положительное!");
+            } 
+            else if (number < 0) 
+            {
+                Console.WriteLine("Отрицательное!");
+            } 
+            else 
+            {
+                Console.WriteLine("Это ноль!");
+            }
+
+            ------------------------------------
+
+            Console.Write("Введите цифру от 1 до 3: ");
+            int digit = Convert.ToInt32(Console.ReadLine());
+
+            switch (digit) 
+            {
+                case 1:
+                    Console.WriteLine("Вы выбрали 1");
+                    break;
+                case 2:
+                    Console.WriteLine("Вы выбрали 2");
+                    break;
+                case 3:
+                    Console.WriteLine("Вы выбрали 3");
+                    break;
+                default:
+                    Console.WriteLine("Неизвестная цифра");
+                    break;
+            }
+        </div>
+        <div class="text">
+            <h4>ПЛАТФОРМА .NET</h4>
+            .NET — это кроссплатформенная платформа для разработки приложений, созданная Microsoft. Она включает: <br />
+            Языки программирования (C#, F#, VB.NET)<br />
+            Библиотеки классов (готовые компоненты для работы с файлами, сетью, базами данных и т. д.)<br />
+            Среды выполнения (CLR — Common Language Runtime)<br />
+            Поддерживает:<br />
+            Windows, Linux, macOS<br />
+            Веб, мобильные, десктоп, игры, IoT, AI<br />
+            Основные компоненты .NET<br />
+            CLR (Common Language Runtime) – исполняет код, управляет памятью, безопасностью.<br />
+            FCL (Framework Class Library) – стандартные библиотеки для работы с коллекциями, файлами, сетью и т. д.<br />
+            Roslyn – компилятор C#.<br />
+            ASP.NET Core – фреймворк для веб-приложений.<br />
+            Entity Framework – ORM для работы с базами данных.<br />
+            .NET vs .NET Core vs .NET Framework<br />
+            .NET Framework – старая версия (только Windows).<br />
+            .NET Core – кроссплатформенный преемник (2016).<br />
+            .NET 5+ – единая платформа (с 2020, объединила Core и Framework).<br />
+            Как работает .NET?<br />
+            Вы пишете код на C#.<br />
+            Компилятор превращает его в CIL (Common Intermediate Language).<br />
+            CLR компилирует CIL в машинный код (JIT-компиляция).<br />
+            Приложение выполняется.<br />
+            В папке MyApp появились файлы:<br />
+            Program.cs — основной файл с кодом.<br />
+            MyApp.csproj — конфигурация проекта (зависимости, версия .NET).<br />
+            dotnet new	Создаёт новый проект<br />
+            dotnet run	Запускает приложение<br />
+            dotnet build	Компилирует проект<br />
+            dotnet restore	Восстанавливает зависимости<br />
+            <h4>ООП в C#</h4>
+            ООП — это методология программирования, основанная на использовании объектов и классов.<br />
+            Основные принципы ООП:<br />
+            Инкапсуляция — скрытие внутренней реализации.<br />
+            Наследование — создание новых классов на основе существующих.<br />
+            Полиморфизм — возможность объектов вести себя по-разному в зависимости от контекста.<br />
+            Абстракция — выделение главных характеристик объекта.<br />
+            Класс — это шаблон, описывающий структуру объекта (поля, методы, свойства).<br />
+            Объект — это экземпляр класса, созданный на его основе.<br />
+        </div>
+        <div class="code">
+            // Пример класса "Person"
+            class Person 
+            {
+                // Поля (данные)
+                public string Name;
+                public int Age;
+
+                // Метод (действие)
+                public void Greet() 
+                {
+                    Console.WriteLine($"Привет, меня зовут {Name}, мне {Age} лет!");
+                }
+            }
+
+            class Program 
+            {
+                static void Main() 
+                {
+                    // Создаём объект класса Person
+                    Person person1 = new Person();
+        
+                    // Устанавливаем значения полей
+                    person1.Name = "Алексей";
+                    person1.Age = 30;
+        
+                    // Вызываем метод
+                    person1.Greet();  // Вывод: Привет, меня зовут Алексей, мне 30 лет!
+                }
+            }
+        </div>
+        <div class="text">
+            Инкапсуляция — это принцип ООП, который: <br />
+            Скрывает внутреннюю реализацию класса от внешнего кода.<br />
+            Защищает данные от некорректного изменения.<br />
+            Предоставляет контролируемый доступ через методы и свойства.
+        </div>
+        <div class="code">
+            class Person 
+            {
+                private string _name;
+                private int _age;
+
+                // Свойство для доступа к имени
+                public string Name 
+                {
+                    get { return _name; }         // Возвращает значение
+                    set { _name = value; }        // Устанавливает значение
+                }
+
+                // Свойство для возраста с проверкой
+                public int Age 
+                {
+                    get { return _age; }
+                    set 
+                    {
+                        if (value > 0 && value < 120)  // Проверка
+                            _age = value;
+                        else
+                            Console.WriteLine("Недопустимый возраст!");
+                    }
+                }
+
+                public void Greet() 
+                {
+                    Console.WriteLine($"Привет, я {_name}, мне {_age} лет!");
+                }
+            }
+        </div>
+        <div class="text">
+            <h4>Ассинхронность в C#</h4>
+            В синхронном программировании операции выполняются последовательно, одна за другой. Если одна операция блокирует выполнение (например, чтение файла или запрос к серверу), вся 
+            программа "зависает" до её завершения.
+        </div>
+        <div class="code">
+            void SyncMethod()
+            {
+                Console.WriteLine("Начало синхронной операции...");
+                Thread.Sleep(2000); // Имитация долгой операции (2 секунды)
+                Console.WriteLine("Конец синхронной операции.");
+            }
+
+            SyncMethod();
+            Console.WriteLine("Программа продолжает работу.");
+            
+            // Начало синхронной операции...
+            // Конец синхронной операции.
+            // Программа продолжает работу.
+        </div>
+        <div class="text">
+            Асинхронность позволяет выполнять долгие операции без блокировки основного потока. В C# для этого используются ключевые слова async и await
+        </div>
+        <div class="code">
+            async Task AsyncMethod()
+            {
+                Console.WriteLine("Начало асинхронной операции...");
+                await Task.Delay(2000); // Не блокирует поток, а "ожидает" в фоне
+                Console.WriteLine("Конец асинхронной операции.");
+            }
+
+            await AsyncMethod();
+            Console.WriteLine("Программа продолжает работу.");
+
+            // Вывод (такой же, но поведение другое):
+            // Начало асинхронной операции...
+            // Конец асинхронной операции.
+            // Программа продолжает работу.
+        </div>
+        <div class="text">
+            Во время await Task.Delay(2000) поток не блокируется, и программа может выполнять другие задачи (например, обрабатывать UI-события в приложении).<br />
+            Основные понятия<br />
+            async – указывает, что метод содержит асинхронные операции.<br />
+            await – приостанавливает выполнение метода, пока операция не завершится, но не блокирует поток.<br />
+            Task – представляет асинхронную операцию.
+            <h4>Работа с файлами в C#</h4>
+            В C# для работы с файлами используется пространство имен System.IO. Самый простой способ взаимодействия с файлами — статический класс File,
+            который предоставляет методы для создания, чтения, записи, копирования и удаления файлов.<br />
+            Основные методы класса File<br />
+            File.Exists(path) — проверяет, существует ли файл.<br />
+            File.Create(path) — создаёт файл и возвращает FileStream для записи.<br />
+            File.WriteAllText(path, content) — записывает текст в файл (перезаписывает, если файл существует).<br />
+            File.ReadAllText(path) — читает весь текст из файла.<br />
+            File.AppendAllText(path, content) — добавляет текст в конец файла.<br />
+            File.Delete(path) — удаляет файл.<br />
+            File.Copy(source, destination) — копирует файл.
+        </div>
+        <div class="code">
+            using System;
+            using System.IO;
+
+            class Program
+            {
+                static void Main()
+                {
+                    string filePath = "example.txt";
+        
+                    // Проверяем, существует ли файл
+                    if (!File.Exists(filePath))
+                    {
+                        // Создаём и записываем текст в файл
+                        File.WriteAllText(filePath, "Привет, мир!");
+                        Console.WriteLine("Файл создан и в него записан текст.");
+                    }
+        
+                    // Читаем содержимое файла
+                    string content = File.ReadAllText(filePath);
+                    Console.WriteLine($"Содержимое файла: {content}");
+        
+                    // Добавляем текст в файл
+                    File.AppendAllText(filePath, "\nНовая строка.");
+                    Console.WriteLine("Текст добавлен в файл.");
+        
+                    // Выводим обновлённое содержимое
+                    Console.WriteLine($"Обновлённое содержимое:\n{File.ReadAllText(filePath)}");
+        
+                    // Удаляем файл (раскомментируйте для проверки)
+                    // File.Delete(filePath);
+                    // Console.WriteLine("Файл удалён.");
+                }
+            }
+        </div>
+        <div class="text">
+            <h4>ДЕЛЕГАТЫ, ЛЯМБДА И СОБЫТИЯ</h4>
+            Делегат в C# — это тип, который хранит ссылку на метод с определённой сигнатурой (типом возвращаемого значения и параметров).<br />
+            Делегаты похожи на указатели на функции в C++, но безопасны и работают в управляемой среде .NET.<br />
+            Они позволяют передавать методы как аргументы другим методам.<br />
+            MessageDelegate — это делегат, который может указывать на любой метод, принимающий string и возвращающий void.<br />
+            delegateInstance — переменная делегата, которая ссылается на метод ShowMessage.<br />
+            При вызове delegateInstance("...") выполняется метод ShowMessage.
+        </div>
+        <div class="code">
+            using System;
+
+            // Объявляем делегат
+            delegate void MessageDelegate(string message);
+
+            class Program
+            {
+                static void Main()
+                {
+                    // Создаём экземпляр делегата и связываем его с методом ShowMessage
+                    MessageDelegate delegateInstance = ShowMessage;
+        
+                    // Вызываем метод через делегат
+                    delegateInstance("Привет, мир!");  // Выведет: Сообщение: Привет, мир!
+                }
+
+                static void ShowMessage(string text)
+                {
+                    Console.WriteLine($"Сообщение: {text}");
+                }
+            }
+        </div>
+        <div class="text">
+            Исключение (exception) — это ошибка, которая возникает во время выполнения программы и нарушает её нормальный поток. Например: <br />
+            Деление на ноль.<br />
+            Обращение к несуществующему элементу массива.<br />
+            Попытка открыть несуществующий файл.<br />
+            В C# исключения представлены классами, унаследованными от System.Exception.<br />
+            Для обработки исключений используются три ключевых блока: <br />
+            try — блок, в котором выполняется код, который может вызвать исключение.<br />
+            catch — блок, который "ловит" исключение и обрабатывает его.<br />
+            finally — блок, который выполняется всегда, даже если исключение произошло.<br />
+            Можно ловить конкретные типы исключений (например, DivideByZeroException).<br />
+            Можно использовать общий Exception для всех ошибок: <br />
+        </div>
+        <div class="code">
+            try 
+            {
+                int a = 10;
+                int b = 0;
+                int result = a / b; // Деление на ноль → исключение!
+                Console.WriteLine(result);
+            }
+            catch (DivideByZeroException ex) 
+            {
+                Console.WriteLine("Ошибка: деление на ноль!");
+                Console.WriteLine(ex.Message); // Выведет стандартное сообщение об ошибке
+            }
+            finally 
+            {
+                Console.WriteLine("Этот блок выполнится в любом случае.");
+            }
+        </div>
     </main>
 </body>
 </html>
