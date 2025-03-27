@@ -10,7 +10,7 @@
     <main>
         <div class="text">
             <h3>C#</h3>
-            <h4>ОСНОВЫ ЯЗЫКА C#</h4>
+            <h4>ОСНОВЫ ЯЗЫКА C# (урок 1)</h4>
             C# — это современный, объектно-ориентированный язык программирования, разработанный Microsoft. Он используется для: <br />
             Создания desktop-приложений (Windows Forms, WPF)<br />
             Веб-разработки (ASP.NET, Blazor)<br />
@@ -89,7 +89,7 @@
         <div class="text">
             Конструкции if/else if/else, switch/case/break/default
         </div>
-        <div class="text">
+        <div class="code">
             if (number > 0) 
             {
                 Console.WriteLine("Положительное!");
@@ -125,7 +125,7 @@
             }
         </div>
         <div class="text">
-            <h4>ПЛАТФОРМА .NET</h4>
+            <h4>ПЛАТФОРМА .NET (урок 2)</h4>
             .NET — это кроссплатформенная платформа для разработки приложений, созданная Microsoft. Она включает: <br />
             Языки программирования (C#, F#, VB.NET)<br />
             Библиотеки классов (готовые компоненты для работы с файлами, сетью, базами данных и т. д.)<br />
@@ -155,7 +155,7 @@
             dotnet run	Запускает приложение<br />
             dotnet build	Компилирует проект<br />
             dotnet restore	Восстанавливает зависимости<br />
-            <h4>ООП в C#</h4>
+            <h4>ООП в C# (урок 3)</h4>
             ООП — это методология программирования, основанная на использовании объектов и классов.<br />
             Основные принципы ООП:<br />
             Инкапсуляция — скрытие внутренней реализации.<br />
@@ -235,7 +235,7 @@
             }
         </div>
         <div class="text">
-            <h4>Ассинхронность в C#</h4>
+            <h4>Ассинхронность в C# (урок 4)</h4>
             В синхронном программировании операции выполняются последовательно, одна за другой. Если одна операция блокирует выполнение (например, чтение файла или запрос к серверу), вся 
             программа "зависает" до её завершения.
         </div>
@@ -279,7 +279,7 @@
             async – указывает, что метод содержит асинхронные операции.<br />
             await – приостанавливает выполнение метода, пока операция не завершится, но не блокирует поток.<br />
             Task – представляет асинхронную операцию.
-            <h4>Работа с файлами в C#</h4>
+            <h4>Работа с файлами в C# (урок 5)</h4>
             В C# для работы с файлами используется пространство имен System.IO. Самый простой способ взаимодействия с файлами — статический класс File,
             который предоставляет методы для создания, чтения, записи, копирования и удаления файлов.<br />
             Основные методы класса File<br />
@@ -327,7 +327,7 @@
             }
         </div>
         <div class="text">
-            <h4>ДЕЛЕГАТЫ, ЛЯМБДА И СОБЫТИЯ</h4>
+            <h4>ДЕЛЕГАТЫ, ЛЯМБДА И СОБЫТИЯ (урок 6)</h4>
             Делегат в C# — это тип, который хранит ссылку на метод с определённой сигнатурой (типом возвращаемого значения и параметров).<br />
             Делегаты похожи на указатели на функции в C++, но безопасны и работают в управляемой среде .NET.<br />
             Они позволяют передавать методы как аргументы другим методам.<br />
@@ -359,7 +359,7 @@
             }
         </div>
         <div class="text">
-            <h4>ИСКЛЮЧЕНИЯ</h4>
+            <h4>ИСКЛЮЧЕНИЯ (урок 7)</h4>
             Исключение (exception) — это ошибка, которая возникает во время выполнения программы и нарушает её нормальный поток. Например: <br />
             Деление на ноль.<br />
             Обращение к несуществующему элементу массива.<br />
@@ -389,6 +389,320 @@
             {
                 Console.WriteLine("Этот блок выполнится в любом случае.");
             }
+        </div>
+        <div class="text">
+            <h4>UDEMY NOTES (урок 8)</h4>
+            Пример комбинирования Delegates и Generics
+        </div>
+        <div class="code">
+            namespace UdemyLearning
+            {
+                public delegate int Comparison<T>(T x, T y);
+
+                public class PersonSorter
+                {
+                    public void Sort(Person[] person, Comparison<Person> comparison)
+                    {
+                        for (int i = 0; i < person.Length - 1; i++)
+                        {
+                            for (int j = i + 1; j < person.Length; j++)
+                            {
+                                if (comparison(person[i], person[j]) > 0)
+                                {
+                                    Person temp = person[i];
+                                    person[i] = person[j];
+                                    person[j] = temp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                public class Person
+                {
+                    protected int _age;
+                    protected string _name;
+
+                    public string Name { get { return _name; } set { _name = value; } }
+
+                    public int Age { get { return _age; } 
+                        set
+                        {
+                            if (value <= 18)
+                            {
+                                throw new Exception();
+                            } else
+                            {
+                                _age = value;
+                            }
+                        } 
+                    }
+                }
+
+                internal class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        Person[] people =
+                        {
+                            new Person {Name = "ah1", Age = 25 },
+                            new Person {Name = "ch4", Age = 45 },
+                            new Person {Name = "bh3", Age = 35 },
+                        };
+
+                        PersonSorter sorter = new PersonSorter();
+
+                        sorter.Sort(people, CompareByAge);
+
+                        foreach(Person person in people)
+                        {
+                            Console.WriteLine(person.Name);
+                            Console.WriteLine(person.Age);
+                        }
+
+                        sorter.Sort(people, CompareByName);
+
+                        foreach (Person person in people)
+                        {
+                            Console.WriteLine(person.Name);
+                            Console.WriteLine(person.Age);
+                        }
+
+                        Console.ReadLine();
+                    }
+
+                    static int CompareByAge(Person x, Person y)
+                    {
+                        return x.Age.CompareTo(y.Age);
+                    }
+
+                    static int CompareByName(Person x, Person y)
+                    {
+                        return x.Name.CompareTo(y.Name);
+                    }
+                }
+            }
+        </div>
+        <div class="text">
+            <h3>WEB DEV</h3>
+            <h4>PHP (урок 9)</h4>
+            declare(strict_types=1); включает строгую проверку типов в PHP. Без него PHP пытается неявно преобразовывать типы, что может привести к неожиданным ошибкам.<br />
+            Генераторы (yield) позволяют лениво (lazy evaluation) генерировать данные, экономя память.<br />
+            Ключевые сценарии:<br />
+            Чтение больших файлов (логи, CSV)<br />
+            Потоковая обработка API-ответов<br />
+            Генерация последовательностей "на лету"<br />
+            Фишка: Даже если файл весит 10 ГБ, память будет использоваться только для текущей строки.
+        </div>
+        <div class="code">
+            &lt;?php
+            declare(strict_types=1);
+
+            function readLargeFile(string $filename): iterable {
+                $file = fopen($filename, 'r');
+                while (!feof($file)) {
+                    yield trim(fgets($file)); // Читает по одной строке, не загружая весь файл
+                }
+                fclose($file);
+            }
+
+            // Использование:
+            foreach (readLargeFile('huge_log.txt') as $line) {
+                if (str_contains($line, 'ERROR')) {
+                    echo $line . PHP_EOL;
+                }
+            }
+        </div>
+        <div class="text">
+            Функции высшего порядка — функции, которые принимают или возвращают другие функции.<br />
+            Каррирование — преобразование функции от многих аргументов в последовательность функций одного аргумента.<br />
+            Композиция функций — создание новой функции путем объединения существующих (f(g(x)))<br />
+        </div>
+        <div class="code">
+            // Функции высшего порядка: array_map + анонимные функции
+            $numbers = [1, 2, 3, 4];
+            $squared = array_map(fn($x) => $x ** 2, $numbers); // [1, 4, 9, 16]
+
+            //Каррирование
+            function add(int $a): callable {
+                return fn(int $b) => $a + $b;
+            }
+
+            $addFive = add(5);
+            echo $addFive(10); // 15
+
+            //Композиция функций
+            function compose(callable ...$functions): callable {
+                return fn($x) => array_reduce(
+                    $functions,
+                    fn($carry, callable $f) => $f($carry),
+                    $x
+                );
+            }
+
+            $double = fn($x) => $x * 2;
+            $increment = fn($x) => $x + 1;
+
+            $doubleThenIncrement = compose($double, $increment);
+            echo $doubleThenIncrement(5); // 11 (5*2 + 1)
+        </div>
+        <div class="text">
+            Паттерн "Стратегия" — это выбор алгоритма в рантайме без изменения клиентского кода.<br />
+            Вместо ООП-реализации (интерфейсы + классы) используем функции как объекты первого класса.<br />
+            Плюсы:<br />
+            Упрощение тестирования (каждая стратегия — чистая функция).<br />
+            Возможность горячей замены логики.
+        </div>
+        <div class="code">
+            //Обычный подход (условия):
+            $numbers = [-2, -1, 0, 1, 2];
+            $filtered = [];
+            foreach ($numbers as $number) {
+                if ($number > 0) { // Жёстко зашито в код
+                    $filtered[] = $number;
+                }
+            }
+
+            //Функциональный "Стратегия":
+            declare(strict_types=1);
+
+            // Стратегии как чистые функции:
+            $isPositive = fn(int $n): bool => $n > 0;
+            $isEven = fn(int $n): bool => $n % 2 === 0;
+
+            // Функция-компоновщик:
+            function filter(array $data, callable $strategy): array {
+                return array_filter($data, $strategy);
+            }
+
+            // Использование:
+            $numbers = [-2, -1, 0, 1, 2];
+            filter($numbers, $isPositive); // [1, 2]
+            filter($numbers, $isEven);     // [-2, 0, 2]
+        </div>
+        <div class="text">
+            <h4>LARAVEL (урок 10)</h4>
+            Service Container — это ядро Laravel <br />
+            Laravel Container — это мощный инструмент для управления зависимостями и выполнения внедрения зависимостей (DI).<br />
+            Как это работает?<br />
+            Биндинг (Binding): Регистрация классов/интерфейсов в контейнере.<br />
+            Резолвинг (Resolving): Автоматическое создание экземпляров с зависимостями.<br />
+        </div>
+        <div class="code">
+            //Простая привязка
+            $this->app->bind('MyService', function ($app) {
+                return new MyService($app->make('AnotherService'));
+            });
+
+            //Синглтон (одиночка)
+            $this->app->singleton('CacheProvider', function ($app) {
+                return new RedisCache($app->make('Redis'));
+            });
+
+            //Интерфейсы и их реализации
+            $this->app->bind(
+                PaymentGatewayInterface::class,
+                StripePaymentGateway::class
+            );
+
+            //Автоматическое внедрение (Auto-wiring)
+            class OrderController {
+                public function __construct(
+                    protected PaymentGatewayInterface $paymentGateway
+                ) {}
+            }
+
+            //Контекстный биндинг
+            $this->app->when(OrderController::class)
+              ->needs(PaymentGatewayInterface::class)
+              ->give(StripePaymentGateway::class);
+
+            //Тегирование сервисов
+            $this->app->tag([StripeGateway::class, PayPalGateway::class], 'payment-gateways');
+            $gateways = $this->app->tagged('payment-gateways');
+        </div>
+        <div class="text">
+            Проблема "Толстых" Моделей <br />
+            В типичном Laravel-приложении логика часто пишется прямо в контроллерах или моделях, что приводит к:<br />
+            Сложности тестирования.<br />
+            Нарушению Single Responsibility Principle (SRP).<br />
+            Трудностям при замене источника данных (например, с MySQL на API).<br />
+            Решение: Репозиторий-паттерн<br />
+            Репозиторий — это прослойка между бизнес-логикой и данными.<br />
+        </div>
+        <div class="code">
+            interface UserRepositoryInterface {
+                public function find(int $id): ?User;
+                public function save(User $user): void;
+                public function findByEmail(string $email): ?User;
+            }
+
+            class EloquentUserRepository implements UserRepositoryInterface {
+                public function find(int $id): ?User {
+                    return User::find($id);
+                }
+
+                public function save(User $user): void {
+                    $user->save();
+                }
+
+                public function findByEmail(string $email): ?User {
+                    return User::where('email', $email)->first();
+                }
+            }
+
+            // Внедрение репозитория через DI
+            // В сервис-провайдере:
+            $this->app->bind(
+                UserRepositoryInterface::class,
+                EloquentUserRepository::class
+            );
+
+            // В контроллере:
+            class UserController {
+                public function __construct(
+                    protected UserRepositoryInterface $users
+                ) {}
+
+                public function show(int $id) {
+                    return $this->users->find($id);
+                }
+            }
+        </div>
+        <div class="text">
+            В Laravel bind и singleton — это два метода регистрации зависимостей в Service Container, но они работают по-разному <br />
+            bind() — Обычная привязка - Создает новый экземпляр при каждом обращении к контейнеру <br />
+            singleton() — Одиночка - Возвращает один и тот же экземпляр при всех последующих вызовах.<br />
+            bind()	Новый каждый раз	+	Запросы, уникальные контексты <br />
+            singleton()	Один на все вызовы	–	Общие ресурсы (БД, конфиги)
+        </div>
+        <div class="code">
+            // Bind
+            $this->app->bind(MyService::class, function ($app) {
+                return new MyService();
+            });
+
+            // Каждый раз новый объект
+            $service1 = app(MyService::class); // Новый экземпляр
+            $service2 = app(MyService::class); // Еще один новый экземпляр
+            var_dump($service1 === $service2); // false
+
+            // Проверка типа привязки
+            dd(app()->bound(MyService::class)); // true/false
+            dd(app()->isShared(MyService::class)); // true для singleton
+            -----------------------------------------------
+            // Singleton
+            $this->app->singleton(MyService::class, function ($app) {
+                return new MyService();
+            });
+
+            // Всегда один объект
+            $service1 = app(MyService::class); // Создан впервые
+            $service2 = app(MyService::class); // Возвращен тот же экземпляр
+            var_dump($service1 === $service2); // true
+            // проверка
+            $this->app->instance(MyService::class, new FakeService());
+
         </div>
     </main>
 </body>
