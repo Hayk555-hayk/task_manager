@@ -397,11 +397,11 @@
         <div class="code">
             namespace UdemyLearning
             {
-                public delegate int Comparison<T>(T x, T y);
+                public delegate int Comparison&lt;T&gt;(T x, T y);
 
                 public class PersonSorter
                 {
-                    public void Sort(Person[] person, Comparison<Person> comparison)
+                    public void Sort(Person[] person, Comparison&lt;Person&gt; comparison)
                     {
                         for (int i = 0; i < person.Length - 1; i++)
                         {
@@ -702,7 +702,507 @@
             var_dump($service1 === $service2); // true
             // проверка
             $this->app->instance(MyService::class, new FakeService());
+        </div>
+        <div class="text">
+            <h3>C#</h3>
+            <h4>UDEMY NOTES (урок 11)</h4>
+            Код помещён в пространство имён UdemyLearning для логической группировки.<br />
+            Делегат — это тип, который хранит ссылку на метод с определённой сигнатурой.<br />
+            Здесь Notify может указывать на любой метод, который принимает string и возвращает void.<br />
+            Класс EventPublisher (Издатель)<br />
+            public event Notify OnNotify:<br />
+            OnNotify — событие, основанное на делегате Notify.<br />
+            Ключевое слово event добавляет защиту (подписка/отписка только через +=/-=).<br />
+            OnNotify?.Invoke(message):<br />
+            ?. — проверка на null (если нет подписчиков, событие не вызовется).<br />
+            Invoke — вызывает все подписанные методы.<br />
+            Класс EventSubscriber (Подписчик)<br />
+            Метод OnEventRised соответствует сигнатуре делегата Notify (void + string).<br />
+            Будет вызван при срабатывании события OnNotify<br />
+            Создание объектов:<br />
+            publisher — издатель события.<br />
+            eventSubscriber — подписчик.<br />
+            Подписка на событие:<br />
+            publisher.OnNotify += eventSubscriber.OnEventRised — добавление метода OnEventRised в список вызовов события OnNotify.<br />
+            Запуск события:<br />
+            publisher.RaisEvent("TEST RUN") вызывает все подписанные методы (здесь — OnEventRised).<br />
+            Результат:<br />
+            В консоль выведется: "Event received TEST RUN".<br />
+            Создаётся событие OnNotify в EventPublisher.<br />
+            Подписчик (EventSubscriber) регистрирует свой метод OnEventRised через +=.<br />
+            При вызове RaisEvent("TEST RUN"):<br />
+            Проверяется, есть ли подписчики (?.).<br />
+            Если есть, вызывается OnEventRised с переданным сообщением.<br />
+            Метод OnEventRised выводит сообщение в консоль.<br />
+            Инкапсуляция: Событие OnNotify объявлено как public, но подписка/отписка возможны только через += и -=.<br />
+            Множественные подписчики: Можно добавить несколько методов:<br />
+            publisher.OnNotify += subscriber1.Method1;<br />
+            publisher.OnNotify += subscriber2.Method2;<br />
+        </div>
+        <div class="code">
+            namespace UdemyLearning
+            {
 
+                public delegate void Notify(string message);
+
+                public class EventPublisher
+                {
+                    public event Notify OnNotify;
+
+                    public void RaisEvent(string message)
+                    {
+                        OnNotify?.Invoke(message);
+                    }
+                }
+
+                public class EventSubscriber
+                {
+                    public void OnEventRised(string message)
+                    {
+                        Console.WriteLine("Event received " + message);
+                    }
+                }
+
+                internal class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        EventPublisher publisher = new EventPublisher();
+                        EventSubscriber eventSubscriber = new EventSubscriber();
+
+                        publisher.OnNotify += eventSubscriber.OnEventRised;
+
+                        publisher.RaisEvent("TEST RUN");
+
+                        Console.ReadKey();
+                    }
+                }
+            }
+        </div>
+        <div class="text">
+            <h4>ASP.NET CORE (урок 12)</h4>
+            ASP.NET Core — это кроссплатформенный фреймворк для создания современных веб-приложений и API от Microsoft. Он работает на Windows, Linux и macOS.<br />
+            Ключевые особенности:<br />
+            Открытый исходный код (GitHub)<br />
+            Высокая производительность (быстрее Node.js, Python)<br />
+            Поддержка Docker и микросервисов<br />
+            Гибкость (MVC, Web API, Razor Pages, Blazor)<br />
+            Встроенная поддержка Dependency Injection<br />
+            dotnet new web -o FirstWebApp - создаёт шаблон минимального веб-приложения <br />
+            dotnet run - запускает сервер (обычно на http://localhost:5000 или https://localhost:5001)<br />
+        </div>
+        <div class="code">
+            var builder = WebApplication.CreateBuilder(args);
+            var app = builder.Build();
+
+            app.MapGet("/", () => "Hello World!");
+
+            app.Run();
+        </div>
+        <div class="text">
+            WebApplication.CreateBuilder() настраивает хост приложения.<br />
+            app.MapGet("/", ...) регистрирует GET-запрос для пути /.<br />
+            app.Run() запускает приложение.<br />
+            Middleware — это компоненты, которые обрабатывают HTTP-запросы и ответы. Они выполняются последовательно, образуя конвейер (pipeline).<br />
+            Примеры встроенного Middleware:<br />
+            Статические файлы (app.UseStaticFiles())<br />
+            Маршрутизация (app.UseRouting())<br />
+            Аутентификация (app.UseAuthentication())<br />
+            Как работает конвейер Middleware?<br />
+            Запрос проходит через Middleware в порядке их регистрации, а ответ — в обратном порядке.<br />
+            Запрос → Middleware 1 → Middleware 2 → ... → Middleware N → Ваш endpoint <br />
+            Ответ ← Middleware 1 ← Middleware 2 ← ... ← Middleware N ← Ваш endpoint <br />
+            При запросе сначала выполнится Console.WriteLine("До обработки запроса").<br />
+            await next() передаёт управление следующему Middleware (в данном случае — маршруту /).<br />
+            После формирования ответа выполнится Console.WriteLine("После обработки запроса").<br />
+            app.UseHttpLogging(); // Требует подключения пакета Microsoft.AspNetCore.HttpLogging<br />
+            app.UseExceptionHandler("/error"); // Перенаправление на страницу ошибки<br />
+            app.UseStaticFiles(); // Раздаёт файлы из wwwroot
+        </div>
+        <div class="code">
+            var builder = WebApplication.CreateBuilder(args);
+            var app = builder.Build();
+
+            // Добавляем Middleware
+            app.Use(async (context, next) =>
+            {
+                Console.WriteLine("До обработки запроса");
+                await next(); // Передаём запрос следующему Middleware
+                Console.WriteLine("После обработки запроса");
+            });
+
+            app.MapGet("/", () => "Главная страница");
+
+            app.Run();
+        </div>
+        <div class="text">
+            <h4>ASP.NET CORE MVC (урок 13)</h4>
+            ASP.NET Core MVC — это фреймворк для создания веб-приложений на основе паттерна Model-View-Controller (MVC), разработанный Microsoft.<br />
+            Кроссплатформенный (работает на Windows, Linux, macOS)<br />
+            Высокопроизводительный<br />
+            Модульный (использует middleware)<br />
+            Поддерживает Dependency Injection "из коробки"<br />
+            Работает с .NET Core/.NET 5+<br />
+            Основные компоненты MVC:<br />
+            Model - представляет данные и бизнес-логику<br />
+            View - отвечает за отображение данных (HTML-страницы)<br />
+            Controller - обрабатывает запросы пользователя, работает с Model и возвращает View<br />
+            dotnet new mvc -n MyFirstMvcApp<br />
+            dotnet run<br />
+            Структура проекта:<br />
+            /Controllers - папка с контроллерами<br />
+            /Views - папка с представлениями<br />
+            /wwwroot - статические файлы (CSS, JS, изображения)<br />
+            Program.cs - точка входа и конфигурация приложения<br />
+            appsettings.json - файл конфигурации<br />
+        </div>
+        <div class="code">
+            //HomeController.cs
+            public class HomeController : Controller
+            {
+                public IActionResult Index()
+                {
+                    return View(); // Возвращает представление Views/Home/Index.cshtml
+                }
+
+                public IActionResult Welcome()
+                {
+                    ViewData["Message"] = "Добро пожаловать в ASP.NET Core MVC!";
+                    return View();
+                }
+            }
+            //Views/Home/Welcome.cshtml
+            @{
+                ViewData["Title"] = "Страница приветствия";
+            }
+            <h1>@ViewData["Message"]</h1>
+        </div>
+        <div class="text">
+            Маршрутизация — это процесс определения того, какой контроллер и какое действие (action) должны обработать HTTP-запрос на основе URL.
+            В ASP.NET Core MVC используется система маршрутов, которая анализирует URL и выбирает подходящий обработчик.<br />
+            В ASP.NET Core MVC есть два основных подхода: <br />
+            Обычная (Conventional) маршрутизация – на основе шаблонов в Program.cs.<br />
+            Атрибутная маршрутизация – маршруты задаются атрибутами прямо над контроллерами и методами.<br />
+            По умолчанию в Program.cs уже есть стандартный маршрут:
+        </div>
+        <div class="code">
+            // {controller=Home} – если контроллер не указан, используется HomeController.
+            // {action=Index} – если действие не указано, вызывается Index().
+            // {id?} – параметр id является необязательным
+            
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        </div>
+        <div class="text">
+            Более гибкий подход — задание маршрутов прямо в коде контроллера <br />
+            Более точный контроль над URL.<br />
+            Возможность сложных шаблонов (ограничения типов, несколько маршрутов для одного метода).<br />
+        </div>
+        <div class="code">
+            [Route("products")]
+            public class ProductsController : Controller
+            {
+                [HttpGet("list")]  // Обрабатывает GET /products/list
+                public IActionResult Index() { ... }
+
+                [HttpGet("{id:int}")]  // Обрабатывает GET /products/5 (только числа)
+                public IActionResult Details(int id) { ... }
+            }
+        </div>
+        <div class="text">
+            Можно указывать типы параметров прямо в маршруте
+        </div>
+        <div class="code">
+            [Route("users/{id:int}")]  // Только целые числа
+            public IActionResult GetUser(int id) { ... }
+
+            [Route("posts/{slug:alpha}")]  // Только буквы
+            public IActionResult GetPost(string slug) { ... }
+        </div>
+        <div class="text">
+            <h4>МИНИМАЛЬНЫЕ API (урок 14)</h4>
+            Minimal API — это упрощённый подход к созданию HTTP API в .NET, который позволяет быстро создавать микро-сервисы и веб-API
+            с минимальным количеством кода и настройки. В отличие от традиционного ASP.NET Core (с контроллерами), Minimal API требует меньше шаблонного кода.<br />
+            Ключевые особенности:<br />
+            Минимальная конфигурация<br />
+            Прямое определение маршрутов и методов<br />
+            Идеально для небольших API и микросервисов<br />
+            dotnet new web -o MinimalApiDemo
+        </div>
+        <div class="code">
+            // Program.cs
+            // WebApplication.CreateBuilder(args) — создаёт "строитель" приложения
+            // app.MapGet("/", ...) — определяет GET-эндпоинт для пути /.
+            // app.Run() — запускает приложение.
+
+            var builder = WebApplication.CreateBuilder(args);
+            var app = builder.Build();
+
+            app.MapGet("/", () => "Hello World!");
+            app.MapGet("/welcome", () => "Welcome to Minimal API!");
+
+            app.Run();
+        </div>
+        <div class="text">
+            <h4>Аутентификация и Авторизация (урок 15)</h4>
+            Основные понятия <br />
+            Аутентификация (Authentication) — процесс проверки, что пользователь действительно тот, за кого себя выдаёт (например, через логин и пароль).<br />
+            Авторизация (Authorization) — проверка прав пользователя на доступ к определённым ресурсам (например, доступ к админ-панели).<br />
+            Разница между аутентификацией и авторизацией <br />
+            Аутентификация → "Кто ты?" (проверка личности).<br />
+            Авторизация → "Что тебе разрешено?" (проверка прав).<br />
+            Основные методы аутентификации <br />
+            Сессии и куки (традиционный способ, stateful).<br />
+            JWT (JSON Web Tokens) (современный, stateless подход).<br />
+            OAuth / OpenID Connect (используется для делегированного доступа, например "Войти через Google").<br />
+            Identity Framework (например, ASP.NET Core Identity — готовая система управления пользователями).
+            <h4>Dependency Injection (DI) и сервисы (урок 16)</h4>
+            Представь, у тебя есть класс Car, который зависит от класса Engine <br />
+            Жёсткая связь (tight coupling) – Car зависит от конкретной реализации Engine.<br />
+            Сложно тестировать – нельзя подменить Engine на заглушку (mock).<br />
+            Трудно менять реализацию – если завтра понадобится ElectricEngine, придётся переписывать Car.
+        </div>
+        <div class="code">
+            public class Engine 
+            {
+                public void Start() => Console.WriteLine("Engine started!");
+            }
+
+            public class Car 
+            {
+                private Engine _engine;
+
+                public Car() 
+                {
+                    _engine = new Engine();  // Прямое создание зависимости
+                }
+
+                public void StartCar() 
+                {
+                    _engine.Start();
+                }
+            }
+        </div>
+        <div class="text">
+            DI — это паттерн проектирования, при котором зависимости не создаются внутри класса, а "внедряются" извне.<br />
+            Гибкость – можно подменить реализацию IEngine (например, на ElectricEngine).<br />
+            Тестируемость – в тестах можно передавать MockEngine.<br />
+            Уменьшение связанности кода.
+        </div>
+        <div class="code">
+            public interface IEngine 
+            {
+                void Start();
+            }
+
+            public class Engine : IEngine 
+            {
+                public void Start() => Console.WriteLine("Engine started!");
+            }
+
+            public class Car 
+            {
+                private readonly IEngine _engine;
+
+                // Зависимость внедряется через конструктор (Constructor Injection)
+                public Car(IEngine engine) 
+                {
+                    _engine = engine;
+                }
+
+                public void StartCar() 
+                {
+                    _engine.Start();
+                }
+            }
+        </div>
+        <div class="text">
+            Основные способы внедрения зависимостей <br />
+            Constructor Injection (через конструктор) – самый частый способ.<br />
+            Property Injection (через свойство) – реже, используется, например, в UI-фреймворках.<br />
+            Method Injection (через метод) – если зависимость нужна только в одном методе.
+            <h4>Middleware и кастомизации запросов (урок 17)</h4>
+            Middleware — это промежуточное программное обеспечение, которое обрабатывает HTTP-запросы и ответы в конвейере.<br />
+            Это функции или компоненты, которые выполняются между получением запроса и отправкой ответа.<br />
+            Middleware может:<br />
+            Логировать запросы<br />
+            Авторизовать пользователей<br />
+            Обрабатывать ошибки<br />
+            Модифицировать запрос/ответ<br />
+            Каждый middleware может: <br />
+            Обработать запрос и передать его дальше (next()).<br />
+            Прервать конвейер и сразу отправить ответ <br />
+            Порядок middleware важен – они выполняются последовательно.<br />
+            Middleware может завершить запрос (если не вызвать next()).<br />
+            Middleware может изменять req и res (например, добавлять заголовки
+        </div>
+        <div class="code">
+            app.use((req, res, next) => {
+                console.log("Middleware 1: Запрос получен");
+                next(); // Передать управление следующему middleware
+            });
+
+            app.use((req, res, next) => {
+                console.log("Middleware 2: Проверка авторизации");
+                if (user.isAuthenticated) {
+                    next();
+                } else {
+                    res.status(403).send("Доступ запрещен!");
+                }
+            });
+
+            app.get("/", (req, res) => {
+                res.send("Главная страница");
+            });
+        </div>
+        <div class="text">
+            <h4>SignalR (урок 18)</h4>
+            1. Что такое SignalR? <br />
+            SignalR — это библиотека ASP.NET, которая упрощает создание веб-приложений реального времени (real-time). Она позволяет серверу мгновенно отправлять данные клиентам без постоянных HTTP-запросов.<br />
+            2. Где используется?<br />
+            Чат-приложения (WhatsApp, Telegram Web)<br />
+            Уведомления (Facebook, Twitter)<br />
+            Онлайн-игры (мультиплеерные игры)<br />
+            Биржевые графики (обновление котировок)<br />
+            Совместная работа (Google Docs, Figma)<br />
+            3. Как работает SignalR?<br />
+            Использует WebSockets (если поддерживаются браузером и сервером).<br />
+            Если WebSockets недоступны, автоматически переключается на Long Polling, Server-Sent Events (SSE).<br />
+            Поддерживает RPC (Remote Procedure Call) — сервер может вызывать методы клиента, а клиент — сервера.<br />
+            4. Основные компоненты<br />
+            Хаб (Hub) — центральный класс, через который клиенты и сервер обмениваются сообщениями.<br />
+            Клиенты (JavaScript, .NET, Java и др.) — подключаются к хабу и получают/отправляют сообщения.<br />
+            Транспорты (WebSocket, Server-Sent Events, Long Polling) — механизмы передачи данных.
+        </div>
+        <div class="code">
+            // Серверный хаб
+            public class ChatHub : Hub
+            {
+                public async Task SendMessage(string user, string message)
+                {
+                    await Clients.All.SendAsync("ReceiveMessage", user, message);
+                }
+            }
+            -----------------------------------------------------------------------------
+            // Клиент (JavaScript)
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .build();
+
+            connection.on("ReceiveMessage", (user, message) => {
+                console.log(`${user}: ${message}`);
+            });
+
+            connection.start();
+        </div>
+        <div class="text">
+            <h4>ТЕСТИРОВАНИЕ (урок 19)</h4>
+            1. Зачем нужно тестирование? <br />
+            Раннее обнаружение багов<br />
+            Уверенность при рефакторинге<br />
+            Документирование поведения кода<br />
+            Сокращение времени на ручное тестирование<br />
+            2. Типы тестов:<br />
+            Unit-тесты - тестирование отдельных компонентов изолированно<br />
+            Integration-тесты - проверка взаимодействия компонентов<br />
+            E2E-тесты - тестирование системы в целом (как пользователь)<br />
+            Добавьте тестовый проект xUnit: dotnet new xunit -n MyProject.Tests <br />
+            Добавьте ссылку на основной проект в тестовый: dotnet add MyProject.Tests reference MyProject <br />
+            Запуск тестов: dotnet test
+        </div>
+        <div class="code">
+            // В проекте MyProject.Tests создайте файл SampleTests.cs:
+            using Xunit;
+
+            namespace MyProject.Tests
+            {
+                public class SampleTests
+                {
+                    [Fact]
+                    public void TestAddition()
+                    {
+                        // Arrange
+                        int a = 5;
+                        int b = 3;
+            
+                        // Act
+                        int result = a + b;
+            
+                        // Assert
+                        Assert.Equal(8, result);
+                    }
+                }
+            }
+        </div>
+        <div class="text">
+            <h4>RAZOR PAGES (урок 20)</h4>
+            Razor Pages — это технология Microsoft для создания веб-приложений на C#. Она основана на паттерне MVVM (Model-View-ViewModel)
+            и упрощает разработку странично-ориентированных приложений по сравнению с традиционным MVC.<br />
+            Структура проекта <br />
+            Pages — содержит Razor-страницы (.cshtml и .cshtml.cs).<br />
+            wwwroot — для статических файлов (CSS, JS, изображения).<br />
+            appsettings.json — настройки приложения.<br />
+            Открой папку Pages → удали дефолтные страницы (кроме _Layout.cshtml и _ViewImports.cshtml).<br />
+            Создай новую страницу:<br />
+            ПКМ на Pages → Add → Razor Page → Razor Page (Empty) → назови Index.cshtml.<br />
+            В Index.cshtml напиши: <br />
+            Разбор кода<br />
+            @page — директива, которая делает файл Razor Page (обязательна для каждой страницы).<br />
+            @DateTime.Now — вставка C#-кода в HTML (Razor-синтаксис).
+        </div>
+        <div class="code">
+            @page
+            &lt;h&gt;>Привет, мир!&lt;/h1&gt;
+            &lt;p&gt;Текущее время: @DateTime.Now&lt;/p&gt;
+        </div>
+        <div class="text">
+            <h4>BLAZOR (урок 21)</h4>
+            Blazor — это веб-фреймворк от Microsoft, который позволяет создавать интерактивные веб-приложения используя C# вместо JavaScript. Есть две основные модели размещения: <br />
+            Blazor Server: Логика выполняется на сервере, обновления DOM передаются через SignalR<br />
+            Blazor WebAssembly: Приложение выполняется полностью в браузере на WebAssembly<br />
+            dotnet new blazorserver -o FirstBlazorApp --no-https <br />
+            dotnet run <br />
+            Основные файлы и папки: <br />
+            Program.cs — точка входа<br />
+            Pages/ — содержит Razor-компоненты (страницы)<br />
+            Index.razor — главная страница<br />
+            Counter.razor — пример счётчика<br />
+            FetchData.razor — пример загрузки данных<br />
+            Shared/ — общие компоненты<br />
+            MainLayout.razor — основной макет<br />
+            wwwroot/ — статические файлы (css, js, изображения)<br />
+        </div>
+        <div class="code">
+            @page "/counter"
+
+            &lt;h1&gt;Счётчик&lt;/h1&gt;
+
+            &lt;p&gt;Текущее значение: @currentCount&lt;/p&gt;
+
+            &lt;button class="btn btn-primary" @onclick="IncrementCount"&gt;Увеличить&lt;/button&gt;
+            &lt;button class="btn btn-danger" @onclick="DecrementCount"&gt;Уменьшить&lt;/button&gt;
+            &lt;button class="btn btn-warning" @onclick="ResetCount"&gt;Сбросить&lt;/button&gt;
+
+            @code {
+                private int currentCount = 0;
+
+                private void IncrementCount()
+                {
+                    currentCount++;
+                }
+
+                private void DecrementCount()
+                {
+                    if (currentCount &gt; 0)
+                        currentCount--;
+                }
+
+                private void ResetCount()
+                {
+                    currentCount = 0;
+                }
+            }
         </div>
     </main>
 </body>
