@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЗАДАЧИ</title>
+    <title>C#</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -484,228 +484,8 @@
             }
         </div>
         <div class="text">
-            <h3>WEB DEV</h3>
-            <h4>PHP (урок 9)</h4>
-            declare(strict_types=1); включает строгую проверку типов в PHP. Без него PHP пытается неявно преобразовывать типы, что может привести к неожиданным ошибкам.<br />
-            Генераторы (yield) позволяют лениво (lazy evaluation) генерировать данные, экономя память.<br />
-            Ключевые сценарии:<br />
-            Чтение больших файлов (логи, CSV)<br />
-            Потоковая обработка API-ответов<br />
-            Генерация последовательностей "на лету"<br />
-            Фишка: Даже если файл весит 10 ГБ, память будет использоваться только для текущей строки.
-        </div>
-        <div class="code">
-            &lt;?php
-            declare(strict_types=1);
-
-            function readLargeFile(string $filename): iterable {
-                $file = fopen($filename, 'r');
-                while (!feof($file)) {
-                    yield trim(fgets($file)); // Читает по одной строке, не загружая весь файл
-                }
-                fclose($file);
-            }
-
-            // Использование:
-            foreach (readLargeFile('huge_log.txt') as $line) {
-                if (str_contains($line, 'ERROR')) {
-                    echo $line . PHP_EOL;
-                }
-            }
-        </div>
-        <div class="text">
-            Функции высшего порядка — функции, которые принимают или возвращают другие функции.<br />
-            Каррирование — преобразование функции от многих аргументов в последовательность функций одного аргумента.<br />
-            Композиция функций — создание новой функции путем объединения существующих (f(g(x)))<br />
-        </div>
-        <div class="code">
-            // Функции высшего порядка: array_map + анонимные функции
-            $numbers = [1, 2, 3, 4];
-            $squared = array_map(fn($x) => $x ** 2, $numbers); // [1, 4, 9, 16]
-
-            //Каррирование
-            function add(int $a): callable {
-                return fn(int $b) => $a + $b;
-            }
-
-            $addFive = add(5);
-            echo $addFive(10); // 15
-
-            //Композиция функций
-            function compose(callable ...$functions): callable {
-                return fn($x) => array_reduce(
-                    $functions,
-                    fn($carry, callable $f) => $f($carry),
-                    $x
-                );
-            }
-
-            $double = fn($x) => $x * 2;
-            $increment = fn($x) => $x + 1;
-
-            $doubleThenIncrement = compose($double, $increment);
-            echo $doubleThenIncrement(5); // 11 (5*2 + 1)
-        </div>
-        <div class="text">
-            Паттерн "Стратегия" — это выбор алгоритма в рантайме без изменения клиентского кода.<br />
-            Вместо ООП-реализации (интерфейсы + классы) используем функции как объекты первого класса.<br />
-            Плюсы:<br />
-            Упрощение тестирования (каждая стратегия — чистая функция).<br />
-            Возможность горячей замены логики.
-        </div>
-        <div class="code">
-            //Обычный подход (условия):
-            $numbers = [-2, -1, 0, 1, 2];
-            $filtered = [];
-            foreach ($numbers as $number) {
-                if ($number > 0) { // Жёстко зашито в код
-                    $filtered[] = $number;
-                }
-            }
-
-            //Функциональный "Стратегия":
-            declare(strict_types=1);
-
-            // Стратегии как чистые функции:
-            $isPositive = fn(int $n): bool => $n > 0;
-            $isEven = fn(int $n): bool => $n % 2 === 0;
-
-            // Функция-компоновщик:
-            function filter(array $data, callable $strategy): array {
-                return array_filter($data, $strategy);
-            }
-
-            // Использование:
-            $numbers = [-2, -1, 0, 1, 2];
-            filter($numbers, $isPositive); // [1, 2]
-            filter($numbers, $isEven);     // [-2, 0, 2]
-        </div>
-        <div class="text">
-            <h4>LARAVEL (урок 10)</h4>
-            Service Container — это ядро Laravel <br />
-            Laravel Container — это мощный инструмент для управления зависимостями и выполнения внедрения зависимостей (DI).<br />
-            Как это работает?<br />
-            Биндинг (Binding): Регистрация классов/интерфейсов в контейнере.<br />
-            Резолвинг (Resolving): Автоматическое создание экземпляров с зависимостями.<br />
-        </div>
-        <div class="code">
-            //Простая привязка
-            $this->app->bind('MyService', function ($app) {
-                return new MyService($app->make('AnotherService'));
-            });
-
-            //Синглтон (одиночка)
-            $this->app->singleton('CacheProvider', function ($app) {
-                return new RedisCache($app->make('Redis'));
-            });
-
-            //Интерфейсы и их реализации
-            $this->app->bind(
-                PaymentGatewayInterface::class,
-                StripePaymentGateway::class
-            );
-
-            //Автоматическое внедрение (Auto-wiring)
-            class OrderController {
-                public function __construct(
-                    protected PaymentGatewayInterface $paymentGateway
-                ) {}
-            }
-
-            //Контекстный биндинг
-            $this->app->when(OrderController::class)
-              ->needs(PaymentGatewayInterface::class)
-              ->give(StripePaymentGateway::class);
-
-            //Тегирование сервисов
-            $this->app->tag([StripeGateway::class, PayPalGateway::class], 'payment-gateways');
-            $gateways = $this->app->tagged('payment-gateways');
-        </div>
-        <div class="text">
-            Проблема "Толстых" Моделей <br />
-            В типичном Laravel-приложении логика часто пишется прямо в контроллерах или моделях, что приводит к:<br />
-            Сложности тестирования.<br />
-            Нарушению Single Responsibility Principle (SRP).<br />
-            Трудностям при замене источника данных (например, с MySQL на API).<br />
-            Решение: Репозиторий-паттерн<br />
-            Репозиторий — это прослойка между бизнес-логикой и данными.<br />
-        </div>
-        <div class="code">
-            interface UserRepositoryInterface {
-                public function find(int $id): ?User;
-                public function save(User $user): void;
-                public function findByEmail(string $email): ?User;
-            }
-
-            class EloquentUserRepository implements UserRepositoryInterface {
-                public function find(int $id): ?User {
-                    return User::find($id);
-                }
-
-                public function save(User $user): void {
-                    $user->save();
-                }
-
-                public function findByEmail(string $email): ?User {
-                    return User::where('email', $email)->first();
-                }
-            }
-
-            // Внедрение репозитория через DI
-            // В сервис-провайдере:
-            $this->app->bind(
-                UserRepositoryInterface::class,
-                EloquentUserRepository::class
-            );
-
-            // В контроллере:
-            class UserController {
-                public function __construct(
-                    protected UserRepositoryInterface $users
-                ) {}
-
-                public function show(int $id) {
-                    return $this->users->find($id);
-                }
-            }
-        </div>
-        <div class="text">
-            В Laravel bind и singleton — это два метода регистрации зависимостей в Service Container, но они работают по-разному <br />
-            bind() — Обычная привязка - Создает новый экземпляр при каждом обращении к контейнеру <br />
-            singleton() — Одиночка - Возвращает один и тот же экземпляр при всех последующих вызовах.<br />
-            bind()	Новый каждый раз	+	Запросы, уникальные контексты <br />
-            singleton()	Один на все вызовы	–	Общие ресурсы (БД, конфиги)
-        </div>
-        <div class="code">
-            // Bind
-            $this->app->bind(MyService::class, function ($app) {
-                return new MyService();
-            });
-
-            // Каждый раз новый объект
-            $service1 = app(MyService::class); // Новый экземпляр
-            $service2 = app(MyService::class); // Еще один новый экземпляр
-            var_dump($service1 === $service2); // false
-
-            // Проверка типа привязки
-            dd(app()->bound(MyService::class)); // true/false
-            dd(app()->isShared(MyService::class)); // true для singleton
-            -----------------------------------------------
-            // Singleton
-            $this->app->singleton(MyService::class, function ($app) {
-                return new MyService();
-            });
-
-            // Всегда один объект
-            $service1 = app(MyService::class); // Создан впервые
-            $service2 = app(MyService::class); // Возвращен тот же экземпляр
-            var_dump($service1 === $service2); // true
-            // проверка
-            $this->app->instance(MyService::class, new FakeService());
-        </div>
-        <div class="text">
             <h3>C#</h3>
-            <h4>UDEMY NOTES (урок 11)</h4>
+            <h4>UDEMY NOTES (урок 9)</h4>
             Код помещён в пространство имён UdemyLearning для логической группировки.<br />
             Делегат — это тип, который хранит ссылку на метод с определённой сигнатурой.<br />
             Здесь Notify может указывать на любой метод, который принимает string и возвращает void.<br />
@@ -780,7 +560,7 @@
             }
         </div>
         <div class="text">
-            <h4>ASP.NET CORE (урок 12)</h4>
+            <h4>ASP.NET CORE (урок 10)</h4>
             ASP.NET Core — это кроссплатформенный фреймворк для создания современных веб-приложений и API от Microsoft. Он работает на Windows, Linux и macOS.<br />
             Ключевые особенности:<br />
             Открытый исходный код (GitHub)<br />
@@ -836,7 +616,7 @@
             app.Run();
         </div>
         <div class="text">
-            <h4>ASP.NET CORE MVC (урок 13)</h4>
+            <h4>ASP.NET CORE MVC (урок 11)</h4>
             ASP.NET Core MVC — это фреймворк для создания веб-приложений на основе паттерна Model-View-Controller (MVC), разработанный Microsoft.<br />
             Кроссплатформенный (работает на Windows, Linux, macOS)<br />
             Высокопроизводительный<br />
@@ -921,7 +701,7 @@
             public IActionResult GetPost(string slug) { ... }
         </div>
         <div class="text">
-            <h4>МИНИМАЛЬНЫЕ API (урок 14)</h4>
+            <h4>МИНИМАЛЬНЫЕ API (урок 12)</h4>
             Minimal API — это упрощённый подход к созданию HTTP API в .NET, который позволяет быстро создавать микро-сервисы и веб-API
             с минимальным количеством кода и настройки. В отличие от традиционного ASP.NET Core (с контроллерами), Minimal API требует меньше шаблонного кода.<br />
             Ключевые особенности:<br />
@@ -945,7 +725,7 @@
             app.Run();
         </div>
         <div class="text">
-            <h4>Аутентификация и Авторизация (урок 15)</h4>
+            <h4>Аутентификация и Авторизация (урок 13)</h4>
             Основные понятия <br />
             Аутентификация (Authentication) — процесс проверки, что пользователь действительно тот, за кого себя выдаёт (например, через логин и пароль).<br />
             Авторизация (Authorization) — проверка прав пользователя на доступ к определённым ресурсам (например, доступ к админ-панели).<br />
@@ -957,7 +737,7 @@
             JWT (JSON Web Tokens) (современный, stateless подход).<br />
             OAuth / OpenID Connect (используется для делегированного доступа, например "Войти через Google").<br />
             Identity Framework (например, ASP.NET Core Identity — готовая система управления пользователями).
-            <h4>Dependency Injection (DI) и сервисы (урок 16)</h4>
+            <h4>Dependency Injection (DI) и сервисы (урок 14)</h4>
             Представь, у тебя есть класс Car, который зависит от класса Engine <br />
             Жёсткая связь (tight coupling) – Car зависит от конкретной реализации Engine.<br />
             Сложно тестировать – нельзя подменить Engine на заглушку (mock).<br />
@@ -1022,7 +802,7 @@
             Constructor Injection (через конструктор) – самый частый способ.<br />
             Property Injection (через свойство) – реже, используется, например, в UI-фреймворках.<br />
             Method Injection (через метод) – если зависимость нужна только в одном методе.
-            <h4>Middleware и кастомизации запросов (урок 17)</h4>
+            <h4>Middleware и кастомизации запросов (урок 15)</h4>
             Middleware — это промежуточное программное обеспечение, которое обрабатывает HTTP-запросы и ответы в конвейере.<br />
             Это функции или компоненты, которые выполняются между получением запроса и отправкой ответа.<br />
             Middleware может:<br />
@@ -1057,7 +837,7 @@
             });
         </div>
         <div class="text">
-            <h4>SignalR (урок 18)</h4>
+            <h4>SignalR (урок 16)</h4>
             1. Что такое SignalR? <br />
             SignalR — это библиотека ASP.NET, которая упрощает создание веб-приложений реального времени (real-time). Она позволяет серверу мгновенно отправлять данные клиентам без постоянных HTTP-запросов.<br />
             2. Где используется?<br />
@@ -1097,7 +877,7 @@
             connection.start();
         </div>
         <div class="text">
-            <h4>ТЕСТИРОВАНИЕ (урок 19)</h4>
+            <h4>ТЕСТИРОВАНИЕ (урок 17)</h4>
             1. Зачем нужно тестирование? <br />
             Раннее обнаружение багов<br />
             Уверенность при рефакторинге<br />
@@ -1136,7 +916,7 @@
             }
         </div>
         <div class="text">
-            <h4>RAZOR PAGES (урок 20)</h4>
+            <h4>RAZOR PAGES (урок 18)</h4>
             Razor Pages — это технология Microsoft для создания веб-приложений на C#. Она основана на паттерне MVVM (Model-View-ViewModel)
             и упрощает разработку странично-ориентированных приложений по сравнению с традиционным MVC.<br />
             Структура проекта <br />
@@ -1157,7 +937,7 @@
             &lt;p&gt;Текущее время: @DateTime.Now&lt;/p&gt;
         </div>
         <div class="text">
-            <h4>BLAZOR (урок 21)</h4>
+            <h4>BLAZOR (урок 19)</h4>
             Blazor — это веб-фреймворк от Microsoft, который позволяет создавать интерактивные веб-приложения используя C# вместо JavaScript. Есть две основные модели размещения: <br />
             Blazor Server: Логика выполняется на сервере, обновления DOM передаются через SignalR<br />
             Blazor WebAssembly: Приложение выполняется полностью в браузере на WebAssembly<br />
@@ -1205,7 +985,7 @@
             }
         </div>
         <div class="text">
-            <h4>Udemy Notes (урок 22)</h4>
+            <h4>Udemy Notes (урок 20)</h4>
             Регулярные выражения пишутся таким образом
         </div>
         <div class="code">
@@ -1217,7 +997,7 @@
             MatchCollection matchCollection = regex.Matches(text);
         </div>
         <div class="text">
-            <h4>Паттерны проектирования (урок 23)</h4>
+            <h4>Паттерны проектирования (урок 21)</h4>
             Паттерны проектирования — это проверенные решения распространенных проблем в разработке ПО. Они делятся на 3 категории: <br />
             Порождающие (создание объектов)<br />
             Структурные (композиция объектов)<br />
@@ -1276,7 +1056,7 @@
             sealed запрещает наследование. <br />
             lock гарантирует потокобезопасность.<br />
             Приватный конструктор блокирует создание через new.
-            <h4>API design (урок 25)</h4>
+            <h4>API design (урок 22)</h4>
             API (Application Programming Interface) — это набор правил и инструментов для взаимодействия между разными компонентами программного обеспечения. В веб-контексте API обычно означает HTTP-интерфейс,
             который позволяет клиентам (например, браузерам или мобильным приложениям) обмениваться данными с сервером.
             Типы API в C# <br />
@@ -1304,7 +1084,7 @@
             Запрос (Request) – что отправляет клиент.<br />
             Ответ (Response) – что возвращает сервер.<br />
             Статус-коды – 200 (OK), 404 (Not Found), 500 (Server Error) и др.<br />
-            <h4>Алгоритмы (урок 26)</h4>
+            <h4>Алгоритмы (урок 23)</h4>
             Алгоритм — это последовательность шагов для решения определенной задачи.<br />
             Пример: алгоритм приготовления кофе:<br />
             Взять чашку.<br />
@@ -1328,7 +1108,7 @@
             Console.WriteLine($"Сумма чисел от 1 до {N} = {sum}");
         </div>
         <div class="text">
-            <h4>Computer Science (урок 27)</h4>
+            <h4>Computer Science (урок 24)</h4>
             Computer Science (CS) — это наука о вычислениях, алгоритмах, данных и их обработке, а также о принципах работы компьютеров и программного обеспечения.<br />
             Основные направления CS:<br />
             Алгоритмы и структуры данных – как эффективно решать задачи.<br />
@@ -1342,7 +1122,7 @@
             Пример: рецепт приготовления кофе – это алгоритм.<br />
             Программа – алгоритм, записанный на языке, понятном компьютеру.<br />
             Данные – информация, которую обрабатывает программа (числа, текст, изображения).
-            <h4>Оптимизация и производительность (урок 28)</h4>
+            <h4>Оптимизация и производительность (урок 25)</h4>
             BenchmarkDotNet – библиотеки для бенчмаркинга в .NET.<br />
             Зачем нужен BenchmarkDotNet?<br />
             Ручные замеры (DateTime, Stopwatch) неточны из-за влияния фоновых процессов, JIT-компиляции и GC.<br />
@@ -1406,7 +1186,7 @@
             Error/StdDev – погрешность и стандартное отклонение.<br />
             Вывод<br />
             for обычно чуть быстрее foreach для массивов, но разница часто незначительна
-            <h4>Рефлексия и метапрограммирования (урок 29)</h4>
+            <h4>Рефлексия и метапрограммирования (урок 26)</h4>
             Рефлексия — это механизм в .NET, который позволяет анализировать и взаимодействовать с типами, методами, свойствами и другими элементами программы во время выполнения (а не на этапе компиляции).<br />
             Зачем нужна рефлексия?<br />
             Динамическая загрузка и использование сборок.<br />
@@ -1473,7 +1253,7 @@
             }
         </div>
         <div class="text">
-            <h4>Source Generators (урок 30)</h4>
+            <h4>Source Generators (урок 27)</h4>
             Source Generators — это механизм в .NET, позволяющий автоматически генерировать исходный код C# во время компиляции. Они работают как часть компилятора Roslyn
             и добавляют код в сборку до её окончательной компиляции. <br />
             Аналогия:<br />
@@ -1561,7 +1341,7 @@
             Generated.GeneratedClass.Hello(); // Вызов сгенерированного метода!
         </div>
         <div class="text">
-            <h4>Паралельое программирование (урок 31)</h4>
+            <h4>Паралельое программирование (урок 28)</h4>
             Современные процессоры имеют несколько ядер, и если программа выполняется в одном потоке, она использует только часть вычислительной мощности. Параллельное программирование позволяет: <br />
             Ускорить выполнение задач за счёт распределения работы между потоками.<br />
             Улучшить отзывчивость приложений (например, UI не "зависает" при долгих вычислениях).<br />
@@ -1600,7 +1380,7 @@
             Что произойдёт?<br />
             В обычном for все итерации выполняются в одном потоке по порядку.<br />
             В Parallel.For итерации распределяются между разными потоками (можно увидеть разные ThreadId).<br />
-            <h4>Redis with C# (урок 32)</h4>
+            <h4>Redis with C# (урок 29)</h4>
             Redis (Remote Dictionary Server) — это высокопроизводительная in-memory база данных, которая поддерживает различные структуры данных (строки, хеши, списки и т.д.). Она часто используется для:<br />
             Кэширования<br />
             Pub/Sub (механизма сообщений)<br />
