@@ -875,7 +875,7 @@
             @{
                 ViewData["Title"] = "Страница приветствия";
             }
-            <h1>@ViewData["Message"]</h1>
+            &lt;h1&gt;@ViewData["Message"]&lt;/h1&gt;
         </div>
         <div class="text">
             Маршрутизация — это процесс определения того, какой контроллер и какое действие (action) должны обработать HTTP-запрос на основе URL.
@@ -1201,6 +1201,430 @@
                 private void ResetCount()
                 {
                     currentCount = 0;
+                }
+            }
+        </div>
+        <div class="text">
+            <h4>Udemy Notes (урок 22)</h4>
+            Регулярные выражения пишутся таким образом
+        </div>
+        <div class="code">
+            string pattern = @"\d";
+            Regex regex = new Regex(pattern);
+
+            string text = "Hi it is numbers 1234";
+
+            MatchCollection matchCollection = regex.Matches(text);
+        </div>
+        <div class="text">
+            <h4>Паттерны проектирования (урок 23)</h4>
+            Паттерны проектирования — это проверенные решения распространенных проблем в разработке ПО. Они делятся на 3 категории: <br />
+            Порождающие (создание объектов)<br />
+            Структурные (композиция объектов)<br />
+            Поведенческие (взаимодействие объектов)<br />
+            Singleton — порождающий паттерн, гарантирующий, что класс имеет только один экземпляр и предоставляет глобальную точку доступа к нему.<br />
+            Когда использовать?<br />
+            Когда нужен ровно один экземпляр класса (например, логгер, настройки приложения).
+        </div>
+        <div class="code">
+            public sealed class Singleton
+            {
+                private static Singleton _instance;
+                private static readonly object _lock = new object();
+
+                // Закрытый конструктор
+                private Singleton() 
+                {
+                    // Инициализация
+                }
+
+                // Публичное статическое свойство для доступа
+                public static Singleton Instance
+                {
+                    get
+                    {
+                        lock (_lock)
+                        {
+                            if (_instance == null)
+                            {
+                                _instance = new Singleton();
+                            }
+                            return _instance;
+                        }
+                    }
+                }
+
+                public void SomeBusinessLogic()
+                {
+                    Console.WriteLine("Выполняем бизнес-логику...");
+                }
+            }
+
+            // Использование
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    Singleton s1 = Singleton.Instance;
+                    Singleton s2 = Singleton.Instance;
+
+                    Console.WriteLine(s1 == s2); // True (это один и тот же объект)
+                }
+            }
+        </div>
+        <div class="text">
+            sealed запрещает наследование. <br />
+            lock гарантирует потокобезопасность.<br />
+            Приватный конструктор блокирует создание через new.
+            <h4>API design (урок 25)</h4>
+            API (Application Programming Interface) — это набор правил и инструментов для взаимодействия между разными компонентами программного обеспечения. В веб-контексте API обычно означает HTTP-интерфейс,
+            который позволяет клиентам (например, браузерам или мобильным приложениям) обмениваться данными с сервером.
+            Типы API в C# <br />
+            REST API (Representational State Transfer) – использует HTTP-методы (GET, POST, PUT, DELETE) и JSON/XML.<br />
+            gRPC – высокопроизводительный RPC-фреймворк от Google.<br />
+            SOAP – устаревающий протокол на основе XML.<br />
+            SignalR – для real-time коммуникации.<br />
+            В этом курсе фокус будет на REST API.<br />
+            Минимальный API на C# (ASP.NET Core)<br />
+            Современный C# предлагает упрощённый подход к созданию API через Minimal APIs
+        </div>
+        <div class="code">
+            var builder = WebApplication.CreateBuilder(args);
+            var app = builder.Build();
+
+            // Маршрут для GET-запроса
+            app.MapGet("/hello", () => "Hello, API!");
+
+            app.Run();
+        </div>
+        <div class="text">
+            MapGet – регистрирует обработчик для HTTP GET.<br />
+            /hello – путь (endpoint).<br />
+            Endpoint – URL + HTTP-метод (например, GET /products).<br />
+            Запрос (Request) – что отправляет клиент.<br />
+            Ответ (Response) – что возвращает сервер.<br />
+            Статус-коды – 200 (OK), 404 (Not Found), 500 (Server Error) и др.<br />
+            <h4>Алгоритмы (урок 26)</h4>
+            Алгоритм — это последовательность шагов для решения определенной задачи.<br />
+            Пример: алгоритм приготовления кофе:<br />
+            Взять чашку.<br />
+            Насыпать кофе.<br />
+            Залить горячей водой.<br />
+            В программировании алгоритмы используются для сортировки, поиска, обработки данных и многого другого.<br />
+            Задача: Найти сумму всех чисел от 1 до N.<br />
+            Создаем переменную sum для хранения суммы.<br />
+            Запускаем цикл от 1 до N.<br />
+            На каждом шаге добавляем i к sum.
+        </div>
+        <div class="code">
+            int sum = 0;
+            int N = 10;
+
+            for (int i = 1; i <= N; i++)
+            {
+                sum += i;
+            }
+
+            Console.WriteLine($"Сумма чисел от 1 до {N} = {sum}");
+        </div>
+        <div class="text">
+            <h4>Computer Science (урок 27)</h4>
+            Computer Science (CS) — это наука о вычислениях, алгоритмах, данных и их обработке, а также о принципах работы компьютеров и программного обеспечения.<br />
+            Основные направления CS:<br />
+            Алгоритмы и структуры данных – как эффективно решать задачи.<br />
+            Архитектура компьютера – как устроены процессоры, память и устройства.<br />
+            Операционные системы – как управляются ресурсы компьютера.<br />
+            Программирование – создание программ на разных языках.<br />
+            Искусственный интеллект и машинное обучение – как компьютеры учатся.<br />
+            Сети и безопасность – как данные передаются и защищаются.<br />
+            Базовые понятия<br />
+            Алгоритм – последовательность шагов для решения задачи.<br />
+            Пример: рецепт приготовления кофе – это алгоритм.<br />
+            Программа – алгоритм, записанный на языке, понятном компьютеру.<br />
+            Данные – информация, которую обрабатывает программа (числа, текст, изображения).
+            <h4>Оптимизация и производительность (урок 28)</h4>
+            BenchmarkDotNet – библиотеки для бенчмаркинга в .NET.<br />
+            Зачем нужен BenchmarkDotNet?<br />
+            Ручные замеры (DateTime, Stopwatch) неточны из-за влияния фоновых процессов, JIT-компиляции и GC.<br />
+            BenchmarkDotNet автоматизирует процесс, обеспечивая:<br />
+            Прогрев кода (JIT-компиляция).<br />
+            Статистическую обработку результатов.<br />
+            Минимизацию влияния внешних факторов.<br />
+            dotnet add package BenchmarkDotNet <br />
+            Создадим тест для сравнения скорости работы for и foreach.
+        </div>
+        <div class="code">
+            using BenchmarkDotNet.Attributes;
+            using BenchmarkDotNet.Running;
+
+            // Класс с бенчмарками
+            public class ForVsForEachBenchmark
+            {
+                private int[] _array = new int[1000];
+
+                [GlobalSetup]
+                public void Setup()
+                {
+                    // Инициализация массива перед тестами
+                    for (int i = 0; i < _array.Length; i++)
+                        _array[i] = i;
+                }
+
+                [Benchmark]
+                public int ForLoop()
+                {
+                    int sum = 0;
+                    for (int i = 0; i < _array.Length; i++)
+                        sum += _array[i];
+                    return sum;
+                }
+
+                [Benchmark]
+                public int ForEachLoop()
+                {
+                    int sum = 0;
+                    foreach (var item in _array)
+                        sum += item;
+                    return sum;
+                }
+            }
+
+            // Запуск бенчмарка
+            public class Program
+            {
+                public static void Main(string[] args)
+                {
+                    BenchmarkRunner.Run&lt;ForVsForEachBenchmark&gt;();
+                }
+            }
+        </div>
+        <div class="text">
+            После запуска BenchmarkDotNet выведет результаты в консоль, например: <br />
+            ForLoop	1.234 μs	0.045 μs	0.038 μs<br />
+            ForEachLoop	1.567 μs	0.067 μs	0.059 μs<br />
+            Mean – среднее время выполнения.<br />
+            Error/StdDev – погрешность и стандартное отклонение.<br />
+            Вывод<br />
+            for обычно чуть быстрее foreach для массивов, но разница часто незначительна
+            <h4>Рефлексия и метапрограммирования (урок 29)</h4>
+            Рефлексия — это механизм в .NET, который позволяет анализировать и взаимодействовать с типами, методами, свойствами и другими элементами программы во время выполнения (а не на этапе компиляции).<br />
+            Зачем нужна рефлексия?<br />
+            Динамическая загрузка и использование сборок.<br />
+            Анализ структуры классов (например, генераторы кода, ORM).<br />
+            Вызов методов или доступ к свойствам, о которых неизвестно на этапе компиляции.<br />
+            Создание экземпляров классов по имени.<br />
+            Основные классы рефлексии<br />
+            Type — информация о типе (классе, структуре и т. д.).<br />
+            Assembly — информация о загруженной сборке.<br />
+            MethodInfo, PropertyInfo, FieldInfo — информация о методах, свойствах, полях.<br />
+            Activator — создание экземпляров классов динамически.<br />
+            Получение типа (Type)<br />
+            Есть три основных способа:<br />
+            typeof(Класс) — если тип известен на этапе компиляции.<br />
+            объект.GetType() — если есть экземпляр объекта.<br />
+            Type.GetType("Полное.Имя.Класса") — загрузка по строковому имени.
+        </div>
+        <div class="code">
+            using System;
+            using System.Reflection;
+
+            class Person
+            {
+                public string Name { get; set; }
+                public int Age { get; set; }
+            }
+
+            class Program
+            {
+                static void Main()
+                {
+                    // 1. Получаем тип через typeof
+                    Type personType1 = typeof(Person);
+                    Console.WriteLine($"Тип Person: {personType1.Name}");
+        
+                    // 2. Получаем тип через экземпляр объекта
+                    Person person = new Person();
+                    Type personType2 = person.GetType();
+                    Console.WriteLine($"Тип объекта person: {personType2.Name}");
+        
+                    // 3. Получаем тип по строковому имени
+                    Type personType3 = Type.GetType("Person"); // Если класс в текущей сборке
+                    Console.WriteLine($"Тип по имени: {personType3?.Name ?? "Не найден"}");
+                }
+            }
+            ------------------------------------------------------------------------------------
+            // Получение информации о свойствах и методах
+            Type type = typeof(Person);
+
+            // Получаем все публичные свойства
+            PropertyInfo[] properties = type.GetProperties();
+            Console.WriteLine("Свойства класса Person:");
+            foreach (var prop in properties)
+            {
+                Console.WriteLine($"- {prop.Name} ({prop.PropertyType.Name})");
+            }
+
+            // Получаем все публичные методы
+            MethodInfo[] methods = type.GetMethods();
+            Console.WriteLine("\nМетоды класса Person:");
+            foreach (var method in methods)
+            {
+                Console.WriteLine($"- {method.Name} (Возвращает: {method.ReturnType.Name})");
+            }
+        </div>
+        <div class="text">
+            <h4>Source Generators (урок 30)</h4>
+            Source Generators — это механизм в .NET, позволяющий автоматически генерировать исходный код C# во время компиляции. Они работают как часть компилятора Roslyn
+            и добавляют код в сборку до её окончательной компиляции. <br />
+            Аналогия:<br />
+            Представьте, что у вас есть помощник, который перед сборкой проекта автоматически дописывает за
+            вас повторяющийся или шаблонный код (например, классы DTO, реализация INotifyPropertyChanged и т. д.).<br />
+            Зачем они нужны? <br />
+            Избегают шаблонного кода: Генерация boilerplate-кода (например, для сериализации, маппинга или репозиториев).<br />
+            Производительность: Генерация во время компиляции быстрее, чем рефлексия или динамическая генерация в runtime.<br />
+            Безопасность: Сгенерированный код можно увидеть и отладить.<br />
+            Пример проблемы без SG:<br />
+            Ручная реализация INotifyPropertyChanged требует множества повторяющихся блоков:
+        </div>
+        <div class="code">
+            public string Name
+            {
+                get => _name;
+                set
+                {
+                    _name = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
+                }
+            }
+        </div>
+        <div class="text">
+            С Source Generator это можно автоматизировать!<br />
+            Как работают Source Generators?<br />
+            Компилятор Roslyn анализирует ваш код.<br />
+            Source Generator получает синтаксическое дерево и семантическую модель проекта.<br />
+            Генератор создаёт новый код на основе анализа.<br />
+            Новый код добавляется в сборку.<br />
+            Минимальный пример генератора<br />
+            Создадим генератор, который добавляет в проект класс GeneratedClass с одним методом.<br />
+            Шаг 1: Создаём проект<br />
+            Создайте два проекта в Visual Studio:<br />
+            ConsoleApp (обычное консольное приложение .NET 6+).<br />
+            SourceGenerator (библиотека классов, целевая платформа netstandard2.0).<br />
+            Шаг 2: Подключаем пакеты<br />
+            В SourceGenerator.csproj добавьте:<br />
+        </div>
+        <div class="code">
+            &lt;ItemGroup&gt;
+                &lt;PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all" /&gt;
+                &lt;PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" /&gt;
+            &lt;/ItemGroup&gt;
+               -------------------------------------------------------------
+            //Шаг 3: Пишем генератор
+            //Создайте класс HelloSourceGenerator.cs
+            using Microsoft.CodeAnalysis;
+            using Microsoft.CodeAnalysis.Text;
+            using System.Text;
+
+            [Generator]
+            public class HelloSourceGenerator : ISourceGenerator
+            {
+                public void Initialize(GeneratorInitializationContext context)
+                {
+                    // Не требуется инициализация
+                }
+
+                public void Execute(GeneratorExecutionContext context)
+                {
+                    var sourceCode = @"
+            namespace Generated
+            {
+                public static class GeneratedClass
+                {
+                    public static void Hello() 
+                        => System.Console.WriteLine(""Hello from generated code!"");
+                }
+            }";
+                    context.AddSource("GeneratedClass.g.cs", SourceText.From(sourceCode, Encoding.UTF8));
+                }
+            }
+            ----------------------------------------------------------------------
+            // Шаг 4: Подключаем генератор к основному проекту
+            // В ConsoleApp.csproj добавьте:
+
+            &lt;ItemGroup&gt;
+                &lt;ProjectReference Include="..\SourceGenerator\SourceGenerator.csproj" 
+                                  OutputItemType="Analyzer" ReferenceOutputAssembly="false" /&gt;
+            &lt;/ItemGroup&gt;
+            -------------------------------------------------------------------------
+            // Используем сгенерированный код
+            // В Program.cs:
+            Generated.GeneratedClass.Hello(); // Вызов сгенерированного метода!
+        </div>
+        <div class="text">
+            <h4>Паралельое программирование (урок 31)</h4>
+            Современные процессоры имеют несколько ядер, и если программа выполняется в одном потоке, она использует только часть вычислительной мощности. Параллельное программирование позволяет: <br />
+            Ускорить выполнение задач за счёт распределения работы между потоками.<br />
+            Улучшить отзывчивость приложений (например, UI не "зависает" при долгих вычислениях).<br />
+            Эффективнее использовать ресурсы серверов.<br />
+            Основные понятия<br />
+            Поток (Thread) — наименьшая единица выполнения. ОС управляет потоками и распределяет их по ядрам CPU.<br />
+            Многопоточность (Multithreading) — выполнение нескольких потоков в рамках одного процесса.<br />
+            Параллелизм (Parallelism) — одновременное выполнение нескольких задач на разных ядрах CPU.<br />
+            Асинхронность (Asynchrony) — выполнение задач без блокировки основного потока (но не обязательно параллельно).<br />
+            Простейший пример: Parallel.For<br />
+            Parallel.For — это метод из пространства имён System.Threading.Tasks, который позволяет распараллелить цикл for.
+        </div>
+        <div class="code">
+            using System;
+            using System.Threading.Tasks;
+
+            class Program
+            {
+                static void Main()
+                {
+                    // Обычный последовательный for
+                    for (int i = 0; i < 10; i++)
+                    {
+                        Console.WriteLine($"Последовательный: {i}, поток: {Environment.CurrentManagedThreadId}");
+                    }
+
+                    // Параллельный for
+                    Parallel.For(0, 10, i =>
+                    {
+                        Console.WriteLine($"Параллельный: {i}, поток: {Environment.CurrentManagedThreadId}");
+                    });
+                }
+            }
+        </div>
+        <div class="text">
+            Что произойдёт?<br />
+            В обычном for все итерации выполняются в одном потоке по порядку.<br />
+            В Parallel.For итерации распределяются между разными потоками (можно увидеть разные ThreadId).<br />
+            <h4>Redis with C# (урок 32)</h4>
+            Redis (Remote Dictionary Server) — это высокопроизводительная in-memory база данных, которая поддерживает различные структуры данных (строки, хеши, списки и т.д.). Она часто используется для:<br />
+            Кэширования<br />
+            Pub/Sub (механизма сообщений)<br />
+            Хранения сессий<br />
+            Очередей задач<br />
+            Добавьте пакет StackExchange.Redis (основная библиотека для работы с Redis в C#): dotnet add package StackExchange.Redis
+        </div>
+        <div class="code">
+            using StackExchange.Redis;
+            using System;
+
+            class Program
+            {
+                static void Main()
+                {
+                    // Подключение к Redis (по умолчанию localhost:6379)
+                    ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+                    IDatabase db = redis.GetDatabase();
+
+                    // Простейшие операции
+                    db.StringSet("test_key", "Hello, Redis!");
+                    string value = db.StringGet("test_key");
+
+                    Console.WriteLine($"Значение ключа 'test_key': {value}");
                 }
             }
         </div>
