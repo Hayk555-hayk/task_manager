@@ -1,1413 +1,451 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C#</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Задачи на сегодня</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f2f5, #dfe6e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .task-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .task-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2d3436;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f1f2f6;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            transition: 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #dfe4ea;
+        }
+    </style>
 </head>
+
 <body>
-    <main>
-        <div class="text">
-            <h3>C#</h3>
-            <h4>ОСНОВЫ ЯЗЫКА C# (урок 1)</h4>
-            C# — это современный, объектно-ориентированный язык программирования, разработанный Microsoft. Он используется для: <br />
-            Создания desktop-приложений (Windows Forms, WPF)<br />
-            Веб-разработки (ASP.NET, Blazor)<br />
-            Мобильных приложений (Xamarin, MAUI)<br />
-            Игр (Unity)<br />
-            Серверных приложений (Microservices, API)<br />
-        </div>
-        <div class="code">
-            // Program.cs точка входа программы
-            // Это комментарий — он не влияет на код
-            using System; // Подключение пространства имён System
+    <div class="task-container">
+        <h1>Задачи на сегодня</h1>
+        <ul id="task-list"></ul>
+    </div>
 
-            class Program // Объявление класса Program
-            {
-                static void Main(string[] args) // Главный метод программы
-                {
-                    Console.WriteLine("Hello, World!"); // Вывод текста в консоль
-                }
-            }
-        </div>
-        <div class="text">
-            Переменная — это именованная область памяти, которая хранит данные. У каждой переменной есть: <br />
-            Имя (например, age, name)<br />
-            Тип данных (например, число, текст)<br />
-            Значение (например, 25, "Анна")<br />
-            Основные типы данных<br />
-            int	10, -5	Целое число<br />
-            double	3.14, -0.5	Число с плавающей точкой<br />
-            bool	true, false	Логический тип (истина/ложь)<br />
-            char	'A', 'ж'	Один символ<br />
-            string	"Привет"	Строка (текст)<br />
-            const double PI = 3.14159; - Используйте const, если значение не должно меняться
-        </div>
-        <div class="code">
-            int age = 25;                  // Целое число
-            double height = 1.75;          // Число с плавающей точкой
-            string name = "Иван";          // Строка
-            bool isStudent = true;         // Логическое значение
-            char grade = 'A';              // Один символ
-        </div>
-        <div class="text">
-            В C# для чтения ввода с клавиатуры используется метод Console.ReadLine() <br />
-            Convert.ToInt32()	int age = Convert.ToInt32("25");	Преобразует строку в целое число. Если строка не число — ошибка.<br />
-            int.Parse()	int num = int.Parse("10");	Аналогично Convert, но менее гибкий.<br />
-            int.TryParse()	int.TryParse("abc", out _)	Безопасный метод. Возвращает true/false в зависимости от успеха.<br />
-        </div>
-        <div class="code">
-            Console.Write("Введите ваше имя: ");  // Вывод подсказки (без перевода строки)
-            string userName = Console.ReadLine();  // Чтение ввода
+    <script>
+        const allTasks = [
+            // ==== Общие темы по .NET ====
+            ".NET - CLR, CTS, CLS: внутренняя архитектура платформы",
+            ".NET - .NET 6/7/8 особенности и различия",
+            ".NET - Memory management, Garbage Collector",
+            ".NET - JIT, AOT и NativeAOT",
+            ".NET - Dependency Injection и Service Lifetimes",
+            ".NET - Middleware pipeline и HTTP pipeline",
+            ".NET - Конфигурация приложений (IConfiguration, appsettings)",
+            ".NET - Logging и интеграция с Serilog, NLog",
+            ".NET - Global error handling и обработка исключений",
+            ".NET - Workloads: ASP.NET, WPF, MAUI, Worker Service",
+            ".NET - Environment-based execution и переменные окружения",
+            ".NET - Кросс-платформенная разработка и деплой",
+            // ==== C# Advanced ====
+            "C# - Advanced OOP (абстракции, SOLID, паттерны)",
+            "C# - Delegates, Events, Func/Action, Multicast Delegates",
+            "C# - LINQ (Query Syntax, Method Syntax, Deferred Execution)",
+            "C# - Async/await, Task, ValueTask, IAsyncEnumerable",
+            "C# - Exception handling: best practices, custom exceptions",
+            "C# - Nullable Reference Types и аннотации",
+            "C# - Records, Tuples, Pattern Matching (C# 8-12)",
+            "C# - Reflection, Attributes и Source Generators",
+            "C# - Span<T>, Memory<T>, Unsafe-код, stackalloc",
+            "C# - IDisposable, using и IAsyncDisposable",
+            "C# - Dynamic, ExpandoObject, DLR",
+            "C# - Roslyn API для анализа и генерации кода",
+            "C# - Code analyzers, StyleCop, Roslynator",
+            "C# - BenchmarkDotNet и производительность",
+            // ==== ASP.NET Core ====
+            "ASP.NET Core - Routing, Attribute/Conventional Routes",
+            "ASP.NET Core - Model Binding, Model Validation",
+            "ASP.NET Core - Controllers vs Minimal APIs",
+            "ASP.NET Core - Filters (Action, Exception, Result)",
+            "ASP.NET Core - API Versioning",
+            "ASP.NET Core - Swagger / Swashbuckle / NSwag",
+            "ASP.NET Core - Authentication/Authorization (JWT, OAuth2, OpenID Connect)",
+            "ASP.NET Core - Identity Framework: кастомизация, Claims",
+            "ASP.NET Core - Configuration: Secret Manager, Environment Vars, Azure Vault",
+            "ASP.NET Core - CORS, HTTPS Redirection, Forwarded Headers",
+            "ASP.NET Core - SignalR и WebSockets",
+            "ASP.NET Core - gRPC: Protocol Buffers, streaming, performance",
+            "ASP.NET Core - File uploads, streaming, large files",
+            "ASP.NET Core - Health checks, diagnostics",
+            "ASP.NET Core - Rate limiting, Throttling",
+            "ASP.NET Core - Testability: Unit, Integration, End-to-End Tests",
+            "ASP.NET Core - Hosting в Docker и Kubernetes",
+            "ASP.NET Core - Background Services и Hosted Services",
+            "ASP.NET Core - Middleware pipeline: custom middleware",
+            "ASP.NET Core - Output caching, response compression",
+            "ASP.NET Core - Feature folders и архитектурные шаблоны",
+            "ASP.NET Core - Clean Architecture / Onion Architecture",
+            "ASP.NET Core - CQRS + MediatR",
+            "ASP.NET Core - DDD и Event Sourcing (основы)",
+            // ==== Entity Framework Core ====
+            "EF Core - Code First, Migrations, Fluent API",
+            "EF Core - Навигационные свойства, Lazy/Eager loading",
+            "EF Core - Projection, DTO, AutoMapper",
+            "EF Core - Transactions, Isolation Levels",
+            "EF Core - Raw SQL, Stored Procedures",
+            "EF Core - Performance tuning и query caching",
+            "EF Core - Change Tracker, DbContext lifecycle",
+            "EF Core - Unit testing с in-memory database",
+            "EF Core - Shadow properties, global query filters",
+            "EF Core - Seeding, indexes, constraints",
+            // ==== WPF Advanced ====
+            "WPF - MVVM и архитектура слоя UI",
+            "WPF - Data Binding, Commanding, Validation",
+            "WPF - Dependency Properties и Attached Properties",
+            "WPF - XAML Advanced: Styles, Templates, Triggers",
+            "WPF - Resources, StaticResource, DynamicResource",
+            "WPF - Routed Events, Command Binding",
+            "WPF - Data Templates, ItemsControl, DataGrid",
+            "WPF - Animations, Visual State Manager",
+            "WPF - Custom Controls vs UserControls",
+            "WPF - ValueConverters и MultiBinding",
+            "WPF - Dispatcher и многопоточность в UI",
+            "WPF - Interop с WinForms или Win32",
+            "WPF - MVVM Toolkit (Microsoft MVVM Toolkit)",
+            "WPF - UI Testing (UIAutomation, White, FlaUI)",
+            "WPF - Performance оптимизация UI",
+            "WPF - Упаковка и деплой (ClickOnce, MSIX)",
+            // ==== Тестирование ====
+            "Testing - Unit Testing (xUnit, NUnit, MSTest)",
+            "Testing - Mocking (Moq, NSubstitute)",
+            "Testing - Integration Testing с TestServer",
+            "Testing - End-to-End тесты (Playwright, Selenium)",
+            "Testing - Code coverage и CI интеграция",
+            "Testing - Test-Driven Development (TDD)",
+            "Testing - Behavior-Driven Development (BDD)",
+            "Testing - Snapshot Testing, Approval Tests",
+            // ==== Общие темы по PHP ====
+            "PHP - Ядро языка: переменные, типы, управление памятью",
+            "PHP - ООП: классы, наследование, интерфейсы, трейты",
+            "PHP - Пространства имён и автозагрузка (PSR-4)",
+            "PHP - Исключения, обработка ошибок, Error vs Exception",
+            "PHP - Composer: зависимости, autoload, custom commands",
+            "PHP - PHP-FPM, OPcache, производительность",
+            "PHP - Работа с файлами, потоками, буферами",
+            "PHP - Работа с CURL, HTTP-запросами и API",
+            "PHP - Регулярные выражения и парсинг",
+            "PHP - Генераторы, итераторы, yield, SPL",
+            "PHP - Работа с JSON, XML, YAML",
+            "PHP - Работа с сессиями, cookie, JWT",
+            "PHP - Типизация (PHP 7-8): скалярные типы, union, attributes",
+            "PHP - Стандарты PSR (1, 2, 3, 4, 7, 11, 12, 15, 17)",
+            "PHP - Асинхронность: ReactPHP, Swoole (основы)",
+            "PHP - Тестирование: PHPUnit, Mockery, Pest",
+            "PHP - Статический анализ: PHPStan, Psalm",
+            "PHP - Безопасность: XSS, CSRF, SQLi, RCE, LFI, SSRF",
+            "PHP - HTTP-заголовки, статус-коды, кэширование",
+            "PHP - REST API принципы и реализация",
+            "PHP - SOAP, RPC, GraphQL (базово)",
+            "PHP - Функциональное программирование в PHP",
+            "PHP - Архитектурные паттерны (MVC, MVVM, ADR, Hexagonal)",
+            "PHP - Модули, расширения, системные вызовы",
+            "PHP - Установка и настройка PHP локально и на сервере",
+            "PHP - Debug: Xdebug, var_dump, Laravel Telescope",
 
-            Console.WriteLine($"Привет, {userName}!");
+            // ==== Laravel Core ====
+            "Laravel - Архитектура фреймворка: Request lifecycle",
+            "Laravel - Service Container, сервис-провайдеры, фасады",
+            "Laravel - Dependency Injection и резолвинг",
+            "Laravel - Facades и хелперы",
+            "Laravel - Middleware, Kernel, HTTP lifecycle",
+            "Laravel - Routing: группировка, named routes, route model binding",
+            "Laravel - Controllers, Resource Controllers, Invokable",
+            "Laravel - Request Validation: FormRequest, кастомные правила",
+            "Laravel - Response: JSON, redirects, responses",
+            "Laravel - Blade: шаблонизатор, компоненты, слоты, директивы",
+            "Laravel - Livewire и интеграция с Alpine.js (опционально)",
+            "Laravel - View Composers, View Service Providers",
+            "Laravel - Events, Listeners, Broadcasting",
+            "Laravel - Jobs, Queues, Sync vs Async, Redis, Horizon",
+            "Laravel - Artisan CLI: кастомные команды, генерация кода",
+            "Laravel - Eloquent ORM: CRUD, отношения, scopes, кастомные атрибуты",
+            "Laravel - Query Builder vs Eloquent",
+            "Laravel - Timestamps, soft deletes, mutators, кастомные кастеры",
+            "Laravel - Seeding, Factories, Test Data",
+            "Laravel - Тестирование: Feature, Unit, HTTP, Browser",
+            "Laravel - Exception handling: кастомные handler’ы",
+            "Laravel - Политики, права, authorization",
+            "Laravel - Authentication: session-based, token, sanctum, passport",
+            "Laravel - API Resources, кастомные трансформеры",
+            "Laravel - File storage: локально, S3, файлы, директории",
+            "Laravel - Notifications: email, Slack, SMS",
+            "Laravel - Emails: Mailable, Markdown, Queue mail",
+            "Laravel - События жизненного цикла моделей",
+            "Laravel - Command Bus, Pipeline pattern",
+            "Laravel - Cache: redis, memcached, file, теги",
+            "Laravel - Rate limiting, Throttle middleware",
+            "Laravel - Localization и перевод интерфейсов",
+            "Laravel - Миграции: schema builder, foreign keys, индексы",
+            "Laravel - Package development, Laravel Mix, npm и vite",
+            "Laravel - Telescope, Debugbar, логгирование",
+            "Laravel - Профилирование, оптимизация производительности",
+            "Laravel - Sanctum vs Passport: различия и кейсы",
+            "Laravel - Multitenancy (Laravel Tenancy, кастомная реализация)",
+            "Laravel - Domain-driven design (DDD) подход с Laravel",
+            // ==== JavaScript Core ====
+            "JavaScript - Типы данных, приведение типов, операторы",
+            "JavaScript - Ссылочные и примитивные типы",
+            "JavaScript - Scope, Hoisting, Closures",
+            "JavaScript - Event loop, call stack, microtasks",
+            "JavaScript - Промисы, async/await, fetch API",
+            "JavaScript - Структуры данных: Map, Set, WeakMap, WeakSet",
+            "JavaScript - Object.freeze, Object.defineProperty",
+            "JavaScript - Модули: ESM, CommonJS",
+            "JavaScript - Деструктуризация, rest/spread",
+            "JavaScript - this, bind, call, apply",
+            "JavaScript - Регулярные выражения",
+            "JavaScript - Functional Programming: map, reduce, filter, compose",
+            "JavaScript - Генераторы и итераторы",
+            "JavaScript - Прототипное наследование и классы",
+            "JavaScript - TypeScript основы и аннотации",
+            "JavaScript - ESLint, Prettier, форматирование кода",
+            "JavaScript - Работа с датой: Date, Intl, Moment, Day.js",
 
-            -----------------------------------------------------
+            // ==== Node.js & Backend ====
+            "Node.js - Архитектура, Event loop, асинхронность",
+            "Node.js - Express.js: middleware, routes, error handling",
+            "Node.js - CORS, Body parsing, логгирование",
+            "Node.js - REST API разработка",
+            "Node.js - GraphQL (Apollo Server, Federation)",
+            "Node.js - Аутентификация (JWT, OAuth, passport.js)",
+            "Node.js - WebSocket: socket.io",
+            "Node.js - Подключение и работа с MongoDB (mongoose)",
+            "Node.js - Слой сервисов, контроллеров, DTO",
+            "Node.js - Кеширование: Redis, in-memory cache",
+            "Node.js - Background Jobs: Bull, Agenda",
+            "Node.js - Валидация данных: Joi, express-validator",
+            "Node.js - Unit и интеграционные тесты: Mocha, Chai, Jest",
+            "Node.js - TypeScript + Node.js проектирование",
+            "Node.js - Error handling и логгирование (Winston, Morgan)",
+            "Node.js - Подключение внешних API (fetch/axios)",
+            "Node.js - Swagger и OpenAPI документация",
+            "Node.js - Rate Limiting, защита от DDOS",
+            "Node.js - Мониторинг (PM2, LogRocket, Sentry)",
 
-            Console.Write("Сколько вам лет? ");
-            string input = Console.ReadLine();  // Пользователь вводит "30" (но это всё ещё строка!)
-            int age = Convert.ToInt32(input);   // Преобразуем строку в число
+            // ==== MongoDB ====
+            "MongoDB - Основы NoSQL, коллекции, документы",
+            "MongoDB - CRUD операции, projection, upsert",
+            "MongoDB - Индексы, уникальные ключи, TTL",
+            "MongoDB - Агрегации: $match, $group, $lookup",
+            "MongoDB - Валидация схем (Schema Validation)",
+            "MongoDB - Транзакции и многодокументные обновления",
+            "MongoDB - Реляционные связи: manual refs vs population",
+            "MongoDB - Mongoose ORM: схемы, middleware, hooks",
+            "MongoDB - Производительность и explain plans",
+            "MongoDB - Репликация, шардирование (общие основы)",
+            "MongoDB - Atlas, Compass, mongo shell",
 
-            Console.WriteLine($"Через 10 лет вам будет {age + 10}");  // Можно делать вычисления!
+            // ==== React.js Frontend ====
+            "React - JSX, компоненты, пропсы, state",
+            "React - useState, useEffect, useRef, useMemo, useCallback",
+            "React - Event handling, forms, controlled/uncontrolled inputs",
+            "React - React Router: маршруты, навигация, protected routes",
+            "React - Компоненты высшего порядка (HOC), render props",
+            "React - Подъем состояния и lifting state up",
+            "React - Контекст и глобальное состояние (Context API)",
+            "React - Redux Toolkit: store, reducers, middleware, selectors",
+            "React - Zustand, Jotai, Recoil (альтернативные state managers)",
+            "React - Работа с REST API и axios/fetch",
+            "React - Загрузка данных, UI-стейты (loading/error)",
+            "React - Мемоизация и оптимизация производительности",
+            "React - Кастомные хуки, hook lifecycle",
+            "React - Валидация форм (Formik, Yup, React Hook Form)",
+            "React - Компоненты таблиц, пагинация, фильтрация",
+            "React - Адаптивность, Grid/Flexbox, Tailwind CSS",
+            "React - Styled Components, Emotion",
+            "React - CSS-in-JS, BEM, SASS, PostCSS",
+            "React - Unit и интеграционные тесты: Jest, React Testing Library",
+            "React - Storybook: документирование UI компонентов",
+            "React - Portal, modals, accessibility (ARIA)",
+            "React - SSR и CSR различия",
+            "React - Ленивая загрузка, suspense, error boundaries",
+            "React - Service workers и PWA основы",
 
-            -----------------------------------------------------
+            // ==== Next.js ====
+            "Next.js - File-based routing",
+            "Next.js - SSR, SSG, ISR — сравнение и настройка",
+            "Next.js - API routes (backend в next)",
+            "Next.js - App Router vs Pages Router",
+            "Next.js - SEO оптимизация, meta теги",
+            "Next.js - Middleware, headers, rewrites",
+            "Next.js - Динамические и вложенные маршруты",
+            "Next.js - Data fetching (fetch, getServerSideProps)",
+            "Next.js - Auth.js (бывший next-auth)",
+            "Next.js - Deployment на Vercel и Docker",
+            "Next.js - Image optimization и next/image",
+            "Next.js - Разделение кода и lazy loading",
+            "Next.js - Интернационализация (i18n)",
+            "Next.js - Middleware и edge functions",
+            // ==== API Design ====
+            "API Design - Принципы REST: ресурсы, методы, статус-коды",
+            "API Design - Идти по HTTP стандартам: GET, POST, PUT, DELETE, PATCH",
+            "API Design - Idempotency и безопасные методы",
+            "API Design - Версионирование API: URI, header, query",
+            "API Design - Аутентификация и авторизация: OAuth2, JWT, API keys",
+            "API Design - Форматы данных: JSON, XML, Protobuf",
+            "API Design - Пагинация, фильтрация, сортировка",
+            "API Design - HATEOAS (Hypermedia as the Engine of Application State)",
+            "API Design - Документирование API: OpenAPI (Swagger), RAML, API Blueprint",
+            "API Design - GraphQL: схемы, резолверы, запросы, мутации",
+            "API Design - WebSockets и Real-time API",
+            "API Design - Ограничение частоты запросов (Rate Limiting)",
+            "API Design - Кэширование HTTP: Cache-Control, ETag, Last-Modified",
+            "API Design - Обработка ошибок: стандарты, коды и тела ответов",
+            "API Design - API Gateway, прокси и маршрутизация",
+            "API Design - Тестирование API: Postman, Insomnia, Pact",
+            "API Design - Contract-first разработка API",
+            "API Design - Безопасность API: защита от CSRF, CORS, Injection атак",
+            "API Design - Метрики и мониторинг API",
 
-            Console.Write("Введите число: ");
-            string input = Console.ReadLine();
-            int number;
+            // ==== Design Patterns ====
+            "Design Patterns - Порождающие паттерны: Singleton",
+            "Design Patterns - Порождающие паттерны: Factory Method",
+            "Design Patterns - Порождающие паттерны: Abstract Factory",
+            "Design Patterns - Порождающие паттерны: Builder",
+            "Design Patterns - Порождающие паттерны: Prototype",
+            "Design Patterns - Структурные паттерны: Adapter",
+            "Design Patterns - Структурные паттерны: Bridge",
+            "Design Patterns - Структурные паттерны: Composite",
+            "Design Patterns - Структурные паттерны: Decorator",
+            "Design Patterns - Структурные паттерны: Facade",
+            "Design Patterns - Структурные паттерны: Flyweight",
+            "Design Patterns - Структурные паттерны: Proxy",
+            "Design Patterns - Поведенческие паттерны: Chain of Responsibility",
+            "Design Patterns - Поведенческие паттерны: Command",
+            "Design Patterns - Поведенческие паттерны: Interpreter",
+            "Design Patterns - Поведенческие паттерны: Iterator",
+            "Design Patterns - Поведенческие паттерны: Mediator",
+            "Design Patterns - Поведенческие паттерны: Memento",
+            "Design Patterns - Поведенческие паттерны: Observer",
+            "Design Patterns - Поведенческие паттерны: State",
+            "Design Patterns - Поведенческие паттерны: Strategy",
+            "Design Patterns - Поведенческие паттерны: Template Method",
+            "Design Patterns - Поведенческие паттерны: Visitor",
+            "Design Patterns - Принципы SOLID и их связь с паттернами",
+            "Design Patterns - Антипаттерны и как их избегать",
+            "Design Patterns - Использование паттернов в микросервисах",
+            "Design Patterns - Паттерны для тестирования и Mock-объекты",
+            "Design Patterns - Dependency Injection и Inversion of Control",
+            "Design Patterns - Event-driven архитектура и паттерны",
+            "Design Patterns - Domain-Driven Design и паттерны",
+            // ==== Базы данных ====
+            "Databases - Основы реляционных баз данных (RDBMS)",
+            "Databases - Нормализация и денормализация данных",
+            "Databases - SQL: SELECT, INSERT, UPDATE, DELETE",
+            "Databases - JOIN: INNER, LEFT, RIGHT, FULL",
+            "Databases - Индексы: типы, создание, влияние на производительность",
+            "Databases - Транзакции: ACID, уровни изоляции",
+            "Databases - Оптимизация запросов: EXPLAIN, план выполнения",
+            "Databases - Views, Stored Procedures, Triggers",
+            "Databases - Репликация и шардирование",
+            "Databases - NoSQL базы: ключ-значение, документоориентированные, графовые",
+            "Databases - MongoDB: CRUD операции, агрегатные функции",
+            "Databases - Redis: структура данных, кэширование",
+            "Databases - Elasticsearch: индексация и поиск",
+            "Databases - Основы CAP теоремы",
+            "Databases - Бэкапы, восстановление и миграции",
+            "Databases - ORM: Entity Framework, Sequelize, Doctrine и т.д.",
+            "Databases - Безопасность данных и права доступа",
 
-            if (int.TryParse(input, out number))  // Если преобразование удалось
-            {
-                Console.WriteLine($"Вы ввели: {number}");
-            }
-            else  // Если ввели не число
-            {
-                Console.WriteLine("Ошибка: это не число!");
-            }
-        </div>
-        <div class="text">
-            Конструкции if/else if/else, switch/case/break/default
-        </div>
-        <div class="code">
-            if (number > 0) 
-            {
-                Console.WriteLine("Положительное!");
-            } 
-            else if (number < 0) 
-            {
-                Console.WriteLine("Отрицательное!");
-            } 
-            else 
-            {
-                Console.WriteLine("Это ноль!");
-            }
+            // ==== Алгоритмы и структуры данных ====
+            "Algorithms - Основы алгоритмического мышления и анализа сложности (Big O notation)",
+            "Algorithms - Базовые структуры данных: массивы, списки, стеки, очереди",
+            "Algorithms - Деревья: бинарные деревья, бинарные деревья поиска (BST)",
+            "Algorithms - Графы: представление, обходы (DFS, BFS)",
+            "Algorithms - Хеш-таблицы и хеш-функции",
+            "Algorithms - Сортировки: пузырьковая, быстрая, слиянием, пирамидальная",
+            "Algorithms - Поиск: бинарный поиск, линейный поиск",
+            "Algorithms - Рекурсия и динамическое программирование",
+            "Algorithms - Жадные алгоритмы",
+            "Algorithms - Разделяй и властвуй",
+            "Algorithms - Алгоритмы на строках: KMP, Rabin-Karp",
+            "Algorithms - Алгоритмы на графах: алгоритм Дейкстры, Беллмана-Форда",
+            "Algorithms - Алгоритмы минимального остовного дерева: Крускала, Прима",
+            "Algorithms - Жадные алгоритмы и алгоритмы оптимизации",
+            "Algorithms - Работа с большими данными и потоковыми алгоритмами",
+            "Algorithms - Параллельные и конкурентные алгоритмы",
+            "Algorithms - Задачи на оптимизацию памяти и времени",
+            "Algorithms - Практика решения задач на LeetCode, HackerRank, Codeforces",
+            "Algorithms - Использование алгоритмов в реальных приложениях",
 
-            ------------------------------------
+            // ==== Спорт ====
+            "Приседания с собственным весом - Сделать 4 подхода по 20 повторений",
+            "Отжимания от пола - Сделать 4 подхода по 12-15 повторений",
+            "Планка - Удерживать тело в планке 3 подхода по 45 секунд",
+            "Махи ногами вперед-назад - Сделать 3 подхода по 15 повторений на каждую ногу",
+            "Жим гантелей лежа - Сделать 4 подхода по 12 повторений",
+            "Разводка гантелей в стороны - Сделать 3 подхода по 15 повторений",
+            "Тяга гантелей в наклоне - Сделать 4 подхода по 12 повторений",
+            "Подъем гантелей на бицепс - Сделать 4 подхода по 15 повторений",
+            "Французский жим гантелей стоя - Сделать 3 подхода по 12 повторений",
+            "Бёрпи - Сделать 3 подхода по 12 повторений",
+            "Высокие колени - Выполнить 3 подхода по 40 секунд",
+            "Прыжки «звезда» - Сделать 3 подхода по 20 повторений",
+            "Классические скручивания - Сделать 4 подхода по 20 повторений",
+            "Подъем ног лежа - Сделать 3 подхода по 15 повторений",
+            "Русские скручивания с гантелей - Сделать 4 подхода по 20 повторений",
+            "Планка с поднятием ноги - Сделать 3 подхода по 30 секунд на каждую ногу",
+            "Растяжка задней поверхности бедра - Удерживать позу по 30 секунд, 3 подхода на каждую ногу",
+            "Растяжка грудных мышц у стены - Удерживать позу 30 секунд, 3 подхода",
+            "Растяжка спины и поясницы - Сделать наклоны вперед и назад по 3 подхода по 20 секунд",
+            "Приседания с гантелями - Сделать 4 подхода по 15 повторений",
+            "Выпады с гантелями - Сделать 3 подхода по 12 повторений на каждую ногу",
+            "Жим гантелей стоя - Сделать 4 подхода по 12 повторений",
+            "Тяга гантелей к подбородку - Сделать 3 подхода по 15 повторений",
+        ];
 
-            Console.Write("Введите цифру от 1 до 3: ");
-            int digit = Convert.ToInt32(Console.ReadLine());
+        function generateDailyTasks(count = 5) {
+            const shuffled = allTasks.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
 
-            switch (digit) 
-            {
-                case 1:
-                    Console.WriteLine("Вы выбрали 1");
-                    break;
-                case 2:
-                    Console.WriteLine("Вы выбрали 2");
-                    break;
-                case 3:
-                    Console.WriteLine("Вы выбрали 3");
-                    break;
-                default:
-                    Console.WriteLine("Неизвестная цифра");
-                    break;
-            }
-        </div>
-        <div class="text">
-            <h4>ПЛАТФОРМА .NET (урок 2)</h4>
-            .NET — это кроссплатформенная платформа для разработки приложений, созданная Microsoft. Она включает: <br />
-            Языки программирования (C#, F#, VB.NET)<br />
-            Библиотеки классов (готовые компоненты для работы с файлами, сетью, базами данных и т. д.)<br />
-            Среды выполнения (CLR — Common Language Runtime)<br />
-            Поддерживает:<br />
-            Windows, Linux, macOS<br />
-            Веб, мобильные, десктоп, игры, IoT, AI<br />
-            Основные компоненты .NET<br />
-            CLR (Common Language Runtime) – исполняет код, управляет памятью, безопасностью.<br />
-            FCL (Framework Class Library) – стандартные библиотеки для работы с коллекциями, файлами, сетью и т. д.<br />
-            Roslyn – компилятор C#.<br />
-            ASP.NET Core – фреймворк для веб-приложений.<br />
-            Entity Framework – ORM для работы с базами данных.<br />
-            .NET vs .NET Core vs .NET Framework<br />
-            .NET Framework – старая версия (только Windows).<br />
-            .NET Core – кроссплатформенный преемник (2016).<br />
-            .NET 5+ – единая платформа (с 2020, объединила Core и Framework).<br />
-            Как работает .NET?<br />
-            Вы пишете код на C#.<br />
-            Компилятор превращает его в CIL (Common Intermediate Language).<br />
-            CLR компилирует CIL в машинный код (JIT-компиляция).<br />
-            Приложение выполняется.<br />
-            В папке MyApp появились файлы:<br />
-            Program.cs — основной файл с кодом.<br />
-            MyApp.csproj — конфигурация проекта (зависимости, версия .NET).<br />
-            dotnet new	Создаёт новый проект<br />
-            dotnet run	Запускает приложение<br />
-            dotnet build	Компилирует проект<br />
-            dotnet restore	Восстанавливает зависимости<br />
-            <h4>ООП в C# (урок 3)</h4>
-            ООП — это методология программирования, основанная на использовании объектов и классов.<br />
-            Основные принципы ООП:<br />
-            Инкапсуляция — скрытие внутренней реализации.<br />
-            Наследование — создание новых классов на основе существующих.<br />
-            Полиморфизм — возможность объектов вести себя по-разному в зависимости от контекста.<br />
-            Абстракция — выделение главных характеристик объекта.<br />
-            Класс — это шаблон, описывающий структуру объекта (поля, методы, свойства).<br />
-            Объект — это экземпляр класса, созданный на его основе.<br />
-        </div>
-        <div class="code">
-            // Пример класса "Person"
-            class Person 
-            {
-                // Поля (данные)
-                public string Name;
-                public int Age;
-
-                // Метод (действие)
-                public void Greet() 
-                {
-                    Console.WriteLine($"Привет, меня зовут {Name}, мне {Age} лет!");
-                }
-            }
-
-            class Program 
-            {
-                static void Main() 
-                {
-                    // Создаём объект класса Person
-                    Person person1 = new Person();
-        
-                    // Устанавливаем значения полей
-                    person1.Name = "Алексей";
-                    person1.Age = 30;
-        
-                    // Вызываем метод
-                    person1.Greet();  // Вывод: Привет, меня зовут Алексей, мне 30 лет!
-                }
-            }
-        </div>
-        <div class="text">
-            Инкапсуляция — это принцип ООП, который: <br />
-            Скрывает внутреннюю реализацию класса от внешнего кода.<br />
-            Защищает данные от некорректного изменения.<br />
-            Предоставляет контролируемый доступ через методы и свойства.
-        </div>
-        <div class="code">
-            class Person 
-            {
-                private string _name;
-                private int _age;
-
-                // Свойство для доступа к имени
-                public string Name 
-                {
-                    get { return _name; }         // Возвращает значение
-                    set { _name = value; }        // Устанавливает значение
-                }
-
-                // Свойство для возраста с проверкой
-                public int Age 
-                {
-                    get { return _age; }
-                    set 
-                    {
-                        if (value > 0 && value < 120)  // Проверка
-                            _age = value;
-                        else
-                            Console.WriteLine("Недопустимый возраст!");
-                    }
-                }
-
-                public void Greet() 
-                {
-                    Console.WriteLine($"Привет, я {_name}, мне {_age} лет!");
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>Ассинхронность в C# (урок 4)</h4>
-            В синхронном программировании операции выполняются последовательно, одна за другой. Если одна операция блокирует выполнение (например, чтение файла или запрос к серверу), вся 
-            программа "зависает" до её завершения.
-        </div>
-        <div class="code">
-            void SyncMethod()
-            {
-                Console.WriteLine("Начало синхронной операции...");
-                Thread.Sleep(2000); // Имитация долгой операции (2 секунды)
-                Console.WriteLine("Конец синхронной операции.");
-            }
-
-            SyncMethod();
-            Console.WriteLine("Программа продолжает работу.");
-            
-            // Начало синхронной операции...
-            // Конец синхронной операции.
-            // Программа продолжает работу.
-        </div>
-        <div class="text">
-            Асинхронность позволяет выполнять долгие операции без блокировки основного потока. В C# для этого используются ключевые слова async и await
-        </div>
-        <div class="code">
-            async Task AsyncMethod()
-            {
-                Console.WriteLine("Начало асинхронной операции...");
-                await Task.Delay(2000); // Не блокирует поток, а "ожидает" в фоне
-                Console.WriteLine("Конец асинхронной операции.");
-            }
-
-            await AsyncMethod();
-            Console.WriteLine("Программа продолжает работу.");
-
-            // Вывод (такой же, но поведение другое):
-            // Начало асинхронной операции...
-            // Конец асинхронной операции.
-            // Программа продолжает работу.
-        </div>
-        <div class="text">
-            Во время await Task.Delay(2000) поток не блокируется, и программа может выполнять другие задачи (например, обрабатывать UI-события в приложении).<br />
-            Основные понятия<br />
-            async – указывает, что метод содержит асинхронные операции.<br />
-            await – приостанавливает выполнение метода, пока операция не завершится, но не блокирует поток.<br />
-            Task – представляет асинхронную операцию.
-            <h4>Работа с файлами в C# (урок 5)</h4>
-            В C# для работы с файлами используется пространство имен System.IO. Самый простой способ взаимодействия с файлами — статический класс File,
-            который предоставляет методы для создания, чтения, записи, копирования и удаления файлов.<br />
-            Основные методы класса File<br />
-            File.Exists(path) — проверяет, существует ли файл.<br />
-            File.Create(path) — создаёт файл и возвращает FileStream для записи.<br />
-            File.WriteAllText(path, content) — записывает текст в файл (перезаписывает, если файл существует).<br />
-            File.ReadAllText(path) — читает весь текст из файла.<br />
-            File.AppendAllText(path, content) — добавляет текст в конец файла.<br />
-            File.Delete(path) — удаляет файл.<br />
-            File.Copy(source, destination) — копирует файл.
-        </div>
-        <div class="code">
-            using System;
-            using System.IO;
-
-            class Program
-            {
-                static void Main()
-                {
-                    string filePath = "example.txt";
-        
-                    // Проверяем, существует ли файл
-                    if (!File.Exists(filePath))
-                    {
-                        // Создаём и записываем текст в файл
-                        File.WriteAllText(filePath, "Привет, мир!");
-                        Console.WriteLine("Файл создан и в него записан текст.");
-                    }
-        
-                    // Читаем содержимое файла
-                    string content = File.ReadAllText(filePath);
-                    Console.WriteLine($"Содержимое файла: {content}");
-        
-                    // Добавляем текст в файл
-                    File.AppendAllText(filePath, "\nНовая строка.");
-                    Console.WriteLine("Текст добавлен в файл.");
-        
-                    // Выводим обновлённое содержимое
-                    Console.WriteLine($"Обновлённое содержимое:\n{File.ReadAllText(filePath)}");
-        
-                    // Удаляем файл (раскомментируйте для проверки)
-                    // File.Delete(filePath);
-                    // Console.WriteLine("Файл удалён.");
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>ДЕЛЕГАТЫ, ЛЯМБДА И СОБЫТИЯ (урок 6)</h4>
-            Делегат в C# — это тип, который хранит ссылку на метод с определённой сигнатурой (типом возвращаемого значения и параметров).<br />
-            Делегаты похожи на указатели на функции в C++, но безопасны и работают в управляемой среде .NET.<br />
-            Они позволяют передавать методы как аргументы другим методам.<br />
-            MessageDelegate — это делегат, который может указывать на любой метод, принимающий string и возвращающий void.<br />
-            delegateInstance — переменная делегата, которая ссылается на метод ShowMessage.<br />
-            При вызове delegateInstance("...") выполняется метод ShowMessage.
-        </div>
-        <div class="code">
-            using System;
-
-            // Объявляем делегат
-            delegate void MessageDelegate(string message);
-
-            class Program
-            {
-                static void Main()
-                {
-                    // Создаём экземпляр делегата и связываем его с методом ShowMessage
-                    MessageDelegate delegateInstance = ShowMessage;
-        
-                    // Вызываем метод через делегат
-                    delegateInstance("Привет, мир!");  // Выведет: Сообщение: Привет, мир!
-                }
-
-                static void ShowMessage(string text)
-                {
-                    Console.WriteLine($"Сообщение: {text}");
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>ИСКЛЮЧЕНИЯ (урок 7)</h4>
-            Исключение (exception) — это ошибка, которая возникает во время выполнения программы и нарушает её нормальный поток. Например: <br />
-            Деление на ноль.<br />
-            Обращение к несуществующему элементу массива.<br />
-            Попытка открыть несуществующий файл.<br />
-            В C# исключения представлены классами, унаследованными от System.Exception.<br />
-            Для обработки исключений используются три ключевых блока: <br />
-            try — блок, в котором выполняется код, который может вызвать исключение.<br />
-            catch — блок, который "ловит" исключение и обрабатывает его.<br />
-            finally — блок, который выполняется всегда, даже если исключение произошло.<br />
-            Можно ловить конкретные типы исключений (например, DivideByZeroException).<br />
-            Можно использовать общий Exception для всех ошибок: <br />
-        </div>
-        <div class="code">
-            try 
-            {
-                int a = 10;
-                int b = 0;
-                int result = a / b; // Деление на ноль → исключение!
-                Console.WriteLine(result);
-            }
-            catch (DivideByZeroException ex) 
-            {
-                Console.WriteLine("Ошибка: деление на ноль!");
-                Console.WriteLine(ex.Message); // Выведет стандартное сообщение об ошибке
-            }
-            finally 
-            {
-                Console.WriteLine("Этот блок выполнится в любом случае.");
-            }
-        </div>
-        <div class="text">
-            <h4>UDEMY NOTES (урок 8)</h4>
-            Пример комбинирования Delegates и Generics
-        </div>
-        <div class="code">
-            namespace UdemyLearning
-            {
-                public delegate int Comparison&lt;T&gt;(T x, T y);
-
-                public class PersonSorter
-                {
-                    public void Sort(Person[] person, Comparison&lt;Person&gt; comparison)
-                    {
-                        for (int i = 0; i < person.Length - 1; i++)
-                        {
-                            for (int j = i + 1; j < person.Length; j++)
-                            {
-                                if (comparison(person[i], person[j]) > 0)
-                                {
-                                    Person temp = person[i];
-                                    person[i] = person[j];
-                                    person[j] = temp;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                public class Person
-                {
-                    protected int _age;
-                    protected string _name;
-
-                    public string Name { get { return _name; } set { _name = value; } }
-
-                    public int Age { get { return _age; } 
-                        set
-                        {
-                            if (value <= 18)
-                            {
-                                throw new Exception();
-                            } else
-                            {
-                                _age = value;
-                            }
-                        } 
-                    }
-                }
-
-                internal class Program
-                {
-                    static void Main(string[] args)
-                    {
-                        Person[] people =
-                        {
-                            new Person {Name = "ah1", Age = 25 },
-                            new Person {Name = "ch4", Age = 45 },
-                            new Person {Name = "bh3", Age = 35 },
-                        };
-
-                        PersonSorter sorter = new PersonSorter();
-
-                        sorter.Sort(people, CompareByAge);
-
-                        foreach(Person person in people)
-                        {
-                            Console.WriteLine(person.Name);
-                            Console.WriteLine(person.Age);
-                        }
-
-                        sorter.Sort(people, CompareByName);
-
-                        foreach (Person person in people)
-                        {
-                            Console.WriteLine(person.Name);
-                            Console.WriteLine(person.Age);
-                        }
-
-                        Console.ReadLine();
-                    }
-
-                    static int CompareByAge(Person x, Person y)
-                    {
-                        return x.Age.CompareTo(y.Age);
-                    }
-
-                    static int CompareByName(Person x, Person y)
-                    {
-                        return x.Name.CompareTo(y.Name);
-                    }
-                }
-            }
-        </div>
-        <div class="text">
-            <h3>C#</h3>
-            <h4>UDEMY NOTES (урок 9)</h4>
-            Код помещён в пространство имён UdemyLearning для логической группировки.<br />
-            Делегат — это тип, который хранит ссылку на метод с определённой сигнатурой.<br />
-            Здесь Notify может указывать на любой метод, который принимает string и возвращает void.<br />
-            Класс EventPublisher (Издатель)<br />
-            public event Notify OnNotify:<br />
-            OnNotify — событие, основанное на делегате Notify.<br />
-            Ключевое слово event добавляет защиту (подписка/отписка только через +=/-=).<br />
-            OnNotify?.Invoke(message):<br />
-            ?. — проверка на null (если нет подписчиков, событие не вызовется).<br />
-            Invoke — вызывает все подписанные методы.<br />
-            Класс EventSubscriber (Подписчик)<br />
-            Метод OnEventRised соответствует сигнатуре делегата Notify (void + string).<br />
-            Будет вызван при срабатывании события OnNotify<br />
-            Создание объектов:<br />
-            publisher — издатель события.<br />
-            eventSubscriber — подписчик.<br />
-            Подписка на событие:<br />
-            publisher.OnNotify += eventSubscriber.OnEventRised — добавление метода OnEventRised в список вызовов события OnNotify.<br />
-            Запуск события:<br />
-            publisher.RaisEvent("TEST RUN") вызывает все подписанные методы (здесь — OnEventRised).<br />
-            Результат:<br />
-            В консоль выведется: "Event received TEST RUN".<br />
-            Создаётся событие OnNotify в EventPublisher.<br />
-            Подписчик (EventSubscriber) регистрирует свой метод OnEventRised через +=.<br />
-            При вызове RaisEvent("TEST RUN"):<br />
-            Проверяется, есть ли подписчики (?.).<br />
-            Если есть, вызывается OnEventRised с переданным сообщением.<br />
-            Метод OnEventRised выводит сообщение в консоль.<br />
-            Инкапсуляция: Событие OnNotify объявлено как public, но подписка/отписка возможны только через += и -=.<br />
-            Множественные подписчики: Можно добавить несколько методов:<br />
-            publisher.OnNotify += subscriber1.Method1;<br />
-            publisher.OnNotify += subscriber2.Method2;<br />
-        </div>
-        <div class="code">
-            namespace UdemyLearning
-            {
-
-                public delegate void Notify(string message);
-
-                public class EventPublisher
-                {
-                    public event Notify OnNotify;
-
-                    public void RaisEvent(string message)
-                    {
-                        OnNotify?.Invoke(message);
-                    }
-                }
-
-                public class EventSubscriber
-                {
-                    public void OnEventRised(string message)
-                    {
-                        Console.WriteLine("Event received " + message);
-                    }
-                }
-
-                internal class Program
-                {
-                    static void Main(string[] args)
-                    {
-                        EventPublisher publisher = new EventPublisher();
-                        EventSubscriber eventSubscriber = new EventSubscriber();
-
-                        publisher.OnNotify += eventSubscriber.OnEventRised;
-
-                        publisher.RaisEvent("TEST RUN");
-
-                        Console.ReadKey();
-                    }
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>ASP.NET CORE (урок 10)</h4>
-            ASP.NET Core — это кроссплатформенный фреймворк для создания современных веб-приложений и API от Microsoft. Он работает на Windows, Linux и macOS.<br />
-            Ключевые особенности:<br />
-            Открытый исходный код (GitHub)<br />
-            Высокая производительность (быстрее Node.js, Python)<br />
-            Поддержка Docker и микросервисов<br />
-            Гибкость (MVC, Web API, Razor Pages, Blazor)<br />
-            Встроенная поддержка Dependency Injection<br />
-            dotnet new web -o FirstWebApp - создаёт шаблон минимального веб-приложения <br />
-            dotnet run - запускает сервер (обычно на http://localhost:5000 или https://localhost:5001)<br />
-        </div>
-        <div class="code">
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
-
-            app.MapGet("/", () => "Hello World!");
-
-            app.Run();
-        </div>
-        <div class="text">
-            WebApplication.CreateBuilder() настраивает хост приложения.<br />
-            app.MapGet("/", ...) регистрирует GET-запрос для пути /.<br />
-            app.Run() запускает приложение.<br />
-            Middleware — это компоненты, которые обрабатывают HTTP-запросы и ответы. Они выполняются последовательно, образуя конвейер (pipeline).<br />
-            Примеры встроенного Middleware:<br />
-            Статические файлы (app.UseStaticFiles())<br />
-            Маршрутизация (app.UseRouting())<br />
-            Аутентификация (app.UseAuthentication())<br />
-            Как работает конвейер Middleware?<br />
-            Запрос проходит через Middleware в порядке их регистрации, а ответ — в обратном порядке.<br />
-            Запрос → Middleware 1 → Middleware 2 → ... → Middleware N → Ваш endpoint <br />
-            Ответ ← Middleware 1 ← Middleware 2 ← ... ← Middleware N ← Ваш endpoint <br />
-            При запросе сначала выполнится Console.WriteLine("До обработки запроса").<br />
-            await next() передаёт управление следующему Middleware (в данном случае — маршруту /).<br />
-            После формирования ответа выполнится Console.WriteLine("После обработки запроса").<br />
-            app.UseHttpLogging(); // Требует подключения пакета Microsoft.AspNetCore.HttpLogging<br />
-            app.UseExceptionHandler("/error"); // Перенаправление на страницу ошибки<br />
-            app.UseStaticFiles(); // Раздаёт файлы из wwwroot
-        </div>
-        <div class="code">
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
-
-            // Добавляем Middleware
-            app.Use(async (context, next) =>
-            {
-                Console.WriteLine("До обработки запроса");
-                await next(); // Передаём запрос следующему Middleware
-                Console.WriteLine("После обработки запроса");
+        function displayTasks() {
+            const taskList = document.getElementById('task-list');
+            const tasks = generateDailyTasks();
+            tasks.forEach(task => {
+                const li = document.createElement('li');
+                li.textContent = task;
+                taskList.appendChild(li);
             });
+        }
 
-            app.MapGet("/", () => "Главная страница");
-
-            app.Run();
-        </div>
-        <div class="text">
-            <h4>ASP.NET CORE MVC (урок 11)</h4>
-            ASP.NET Core MVC — это фреймворк для создания веб-приложений на основе паттерна Model-View-Controller (MVC), разработанный Microsoft.<br />
-            Кроссплатформенный (работает на Windows, Linux, macOS)<br />
-            Высокопроизводительный<br />
-            Модульный (использует middleware)<br />
-            Поддерживает Dependency Injection "из коробки"<br />
-            Работает с .NET Core/.NET 5+<br />
-            Основные компоненты MVC:<br />
-            Model - представляет данные и бизнес-логику<br />
-            View - отвечает за отображение данных (HTML-страницы)<br />
-            Controller - обрабатывает запросы пользователя, работает с Model и возвращает View<br />
-            dotnet new mvc -n MyFirstMvcApp<br />
-            dotnet run<br />
-            Структура проекта:<br />
-            /Controllers - папка с контроллерами<br />
-            /Views - папка с представлениями<br />
-            /wwwroot - статические файлы (CSS, JS, изображения)<br />
-            Program.cs - точка входа и конфигурация приложения<br />
-            appsettings.json - файл конфигурации<br />
-        </div>
-        <div class="code">
-            //HomeController.cs
-            public class HomeController : Controller
-            {
-                public IActionResult Index()
-                {
-                    return View(); // Возвращает представление Views/Home/Index.cshtml
-                }
-
-                public IActionResult Welcome()
-                {
-                    ViewData["Message"] = "Добро пожаловать в ASP.NET Core MVC!";
-                    return View();
-                }
-            }
-            //Views/Home/Welcome.cshtml
-            @{
-                ViewData["Title"] = "Страница приветствия";
-            }
-            &lt;h1&gt;@ViewData["Message"]&lt;/h1&gt;
-        </div>
-        <div class="text">
-            Маршрутизация — это процесс определения того, какой контроллер и какое действие (action) должны обработать HTTP-запрос на основе URL.
-            В ASP.NET Core MVC используется система маршрутов, которая анализирует URL и выбирает подходящий обработчик.<br />
-            В ASP.NET Core MVC есть два основных подхода: <br />
-            Обычная (Conventional) маршрутизация – на основе шаблонов в Program.cs.<br />
-            Атрибутная маршрутизация – маршруты задаются атрибутами прямо над контроллерами и методами.<br />
-            По умолчанию в Program.cs уже есть стандартный маршрут:
-        </div>
-        <div class="code">
-            // {controller=Home} – если контроллер не указан, используется HomeController.
-            // {action=Index} – если действие не указано, вызывается Index().
-            // {id?} – параметр id является необязательным
-            
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-        </div>
-        <div class="text">
-            Более гибкий подход — задание маршрутов прямо в коде контроллера <br />
-            Более точный контроль над URL.<br />
-            Возможность сложных шаблонов (ограничения типов, несколько маршрутов для одного метода).<br />
-        </div>
-        <div class="code">
-            [Route("products")]
-            public class ProductsController : Controller
-            {
-                [HttpGet("list")]  // Обрабатывает GET /products/list
-                public IActionResult Index() { ... }
-
-                [HttpGet("{id:int}")]  // Обрабатывает GET /products/5 (только числа)
-                public IActionResult Details(int id) { ... }
-            }
-        </div>
-        <div class="text">
-            Можно указывать типы параметров прямо в маршруте
-        </div>
-        <div class="code">
-            [Route("users/{id:int}")]  // Только целые числа
-            public IActionResult GetUser(int id) { ... }
-
-            [Route("posts/{slug:alpha}")]  // Только буквы
-            public IActionResult GetPost(string slug) { ... }
-        </div>
-        <div class="text">
-            <h4>МИНИМАЛЬНЫЕ API (урок 12)</h4>
-            Minimal API — это упрощённый подход к созданию HTTP API в .NET, который позволяет быстро создавать микро-сервисы и веб-API
-            с минимальным количеством кода и настройки. В отличие от традиционного ASP.NET Core (с контроллерами), Minimal API требует меньше шаблонного кода.<br />
-            Ключевые особенности:<br />
-            Минимальная конфигурация<br />
-            Прямое определение маршрутов и методов<br />
-            Идеально для небольших API и микросервисов<br />
-            dotnet new web -o MinimalApiDemo
-        </div>
-        <div class="code">
-            // Program.cs
-            // WebApplication.CreateBuilder(args) — создаёт "строитель" приложения
-            // app.MapGet("/", ...) — определяет GET-эндпоинт для пути /.
-            // app.Run() — запускает приложение.
-
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
-
-            app.MapGet("/", () => "Hello World!");
-            app.MapGet("/welcome", () => "Welcome to Minimal API!");
-
-            app.Run();
-        </div>
-        <div class="text">
-            <h4>Аутентификация и Авторизация (урок 13)</h4>
-            Основные понятия <br />
-            Аутентификация (Authentication) — процесс проверки, что пользователь действительно тот, за кого себя выдаёт (например, через логин и пароль).<br />
-            Авторизация (Authorization) — проверка прав пользователя на доступ к определённым ресурсам (например, доступ к админ-панели).<br />
-            Разница между аутентификацией и авторизацией <br />
-            Аутентификация → "Кто ты?" (проверка личности).<br />
-            Авторизация → "Что тебе разрешено?" (проверка прав).<br />
-            Основные методы аутентификации <br />
-            Сессии и куки (традиционный способ, stateful).<br />
-            JWT (JSON Web Tokens) (современный, stateless подход).<br />
-            OAuth / OpenID Connect (используется для делегированного доступа, например "Войти через Google").<br />
-            Identity Framework (например, ASP.NET Core Identity — готовая система управления пользователями).
-            <h4>Dependency Injection (DI) и сервисы (урок 14)</h4>
-            Представь, у тебя есть класс Car, который зависит от класса Engine <br />
-            Жёсткая связь (tight coupling) – Car зависит от конкретной реализации Engine.<br />
-            Сложно тестировать – нельзя подменить Engine на заглушку (mock).<br />
-            Трудно менять реализацию – если завтра понадобится ElectricEngine, придётся переписывать Car.
-        </div>
-        <div class="code">
-            public class Engine 
-            {
-                public void Start() => Console.WriteLine("Engine started!");
-            }
-
-            public class Car 
-            {
-                private Engine _engine;
-
-                public Car() 
-                {
-                    _engine = new Engine();  // Прямое создание зависимости
-                }
-
-                public void StartCar() 
-                {
-                    _engine.Start();
-                }
-            }
-        </div>
-        <div class="text">
-            DI — это паттерн проектирования, при котором зависимости не создаются внутри класса, а "внедряются" извне.<br />
-            Гибкость – можно подменить реализацию IEngine (например, на ElectricEngine).<br />
-            Тестируемость – в тестах можно передавать MockEngine.<br />
-            Уменьшение связанности кода.
-        </div>
-        <div class="code">
-            public interface IEngine 
-            {
-                void Start();
-            }
-
-            public class Engine : IEngine 
-            {
-                public void Start() => Console.WriteLine("Engine started!");
-            }
-
-            public class Car 
-            {
-                private readonly IEngine _engine;
-
-                // Зависимость внедряется через конструктор (Constructor Injection)
-                public Car(IEngine engine) 
-                {
-                    _engine = engine;
-                }
-
-                public void StartCar() 
-                {
-                    _engine.Start();
-                }
-            }
-        </div>
-        <div class="text">
-            Основные способы внедрения зависимостей <br />
-            Constructor Injection (через конструктор) – самый частый способ.<br />
-            Property Injection (через свойство) – реже, используется, например, в UI-фреймворках.<br />
-            Method Injection (через метод) – если зависимость нужна только в одном методе.
-            <h4>Middleware и кастомизации запросов (урок 15)</h4>
-            Middleware — это промежуточное программное обеспечение, которое обрабатывает HTTP-запросы и ответы в конвейере.<br />
-            Это функции или компоненты, которые выполняются между получением запроса и отправкой ответа.<br />
-            Middleware может:<br />
-            Логировать запросы<br />
-            Авторизовать пользователей<br />
-            Обрабатывать ошибки<br />
-            Модифицировать запрос/ответ<br />
-            Каждый middleware может: <br />
-            Обработать запрос и передать его дальше (next()).<br />
-            Прервать конвейер и сразу отправить ответ <br />
-            Порядок middleware важен – они выполняются последовательно.<br />
-            Middleware может завершить запрос (если не вызвать next()).<br />
-            Middleware может изменять req и res (например, добавлять заголовки
-        </div>
-        <div class="code">
-            app.use((req, res, next) => {
-                console.log("Middleware 1: Запрос получен");
-                next(); // Передать управление следующему middleware
-            });
-
-            app.use((req, res, next) => {
-                console.log("Middleware 2: Проверка авторизации");
-                if (user.isAuthenticated) {
-                    next();
-                } else {
-                    res.status(403).send("Доступ запрещен!");
-                }
-            });
-
-            app.get("/", (req, res) => {
-                res.send("Главная страница");
-            });
-        </div>
-        <div class="text">
-            <h4>SignalR (урок 16)</h4>
-            1. Что такое SignalR? <br />
-            SignalR — это библиотека ASP.NET, которая упрощает создание веб-приложений реального времени (real-time). Она позволяет серверу мгновенно отправлять данные клиентам без постоянных HTTP-запросов.<br />
-            2. Где используется?<br />
-            Чат-приложения (WhatsApp, Telegram Web)<br />
-            Уведомления (Facebook, Twitter)<br />
-            Онлайн-игры (мультиплеерные игры)<br />
-            Биржевые графики (обновление котировок)<br />
-            Совместная работа (Google Docs, Figma)<br />
-            3. Как работает SignalR?<br />
-            Использует WebSockets (если поддерживаются браузером и сервером).<br />
-            Если WebSockets недоступны, автоматически переключается на Long Polling, Server-Sent Events (SSE).<br />
-            Поддерживает RPC (Remote Procedure Call) — сервер может вызывать методы клиента, а клиент — сервера.<br />
-            4. Основные компоненты<br />
-            Хаб (Hub) — центральный класс, через который клиенты и сервер обмениваются сообщениями.<br />
-            Клиенты (JavaScript, .NET, Java и др.) — подключаются к хабу и получают/отправляют сообщения.<br />
-            Транспорты (WebSocket, Server-Sent Events, Long Polling) — механизмы передачи данных.
-        </div>
-        <div class="code">
-            // Серверный хаб
-            public class ChatHub : Hub
-            {
-                public async Task SendMessage(string user, string message)
-                {
-                    await Clients.All.SendAsync("ReceiveMessage", user, message);
-                }
-            }
-            -----------------------------------------------------------------------------
-            // Клиент (JavaScript)
-            const connection = new signalR.HubConnectionBuilder()
-                .withUrl("/chatHub")
-                .build();
-
-            connection.on("ReceiveMessage", (user, message) => {
-                console.log(`${user}: ${message}`);
-            });
-
-            connection.start();
-        </div>
-        <div class="text">
-            <h4>ТЕСТИРОВАНИЕ (урок 17)</h4>
-            1. Зачем нужно тестирование? <br />
-            Раннее обнаружение багов<br />
-            Уверенность при рефакторинге<br />
-            Документирование поведения кода<br />
-            Сокращение времени на ручное тестирование<br />
-            2. Типы тестов:<br />
-            Unit-тесты - тестирование отдельных компонентов изолированно<br />
-            Integration-тесты - проверка взаимодействия компонентов<br />
-            E2E-тесты - тестирование системы в целом (как пользователь)<br />
-            Добавьте тестовый проект xUnit: dotnet new xunit -n MyProject.Tests <br />
-            Добавьте ссылку на основной проект в тестовый: dotnet add MyProject.Tests reference MyProject <br />
-            Запуск тестов: dotnet test
-        </div>
-        <div class="code">
-            // В проекте MyProject.Tests создайте файл SampleTests.cs:
-            using Xunit;
-
-            namespace MyProject.Tests
-            {
-                public class SampleTests
-                {
-                    [Fact]
-                    public void TestAddition()
-                    {
-                        // Arrange
-                        int a = 5;
-                        int b = 3;
-            
-                        // Act
-                        int result = a + b;
-            
-                        // Assert
-                        Assert.Equal(8, result);
-                    }
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>RAZOR PAGES (урок 18)</h4>
-            Razor Pages — это технология Microsoft для создания веб-приложений на C#. Она основана на паттерне MVVM (Model-View-ViewModel)
-            и упрощает разработку странично-ориентированных приложений по сравнению с традиционным MVC.<br />
-            Структура проекта <br />
-            Pages — содержит Razor-страницы (.cshtml и .cshtml.cs).<br />
-            wwwroot — для статических файлов (CSS, JS, изображения).<br />
-            appsettings.json — настройки приложения.<br />
-            Открой папку Pages → удали дефолтные страницы (кроме _Layout.cshtml и _ViewImports.cshtml).<br />
-            Создай новую страницу:<br />
-            ПКМ на Pages → Add → Razor Page → Razor Page (Empty) → назови Index.cshtml.<br />
-            В Index.cshtml напиши: <br />
-            Разбор кода<br />
-            @page — директива, которая делает файл Razor Page (обязательна для каждой страницы).<br />
-            @DateTime.Now — вставка C#-кода в HTML (Razor-синтаксис).
-        </div>
-        <div class="code">
-            @page
-            &lt;h&gt;>Привет, мир!&lt;/h1&gt;
-            &lt;p&gt;Текущее время: @DateTime.Now&lt;/p&gt;
-        </div>
-        <div class="text">
-            <h4>BLAZOR (урок 19)</h4>
-            Blazor — это веб-фреймворк от Microsoft, который позволяет создавать интерактивные веб-приложения используя C# вместо JavaScript. Есть две основные модели размещения: <br />
-            Blazor Server: Логика выполняется на сервере, обновления DOM передаются через SignalR<br />
-            Blazor WebAssembly: Приложение выполняется полностью в браузере на WebAssembly<br />
-            dotnet new blazorserver -o FirstBlazorApp --no-https <br />
-            dotnet run <br />
-            Основные файлы и папки: <br />
-            Program.cs — точка входа<br />
-            Pages/ — содержит Razor-компоненты (страницы)<br />
-            Index.razor — главная страница<br />
-            Counter.razor — пример счётчика<br />
-            FetchData.razor — пример загрузки данных<br />
-            Shared/ — общие компоненты<br />
-            MainLayout.razor — основной макет<br />
-            wwwroot/ — статические файлы (css, js, изображения)<br />
-        </div>
-        <div class="code">
-            @page "/counter"
-
-            &lt;h1&gt;Счётчик&lt;/h1&gt;
-
-            &lt;p&gt;Текущее значение: @currentCount&lt;/p&gt;
-
-            &lt;button class="btn btn-primary" @onclick="IncrementCount"&gt;Увеличить&lt;/button&gt;
-            &lt;button class="btn btn-danger" @onclick="DecrementCount"&gt;Уменьшить&lt;/button&gt;
-            &lt;button class="btn btn-warning" @onclick="ResetCount"&gt;Сбросить&lt;/button&gt;
-
-            @code {
-                private int currentCount = 0;
-
-                private void IncrementCount()
-                {
-                    currentCount++;
-                }
-
-                private void DecrementCount()
-                {
-                    if (currentCount &gt; 0)
-                        currentCount--;
-                }
-
-                private void ResetCount()
-                {
-                    currentCount = 0;
-                }
-            }
-        </div>
-        <div class="text">
-            <h4>Udemy Notes (урок 20)</h4>
-            Регулярные выражения пишутся таким образом
-        </div>
-        <div class="code">
-            string pattern = @"\d";
-            Regex regex = new Regex(pattern);
-
-            string text = "Hi it is numbers 1234";
-
-            MatchCollection matchCollection = regex.Matches(text);
-        </div>
-        <div class="text">
-            <h4>Паттерны проектирования (урок 21)</h4>
-            Паттерны проектирования — это проверенные решения распространенных проблем в разработке ПО. Они делятся на 3 категории: <br />
-            Порождающие (создание объектов)<br />
-            Структурные (композиция объектов)<br />
-            Поведенческие (взаимодействие объектов)<br />
-            Singleton — порождающий паттерн, гарантирующий, что класс имеет только один экземпляр и предоставляет глобальную точку доступа к нему.<br />
-            Когда использовать?<br />
-            Когда нужен ровно один экземпляр класса (например, логгер, настройки приложения).
-        </div>
-        <div class="code">
-            public sealed class Singleton
-            {
-                private static Singleton _instance;
-                private static readonly object _lock = new object();
-
-                // Закрытый конструктор
-                private Singleton() 
-                {
-                    // Инициализация
-                }
-
-                // Публичное статическое свойство для доступа
-                public static Singleton Instance
-                {
-                    get
-                    {
-                        lock (_lock)
-                        {
-                            if (_instance == null)
-                            {
-                                _instance = new Singleton();
-                            }
-                            return _instance;
-                        }
-                    }
-                }
-
-                public void SomeBusinessLogic()
-                {
-                    Console.WriteLine("Выполняем бизнес-логику...");
-                }
-            }
-
-            // Использование
-            class Program
-            {
-                static void Main(string[] args)
-                {
-                    Singleton s1 = Singleton.Instance;
-                    Singleton s2 = Singleton.Instance;
-
-                    Console.WriteLine(s1 == s2); // True (это один и тот же объект)
-                }
-            }
-        </div>
-        <div class="text">
-            sealed запрещает наследование. <br />
-            lock гарантирует потокобезопасность.<br />
-            Приватный конструктор блокирует создание через new.
-            <h4>API design (урок 22)</h4>
-            API (Application Programming Interface) — это набор правил и инструментов для взаимодействия между разными компонентами программного обеспечения. В веб-контексте API обычно означает HTTP-интерфейс,
-            который позволяет клиентам (например, браузерам или мобильным приложениям) обмениваться данными с сервером.
-            Типы API в C# <br />
-            REST API (Representational State Transfer) – использует HTTP-методы (GET, POST, PUT, DELETE) и JSON/XML.<br />
-            gRPC – высокопроизводительный RPC-фреймворк от Google.<br />
-            SOAP – устаревающий протокол на основе XML.<br />
-            SignalR – для real-time коммуникации.<br />
-            В этом курсе фокус будет на REST API.<br />
-            Минимальный API на C# (ASP.NET Core)<br />
-            Современный C# предлагает упрощённый подход к созданию API через Minimal APIs
-        </div>
-        <div class="code">
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
-
-            // Маршрут для GET-запроса
-            app.MapGet("/hello", () => "Hello, API!");
-
-            app.Run();
-        </div>
-        <div class="text">
-            MapGet – регистрирует обработчик для HTTP GET.<br />
-            /hello – путь (endpoint).<br />
-            Endpoint – URL + HTTP-метод (например, GET /products).<br />
-            Запрос (Request) – что отправляет клиент.<br />
-            Ответ (Response) – что возвращает сервер.<br />
-            Статус-коды – 200 (OK), 404 (Not Found), 500 (Server Error) и др.<br />
-            <h4>Алгоритмы (урок 23)</h4>
-            Алгоритм — это последовательность шагов для решения определенной задачи.<br />
-            Пример: алгоритм приготовления кофе:<br />
-            Взять чашку.<br />
-            Насыпать кофе.<br />
-            Залить горячей водой.<br />
-            В программировании алгоритмы используются для сортировки, поиска, обработки данных и многого другого.<br />
-            Задача: Найти сумму всех чисел от 1 до N.<br />
-            Создаем переменную sum для хранения суммы.<br />
-            Запускаем цикл от 1 до N.<br />
-            На каждом шаге добавляем i к sum.
-        </div>
-        <div class="code">
-            int sum = 0;
-            int N = 10;
-
-            for (int i = 1; i <= N; i++)
-            {
-                sum += i;
-            }
-
-            Console.WriteLine($"Сумма чисел от 1 до {N} = {sum}");
-        </div>
-        <div class="text">
-            <h4>Computer Science (урок 24)</h4>
-            Computer Science (CS) — это наука о вычислениях, алгоритмах, данных и их обработке, а также о принципах работы компьютеров и программного обеспечения.<br />
-            Основные направления CS:<br />
-            Алгоритмы и структуры данных – как эффективно решать задачи.<br />
-            Архитектура компьютера – как устроены процессоры, память и устройства.<br />
-            Операционные системы – как управляются ресурсы компьютера.<br />
-            Программирование – создание программ на разных языках.<br />
-            Искусственный интеллект и машинное обучение – как компьютеры учатся.<br />
-            Сети и безопасность – как данные передаются и защищаются.<br />
-            Базовые понятия<br />
-            Алгоритм – последовательность шагов для решения задачи.<br />
-            Пример: рецепт приготовления кофе – это алгоритм.<br />
-            Программа – алгоритм, записанный на языке, понятном компьютеру.<br />
-            Данные – информация, которую обрабатывает программа (числа, текст, изображения).
-            <h4>Оптимизация и производительность (урок 25)</h4>
-            BenchmarkDotNet – библиотеки для бенчмаркинга в .NET.<br />
-            Зачем нужен BenchmarkDotNet?<br />
-            Ручные замеры (DateTime, Stopwatch) неточны из-за влияния фоновых процессов, JIT-компиляции и GC.<br />
-            BenchmarkDotNet автоматизирует процесс, обеспечивая:<br />
-            Прогрев кода (JIT-компиляция).<br />
-            Статистическую обработку результатов.<br />
-            Минимизацию влияния внешних факторов.<br />
-            dotnet add package BenchmarkDotNet <br />
-            Создадим тест для сравнения скорости работы for и foreach.
-        </div>
-        <div class="code">
-            using BenchmarkDotNet.Attributes;
-            using BenchmarkDotNet.Running;
-
-            // Класс с бенчмарками
-            public class ForVsForEachBenchmark
-            {
-                private int[] _array = new int[1000];
-
-                [GlobalSetup]
-                public void Setup()
-                {
-                    // Инициализация массива перед тестами
-                    for (int i = 0; i < _array.Length; i++)
-                        _array[i] = i;
-                }
-
-                [Benchmark]
-                public int ForLoop()
-                {
-                    int sum = 0;
-                    for (int i = 0; i < _array.Length; i++)
-                        sum += _array[i];
-                    return sum;
-                }
-
-                [Benchmark]
-                public int ForEachLoop()
-                {
-                    int sum = 0;
-                    foreach (var item in _array)
-                        sum += item;
-                    return sum;
-                }
-            }
-
-            // Запуск бенчмарка
-            public class Program
-            {
-                public static void Main(string[] args)
-                {
-                    BenchmarkRunner.Run&lt;ForVsForEachBenchmark&gt;();
-                }
-            }
-        </div>
-        <div class="text">
-            После запуска BenchmarkDotNet выведет результаты в консоль, например: <br />
-            ForLoop	1.234 μs	0.045 μs	0.038 μs<br />
-            ForEachLoop	1.567 μs	0.067 μs	0.059 μs<br />
-            Mean – среднее время выполнения.<br />
-            Error/StdDev – погрешность и стандартное отклонение.<br />
-            Вывод<br />
-            for обычно чуть быстрее foreach для массивов, но разница часто незначительна
-            <h4>Рефлексия и метапрограммирования (урок 26)</h4>
-            Рефлексия — это механизм в .NET, который позволяет анализировать и взаимодействовать с типами, методами, свойствами и другими элементами программы во время выполнения (а не на этапе компиляции).<br />
-            Зачем нужна рефлексия?<br />
-            Динамическая загрузка и использование сборок.<br />
-            Анализ структуры классов (например, генераторы кода, ORM).<br />
-            Вызов методов или доступ к свойствам, о которых неизвестно на этапе компиляции.<br />
-            Создание экземпляров классов по имени.<br />
-            Основные классы рефлексии<br />
-            Type — информация о типе (классе, структуре и т. д.).<br />
-            Assembly — информация о загруженной сборке.<br />
-            MethodInfo, PropertyInfo, FieldInfo — информация о методах, свойствах, полях.<br />
-            Activator — создание экземпляров классов динамически.<br />
-            Получение типа (Type)<br />
-            Есть три основных способа:<br />
-            typeof(Класс) — если тип известен на этапе компиляции.<br />
-            объект.GetType() — если есть экземпляр объекта.<br />
-            Type.GetType("Полное.Имя.Класса") — загрузка по строковому имени.
-        </div>
-        <div class="code">
-            using System;
-            using System.Reflection;
-
-            class Person
-            {
-                public string Name { get; set; }
-                public int Age { get; set; }
-            }
-
-            class Program
-            {
-                static void Main()
-                {
-                    // 1. Получаем тип через typeof
-                    Type personType1 = typeof(Person);
-                    Console.WriteLine($"Тип Person: {personType1.Name}");
-        
-                    // 2. Получаем тип через экземпляр объекта
-                    Person person = new Person();
-                    Type personType2 = person.GetType();
-                    Console.WriteLine($"Тип объекта person: {personType2.Name}");
-        
-                    // 3. Получаем тип по строковому имени
-                    Type personType3 = Type.GetType("Person"); // Если класс в текущей сборке
-                    Console.WriteLine($"Тип по имени: {personType3?.Name ?? "Не найден"}");
-                }
-            }
-            ------------------------------------------------------------------------------------
-            // Получение информации о свойствах и методах
-            Type type = typeof(Person);
-
-            // Получаем все публичные свойства
-            PropertyInfo[] properties = type.GetProperties();
-            Console.WriteLine("Свойства класса Person:");
-            foreach (var prop in properties)
-            {
-                Console.WriteLine($"- {prop.Name} ({prop.PropertyType.Name})");
-            }
-
-            // Получаем все публичные методы
-            MethodInfo[] methods = type.GetMethods();
-            Console.WriteLine("\nМетоды класса Person:");
-            foreach (var method in methods)
-            {
-                Console.WriteLine($"- {method.Name} (Возвращает: {method.ReturnType.Name})");
-            }
-        </div>
-        <div class="text">
-            <h4>Source Generators (урок 27)</h4>
-            Source Generators — это механизм в .NET, позволяющий автоматически генерировать исходный код C# во время компиляции. Они работают как часть компилятора Roslyn
-            и добавляют код в сборку до её окончательной компиляции. <br />
-            Аналогия:<br />
-            Представьте, что у вас есть помощник, который перед сборкой проекта автоматически дописывает за
-            вас повторяющийся или шаблонный код (например, классы DTO, реализация INotifyPropertyChanged и т. д.).<br />
-            Зачем они нужны? <br />
-            Избегают шаблонного кода: Генерация boilerplate-кода (например, для сериализации, маппинга или репозиториев).<br />
-            Производительность: Генерация во время компиляции быстрее, чем рефлексия или динамическая генерация в runtime.<br />
-            Безопасность: Сгенерированный код можно увидеть и отладить.<br />
-            Пример проблемы без SG:<br />
-            Ручная реализация INotifyPropertyChanged требует множества повторяющихся блоков:
-        </div>
-        <div class="code">
-            public string Name
-            {
-                get => _name;
-                set
-                {
-                    _name = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
-                }
-            }
-        </div>
-        <div class="text">
-            С Source Generator это можно автоматизировать!<br />
-            Как работают Source Generators?<br />
-            Компилятор Roslyn анализирует ваш код.<br />
-            Source Generator получает синтаксическое дерево и семантическую модель проекта.<br />
-            Генератор создаёт новый код на основе анализа.<br />
-            Новый код добавляется в сборку.<br />
-            Минимальный пример генератора<br />
-            Создадим генератор, который добавляет в проект класс GeneratedClass с одним методом.<br />
-            Шаг 1: Создаём проект<br />
-            Создайте два проекта в Visual Studio:<br />
-            ConsoleApp (обычное консольное приложение .NET 6+).<br />
-            SourceGenerator (библиотека классов, целевая платформа netstandard2.0).<br />
-            Шаг 2: Подключаем пакеты<br />
-            В SourceGenerator.csproj добавьте:<br />
-        </div>
-        <div class="code">
-            &lt;ItemGroup&gt;
-                &lt;PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" PrivateAssets="all" /&gt;
-                &lt;PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" /&gt;
-            &lt;/ItemGroup&gt;
-               -------------------------------------------------------------
-            //Шаг 3: Пишем генератор
-            //Создайте класс HelloSourceGenerator.cs
-            using Microsoft.CodeAnalysis;
-            using Microsoft.CodeAnalysis.Text;
-            using System.Text;
-
-            [Generator]
-            public class HelloSourceGenerator : ISourceGenerator
-            {
-                public void Initialize(GeneratorInitializationContext context)
-                {
-                    // Не требуется инициализация
-                }
-
-                public void Execute(GeneratorExecutionContext context)
-                {
-                    var sourceCode = @"
-            namespace Generated
-            {
-                public static class GeneratedClass
-                {
-                    public static void Hello() 
-                        => System.Console.WriteLine(""Hello from generated code!"");
-                }
-            }";
-                    context.AddSource("GeneratedClass.g.cs", SourceText.From(sourceCode, Encoding.UTF8));
-                }
-            }
-            ----------------------------------------------------------------------
-            // Шаг 4: Подключаем генератор к основному проекту
-            // В ConsoleApp.csproj добавьте:
-
-            &lt;ItemGroup&gt;
-                &lt;ProjectReference Include="..\SourceGenerator\SourceGenerator.csproj" 
-                                  OutputItemType="Analyzer" ReferenceOutputAssembly="false" /&gt;
-            &lt;/ItemGroup&gt;
-            -------------------------------------------------------------------------
-            // Используем сгенерированный код
-            // В Program.cs:
-            Generated.GeneratedClass.Hello(); // Вызов сгенерированного метода!
-        </div>
-        <div class="text">
-            <h4>Паралельое программирование (урок 28)</h4>
-            Современные процессоры имеют несколько ядер, и если программа выполняется в одном потоке, она использует только часть вычислительной мощности. Параллельное программирование позволяет: <br />
-            Ускорить выполнение задач за счёт распределения работы между потоками.<br />
-            Улучшить отзывчивость приложений (например, UI не "зависает" при долгих вычислениях).<br />
-            Эффективнее использовать ресурсы серверов.<br />
-            Основные понятия<br />
-            Поток (Thread) — наименьшая единица выполнения. ОС управляет потоками и распределяет их по ядрам CPU.<br />
-            Многопоточность (Multithreading) — выполнение нескольких потоков в рамках одного процесса.<br />
-            Параллелизм (Parallelism) — одновременное выполнение нескольких задач на разных ядрах CPU.<br />
-            Асинхронность (Asynchrony) — выполнение задач без блокировки основного потока (но не обязательно параллельно).<br />
-            Простейший пример: Parallel.For<br />
-            Parallel.For — это метод из пространства имён System.Threading.Tasks, который позволяет распараллелить цикл for.
-        </div>
-        <div class="code">
-            using System;
-            using System.Threading.Tasks;
-
-            class Program
-            {
-                static void Main()
-                {
-                    // Обычный последовательный for
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Console.WriteLine($"Последовательный: {i}, поток: {Environment.CurrentManagedThreadId}");
-                    }
-
-                    // Параллельный for
-                    Parallel.For(0, 10, i =>
-                    {
-                        Console.WriteLine($"Параллельный: {i}, поток: {Environment.CurrentManagedThreadId}");
-                    });
-                }
-            }
-        </div>
-        <div class="text">
-            Что произойдёт?<br />
-            В обычном for все итерации выполняются в одном потоке по порядку.<br />
-            В Parallel.For итерации распределяются между разными потоками (можно увидеть разные ThreadId).<br />
-            <h4>Redis with C# (урок 29)</h4>
-            Redis (Remote Dictionary Server) — это высокопроизводительная in-memory база данных, которая поддерживает различные структуры данных (строки, хеши, списки и т.д.). Она часто используется для:<br />
-            Кэширования<br />
-            Pub/Sub (механизма сообщений)<br />
-            Хранения сессий<br />
-            Очередей задач<br />
-            Добавьте пакет StackExchange.Redis (основная библиотека для работы с Redis в C#): dotnet add package StackExchange.Redis
-        </div>
-        <div class="code">
-            using StackExchange.Redis;
-            using System;
-
-            class Program
-            {
-                static void Main()
-                {
-                    // Подключение к Redis (по умолчанию localhost:6379)
-                    ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-                    IDatabase db = redis.GetDatabase();
-
-                    // Простейшие операции
-                    db.StringSet("test_key", "Hello, Redis!");
-                    string value = db.StringGet("test_key");
-
-                    Console.WriteLine($"Значение ключа 'test_key': {value}");
-                }
-            }
-        </div>
-    </main>
+        displayTasks();
+    </script>
 </body>
+
 </html>
